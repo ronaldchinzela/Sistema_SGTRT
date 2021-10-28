@@ -1,3 +1,7 @@
+<?php
+     session_start();
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -54,7 +58,7 @@
 <!-- concatenando las vistas de la carpeta modulos -->
 <?php
     //validando si el usuario inició sesión en el sistema
-    if(isset($_SESION["iniciarSesion"]) && $_SESSION["iniciarSesion"] == "ok") {
+    if(isset($_SESSION["iniciarSesion"]) && $_SESSION["iniciarSesion"] == "ok") {
 
     echo '<div class="wrapper">';
 

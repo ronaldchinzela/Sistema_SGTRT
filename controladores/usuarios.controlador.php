@@ -12,10 +12,14 @@
                     $valor = $_POST["ingUsuario"];
 
                     $respuesta = ModeloUsuarios::MdlMostrarUsuarios($tabla, $item, $valor);
-
+                    
+                    if(is_array($respuesta)){
                     if($respuesta["usuario"]  == $_POST["ingUsuario"] && $respuesta["password"] == $_POST["ingPassword"]){
 
-                        echo '<br><div class="alert alert-success">¡Bienvenido al sistema!</div>';
+                        $_SESSION["iniciarSesion"] = "ok";
+                        echo '<script>
+                                window.location = "inicio";
+                        </script>';
 
                     }else{
 
@@ -23,6 +27,8 @@
                         
                         }
                      }
+                    
+                    }
 
                 }
             }
