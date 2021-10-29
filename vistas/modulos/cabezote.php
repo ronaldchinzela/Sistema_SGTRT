@@ -29,8 +29,12 @@
         <ul class="nav navbar-nav">
             <li class="dropdown user user-menu">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                    
+                    <!-- imagen referencial en la foto del usuario logeado -->
                     <img src="vistas/img/plantilla/anonimo.png" class="user-image">
-                    <span class="hidden-xs">Ronald Urbano Miguel Chinchay Zelada</span>
+
+                    <!-- imprimiendo el nombre y apellido concatenado, del usuario logeado -->
+                    <span class="hidden-xs"><?php echo $_SESSION["nombres"]." ".$_SESSION["apellidos"] ?></span>
                 </a>
     <!-- menú desplegable del usuario logeado-->
                 <ul class="dropdown-menu ">

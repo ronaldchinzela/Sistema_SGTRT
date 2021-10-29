@@ -1,6 +1,8 @@
 <?php
     class ControladorUsuarios{
-    /* INGRESO DEL USUARIO AL SISTEMA */
+        /*===========================================
+            INGRESO DEL USUARIO AL SISTEMA 
+        ============================================*/
        static public  function ctrIngresoUsuario(){
             if(isset($_POST["ingUsuario"])){
 
@@ -18,8 +20,17 @@
                     
                     if(is_array($respuesta)){
                     if($respuesta["usuario"]  == $_POST["ingUsuario"] && $respuesta["password"] == $encriptar){
-
+                        
+                        //creando variable de sesión para validar el inicio del mismo
                         $_SESSION["iniciarSesion"] = "ok";
+
+                        //creando variables para capturar el nombre y apellido del usuario logeado
+                        $_SESSION["idusuario"] = $respuesta["idusuario"];
+                        $_SESSION["nombres"] = $respuesta["nombres"];
+                        $_SESSION["apellidos"] = $respuesta["apellidos"];
+                        $_SESSION["rol"] = $respuesta["rol"];
+
+                        //enviando la variable de sesión $_SESSION["iniciarSesion"] al menú de inicio de la página
                         echo '<script>
                                 window.location = "inicio";
                         </script>';
@@ -106,5 +117,17 @@
                    }
             }
 
+        }
+
+        /*===========================================
+            MOSTRANDO USUARIOS DE LA BASE DE DATOS  
+        ============================================*/
+
+        static public function ctrMostrarUsuarios($item, $valor){
+
+            $tabla = "usuarios";
+            $respuesta = ModeloUsuarios::MdlMostrarUsuarios($tabla, $item, $valor);
+
+            return $respuesta;
         }
 }     

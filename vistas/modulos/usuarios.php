@@ -39,29 +39,31 @@
             </thead>
 
             <tbody>
-                <tr>
-                    <td>admin</td>
-                    <td>Administrador</td>
-                    <td><button class="btn btn-success btn-xs">Activo</button></td>
-                    <td>
-                        <div class="btn-group">
-                            <button class="btn btn-warning"><i class="fa fa-pencil"></i></button>
-                            <button class="btn btn-danger"><i class="fa fa-times"></i></button>
-                        </div>
-                    </td>
-                </tr>
 
-                <tr>
-                    <td>admin</td>
-                    <td>Administrador</td>
-                    <td><button class="btn btn-danger btn-xs">Inactivo</button></td>
-                    <td>
-                        <div class="btn-group">
-                            <button class="btn btn-warning"><i class="fa fa-pencil"></i></button>
-                            <button class="btn btn-danger"><i class="fa fa-times"></i></button>
-                        </div>
-                    </td>
-                </tr>
+                <!-- MOSTRANDO LA LISTA DE USUARIOS DE LA BASE DE DATOS -->
+                <?php                    
+                     $item = null;
+                     $valor = null;
+
+                     $usuarios = ControladorUsuarios::ctrMostrarUsuarios($item, $valor);
+
+                     foreach ($usuarios as $key => $value){
+
+                        echo'
+                                <tr>
+                                <td>'.$value["usuario"].'</td>
+                                <td>'.$value["rol"].'</td>
+                                <td><button class="btn btn-success btn-xs">Activo</button></td>
+                                <td>
+                                    <div class="btn-group">
+                                        <button class="btn btn-warning"><i class="fa fa-pencil"></i></button>
+                                        <button class="btn btn-danger"><i class="fa fa-times"></i></button>
+                                    </div>
+                                </td>
+                            </tr>';                           
+                     }
+                ?>
+
             </tbody>
 
         </table>

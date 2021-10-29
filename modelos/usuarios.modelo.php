@@ -6,12 +6,26 @@
         /* MOSTRANDO LOS USUARIOS */
 
         static public function mdlMostrarUsuarios($tabla, $item, $valor){
-            $stmt = Conexion::conectar()->prepare("SELECT * FROM $tabla WHERE $item = :$item");
-            $stmt -> bindParam(":".$item, $valor, PDO::PARAM_STR);
 
-            $stmt -> execute();
+            //validación para el método MOSTRANDO LA LISTA DE USUARIOS 
+            if($item != null){
 
-            return $stmt -> fetch();
+                $stmt = Conexion::conectar()->prepare("SELECT * FROM $tabla WHERE $item = :$item");
+                $stmt -> bindParam(":".$item, $valor, PDO::PARAM_STR);
+
+                $stmt -> execute();
+
+                return $stmt -> fetch();
+
+            }else{
+                //trayendo todos los registros de la base de datos
+                $stmt = Conexion::conectar()->prepare("SELECT * FROM $tabla");
+
+                $stmt -> execute();
+
+                return $stmt -> fetchAll();
+
+            }        
 
             $stmt -> close();
             $stmt = null;
