@@ -49,7 +49,8 @@
                     $tabla = "usuarios";
 
                     //creando un array que almacene los valores ingresados en el formulario
-                    $datos = array("nombre" => $_POST["nuevoNombre"],
+                    $datos = array("usuario" => strtolower($_POST['nuevoNombre'][0] . explode(" ", $_POST['nuevoApellido'])[0]),
+                                   "nombre" => $_POST["nuevoNombre"],
                                    "apellido" => $_POST["nuevoApellido"],
                                    "celular" => $_POST["nuevoCelular"],
                                    "correo" => $_POST["nuevoCorreo"],
