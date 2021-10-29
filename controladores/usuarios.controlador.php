@@ -7,14 +7,17 @@
                 if(preg_match('/^[a-zA-Z0-9]+$/', $_POST["ingUsuario"]) &&
                    preg_match('/^[a-zA-Z0-9]+$/', $_POST["ingPassword"])){
 
+                     //trayendo la variable $encriptar de Registro de usuario
+                    $encriptar = crypt($_POST["ingPassword"], '$2a$07$asxx54ahjppf45sd87a5a4dDDGsystemdev$');
+
                     $tabla = "usuarios";
                     $item = "usuario";
                     $valor = $_POST["ingUsuario"];
-
+                    
                     $respuesta = ModeloUsuarios::MdlMostrarUsuarios($tabla, $item, $valor);
                     
                     if(is_array($respuesta)){
-                    if($respuesta["usuario"]  == $_POST["ingUsuario"] && $respuesta["password"] == $_POST["ingPassword"]){
+                    if($respuesta["usuario"]  == $_POST["ingUsuario"] && $respuesta["password"] == $encriptar){
 
                         $_SESSION["iniciarSesion"] = "ok";
                         echo '<script>
@@ -48,13 +51,16 @@
 
                     $tabla = "usuarios";
 
+                    //creando variable para almacenar la contraseña encriptada
+                    $encriptar = crypt($_POST["nuevoPassword"], '$2a$07$asxx54ahjppf45sd87a5a4dDDGsystemdev$');
+
                     //creando un array que almacene los valores ingresados en el formulario
                     $datos = array("usuario" => strtolower($_POST['nuevoNombre'][0] . explode(" ", $_POST['nuevoApellido'])[0]),
                                    "nombre" => $_POST["nuevoNombre"],
                                    "apellido" => $_POST["nuevoApellido"],
                                    "celular" => $_POST["nuevoCelular"],
                                    "correo" => $_POST["nuevoCorreo"],
-                                   "password" => $_POST["nuevoPassword"],
+                                   "password" => $encriptar,
                                    "perfil" => $_POST["nuevoPerfil"]);
                     
                     $respuesta = ModeloUsuarios::mdlIngresarUsuario($tabla, $datos);
