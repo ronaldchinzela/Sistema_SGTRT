@@ -115,7 +115,7 @@
                 <div class="input-group">
 
                     <span class="input-group-addon"><i class="fa fa-id-card"></i></span>
-                    <input type="text" class="form-control input-lg" name="nuevoApellido" placeholder="Ingresar los apellidos" required>
+                    <input type="text" class="form-control input-lg" name="nuevoNombre" placeholder="Ingresar los apellidos" required>
 
                 </div>
 
@@ -126,7 +126,7 @@
                 <div class="input-group">
 
                     <span class="input-group-addon"><i class="fa fa-envelope"></i></span>
-                    <input type="text" class="form-control input-lg" name="nuevoCorreo" placeholder="Ingresar el correo" required>
+                    <input type="text" class="form-control input-lg" name="nuevoNombre" placeholder="Ingresar el correo" required>
 
                 </div>
 
@@ -137,7 +137,7 @@
                 <div class="input-group">
 
                     <span class="input-group-addon"><i class="fa fa-phone"></i></span>
-                    <input type="text" class="form-control input-lg" name="nuevoCelular" placeholder="Ingresar número telefónico" required>
+                    <input type="text" class="form-control input-lg" name="nuevoNombre" placeholder="Ingresar número telefónico" required>
 
                 </div>
 
@@ -180,12 +180,6 @@
         <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Salir</button>
         <button type="submit" class="btn btn-primary">Generar usuario</button>
       </div>
-
-        <!-- MÉTODO PARA GUARDAR EL USUARIO -->
-        <?php
-             $crearUsuario = new ControladorUsuarios();
-             $crearUsuario -> ctrCrearUsuario();
-        ?>
 
       </form>
     </div>

@@ -37,17 +37,30 @@
   <!-- Google Font -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
 
+  <!-- DataTables -->
+  <link rel="stylesheet" href="vistas/bower_components/datatables.net-bs/css/dataTables.bootstrap.min.css">
+
 <!--===========================================
              PLUGINS DE JAVASCRIPT   
 ============================================-->
 <!-- jQuery 3 -->
     <script src="vistas/bower_components/jquery/dist/jquery.min.js"></script>
+
 <!-- Bootstrap 3.3.7 -->
     <script src="vistas/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+
 <!-- FastClick -->
     <script src="vistas/bower_components/fastclick/lib/fastclick.js"></script>
+
 <!-- AdminLTE App -->
     <script src="vistas/dist/js/adminlte.min.js"></script>
+
+<!-- DataTables -->
+    <script src="vistas/bower_components/datatables.net/js/jquery.dataTables.min.js"></script>
+    <script src="vistas/bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
+    
+<!-- SweetAlert 2 -->
+    <script src="vistas/plugins/sweetalert2/sweetalert2.all.js"></script>
 
 </head>
 <!--===========================================
@@ -77,7 +90,8 @@
            $_GET["ruta"] == "resumen-servidores" ||
            $_GET["ruta"] == "usuarios" ||
            $_GET["ruta"] == "sow" ||
-           $_GET["ruta"] == "costo-mantenimiento"){
+           $_GET["ruta"] == "costo-mantenimiento" || 
+           $_GET["ruta"] == "salir"){
 
     //concatenando las páginas con la extención .php
     include "modulos/".$_GET["ruta"].".php";
