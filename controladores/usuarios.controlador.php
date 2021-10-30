@@ -176,7 +176,7 @@ public function ctrEditarUsuario(){
                                         if(result.value) {
                                             window.location = "usuarios";        
                                         }
-                                    })
+                                    });
 
                             </script>';
 
@@ -216,7 +216,7 @@ public function ctrEditarUsuario(){
                                         if(result.value) {
                                                 window.location = "usuarios";        
                                     }
-                                })
+                                });
 
                     </script>';
         
@@ -237,7 +237,7 @@ public function ctrEditarUsuario(){
                                 if(result.value){
                                     window.location = "usuarios";        
                                 }
-                            })
+                            });
 
                 </script>';
 
