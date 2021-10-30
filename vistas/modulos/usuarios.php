@@ -24,7 +24,6 @@
 
 </div>
 
-
     <!-- Tabla de usuarios -->
     <div class="box-body">
         <table class="table table-bordered table-striped dt-responsive tablas">
@@ -47,20 +46,37 @@
 
                      $usuarios = ControladorUsuarios::ctrMostrarUsuarios($item, $valor);
 
+                     //VARIABLE $Key hace referencia a la variable $item
                      foreach ($usuarios as $key => $value){
-
+                        //DENTRO DE LA VARIABLE $value INGRESAMOS EL NOMBRE DEL CAMPO DE LA TABLA DE LA BD QUE VAMOS A TRAER
                         echo'
-                                <tr>
-                                <td>'.$value["usuario"].'</td>
-                                <td>'.$value["rol"].'</td>
-                                <td><button class="btn btn-success btn-xs">Activo</button></td>
-                                <td>
-                                    <div class="btn-group">
-                                        <button class="btn btn-warning"><i class="fa fa-pencil"></i></button>
-                                        <button class="btn btn-danger"><i class="fa fa-times"></i></button>
-                                    </div>
-                                </td>
-                            </tr>';                           
+                            <tr>
+                            
+                                <td>'.$value["usuario"].'</td>';
+
+                                echo '<td>'.$value["rol"].'</td>';
+
+                                    if($value["estado"] != 0){
+                                        echo ' <td><button class="btn btn-success btn-xs">Activo</button></td>';
+                                    }else{
+                                        echo ' <td><button class="btn btn-danger btn-xs">Inactivo</button></td>';
+                                    }
+                                
+                                //cerrando el echo de $value["rol"]
+                                echo '
+
+                                     <td>
+                                    
+                                        <div class="btn-group">
+
+                                            <button class="btn btn-warning btnEditarUsuario" idUsuario="'.$value["idusuario"].'" data-toggle="modal" data-target="#modalEditarUsuario"><i class="fa fa-pencil"></i></button>
+                                            <button class="btn btn-danger"><i class="fa fa-times"></i></button>
+                                       
+                                        </div>
+                                        
+                                    </td>
+                                    
+                                </tr>';                           
                      }
                 ?>
 
@@ -75,9 +91,9 @@
 
 </div>
 
-<!--===========================================
+<!--======================================================================================================================================
         MODAL AGREGAR NUEVO USUARIO
-============================================-->
+=======================================================================================================================================-->
 <div id="modalAgregarUsuario" class="modal fade" role="dialog">
 
   <div class="modal-dialog">
@@ -183,11 +199,134 @@
         <button type="submit" class="btn btn-primary">Generar usuario</button>
       </div>
 
-        <!-- MÉTODO PARA GUARDAR EL USUARIO -->
+        <!-- OBJETOS PARA INVOCAR LOS MÉTODOS Y CLASES -->
         <?php
              $crearUsuario = new ControladorUsuarios();
              $crearUsuario -> ctrCrearUsuario();
         ?>
+
+      </form>
+    </div>
+
+  </div>
+</div>
+
+
+<!--======================================================================================================================================
+        MODAL EDITAR USUARIO
+=======================================================================================================================================-->
+<div id="modalEditarUsuario" class="modal fade" role="dialog">
+
+  <div class="modal-dialog">
+
+    <div class="modal-content">
+
+    <form role="form" method="post">
+
+<!--===========================================
+        CABECERA DEL MODAL EDITAR USUARIO
+============================================-->
+      <div class="modal-header" style="background:#3c8dbc; color:white">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Actualizar usuario</h4>
+      </div>
+
+<!--===========================================
+        CUERPO DEL MODAL EDITAR USUARIO
+============================================-->
+    <div class="modal-body">
+        
+        <div class="box-body">
+        <!-- ENTRADA PARA EL NOMBRE -->
+            <div class="form-group">
+
+                <div class="input-group">
+
+                    <span class="input-group-addon"><i class="fa fa-user"></i></span>
+                    <input type="text" class="form-control input-lg" id="editarNombre" name="editarNombre" value="" required>
+
+                </div>
+
+            </div>
+        <!-- ENTRADA PARA EDITAR EL APELLIDO -->
+            <div class="form-group">
+
+                <div class="input-group">
+
+                    <span class="input-group-addon"><i class="fa fa-id-card"></i></span>
+                    <input type="text" class="form-control input-lg" id="editarApellido" name="editarApellido" value="" required>
+
+                </div>
+
+            </div>
+             <!-- ENTRADA PARA EDITAR EL CORREO -->
+             <div class="form-group">
+
+                <div class="input-group">
+
+                    <span class="input-group-addon"><i class="fa fa-envelope"></i></span>
+                    <input type="text" class="form-control input-lg" id="editarCorreo" name="editarCorreo" value="" required>
+
+                </div>
+
+                </div>
+            <!-- ENTRADA PARA EDITAR EL CELULAR -->
+             <div class="form-group">
+
+                <div class="input-group">
+
+                    <span class="input-group-addon"><i class="fa fa-phone"></i></span>
+                    <input type="text" class="form-control input-lg" id="editarCelular" name="editarCelular" value="" required>
+
+                </div>
+
+                </div>
+            <!-- ENTRADA PARA EDITAR LA CONTRASEÑA -->
+             <div class="form-group">
+
+                <div class="input-group">
+
+                    <span class="input-group-addon"><i class="fa fa-lock"></i></span>
+                    <input type="password" class="form-control input-lg" name="editarPassword" placeholder="Escriba la nueva contraseña">
+
+                    <input type="hidden" id="passwordActual" name="passwordActual">
+
+                </div>
+
+                </div>
+            <!-- ENTRADA PARA EDITAR EL ROL -->
+             <div class="form-group">
+
+                <div class="input-group">
+
+                    <span class="input-group-addon"><i class="fa fa-address-book-o"></i></span>
+                        <select class="form-control input-lg" name="editarRol">
+                            <option value="" id="editarRol"></option>
+                            <option value="Administrador">Administrador</option>
+                            <option value="Analista">Analista</option>
+                        </select>
+
+                </div>
+
+                </div>
+
+            </div>
+      
+        </div>
+
+<!--===========================================
+        PIE DEL MODAL EDITAR USUARIO
+============================================-->
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Salir</button>
+        <button type="submit" class="btn btn-primary">Actualizar usuario</button>
+      </div>
+
+        <!-- OBJETOS PARA INVOCAR LOS MÉTODOS Y CLASES -->
+        <?php
+             $editarUsuario = new ControladorUsuarios();
+             $editarUsuario -> ctrEditarUsuario();
+        ?> 
 
       </form>
     </div>
