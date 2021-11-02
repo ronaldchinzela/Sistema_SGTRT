@@ -159,7 +159,7 @@
                 <div class="input-group">
 
                     <span class="input-group-addon"><i class="fa fa-phone"></i></span>
-                    <input type="text" class="form-control input-lg" name="nuevoCelular" placeholder="Ingresar número telefónico" required>
+                    <input type="text" class="form-control input-lg" name="nuevoCelular" min="7" max="999999999" id="numero" onkeypress="return solonumeros(event)" onpaste="return false" placeholder="Ingresar número telefónico" required>
 
                 </div>
 
@@ -280,7 +280,7 @@
                 <div class="input-group">
 
                     <span class="input-group-addon"><i class="fa fa-phone"></i></span>
-                    <input type="text" class="form-control input-lg" id="editarCelular" name="editarCelular" value="" required>
+                    <input type="text" class="form-control input-lg" id="editarCelular" name="editarCelular"  value="" required>
 
                 </div>
 

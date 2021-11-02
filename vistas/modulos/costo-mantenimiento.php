@@ -1,46 +1,98 @@
 <!-- Content Wrapper. Contains page content -->
 <div class="content-wrapper">
-    <!-- Content Header (Page header) -->
-    <section class="content-header">
+
+<section class="content-header">
       
 <h1>
    Costo Mantenimiento
 </h1>
 
-    <ol class="breadcrumb">
-    <li><a href="#"><i class="fa fa-home"></i>Inicio</a></li>
-    <li class="active">Home</li>
-    </ol>
 </section>
 
-<!-- Contenido temporal para la página de inicio -->
 <section class="content">
 
-<!-- Default box -->
 <div class="box">
-<div class="box-header with-border">
-    <h3 class="box-title">Sistema para el control de tarifarios</h3>
 
-    <div class="box-tools pull-right">
-    <button type="button" class="btn btn-box-tool" data-widget="collapse" data-toggle="tooltip"
-            title="Collapse">
-        <i class="fa fa-minus"></i></button>
-    <button type="button" class="btn btn-box-tool" data-widget="remove" data-toggle="tooltip" title="Remove">
-        <i class="fa fa-times"></i></button>
-    </div>
+<div class="box-header with-border">
+    
+
 </div>
+
+<!-- Combox de actividad  -->
+<select class="cbo-año">                            
+    <option>Año</option>  
+    <option>2021</option>
+    <option>2020</option> 
+    <option>2019</option>
+    <option>2018</option>  
+    <option>2017</option>                                     
+</select><br>
+
+<select class="cbo-mes">                              
+    <option>Mes</option>  
+    <option>Junio</option>
+    <option>Julio</option> 
+    <option>Agosto</option>  
+    <option>Setiembre</option>  
+    <option>Octubre</option>                                   
+</select><br>
+
+<!-- botón consultar-->
+<input class="boton-listar-consultar" type="button" value="consultar" onclick="location.href='costo-mantenimiento'">
+
+
+    <!-- Tabla de usuarios -->
     <div class="box-body">
-    Infraestructura TI
+        <table class="table table-bordered table-striped dt-responsive tablas">
+
+            <thead>
+            <tr>
+                <th class="th02">ALP</th>
+                <th class="th03">Proyecto</th>
+                <th class="th04">Costo Mensual 4Walls</th>
+                <th class="th05">Costo Nexsus</th>
+                <th class="th06">Costo HP DC Care</th>
+                <th class="th07">Total $</th>
+                <th class="th08">Total S/.</th>                                              
+            </tr>
+            </thead>
+
+             <tbody>
+
+            <!-- HACIENDO EL LLAMADO A LA LISTA DE COSTO MANTENIMIENTO DE LA BD -->
+            <?php
+                 $item = null;
+
+                 $valor = null;
+         
+                 $walls = ControladorWalls::ctrMostrarWalls($item, $valor);
+
+                 foreach ($walls as $key => $value) {
+
+                   echo '<tr>
+                            <td>'.$value["alp"].'</td>
+                            <td>'.$value["nom_proyecto"].'</td>
+
+                            
+
+                            <td>'.$value["idfourwalls"].'</td>
+                            <td>'.$value["idnexus"].'</td>
+                            <td>'.$value["idhp"].'</td>
+                            <td>'.$value["total_sol"].'</td>
+                            <td>'.$value["total_dolar"].'</td>
+                        </tr>';  
+                 }   
+                
+            ?>
+
+
+            </tbody>
+
+        </table>
     </div>
-    <!-- /.box-body -->
-    <div class="box-footer">
-        SGTRT
-    </div>
-    <!-- /.box-footer-->
-    </div>
-    <!-- /.box -->
+
+</div>
 
 </section>
-<!-- /.content -->
+
 </div>
-<!-- /.content-wrapper -->

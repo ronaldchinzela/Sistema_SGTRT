@@ -91,6 +91,7 @@
            $_GET["ruta"] == "usuarios" ||
            $_GET["ruta"] == "sow" ||
            $_GET["ruta"] == "costo-mantenimiento" || 
+           $_GET["ruta"] == "costo-fourwalls" || 
            $_GET["ruta"] == "salir"){
 
     //concatenando las páginas con la extención .php
@@ -117,6 +118,7 @@
 
 <!-- vinculando los archivos js de la carpeta vistas/js/ -->
 <script src="vistas/js/plantilla.js"></script>  
-<script src="vistas/js/usuarios.js"></script>  
+<script src="vistas/js/usuarios.js"></script> 
+<script src="vistas/js/walls.js"></script> 
 </body>
 </html>
