@@ -10,19 +10,18 @@ class AjaxUsuarios{
                 EDITAR USUARIO
    ============================================--*/
 
-   public $idUsuario;
-   
-   public function ajaxEditarUsuario(){
+	public $idUsuario;
 
-        //variable item = a la columna idusuario de la bd
-        $item ="idusuario";
-        $valor = $this->idUsuario;
+	public function ajaxEditarUsuario(){
 
-        $respuesta = ControladorUsuarios::ctrMostrarUsuarios($item, $valor);
+		$item = "idusuario";
+		$valor = $this->idUsuario;
 
-        echo json_encode($respuesta);
+		$respuesta = ControladorUsuarios::ctrMostrarUsuarios($item, $valor);
 
-   }
+		echo json_encode($respuesta);
+
+	}
 
    /*--===========================================
                 ACTIVAR USUARIO
@@ -67,7 +66,7 @@ class AjaxUsuarios{
 
 
    /*--===========================================
-                EDITAR USUARIO
+          OBJETO PARA EDITAR USUARIO
    ============================================--*/
 
    if(isset($_POST["idUsuario"])){
@@ -77,7 +76,6 @@ class AjaxUsuarios{
       $editar -> ajaxEditarUsuario();
    
    }
-
 
    /*--===========================================
                 ACTIVAR USUARIO

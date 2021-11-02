@@ -2,12 +2,12 @@
         EDITAR USUARIO
 ============================================--*/
 
-$(".btnEditarUsuario").click(function(){
+$(document).on("click", ".btnEditarUsuario", function(){
 
-    var idUsuario = $(this).attr("idUsuario");
-    
-    var datos = new FormData();
-    datos.append("idUsuario", idUsuario);
+	var idUsuario = $(this).attr("idUsuario");
+	
+	var datos = new FormData();
+	datos.append("idUsuario", idUsuario);
 
     //EJECUTANDO AJAX PARA TRAER LOS DATOS DE LA BD
     $.ajax({
@@ -21,16 +21,15 @@ $(".btnEditarUsuario").click(function(){
         dataType: "json",
         success: function(respuesta){
             
-            //en respuesta invoca los atributos de bindParam colocados en el insert de usuarios.modelo.php
+            //el valor de respuesta invoca los atributos de la BD
             $("#editarNombre").val(respuesta["nombres"]);
             $("#editarApellido").val(respuesta["apellidos"]);
             $("#editarCorreo").val(respuesta["correo"]);
             $("#editarCelular").val(respuesta["telefono"]);
             $("#passwordActual").val(respuesta["password"]);
-            
-            $("#editarRol").html(respuesta["rol"]);
-            $("#editarRol").val(respuesta["rol"]);
 
+            $("#editarPerfil").html(respuesta["rol"]);
+			$("#editarPerfil").val(respuesta["rol"]);
 
         }
 

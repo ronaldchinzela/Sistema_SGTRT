@@ -286,11 +286,12 @@
 
                 </div>
             <!-- ENTRADA PARA EDITAR LA CONTRASEÑA -->
-             <div class="form-group">
-
+                <div class="form-group">
+                
                 <div class="input-group">
+                
+                    <span class="input-group-addon"><i class="fa fa-lock"></i></span> 
 
-                    <span class="input-group-addon"><i class="fa fa-lock"></i></span>
                     <input type="password" class="form-control input-lg" name="editarPassword" placeholder="Escriba la nueva contraseña">
 
                     <input type="hidden" id="passwordActual" name="passwordActual">
@@ -299,13 +300,15 @@
 
                 </div>
             <!-- ENTRADA PARA EDITAR EL ROL -->
-             <div class="form-group">
+            <div class="form-group">
+              
+              <div class="input-group">
+              
+                <span class="input-group-addon"><i class="fa fa-users"></i></span> 
 
-                <div class="input-group">
-
-                    <span class="input-group-addon"><i class="fa fa-address-book-o"></i></span>
-                        <select class="form-control input-lg" name="editarRol">
-                            <option value="" id="editarRol"></option>
+                <select class="form-control input-lg" name="editarPerfil">
+                  
+                  <option value="" id="editarPerfil"></option>
                             <option value="Administrador">Administrador</option>
                             <option value="Analista">Analista</option>
                         </select>
@@ -328,8 +331,8 @@
 
         <!-- OBJETOS PARA INVOCAR LOS MÉTODOS Y CLASES -->
         <?php
-             $editarUsuario = new ControladorUsuarios();
-             $editarUsuario -> ctrEditarUsuario();
+            $editarUsuario = new ControladorUsuarios();
+            $editarUsuario -> ctrEditarUsuario();
         ?> 
 
       </form>

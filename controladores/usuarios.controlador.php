@@ -160,91 +160,90 @@ static public function ctrEditarUsuario(){
                     $encriptar = crypt($_POST["editarPassword"], '$2a$07$asxx54ahjppf45sd87a5a4dDDGsystemdev$');
                 
                 //VALIDACIÓN DE CARACTERES ESPECIALES EN LA CONTRASEÑA
+                    }else{
+
+                        echo'<script>
+
+                                swal({
+                                    type: "error",
+                                    title: "¡La contraseña no puede ir vacía o llevar caracteres especiales!",
+                                    showConfirmButton: true,
+                                    confirmButtonText: "Cerrar"
+                                    }).then(function(result){
+                                        if (result.value) {
+
+                                        window.location = "usuarios";
+
+                                        }
+                                    })
+
+                            </script>';
+
+                    }
+
                 }else{
 
-                    echo'<script>
+                    $encriptar = $_POST["passwordActual"];
 
-                    swal({
-                          type: "error",
-                          title: "¡La contraseña no puede ir vacía o llevar caracteres especiales!",
-                          showConfirmButton: true,
-                          confirmButtonText: "Cerrar"
-                          }).then(function(result){
-                            if (result.value) {
+                }
+                 //ENVIANDO AL MODELO LOS DATOS ACTUALIZADOS
+                 $datos = array("usuario" => strtolower($_POST['nuevoNombre'][0] . explode(" ", $_POST['nuevoApellido'])[0]),
+                                "nombre" => $_POST["editarNombre"],
+                                "apellido" => $_POST["editarApellido"],
+                                "celular" => $_POST["editarCelular"],
+                                "correo" => $_POST["editarCorreo"],
+                                "password" => $encriptar,
+                                "perfil" => $_POST["editarPerfil"]);
 
-                            window.location = "usuarios";
+                $respuesta = ModeloUsuarios::mdlEditarUsuario($tabla, $datos);
 
-                            }
-                        })
+                //SI LOS DATOS INGRESADOS FUERON ACTUALIZADOS CORRECTAMENTE MOSTRARÁ ALERTA
+                    if($respuesta == "ok"){
 
-                  </script>';
+                        echo'<script>
 
-        }          
-            
-            //SI LA CONTRASEÑA NO ES MODIFICADA, ENTONCES ESTA VIAJARÁ NUEVAMENTE A LA BD EN SU MISMO ESTADO DE ENCRIPTACIÓN
-        }else{
+                        swal({
+                            type: "success",
+                            title: "El usuario ha sido editado correctamente",
+                            showConfirmButton: true,
+                            confirmButtonText: "Cerrar"
+                            }).then(function(result){
+                                        if (result.value) {
 
-            $encriptar = $_POST["passwordActual"];
+                                        window.location = "usuarios";
 
-        }
+                                        }
+                                    })
 
-            //ENVIANDO AL MODELO LOS DATOS ACTUALIZADOS
-            $datos = array(
-                            "nombre" => $_POST["editarNombre"],
-                            "apellido" => $_POST["editarApellido"],
-                            "celular" => $_POST["editarCelular"],
-                            "correo" => $_POST["editarCorreo"],
-                            "password" => $encriptar,
-                            "perfil" => $_POST["editarPerfil"]);
+                        </script>';
 
-            $respuesta = ModeloUsuarios::mdlEditarUsuario($tabla, $datos);
+                    }
 
-            //SI LOS DATOS INGRESADOS FUERON ACTUALIZADOS CORRECTAMENTE MOSTRARÁ ALERTA
-            if($respuesta == "ok"){
 
-                echo'<script>
+                    }else{
 
-                swal({
-                      type: "success",
-                      title: "El usuario ha sido editado correctamente",
-                      showConfirmButton: true,
-                      confirmButtonText: "Cerrar"
-                      }).then(function(result){
-                                if (result.value) {
+                        echo'<script>
 
-                                window.location = "usuarios";
+                            swal({
+                                type: "error",
+                                title: "¡El nombre no puede ir vacío o llevar caracteres especiales!",
+                                showConfirmButton: true,
+                                confirmButtonText: "Cerrar"
+                                }).then(function(result){
+                                    if (result.value) {
 
-                                }
-                            })
+                                    window.location = "usuarios";
 
-                </script>';
+                                    }
+                                })
 
-            }
-                         
-        }else{
+                        </script>';
 
-            echo'<script>
-
-                swal({
-                      type: "error",
-                      title: "¡El nombre no puede ir vacío o llevar caracteres especiales!",
-                      showConfirmButton: true,
-                      confirmButtonText: "Cerrar"
-                      }).then(function(result){
-                        if (result.value) {
-
-                        window.location = "usuarios";
-
-                        }
-                    })
-
-              </script>';
+                    }
 
         }
 
     }
-
-}
 
 /*=================================================================================================================================
                                                         MÉTODO ELIMINAR USUARIO   
