@@ -22,7 +22,7 @@
                     if($respuesta["usuario"]  == $_POST["ingUsuario"] && $respuesta["password"] == $encriptar){
 
                         //VALIDANDO EL ESTADO DEL USUARIO QUE VA INICIAR SESIÓN PARA DENEGAR EL ACCESO CUANDO ESTÉ INACTIVO
-                        if($respuesta["estado"] == 1){ 
+                        if($respuesta["estado"] == 1){
                         
                                 //creando variable de sesión para validar el inicio del mismo
                                 $_SESSION["iniciarSesion"] = "ok";
@@ -40,7 +40,7 @@
                             
                             }else{
 
-                                echo '<br><div class="alert alert-danger">El usuario está desactivado</div>';
+                                echo '<br><div class="alert alert-danger">El usuario está inactivo</div>';
 
                             }
 
@@ -261,7 +261,7 @@ static public function ctrBorrarUsuario(){
 
         if($respuesta == "ok"){
 
-            echo'<script>
+            echo'<script>  
 
             swal({
                   type: "success",

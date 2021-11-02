@@ -42,49 +42,65 @@ $(".btnEditarUsuario").click(function(){
        SCRIPT PARA ACTIVAR USUARIO
 ============================================--*/
 
-$(".btnActivar").click(function(){
+$(document).on("click", ".btnActivar", function(){
 
-    //capturando la clase idUsuario de usuarios.php
-    var idUsuario = $(this).attr("idUsuario");
-    var estadoUsuario = $(this).attr("estadoUsuario");
+	var idUsuario = $(this).attr("idUsuario");
+	var estadoUsuario = $(this).attr("estadoUsuario");
 
-    //realizando la actualización del estado en la BD
-    var datos = new FormData();
-    datos.append("activarId", idUsuario);
-    datos.append("activarUsuario", estadoUsuario);
+	var datos = new FormData();
+ 	datos.append("activarId", idUsuario);
+  	datos.append("activarUsuario", estadoUsuario);
 
-    $.ajax({
+  	$.ajax({
 
-        url:"ajax/usuarios.ajax.php",
-        method: "POST",
-        data: datos,
-        cache: false,
-        contentType: false,
-        processData: false,
-        success: function(respuesta){
+	  url:"ajax/usuarios.ajax.php",
+	  method: "POST",
+	  data: datos,
+	  cache: false,
+      contentType: false,
+      processData: false,
+      success: function(respuesta){
 
-        }
+      	if(window.matchMedia("(max-width:767px)").matches){
+		
+      		 swal({
+		      	title: "El usuario ha sido actualizado",
+		      	type: "success",
+		      	confirmButtonText: "¡Cerrar!"
+		    	}).then(function(result) {
+		        
+		        	if (result.value) {
 
-    })
+		        	window.location = "usuarios";
 
-    if(estadoUsuario == 0){
+		        }
 
-        $(this).removeClass('btn-success');
-        $(this).addClass('btn-danger');
-        $(this).html('Inactivo');
-        $(this).attr('estadoUsuario', 1);
+		      });
 
-    }else{
 
-        $(this).addClass('btn-success');
-        $(this).removeClass('btn-danger');
-        $(this).html('Activo');
-        $(this).attr('estadoUsuario', 0);
+		}
+      }
 
-    }
+  	})
+
+    //CAMBIANDO LA APARIENCIA DEL BOTÓN AL PRECIONAR EN EL MISMO
+  	if(estadoUsuario == 0){
+
+  		$(this).removeClass('btn-success');
+  		$(this).addClass('btn-danger');
+  		$(this).html('Inactivo');
+  		$(this).attr('estadoUsuario',1);
+
+  	}else{
+
+  		$(this).addClass('btn-success');
+  		$(this).removeClass('btn-danger');
+  		$(this).html('Activo');
+  		$(this).attr('estadoUsuario',0);
+
+  	}
 
 })
-
 /*--===========================================
        SCRIPT PARA ELIMINAR USUARIO
 ============================================--*/

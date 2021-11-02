@@ -58,17 +58,17 @@
 
                                     if($value["estado"] != 0){
 
-                                        echo ' <td><button class="btn btn-success btn-xs" btnActivar idUsuario="'.$value["idusuario"].'" estadoUsuario="0">Activo</button></td>';
-                                    
+                                        echo '<td><button class="btn btn-success btn-xs btnActivar" idUsuario="'.$value["idusuario"].'" estadoUsuario="0">Activo</button></td>';
+                    
                                     }else{
-
-                                        echo ' <td><button class="btn btn-danger btn-xs" btnActivar idUsuario="'.$value["idusuario"].'" estadoUsuario="1">Inactivo</button></td>';
-                                    }
+                    
+                                        echo '<td><button class="btn btn-danger btn-xs btnActivar" idUsuario="'.$value["idusuario"].'" estadoUsuario="1">Inactivo</button></td>';
+                    
+                                    }        
                                 
                                 //cerrando el echo de $value["rol"]
                                 echo '
-
-                                
+   
                                      <td>
                                     
                                         <div class="btn-group">
