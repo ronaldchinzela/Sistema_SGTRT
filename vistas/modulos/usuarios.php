@@ -68,12 +68,13 @@
                                 //cerrando el echo de $value["rol"]
                                 echo '
 
+                                
                                      <td>
                                     
                                         <div class="btn-group">
 
-                                            <button class="btn btn-warning btnEditarUsuario" idUsuario="'.$value["idusuario"].'" data-toggle="modal" data-target="#modalEditarUsuario"><i class="fa fa-pencil"></i></button>
-                                            <button class="btn btn-danger"><i class="fa fa-times"></i></button>
+                                            <button class="btn btn-warning btnEditarUsuario" idUsuario="'.$value["idusuario"].'" data-toggle="modal" data-target="#modalEditarUsuario"><i class="fa fa-pencil"></i>&nbsp;&nbsp;<b>Editar</b></button>
+                                            <button class="btn btn-danger btnEliminarUsuario" idUsuario="'.$value["idusuario"].'" usuario="'.$value["usuario"].'"><i class="fa fa-times"></i>&nbsp;&nbsp;<b>Eliminar</b></button>
                                        
                                         </div>
                                         
@@ -180,7 +181,7 @@
                 <div class="input-group">
 
                     <span class="input-group-addon"><i class="fa fa-address-book-o"></i></span>
-                        <select class="form-control input-lg" name="nuevoPerfil">
+                        <select class="form-control input-lg" name="nuevoPerfil" required>
                             <option value="">Seleccionar rol</option>
                             <option value="Administrador">Administrador</option>
                             <option value="Analista">Analista</option>
@@ -336,3 +337,10 @@
 
   </div>
 </div>
+
+<?php
+
+  $borrarUsuario = new ControladorUsuarios();
+  $borrarUsuario -> ctrBorrarUsuario();
+
+?> 

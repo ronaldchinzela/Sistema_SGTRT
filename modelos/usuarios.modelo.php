@@ -90,15 +90,16 @@
             if($stmt -> execute()){
 
                 return "ok";
-
+            
             }else{
-
-                return "error";
+    
+                return "error";	
+    
             }
     
             $stmt -> close();
-            $stmt = null;
     
+            $stmt = null;
     
         }
 
@@ -126,4 +127,32 @@
             $stmt = null;
     
         }
-    }
+
+    /*=================================================================================================================================
+        MÉTODO EDITAR USUARIO   
+    ==================================================================================================================================*/
+
+    static public function mdlBorrarUsuario($tabla, $datos){
+
+		$stmt = Conexion::conectar()->prepare("DELETE FROM $tabla WHERE idusuario = :id");
+
+		$stmt -> bindParam(":id", $datos, PDO::PARAM_INT);
+
+		if($stmt -> execute()){
+
+			return "ok";
+		
+		}else{
+
+			return "error";	
+
+		}
+
+		$stmt -> close();
+
+		$stmt = null;
+
+
+	}
+
+}
