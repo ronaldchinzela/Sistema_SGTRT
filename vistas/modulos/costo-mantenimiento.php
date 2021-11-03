@@ -52,8 +52,8 @@
                 <th class="th04">Costo Mensual 4Walls</th>
                 <th class="th05">Costo Nexsus</th>
                 <th class="th06">Costo HP DC Care</th>
-                <th class="th07">Total $</th>
-                <th class="th08">Total S/.</th>                                              
+                <th class="th07">Total Soles</th>
+                <th class="th08">Total Dolares</th>                                              
             </tr>
             </thead>
 
@@ -82,7 +82,7 @@
           
                             $fourwalls = ControladorFourwalls::ctrMostrarFourwalls($item, $valor);
 
-                            echo '<td>'.$fourwalls["costo"].'</td>';
+                            echo '<td><a href="costo-fourwalls">S/.&nbsp;&nbsp;'.$fourwalls["costo"].'</a></td>';
 
                             //TRAYENDO COSTO DE NEXUS
                             $item = "idnexus";
@@ -90,7 +90,7 @@
           
                             $nexsus = ControladorNexsus::ctrMostrarNexsus($item, $valor);
 
-                             echo '<td>'.$nexsus["costo"].'</td>';
+                             echo '<td><a href="costo-nexsus" class="font-4walls">S/.&nbsp;&nbsp;'.$nexsus["costo"].'</a></td>';
 
                              //TRAYENDO COSTO DE HP
                              $item = "idhp";
@@ -98,12 +98,12 @@
             
                              $hp = ControladorHp::ctrMostrarHp($item, $valor);
 
-                             echo '<td>'.$hp["costo"].'</td>';
+                             echo '<td><a href="costo-hp">S/.&nbsp;&nbsp;'.$hp["costo"].'</a></td>';
 
                              //IMPRIMIENDO COLUMNA TOTAL_SOL Y TOTAL_DOLAR
-                                    echo'<td>'.$value["total_sol"].'</td>
-                                    <td>'.$value["total_dolar"].'</td>
-                                </tr>';  
+                                    echo'<td><b>S/.</b>&nbsp;&nbsp;'.$value["total_sol"].'</td>
+                                         <td><b>$/.</b>&nbsp;&nbsp;'.$value["total_dolar"].'</td>
+                                    </tr>';  
                     
                 } 
                 
