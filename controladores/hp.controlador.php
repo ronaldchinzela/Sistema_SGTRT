@@ -1,24 +1,24 @@
 <?php
 
-class ControladorFourwalls{
+class ControladorHp{
 
 
 	/*=============================================
-				MOSTRAR 4WALLS
+				MOSTRAR HP
 	=============================================*/
 
-	static public function ctrMostrarFourwalls($item, $valor){
+	static public function ctrMostrarHp($item, $valor){
 
-		$tabla = "fourwalls";
+		$tabla = "hp";
 
-		$respuesta = ModeloFourwalls::mdlMostrarFourwalls($tabla, $item, $valor);
+		$respuesta = ModeloHp::mdlMostrarHp($tabla, $item, $valor);
 
 		return $respuesta;
 	
 	}
 
 	/*=============================================
-					EDITAR 4WALLS
+					EDITAR HP
 	=============================================*/
 
 	static public function ctrEditarCategoria(){

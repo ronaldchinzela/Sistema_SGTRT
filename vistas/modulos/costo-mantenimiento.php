@@ -73,16 +73,35 @@
                             <td>'.$value["alp"].'</td>
                             <td>'.$value["nom_proyecto"].'</td>';
 
-                            
+                            //TRAYENDO COSTO DE FOURWALLS 
+                            //La variable $item almacena el id de la llave foranea
+                            //La variable $valor almacena el nombre del campo de la tabla actual, donde traerá
+                            //el registro extraido de la llave foránea  
                             $item = "idfourwalls";
                             $valor = $value["costo_fourwalls"];
           
                             $fourwalls = ControladorFourwalls::ctrMostrarFourwalls($item, $valor);
 
                             echo '<td>'.$fourwalls["costo"].'</td>';
-                             echo '<td>'.$value["idnexus"].'</td>
-                                    <td>'.$value["idhp"].'</td>
-                                    <td>'.$value["total_sol"].'</td>
+
+                            //TRAYENDO COSTO DE NEXUS
+                            $item = "idnexus";
+                            $valor = $value["costo_nexus"];
+          
+                            $nexsus = ControladorNexsus::ctrMostrarNexsus($item, $valor);
+
+                             echo '<td>'.$nexsus["costo"].'</td>';
+
+                             //TRAYENDO COSTO DE HP
+                             $item = "idhp";
+                             $valor = $value["costo_hp"];
+            
+                             $hp = ControladorHp::ctrMostrarHp($item, $valor);
+
+                             echo '<td>'.$hp["costo"].'</td>';
+
+                             //IMPRIMIENDO COLUMNA TOTAL_SOL Y TOTAL_DOLAR
+                                    echo'<td>'.$value["total_sol"].'</td>
                                     <td>'.$value["total_dolar"].'</td>
                                 </tr>';  
                     

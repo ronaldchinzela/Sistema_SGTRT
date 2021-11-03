@@ -1,24 +1,24 @@
 <?php
 
-class ControladorFourwalls{
+class ControladorNexsus{
 
 
 	/*=============================================
-				MOSTRAR 4WALLS
+				MOSTRAR NEXSUS
 	=============================================*/
 
-	static public function ctrMostrarFourwalls($item, $valor){
+	static public function ctrMostrarNexsus($item, $valor){
 
-		$tabla = "fourwalls";
+		$tabla = "nexus";
 
-		$respuesta = ModeloFourwalls::mdlMostrarFourwalls($tabla, $item, $valor);
+		$respuesta = ModeloNexsus::mdlMostrarNexsus($tabla, $item, $valor);
 
 		return $respuesta;
 	
 	}
 
 	/*=============================================
-					EDITAR 4WALLS
+	EDITAR NEXSUS
 	=============================================*/
 
 	static public function ctrEditarCategoria(){
