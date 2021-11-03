@@ -3,7 +3,7 @@
 
 <section class="content-header">
       
-<h1>
+<h1 class="h1-titulo">
    Gestionar usuarios
 </h1>
 

@@ -3,7 +3,7 @@
 
 <section class="content-header">
       
-<h1>
+<h1 class="h1-titulo">
    Costo Mantenimiento - HP Care
 </h1>
 
@@ -20,7 +20,6 @@
 
 <!-- botón consultar-->
 <input class="boton-nexsus-atras" type="button" value="Ver listado" onclick="location.href='costo-mantenimiento'">
-<input class="boton-nexsus-modificar" type="button" value="Modificar" onclick="location.href='costo-mantenimiento'">
 
     <!-- Tabla de usuarios -->
     <div class="box-body">

@@ -3,7 +3,7 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
       
-<h1>
+<h1 class="h1-titulo">
 Tarifario - TI
 </h1>
 

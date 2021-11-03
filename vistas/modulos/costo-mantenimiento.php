@@ -3,7 +3,7 @@
 
 <section class="content-header">
       
-<h1>
+<h1 class="h1-titulo">
    Costo Mantenimiento
 </h1>
 
@@ -82,7 +82,7 @@
           
                             $fourwalls = ControladorFourwalls::ctrMostrarFourwalls($item, $valor);
 
-                            echo '<td><a href="costo-fourwalls">S/.&nbsp;&nbsp;'.$fourwalls["costo"].'</a></td>';
+                            echo '<td><a href="costo-fourwalls" class="href-costos-mantenimiento">S/.&nbsp;&nbsp;'.$fourwalls["costo"].'</a></td>';
 
                             //TRAYENDO COSTO DE NEXUS
                             $item = "idnexus";
@@ -90,7 +90,7 @@
           
                             $nexsus = ControladorNexsus::ctrMostrarNexsus($item, $valor);
 
-                             echo '<td><a href="costo-nexsus" class="font-4walls">S/.&nbsp;&nbsp;'.$nexsus["costo"].'</a></td>';
+                             echo '<td><a href="costo-nexsus" class="href-costos-mantenimiento">S/.&nbsp;&nbsp;'.$nexsus["costo"].'</a></td>';
 
                              //TRAYENDO COSTO DE HP
                              $item = "idhp";
@@ -98,7 +98,7 @@
             
                              $hp = ControladorHp::ctrMostrarHp($item, $valor);
 
-                             echo '<td><a href="costo-hp">S/.&nbsp;&nbsp;'.$hp["costo"].'</a></td>';
+                             echo '<td><a href="costo-hp" class="href-costos-mantenimiento">S/.&nbsp;&nbsp;'.$hp["costo"].'</a></td>';
 
                              //IMPRIMIENDO COLUMNA TOTAL_SOL Y TOTAL_DOLAR
                                     echo'<td><b>S/.</b>&nbsp;&nbsp;'.$value["total_sol"].'</td>
