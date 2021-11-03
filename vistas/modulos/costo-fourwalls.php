@@ -38,14 +38,27 @@
             </thead>
 
             <tbody>
-            <tr>
-                <td>backup</td>
-                <td>OB2CLOUD</td>
-                <td>XXADEDQA</td>
-                <td>100</td>
-                <td>01/01/2000</td>
-                <td></td>
-            </tr>         
+
+            <!-- LISTANDO LOS 4WALLS DE LA BD -->
+            <?php
+                  $item = null;
+                  $valor = null;
+        
+                  $fourwalls = ControladorFourwalls::ctrMostrarFourwalls($item, $valor);
+
+                  foreach($fourwalls as $key => $value) {
+                    
+                    echo ' <tr>
+
+                    <td>'.$value["nom_proyecto"].'</td>
+                    <td>'.$value["equipo"].'</td>
+                    <td>'.$value["serie"].'</td>
+                    <td>'.$value["costo"].'</td>
+                    <td>'.$value["fec_inicio"].'</td>
+                    <td>'.$value["fec_fin"].'</td>
+                  </tr>';
+                }
+            ?>     
             
             </tbody>
 

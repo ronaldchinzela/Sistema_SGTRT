@@ -71,17 +71,22 @@
 
                    echo '<tr>
                             <td>'.$value["alp"].'</td>
-                            <td>'.$value["nom_proyecto"].'</td>
+                            <td>'.$value["nom_proyecto"].'</td>';
 
                             
+                            $item = "idfourwalls";
+                            $valor = $value["costo_fourwalls"];
+          
+                            $fourwalls = ControladorFourwalls::ctrMostrarFourwalls($item, $valor);
 
-                            <td>'.$value["idfourwalls"].'</td>
-                            <td>'.$value["idnexus"].'</td>
-                            <td>'.$value["idhp"].'</td>
-                            <td>'.$value["total_sol"].'</td>
-                            <td>'.$value["total_dolar"].'</td>
-                        </tr>';  
-                 }   
+                            echo '<td>'.$fourwalls["costo"].'</td>';
+                             echo '<td>'.$value["idnexus"].'</td>
+                                    <td>'.$value["idhp"].'</td>
+                                    <td>'.$value["total_sol"].'</td>
+                                    <td>'.$value["total_dolar"].'</td>
+                                </tr>';  
+                    
+                } 
                 
             ?>
 
