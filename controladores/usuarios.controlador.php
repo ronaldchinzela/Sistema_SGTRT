@@ -91,7 +91,8 @@
 
                                     swal({
                                             type: "success",
-                                            title: "¡El usuario ha sido registrado correctamente!",                                       
+                                            title: "¡El usuario ha sido registrado correctamente!", 
+                                            text: "'.$datos['usuario'].'",                                      
                                             showConfirmButton: true,
                                             confirmButtonText: "Cerrar",
                                             closeOnConfirm: false

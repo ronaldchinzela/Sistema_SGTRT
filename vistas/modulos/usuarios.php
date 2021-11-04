@@ -311,7 +311,7 @@
                 <div class="input-group">
 
                     <span class="input-group-addon"><i class="fa fa-phone"></i></span>
-                    <input type="text" class="form-control input-lg" id="editarCelular" name="editarCelular"  value="" required>
+                    <input type="text" class="form-control input-lg" id="editarCelular" name="editarCelular" min="7" max="999999999" onkeypress="return solonumeros(event)" onpaste="return false"  value="" required>
 
                 </div>
 
