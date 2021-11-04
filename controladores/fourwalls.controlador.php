@@ -21,37 +21,45 @@ class ControladorFourwalls{
 					EDITAR 4WALLS
 	=============================================*/
 
-	static public function ctrEditarCategoria(){
+	static public function ctrEditarFourwalls(){
 
-		if(isset($_POST["editarCategoria"])){
+		if(isset($_POST["editarNombre"])){
 
-			if(preg_match('/^[a-zA-Z0-9ñÑáéíóúÁÉÍÓÚ ]+$/', $_POST["editarCategoria"])){
+			if(preg_match('/^[a-zA-Z0-9ñÑáéíóúÁÉÍÓÚ ]+$/', $_POST["editarNombre"]) &&
+			   preg_match('/^[a-zA-Z0-9ñÑáéíóúÁÉÍÓÚ ]+$/', $_POST["editarEquipo"]) &&	
+			   preg_match('/^[a-zA-Z0-9ñÑáéíóúÁÉÍÓÚ ]+$/', $_POST["editarSerie"]) &&
+			   preg_match('/^[0-9.]+$/', $_POST["editarCosto"])){
 
-				$tabla = "categorias";
+				$tabla = "fourwalls";
 
-				$datos = array("categoria"=>$_POST["editarCategoria"],
-							   "id"=>$_POST["idCategoria"]);
+				$datos = array ("idfourwalls"=>$_POST["idFourwalls"],
+								"nom_proyecto" => $_POST["editarNombre"],
+								"equipo" => $_POST["editarEquipo"],
+								"serie" => $_POST["editarSerie"],
+								"costo" => $_POST["editarCosto"],
+								"fec_inicio" => $_POST["editarFechaInicio"],
+								"fec_fin" => $_POST["editarFechaFin"]);
 
-				$respuesta = ModeloCategorias::mdlEditarCategoria($tabla, $datos);
+				$respuesta = ModeloFourwalls::mdlEditarFourwalls($tabla, $datos);
 
 				if($respuesta == "ok"){
 
 					echo'<script>
 
-					swal({
-						  type: "success",
-						  title: "La categoría ha sido cambiada correctamente",
-						  showConfirmButton: true,
-						  confirmButtonText: "Cerrar"
-						  }).then(function(result){
-									if (result.value) {
+						swal({
+							  type: "success",
+							  title: "El registro se actualizó correctamente",
+							  showConfirmButton: true,
+							  confirmButtonText: "Cerrar"
+							  }).then(function(result){
+										if (result.value) {
 
-									window.location = "categorias";
+										window.location = "costo-fourwalls";
 
-									}
-								})
+										}
+									})
 
-					</script>';
+						</script>';
 
 				}
 
@@ -62,21 +70,19 @@ class ControladorFourwalls{
 
 					swal({
 						  type: "error",
-						  title: "¡La categoría no puede ir vacía o llevar caracteres especiales!",
+						  title: "¡Los campos no puede ir vacíos o llevar caracteres especiales!",
 						  showConfirmButton: true,
 						  confirmButtonText: "Cerrar"
 						  }).then(function(result){
 							if (result.value) {
 
-							window.location = "categorias";
+							window.location = "costo-fourwalls";
 
 							}
 						})
 
 			  	</script>';
-
 			}
-
 		}
 
 	}

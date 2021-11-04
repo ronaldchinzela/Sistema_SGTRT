@@ -15,7 +15,6 @@
 
 <div class="box-header with-border">
     
-
 </div>
 
 <!-- botón consultar-->
@@ -32,7 +31,8 @@
                 <th class="th005">serie</th>
                 <th class="th006">Costo de equipo</th>
                 <th class="th007">fecha de inicio de contrato</th>
-                <th class="th008">fecha de fin de contrato</th>                                              
+                <th class="th008">fecha de fin de contrato</th> 
+                <th class="th008">Editar</th>                                              
             </tr>
             </thead>
 
@@ -55,6 +55,17 @@
                     <td>S/.&nbsp;&nbsp'.$value["costo"].'</td>
                     <td>'.$value["fec_inicio"].'</td>
                     <td>'.$value["fec_fin"].'</td>
+
+                    <td>
+
+                      <div class="btn-group">
+                          
+                        <button class="btn btn-warning btnEditarFourwalls" idFourwalls="'.$value["idfourwalls"].'" data-toggle="modal" data-target="#modalEditarFourwalls"><i class="fa fa-pencil"></i></button>
+
+                      </div>  
+
+                    </td>
+
                   </tr>';
                 }
             ?>     
@@ -69,3 +80,152 @@
 </section>
 
 </div>
+
+<!--====================================================================================================================
+                                                    MODAL EDITAR 4WALLS
+=====================================================================================================================-->
+
+<div id="modalEditarFourwalls" class="modal fade" role="dialog">
+  
+  <div class="modal-dialog">
+
+    <div class="modal-content">
+
+      <form role="form" method="post">
+
+        <!--=====================================
+                 CABEZA DEL MODAL
+        ======================================-->
+
+        <div class="modal-header" style="background:#3c8dbc; color:white">
+
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+
+          <h4 class="modal-title">Editar 4-Wall</h4>
+
+        </div>
+
+        <!--=====================================
+                    CUERPO DEL MODAL
+        ======================================-->
+
+        <div class="modal-body">
+
+          <div class="box-body">
+
+            <!-- ENTRADA PARA EL NOMBRE DEL PROYECTO -->
+            
+            <div class="form-group">
+              
+              <div class="input-group">
+              
+                <span class="input-group-addon"><i class="fa fa-th"></i></span> 
+
+                <input type="text" class="form-control input-lg" name="editarNombre" id="editarNombre" required>
+
+                 <input type="hidden"  name="idFourwalls" id="idFourwalls" required> 
+
+              </div>
+
+            </div>
+
+             <!-- ENTRADA PARA EL NOMBRE DEL EQUIPO -->
+
+            <div class="form-group">
+              
+              <div class="input-group">
+              
+                <span class="input-group-addon"><i class="fa fa-th"></i></span> 
+
+                <input type="text" class="form-control input-lg" name="editarEquipo" id="editarEquipo" required>
+
+              </div>
+
+            </div>
+
+             <!-- ENTRADA PARA LA SERIE -->
+
+             <div class="form-group">
+              
+              <div class="input-group">
+              
+                <span class="input-group-addon"><i class="fa fa-barcode"></i></span> 
+
+                <input type="text" class="form-control input-lg" name="editarSerie" id="editarSerie" required>
+
+              </div>
+
+            </div>
+
+            <!-- ENTRADA PARA EL COSTO DEL EQUIPO -->
+
+            <div class="form-group">
+              
+              <div class="input-group">
+              
+                <span class="input-group-addon"><i class="fa fa-th"></i></span> 
+
+                <input type="number" class="form-control input-lg" name="editarCosto" id="editarCosto" min="0" required>
+
+              </div>
+
+            </div>
+
+            <!-- ENTRADA PARA LA FECHA DE INICIO -->
+
+            <div class="form-group">
+
+              <div class="input-group">
+              
+                <span class="input-group-addon"><i class="fa fa-th"></i></span> 
+
+                <input type="text" class="form-control input-lg" name="editarFechaInicio" id="editarFechaInicio" required>
+
+              </div>
+
+            </div>
+            <!-- ENTRADA PARA LA FECHA FIN -->
+
+            <div class="form-group">
+
+            <div class="input-group">
+
+                <span class="input-group-addon"><i class="fa fa-th"></i></span> 
+
+                <input type="text" class="form-control input-lg" name="editarFechaFin" id="editarFechaFin" required>
+
+            </div>
+
+            </div>
+  
+          </div>
+
+        </div>
+
+        <!--=====================================
+        PIE DEL MODAL
+        ======================================-->
+
+        <div class="modal-footer">
+
+          <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Salir</button>
+
+          <button type="submit" class="btn btn-primary">Guardar cambios</button>
+
+        </div>
+
+        <?php
+
+            $editarFourwalls = new ControladorFourwalls();
+            $editarFourwalls -> ctrEditarFourwalls();
+
+        ?> 
+
+      </form>
+
+    </div>
+
+  </div>
+
+</div>
+
