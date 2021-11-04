@@ -22,6 +22,7 @@ $(document).on("click", ".btnEditarUsuario", function(){
         success: function(respuesta){
             
             //el valor de respuesta invoca los atributos de la BD
+            $("#editarUsuario").val(respuesta["usuario"]);
             $("#editarNombre").val(respuesta["nombres"]);
             $("#editarApellido").val(respuesta["apellidos"]);
             $("#editarCorreo").val(respuesta["correo"]);
@@ -29,7 +30,7 @@ $(document).on("click", ".btnEditarUsuario", function(){
             $("#passwordActual").val(respuesta["password"]);
 
             $("#editarPerfil").html(respuesta["rol"]);
-			$("#editarPerfil").val(respuesta["rol"]);
+			      $("#editarPerfil").val(respuesta["rol"]);
 
         }
 

@@ -187,7 +187,7 @@ static public function ctrEditarUsuario(){
 
                 }
                  //ENVIANDO AL MODELO LOS DATOS ACTUALIZADOS
-                 $datos = array("usuario" => strtolower($_POST['nuevoNombre'][0] . explode(" ", $_POST['nuevoApellido'])[0]),
+                 $datos = array("usuario" => $_POST["editarUsuario"],
                                 "nombre" => $_POST["editarNombre"],
                                 "apellido" => $_POST["editarApellido"],
                                 "celular" => $_POST["editarCelular"],

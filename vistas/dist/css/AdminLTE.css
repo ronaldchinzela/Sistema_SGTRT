@@ -5824,3 +5824,21 @@ table.text-center th {
   border: 1px solid #000;
   background-color: #3C8DBC;
  }
+
+  /*ESTILOS usuarios*/
+  #cajas-formulario{
+    position: relative;
+    top: -40px;
+  }
+
+  #pie{
+    position: relative;
+    top: -40px;
+  }
+
+  #dimensiones-form{
+    position: relative;
+    height: 550px;
+  }
+
+  /*ESTILOS */

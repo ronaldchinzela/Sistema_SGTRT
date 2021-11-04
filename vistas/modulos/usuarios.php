@@ -104,7 +104,7 @@
 
     <div class="modal-content">
 
-    <form role="form" method="post">
+    <form role="form" method="post" id="dimensiones-form">
 
 <!--===========================================
         CABECERA DEL MODAL
@@ -119,7 +119,22 @@
 ============================================-->
     <div class="modal-body">
         
-        <div class="box-body">
+        <div class="box-body" id="cajas-formulario">
+
+        <!-- ENTRADA PARA EL USUARIO -->
+
+        <div class="form-group">
+              
+              <div class="input-group">
+              
+                <span class="input-group-addon" style="visibility:hidden"><i class="fa fa-key"></i></span> 
+
+                <input type="hidden" class="form-control input-lg" name="nuevoUsuario" placeholder="Ingresar usuario" id="nuevoUsuario" required>
+
+              </div>
+
+            </div>
+
         <!-- ENTRADA PARA EL NOMBRE -->
             <div class="form-group">
 
@@ -198,7 +213,7 @@
 <!--===========================================
         PIE DEL MODAL
 ============================================-->
-      <div class="modal-footer">
+      <div class="modal-footer" id="pie">
         <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Salir</button>
         <button type="submit" class="btn btn-primary">Generar usuario</button>
       </div>
@@ -225,7 +240,7 @@
 
     <div class="modal-content">
 
-    <form role="form" method="post">
+    <form role="form" method="post" id="dimensiones-form">
 
 <!--===========================================
         CABECERA DEL MODAL EDITAR USUARIO
@@ -240,7 +255,23 @@
 ============================================-->
     <div class="modal-body">
         
-        <div class="box-body">
+        <div class="box-body" id="cajas-formulario">
+
+         <!-- ENTRADA PARA EL USUARIO -->
+
+         <div class="form-group">
+              
+              <div class="input-group">
+              
+                <span class="input-group-addon" style="visibility:hidden"><i class="fa fa-key"></i></span> 
+
+                <input type="hidden" class="form-control input-lg" id="editarUsuario" name="editarUsuario" value="" readonly>
+
+              </div>
+
+            </div>
+
+
         <!-- ENTRADA PARA EL NOMBRE -->
             <div class="form-group">
 
@@ -324,7 +355,7 @@
 <!--===========================================
         PIE DEL MODAL EDITAR USUARIO
 ============================================-->
-      <div class="modal-footer">
+      <div class="modal-footer" id="pie">
         <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Salir</button>
         <button type="submit" class="btn btn-primary">Actualizar usuario</button>
       </div>
