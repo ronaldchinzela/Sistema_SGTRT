@@ -101,7 +101,7 @@
 
           <button type="button" class="close" data-dismiss="modal">&times;</button>
 
-          <h4 class="modal-title">Editar 4-Wall</h4>
+          <h4 class="modal-title" id="center-titulo">Editar 4-Wall</h4>
 
         </div>
 
@@ -119,7 +119,7 @@
               
               <div class="input-group">
               
-                <span class="input-group-addon"><i class="fa fa-th"></i></span> 
+                <span class="input-group-addon" id="color-span"><i class="fa fa-file-code-o"></i>&nbsp;&nbsp;Proyecto</span> 
 
                 <input type="text" class="form-control input-lg" name="editarNombre" id="editarNombre" required>
 
@@ -135,7 +135,7 @@
               
               <div class="input-group">
               
-                <span class="input-group-addon"><i class="fa fa-th"></i></span> 
+                <span class="input-group-addon" id="color-span"><i class="fa fa-laptop"></i>&nbsp;&nbsp;Equipo&nbsp;&nbsp;</span> 
 
                 <input type="text" class="form-control input-lg" name="editarEquipo" id="editarEquipo" required>
 
@@ -149,7 +149,7 @@
               
               <div class="input-group">
               
-                <span class="input-group-addon"><i class="fa fa-barcode"></i></span> 
+                <span class="input-group-addon" id="color-span"><i class="fa fa-barcode"></i>&nbsp;&nbsp;Serie&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> 
 
                 <input type="text" class="form-control input-lg" name="editarSerie" id="editarSerie" required>
 
@@ -163,9 +163,9 @@
               
               <div class="input-group">
               
-                <span class="input-group-addon"><i class="fa fa-th"></i></span> 
+                <span class="input-group-addon" id="color-span"><i class="fa fa-money"></i>&nbsp;&nbsp;Costo&nbsp;&nbsp;&nbsp;&nbsp;</span> 
 
-                <input type="number" class="form-control input-lg" name="editarCosto" id="editarCosto" min="0" required>
+                <input type="text" class="form-control input-lg" name="editarCosto" id="editarCosto" min="0" required>
 
               </div>
 
@@ -177,7 +177,7 @@
 
               <div class="input-group">
               
-                <span class="input-group-addon"><i class="fa fa-th"></i></span> 
+                <span class="input-group-addon" id="color-span"><i class="fa fa-calendar"></i>&nbsp;&nbsp;Fecha Inicio</span> 
 
                 <input type="text" class="form-control input-lg" name="editarFechaInicio" id="editarFechaInicio" required>
 
@@ -190,7 +190,7 @@
 
             <div class="input-group">
 
-                <span class="input-group-addon"><i class="fa fa-th"></i></span> 
+                <span class="input-group-addon" id="color-span"><i class="fa fa-calendar"></i>&nbsp;&nbsp;Fecha Fin&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> 
 
                 <input type="text" class="form-control input-lg" name="editarFechaFin" id="editarFechaFin" required>
 

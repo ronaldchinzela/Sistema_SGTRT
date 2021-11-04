@@ -59,7 +59,7 @@
             <!-- módulo calculadora sow -->
             <li class="treeview">
                 <a href="#">
-                    <i class="app-menu__icon fa fa-cog"></i>
+                    <i class="app-menu__icon fa fa-cogs"></i>
                     <span>Calculadora SOW</span>
                     <span class="pull-right-container">
                         <i class="fa fa-angle-left pull-right"></i>

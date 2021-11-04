@@ -5793,4 +5793,15 @@ table.text-center th {
   border: 1px solid #000;
   background-color: #cad3e7;
  }
- /*ESTILOS costo-mantenimiento*/
+ /*ESTILOS costo-fourwalls*/
+
+ #color-span{
+   color: #0522a3;
+   font-size: 20px;
+ }
+
+ #center-titulo{
+  text-align:center;
+  font-weight: bold;
+  font-size: 24px;
+ }

@@ -111,7 +111,7 @@
 ============================================-->
       <div class="modal-header" style="background:#3c8dbc; color:white">
         <button type="button" class="close" data-dismiss="modal">&times;</button>
-        <h4 class="modal-title">Nuevo usuario</h4>
+        <h4 class="modal-title" id="center-titulo">Nuevo usuario</h4>
       </div>
 
 <!--===========================================
@@ -232,7 +232,7 @@
 ============================================-->
       <div class="modal-header" style="background:#3c8dbc; color:white">
         <button type="button" class="close" data-dismiss="modal">&times;</button>
-        <h4 class="modal-title">Actualizar usuario</h4>
+        <h4 class="modal-title" id="center-titulo">Actualizar usuario</h4>
       </div>
 
 <!--===========================================
