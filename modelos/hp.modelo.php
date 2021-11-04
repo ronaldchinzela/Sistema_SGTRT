@@ -40,12 +40,20 @@ class ModeloHp{
 	                EDITAR HP
 	=============================================*/
 
-	static public function mdlEditarCategoria($tabla, $datos){
+	static public function mdlEditarHp($tabla, $datos){
 
-		$stmt = Conexion::conectar()->prepare("UPDATE $tabla SET categoria = :categoria WHERE id = :id");
+		$stmt = Conexion::conectar()->prepare("UPDATE $tabla SET nom_proyecto = :nom_proyecto, equipo = :equipo, 
+																 serie = :serie, costo = :costo, fec_inicio = :fec_inicio, 
+																 fec_fin = :fec_fin
+																 WHERE idhp = :idhp");
 
-		$stmt -> bindParam(":categoria", $datos["categoria"], PDO::PARAM_STR);
-		$stmt -> bindParam(":id", $datos["id"], PDO::PARAM_INT);
+		$stmt -> bindParam(":nom_proyecto", $datos["nom_proyecto"], PDO::PARAM_STR);
+		$stmt -> bindParam(":equipo", $datos["equipo"], PDO::PARAM_INT);
+		$stmt -> bindParam(":serie", $datos["serie"], PDO::PARAM_INT);
+		$stmt -> bindParam(":costo", $datos["costo"], PDO::PARAM_INT);
+		$stmt -> bindParam(":fec_inicio", $datos["fec_inicio"], PDO::PARAM_INT);
+		$stmt -> bindParam(":fec_fin", $datos["fec_fin"], PDO::PARAM_INT);
+		$stmt -> bindParam(":idhp", $datos["idhp"], PDO::PARAM_INT);
 
 		if($stmt->execute()){
 
@@ -63,4 +71,3 @@ class ModeloHp{
 	}
 
 }
-

@@ -123,6 +123,7 @@
 <script src="vistas/js/usuarios.js"></script> 
 <!--<script src="vistas/js/walls.js"></script>-->
 <script src="vistas/js/fourwalls.js"></script>
-<script src="vistas/js/nexsus.js"></script>  
+<script src="vistas/js/nexsus.js"></script>
+<script src="vistas/js/hp.js"></script>  
 </body>
 </html>

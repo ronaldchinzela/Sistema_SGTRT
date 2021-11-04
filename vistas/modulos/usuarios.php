@@ -248,7 +248,7 @@
 
                     <span class="input-group-addon"><i class="fa fa-user"></i></span>
                     <input type="text" class="form-control input-lg" id="editarNombre" name="editarNombre" value="" required>
-
+                    <input type="hidden"  name="idUsuario" id="idUsuario" required> 
                 </div>
 
             </div>
