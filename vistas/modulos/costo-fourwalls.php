@@ -18,7 +18,7 @@
 </div>
 
 <!-- botón consultar-->
-<input class="boton-nexsus-atras" type="button" value="Ver listado" onclick="location.href='costo-mantenimiento'">
+<input class="boton-nexsus-atras" id="boton-volver" type="button" value="Ver listado" onclick="location.href='costo-mantenimiento'">
 
     <!-- Tabla de usuarios -->
     <div class="box-body">
