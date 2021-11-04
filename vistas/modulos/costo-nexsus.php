@@ -19,7 +19,7 @@
 </div>
 
 <!-- botón consultar-->
-<input class="boton-nexsus-atras" type="button" value="Ver listado" onclick="location.href='costo-mantenimiento'">
+<input class="boton-nexsus-atras" id="boton-volver" type="button" value="Ver listado" onclick="location.href='costo-mantenimiento'">
 
     <!-- Tabla de usuarios -->
     <div class="box-body">
@@ -30,7 +30,8 @@
                 <th class="th003">ALP</th>
                 <th class="th004">Proyecto</th>
                 <th class="th005">Punto de red</th>
-                <th class="th006">Costo</th>                                           
+                <th class="th006">Costo</th>
+                <th class="th008">Editar</th>                                            
             </tr>
             </thead>
 
@@ -51,6 +52,18 @@
                     <td>'.$value["nom_proyecto"].'</td>
                     <td>'.$value["punto_red"].'</td>
                     <td>S/.&nbsp;&nbsp'.$value["costo"].'</td>
+
+                    <td>
+
+                      <div class="btn-group">
+                          
+                        <button class="btn btn-warning btnEditarNexsus" idNexsus="'.$value["idnexus"].'" data-toggle="modal" data-target="#modalEditarNexsus"><i class="fa fa-pencil"></i></button>
+
+                      </div>  
+
+                    </td>
+
+
                   </tr>';
                 }
             ?>     
@@ -63,5 +76,112 @@
 </div>
 
 </section>
+
+</div>
+
+<!--====================================================================================================================
+                                                    MODAL EDITAR NEXSUS
+=====================================================================================================================-->
+
+<div id="modalEditarNexsus" class="modal fade" role="dialog">
+  
+  <div class="modal-dialog">
+
+    <div class="modal-content">
+
+      <form role="form" method="post">
+
+        <!--=====================================
+                 CABEZA DEL MODAL
+        ======================================-->
+
+        <div class="modal-header" style="background:#3c8dbc; color:white">
+
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+
+          <h4 class="modal-title" id="center-titulo">Editar Nexsus</h4>
+
+        </div>
+
+        <!--=====================================
+                    CUERPO DEL MODAL
+        ======================================-->
+
+        <div class="modal-body">
+
+          <div class="box-body">
+
+            <!-- ENTRADA PARA EL NOMBRE DEL PROYECTO -->
+            
+            <div class="form-group">
+              
+              <div class="input-group">
+              
+                <span class="input-group-addon" id="color-span"><i class="fa fa-file-code-o"></i>&nbsp;&nbsp;Proyecto&nbsp;&nbsp;&nbsp;</span> 
+
+                <input type="text" class="form-control input-lg" name="editarNombre" id="editarNombre" required>
+
+                 <input type="hidden"  name="idNexsus" id="idNexsus" required> 
+
+              </div>
+
+            </div>
+
+             <!-- ENTRADA PARA EL PUNTO DE RED -->
+
+            <div class="form-group">
+              
+              <div class="input-group">
+              
+                <span class="input-group-addon" id="color-span"><i class="fa fa-dot-circle-o"></i>&nbsp;&nbsp;Punto Red</span> 
+
+                <input type="text" class="form-control input-lg" name="editarPunto" id="editarPunto" required>
+
+              </div>
+
+            </div>
+
+            <!-- ENTRADA PARA EL COSTO DEL EQUIPO -->
+
+            <div class="form-group">
+              
+              <div class="input-group">
+              
+                <span class="input-group-addon" id="color-span"><i class="fa fa-money"></i>&nbsp;&nbsp;Costo&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> 
+
+                <input type="text" class="form-control input-lg" name="editarCosto" id="editarCosto" min="0" required>
+
+              </div>
+
+            </div>
+  
+          </div>
+
+        </div>
+
+        <!--=====================================
+        PIE DEL MODAL
+        ======================================-->
+
+        <div class="modal-footer">
+
+          <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Salir</button>
+
+          <button type="submit" class="btn btn-primary">Guardar cambios</button>
+
+        </div>
+
+        <?php
+
+            $editarNexsus = new ControladorNexsus();
+            $editarNexsus -> ctrEditarNexsus();
+
+        ?> 
+
+      </form>
+
+    </div>
+
+  </div>
 
 </div>

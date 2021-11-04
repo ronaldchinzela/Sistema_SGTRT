@@ -37,15 +37,18 @@ class ModeloNexsus{
 	}
 
 	/*=============================================
-	EDITAR NEXSUS
+					EDITAR NEXSUS
 	=============================================*/
 
-	static public function mdlEditarCategoria($tabla, $datos){
+	static public function mdlEditarNexsus($tabla, $datos){
 
-		$stmt = Conexion::conectar()->prepare("UPDATE $tabla SET categoria = :categoria WHERE id = :id");
+		$stmt = Conexion::conectar()->prepare("UPDATE $tabla SET nom_proyecto = :nom_proyecto, punto_red = :punto_red, 
+																 costo = :costo WHERE idnexus = :idnexus");
 
-		$stmt -> bindParam(":categoria", $datos["categoria"], PDO::PARAM_STR);
-		$stmt -> bindParam(":id", $datos["id"], PDO::PARAM_INT);
+		$stmt -> bindParam(":nom_proyecto", $datos["nom_proyecto"], PDO::PARAM_STR);
+		$stmt -> bindParam(":punto_red", $datos["punto_red"], PDO::PARAM_INT);
+		$stmt -> bindParam(":costo", $datos["costo"], PDO::PARAM_INT);
+		$stmt -> bindParam(":idnexus", $datos["idnexus"], PDO::PARAM_INT);
 
 		if($stmt->execute()){
 
@@ -58,32 +61,6 @@ class ModeloNexsus{
 		}
 
 		$stmt->close();
-		$stmt = null;
-
-	}
-
-	/*=============================================
-	BORRAR CATEGORIA
-	=============================================*/
-
-	static public function mdlBorrarCategoria($tabla, $datos){
-
-		$stmt = Conexion::conectar()->prepare("DELETE FROM $tabla WHERE id = :id");
-
-		$stmt -> bindParam(":id", $datos, PDO::PARAM_INT);
-
-		if($stmt -> execute()){
-
-			return "ok";
-		
-		}else{
-
-			return "error";	
-
-		}
-
-		$stmt -> close();
-
 		$stmt = null;
 
 	}

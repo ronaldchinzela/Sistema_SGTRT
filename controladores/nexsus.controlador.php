@@ -4,7 +4,7 @@ class ControladorNexsus{
 
 
 	/*=============================================
-				MOSTRAR NEXSUS
+					MOSTRAR NEXSUS
 	=============================================*/
 
 	static public function ctrMostrarNexsus($item, $valor){
@@ -18,40 +18,44 @@ class ControladorNexsus{
 	}
 
 	/*=============================================
-	EDITAR NEXSUS
+					EDITAR NEXSUS
 	=============================================*/
 
-	static public function ctrEditarCategoria(){
+	static public function ctrEditarNexsus(){
 
-		if(isset($_POST["editarCategoria"])){
+		if(isset($_POST["editarNombre"])){
 
-			if(preg_match('/^[a-zA-Z0-9ñÑáéíóúÁÉÍÓÚ ]+$/', $_POST["editarCategoria"])){
+			if(preg_match('/^[a-zA-Z0-9ñÑáéíóúÁÉÍÓÚ ]+$/', $_POST["editarNombre"]) &&
+			   preg_match('/^[a-zA-Z0-9ñÑáéíóúÁÉÍÓÚ ]+$/', $_POST["editarPunto"]) &&	
+			   preg_match('/^[0-9.]+$/', $_POST["editarCosto"])){
 
-				$tabla = "categorias";
+				$tabla = "nexus";
 
-				$datos = array("categoria"=>$_POST["editarCategoria"],
-							   "id"=>$_POST["idCategoria"]);
+				$datos = array ("idnexus"=>$_POST["idNexsus"],
+								"nom_proyecto" => $_POST["editarNombre"],
+								"punto_red" => $_POST["editarPunto"],
+								"costo" => $_POST["editarCosto"]);
 
-				$respuesta = ModeloCategorias::mdlEditarCategoria($tabla, $datos);
+				$respuesta = ModeloNexsus::mdlEditarNexsus($tabla, $datos);
 
 				if($respuesta == "ok"){
 
 					echo'<script>
 
-					swal({
-						  type: "success",
-						  title: "La categoría ha sido cambiada correctamente",
-						  showConfirmButton: true,
-						  confirmButtonText: "Cerrar"
-						  }).then(function(result){
-									if (result.value) {
+						swal({
+							  type: "success",
+							  title: "El registro se actualizó correctamente",
+							  showConfirmButton: true,
+							  confirmButtonText: "Cerrar"
+							  }).then(function(result){
+										if (result.value) {
 
-									window.location = "categorias";
+										window.location = "costo-nexsus";
 
-									}
-								})
+										}
+									})
 
-					</script>';
+						</script>';
 
 				}
 
@@ -62,21 +66,19 @@ class ControladorNexsus{
 
 					swal({
 						  type: "error",
-						  title: "¡La categoría no puede ir vacía o llevar caracteres especiales!",
+						  title: "¡Los campos no puede ir vacíos o llevar caracteres especiales!",
 						  showConfirmButton: true,
 						  confirmButtonText: "Cerrar"
 						  }).then(function(result){
 							if (result.value) {
 
-							window.location = "categorias";
+							window.location = "costo-nexsus";
 
 							}
 						})
 
 			  	</script>';
-
 			}
-
 		}
 
 	}
