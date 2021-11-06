@@ -8,7 +8,7 @@
                     <span>Inicio</span>
                 </a>
             </li>
-            <!-- módulo reportes -->
+            <!-- MÓDULO REPORTES -->
             <li class="treeview">
                 <a href="#">
                     <i class="app-menu__icon fa fa-file-text-o"></i>
@@ -38,7 +38,7 @@
                     </li>
                 </ul>
             </li>
-            <!-- módulo usuarios -->
+            <!-- MÓDULO USUARIOS -->
             <li class="treeview">
                 <a href="#">
                     <i class="app-menu__icon fa fa-users"></i>
@@ -56,7 +56,7 @@
                     </li>                  
                 </ul>
             </li>
-            <!-- módulo calculadora sow -->
+            <!-- MÓDULO CALCULADORA SOW -->
             <li class="treeview">
                 <a href="#">
                     <i class="app-menu__icon fa fa-cogs"></i>
@@ -79,7 +79,16 @@
                             <span>Costo mantenimiento</span>
                         </a>
                     </li>
+                    <li>
+                        <a href="licencia-spla">
+                            <i class="fa fa-share"></i>
+                            <span>Licencia SPLA</span>
+                        </a>
+                    </li>
                 </ul>
+
+
+
             </li>
         </ul>
     </section>

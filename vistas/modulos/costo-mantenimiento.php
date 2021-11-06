@@ -53,7 +53,7 @@
                 <th class="th05">Costo Nexsus</th>
                 <th class="th06">Costo HP DC Care</th>
                 <th class="th07">Total Soles</th>
-                <th class="th08">Total Dolares</th>                                              
+                <th class="th08">Total Dólares</th>                                              
             </tr>
             </thead>
 

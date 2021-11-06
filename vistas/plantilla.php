@@ -93,7 +93,8 @@
            $_GET["ruta"] == "costo-mantenimiento" || 
            $_GET["ruta"] == "costo-fourwalls" ||
            $_GET["ruta"] == "costo-nexsus" || 
-           $_GET["ruta"] == "costo-hp" ||  
+           $_GET["ruta"] == "costo-hp" ||
+           $_GET["ruta"] == "licencia-spla" ||   
            $_GET["ruta"] == "salir"){
 
     //concatenando las páginas con la extención .php
@@ -125,5 +126,6 @@
 <script src="vistas/js/fourwalls.js"></script>
 <script src="vistas/js/nexsus.js"></script>
 <script src="vistas/js/hp.js"></script>  
+<script src="vistas/js/licencias.js"></script>
 </body>
 </html>
