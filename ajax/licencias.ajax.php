@@ -26,7 +26,7 @@ class AjaxLicencias{
 }
 
 /*=============================================
-				EDITAR LICENCIA
+			CREANDO OBJETO EDITAR LICENCIA
 =============================================*/	
 
 if(isset($_POST["idLicencia"])){

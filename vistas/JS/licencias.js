@@ -1,16 +1,16 @@
 /*=============================================
-EDITAR CLIENTE
+                  EDITAR LICENCIA
 =============================================*/
-$(".tablas").on("click", ".btnEditarCliente", function(){
+$(".tablas").on("click", ".btnEditarLicencia", function(){
 
-	var idCliente = $(this).attr("idCliente");
+	var idLicencia = $(this).attr("idLicencia");
 
 	var datos = new FormData();
-    datos.append("idCliente", idCliente);
+    datos.append("idLicencia", idLicencia);
 
     $.ajax({
 
-      url:"ajax/clientes.ajax.php",
+      url:"ajax/licencias.ajax.php",
       method: "POST",
       data: datos,
       cache: false,
@@ -19,13 +19,14 @@ $(".tablas").on("click", ".btnEditarCliente", function(){
       dataType:"json",
       success:function(respuesta){
       
-      	 $("#idCliente").val(respuesta["id"]);
-	       $("#editarCliente").val(respuesta["nombre"]);
-	       $("#editarDocumentoId").val(respuesta["documento"]);
-	       $("#editarEmail").val(respuesta["email"]);
-	       $("#editarTelefono").val(respuesta["telefono"]);
-	       $("#editarDireccion").val(respuesta["direccion"]);
-           $("#editarFechaNacimiento").val(respuesta["fecha_nacimiento"]);
+      	 $("#idLicencia").val(respuesta["id_licencia"]);
+	       $("#editarCodigo").val(respuesta["cod_licencia"]);
+	       $("#editarLicencia").val(respuesta["nom_licencia"]);
+
+         $("#editarTipo").html(respuesta["tipo"]);
+         $("#editarTipo").val(respuesta["tipo"]);
+
+	       $("#editarCosto").val(respuesta["costo"]);
 	  }
 
   	})

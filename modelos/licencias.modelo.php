@@ -69,17 +69,18 @@ class ModeloLicencias{
 					EDITAR LICENCIA
 	=============================================*/
 
-	static public function mdlEditarCliente($tabla, $datos){
+	static public function mdlEditarLicencia($tabla, $datos){
 
-		$stmt = Conexion::conectar()->prepare("UPDATE $tabla SET nombre = :nombre, documento = :documento, email = :email, telefono = :telefono, direccion = :direccion, fecha_nacimiento = :fecha_nacimiento WHERE id = :id");
+		$stmt = Conexion::conectar()->prepare("UPDATE $tabla SET cod_licencia = :cod_licencia, 
+															     nom_licencia = :nom_licencia, 
+																 tipo = :tipo, costo = :costo 
+																 WHERE id_licencia = :id_licencia");
 
-		$stmt->bindParam(":id", $datos["id"], PDO::PARAM_INT);
-		$stmt->bindParam(":nombre", $datos["nombre"], PDO::PARAM_STR);
-		$stmt->bindParam(":documento", $datos["documento"], PDO::PARAM_INT);
-		$stmt->bindParam(":email", $datos["email"], PDO::PARAM_STR);
-		$stmt->bindParam(":telefono", $datos["telefono"], PDO::PARAM_STR);
-		$stmt->bindParam(":direccion", $datos["direccion"], PDO::PARAM_STR);
-		$stmt->bindParam(":fecha_nacimiento", $datos["fecha_nacimiento"], PDO::PARAM_STR);
+		$stmt->bindParam(":id_licencia", $datos["id_licencia"], PDO::PARAM_INT);
+		$stmt->bindParam(":cod_licencia", $datos["cod_licencia"], PDO::PARAM_STR);
+		$stmt->bindParam(":nom_licencia", $datos["nom_licencia"], PDO::PARAM_STR);
+		$stmt->bindParam(":costo", $datos["costo"], PDO::PARAM_INT);
+		$stmt->bindParam(":tipo", $datos["tipo"], PDO::PARAM_STR);
 
 		if($stmt->execute()){
 

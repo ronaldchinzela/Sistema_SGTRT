@@ -86,30 +86,26 @@ class ControladorLicencias{
 	}
 
 	/*=============================================
-					EDITAR CLIENTE
+					EDITAR LICENCIA
 	=============================================*/
 
-	static public function ctrEditarCliente(){
+	static public function ctrEditarLicencia(){
 
-		if(isset($_POST["editarCliente"])){
+		if(isset($_POST["editarLicencia"])){
 
-			if(preg_match('/^[a-zA-Z0-9ñÑáéíóúÁÉÍÓÚ ]+$/', $_POST["editarCliente"]) &&
-			   preg_match('/^[0-9]+$/', $_POST["editarDocumentoId"]) &&
-			   preg_match('/^[^0-9][a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[@][a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[.][a-zA-Z]{2,4}$/', $_POST["editarEmail"]) && 
-			   preg_match('/^[()\-0-9 ]+$/', $_POST["editarTelefono"]) && 
-			   preg_match('/^[#\.\-a-zA-Z0-9 ]+$/', $_POST["editarDireccion"])){
+			if(preg_match('/^[#\.\-a-zA-Z0-9ñÑáéíóúÁÉÍÓÚ ]+$/', $_POST["editarCodigo"]) &&
+			   preg_match('/^[#\.\-a-zA-Z0-9ñÑáéíóúÁÉÍÓÚ ]+$/', $_POST["editarLicencia"]) &&
+			   preg_match('/^[0-9.]+$/', $_POST["editarCosto"])){
 
-			   	$tabla = "clientes";
+			   	$tabla = "licencia_spla";
 
-			   	$datos = array("id"=>$_POST["idCliente"],
-			   				   "nombre"=>$_POST["editarCliente"],
-					           "documento"=>$_POST["editarDocumentoId"],
-					           "email"=>$_POST["editarEmail"],
-					           "telefono"=>$_POST["editarTelefono"],
-					           "direccion"=>$_POST["editarDireccion"],
-					           "fecha_nacimiento"=>$_POST["editarFechaNacimiento"]);
+			   	$datos = array("id_licencia"=>$_POST["idLicencia"],
+			   				   "cod_licencia"=>$_POST["editarCodigo"],
+					           "nom_licencia"=>$_POST["editarLicencia"],
+					           "tipo"=>$_POST["editarTipo"],
+					           "costo"=>$_POST["editarCosto"]);
 
-			   	$respuesta = ModeloClientes::mdlEditarCliente($tabla, $datos);
+			   	$respuesta = ModeloLicencias::mdlEditarLicencia($tabla, $datos);
 
 			   	if($respuesta == "ok"){
 
@@ -117,13 +113,13 @@ class ControladorLicencias{
 
 					swal({
 						  type: "success",
-						  title: "El cliente ha sido cambiado correctamente",
+						  title: "La licencia ha sido actualizada correctamente",
 						  showConfirmButton: true,
 						  confirmButtonText: "Cerrar"
 						  }).then(function(result){
 									if (result.value) {
 
-									window.location = "clientes";
+									window.location = "licencia-spla";
 
 									}
 								})
@@ -138,13 +134,13 @@ class ControladorLicencias{
 
 					swal({
 						  type: "error",
-						  title: "¡El cliente no puede ir vacío o llevar caracteres especiales!",
+						  title: "¡Los datos ingresados no pueden ir vacíos o llevar caracteres especiales!",
 						  showConfirmButton: true,
 						  confirmButtonText: "Cerrar"
 						  }).then(function(result){
 							if (result.value) {
 
-							window.location = "clientes";
+							window.location = "licencia-spla";
 
 							}
 						})

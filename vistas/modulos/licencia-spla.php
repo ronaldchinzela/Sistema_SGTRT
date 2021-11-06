@@ -62,7 +62,7 @@
 
                       echo '<td>'.$value["tipo"].'</td>';         
 
-                      echo'<td>'.$value["costo"].'</td>
+                      echo'<td><b>$</b>&nbsp;'.$value["costo"].'</td>
 
                       <td>
 
@@ -112,7 +112,7 @@
 
           <button type="button" class="close" data-dismiss="modal">&times;</button>
 
-          <h4 class="modal-title">Agregar Licencia</h4>
+          <h4 class="modal-title" id="center-titulo">REGISTRO - LICENCIA - SPLA</h4>
 
         </div>
 
@@ -130,7 +130,7 @@
               
               <div class="input-group">
               
-                <span class="input-group-addon"><i class="fa fa-user"></i></span> 
+                <span class="input-group-addon" id="color-span"><i class="fa fa-code"></i></span> 
 
                 <input type="text" class="form-control input-lg" name="nuevoCodigo" placeholder="Ingresar el código" required>
 
@@ -144,7 +144,7 @@
               
               <div class="input-group">
               
-                <span class="input-group-addon"><i class="fa fa-user"></i></span> 
+                <span class="input-group-addon" id="color-span"><i class="fa fa-pencil-square-o"></i></span> 
 
                 <input type="text" class="form-control input-lg" name="nuevoLicencia" placeholder="Ingresar el nombre de la licencia" required>
 
@@ -158,9 +158,9 @@
               
               <div class="input-group">
               
-                <span class="input-group-addon"><i class="fa fa-users"></i></span> 
+                <span class="input-group-addon" id="color-span"><i class="fa fa-server"></i></span> 
 
-                <select class="form-control input-lg" name="nuevoTipo">
+                <select class="form-control input-lg" name="nuevoTipo" required>
                   
                   <option value="">Selecionar sistema operativo</option>
 
@@ -170,7 +170,7 @@
 
                   <option value="Remote">Remote</option>
                   
-                  <option value="Sqlserverdos">Sqlserver - 2</option>
+                  <option value="Sqlserver - 2">Sqlserver - 2</option>
 
                 </select>
 
@@ -184,7 +184,7 @@
               
               <div class="input-group">
               
-                <span class="input-group-addon"><i class="fa fa-envelope"></i></span> 
+                <span class="input-group-addon" id="color-span"><i class="fa fa-money"></i></span> 
 
                 <input type="text" class="form-control input-lg" name="nuevoCosto" placeholder="Ingresar el costo" required>
 
@@ -205,7 +205,7 @@
 
           <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Salir</button>
 
-          <button type="submit" class="btn btn-primary">Guardar Licencia</button>
+          <button type="submit" class="btn btn-primary">Registrar Licencia</button>
 
         </div>
 
@@ -244,7 +244,7 @@
 
           <button type="button" class="close" data-dismiss="modal">&times;</button>
 
-          <h4 class="modal-title">Editar Licencia</h4>
+          <h4 class="modal-title" id="center-titulo">EDITAR - LICENCIA - SPLA</h4>
 
         </div>
 
@@ -265,6 +265,7 @@
                 <span class="input-group-addon"><i class="fa fa-user"></i></span> 
 
                 <input type="text" class="form-control input-lg" name="editarCodigo" id="editarCodigo" required>
+                <input type="hidden" id="idLicencia" name="idLicencia">
 
               </div>
 
@@ -292,16 +293,12 @@
               
                 <span class="input-group-addon"><i class="fa fa-users"></i></span> 
 
-                <select class="form-control input-lg" name="editarTipo">
+                <select class="form-control input-lg" name="editarTipo" required>
 
                   <option value="" id="editarTipo"></option>
-
                   <option value="Office">Office</option>
-
                   <option value="Sqlserver">Sqlserver</option>
-
-                  <option value="Remote">Remote</option>
-                  
+                  <option value="Remote">Remote</option>             
                   <option value="Sqlserverdos">Sqlserver - 2</option>
 
                 </select>
@@ -343,6 +340,12 @@
 
       </form>
 
+      <?php
+
+          $editarLicencia = new ControladorLicencias();
+          $editarLicencia -> ctrEditarLicencia();
+
+      ?>
 
 
     </div>
