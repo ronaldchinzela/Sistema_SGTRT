@@ -3,10 +3,6 @@
         <ul class="sidebar-menu">
             <!--botón menú de inicio-->
             <li class="active">
-                <a href="inicio">
-                    <i class="fa fa-home"></i>
-                    <span>Inicio</span>
-                </a>
             </li>
             <!-- MÓDULO REPORTES -->
             <li class="treeview">
