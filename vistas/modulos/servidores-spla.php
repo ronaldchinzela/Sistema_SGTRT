@@ -34,32 +34,38 @@
                 <th class="th007">Código de licencia</th>
                 <th class="th008">tipo</th>
                 <th class="th008">lic. req</th>  
-                <th class="th008">3000</th>                                                 
+                <th class="th008">Total</th>                                                 
             </tr>
             </thead>
 
             <tbody>
 
-            <!-- LISTANDO HP DE LA BD -->
+            <!-- LISTANDO SERVIDORES DE LA BD -->
             <?php
                   $item = null;
                   $valor = null;
         
-                  $hp = ControladorHp::ctrMostrarHp($item, $valor);
+                  $Servidores = ControladorServidoresLic::ctrMostrarServidoresLic($item, $valor);
 
-                  foreach($hp as $key => $value) {
+                  foreach($Servidores as $key => $value) {
                     
                     echo ' <tr>
 
+                    <td>'.$value["alp"].'</td>
                     <td>'.$value["nom_proyecto"].'</td>
-                    <td>'.$value["equipo"].'</td>
-                    <td>'.$value["serie"].'</td>
-                    <td>S/.&nbsp;&nbsp'.$value["costo"].'</td>
-                    <td>'.$value["fec_inicio"].'</td>
-                    <td>'.$value["fec_fin"].'</td>
+                    <td>'.$value["vm"].'</td>
+                    <td>'.$value["cpu"].'</td>
+                    <td>'.$value["cod_lic"].'</td>';
 
-                    <td> </td>
-                    <td> </td>
+                    $item = "id_licencia";
+                    $valor = $value["id_licencia"];
+  
+                    $licencia = ControladorLicencias::ctrMostrarLicencias($item, $valor);
+
+                    echo '<td>'.$licencia["tipo"].'</td>';
+
+                    echo'<td>'.$value["lic_req"].'</td>
+                    <td>S/&nbsp;&nbsp'.$value["total"].'</td>
 
                   </tr>';
                 }

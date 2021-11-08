@@ -303,7 +303,7 @@
                   <option value="Office">Office</option>
                   <option value="Sqlserver">Sqlserver</option>
                   <option value="Remote">Remote</option>             
-                  <option value="Sqlserverdos">Sqlserver - 2</option>
+                  <option value="Sqlserver - 2">Sqlserver - 2</option>
 
                 </select>
 

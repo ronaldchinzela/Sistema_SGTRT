@@ -1,5 +1,5 @@
 /*=============================================
-			EDITAR 4WALL
+				  EDITAR 4WALL
 =============================================*/
 $(".tablas").on("click", ".btnEditarFourwalls", function(){
 

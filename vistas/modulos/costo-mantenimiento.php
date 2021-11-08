@@ -75,7 +75,7 @@
 
                             //TRAYENDO COSTO DE FOURWALLS 
                             //La variable $item almacena el id de la llave foranea
-                            //La variable $valor almacena el nombre del campo de la tabla actual, donde traerá
+                            //La variable $valor almacena el nombre del campo de la llave foranea de la tabla actual, donde traerá
                             //el registro extraido de la llave foránea  
                             $item = "idfourwalls";
                             $valor = $value["costo_fourwalls"];
