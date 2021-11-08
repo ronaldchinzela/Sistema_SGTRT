@@ -5807,24 +5807,6 @@ table.text-center th {
   font-size: 24px;
  }
 
- #boton-volver{
-  box-sizing: border-box;
-  float: auto;
-  height: 33px;
-  top: 3px;
-  position: relative;
-  left: 10px;
-  width: 100px;
-  color: #fff;
-  padding-left: 10px;
-  padding-right: 8px;
-  text-align: center;
-  font-size: 17px;
-  border-radius: .3em;
-  border: 1px solid #000;
-  background-color: #3C8DBC;
- }
-
   /*ESTILOS usuarios*/
   #cajas-formulario{
     position: relative;
@@ -5841,4 +5823,12 @@ table.text-center th {
     height: 550px;
   }
 
-  /*ESTILOS */
+  /*ESTILOS licencia-spla*/
+
+ #ver-listado-1{
+  position: relative;
+  right: -10px;
+  background-color: #15b90f;
+ }
+
+   /*ESTILOS */

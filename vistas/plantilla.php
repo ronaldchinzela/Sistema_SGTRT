@@ -94,7 +94,8 @@
            $_GET["ruta"] == "costo-fourwalls" ||
            $_GET["ruta"] == "costo-nexsus" || 
            $_GET["ruta"] == "costo-hp" ||
-           $_GET["ruta"] == "licencia-spla" ||   
+           $_GET["ruta"] == "licencia-spla" ||
+           $_GET["ruta"] == "servidores-spla" ||
            $_GET["ruta"] == "salir"){
 
     //concatenando las páginas con la extención .php

@@ -24,6 +24,10 @@
 
       </div>
 
+<!-- botón consultar-->
+<input class="btn btn-primary" id="ver-listado-1" type="button" value="Ver listado de licencias" onclick="location.href='servidores-spla'">
+
+
       <div class="box-body">
         
        <table class="table table-bordered table-striped dt-responsive tablas" width="100%">
