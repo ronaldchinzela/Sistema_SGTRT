@@ -1,41 +1,52 @@
 <aside class="main-sidebar">
     <section class="sidebar">
         <ul class="sidebar-menu">
-            <!--botón menú de inicio-->
-            <li class="active">
-            </li>
-            <!-- MÓDULO REPORTES -->
-            <li class="treeview">
-                <a href="#">
-                    <i class="app-menu__icon fa fa-file-text-o"></i>
-                    <span>Reportes</span>
-                    <span class="pull-right-container">
-                        <i class="fa fa-angle-left pull-right"></i>
-                </a>
-                <!-- menú desplegable reportes -->
-                <ul class="treeview-menu">
-                    <li>
-                        <a href="consumo-recursos">
-                            <i class="fa fa-share"></i>
-                            <span>Consumo Recursos TI</span>
-                        </a>
+            
+        <!-- creando accesos con privilegios a los usuarios logeados -->
+        <?php
+            //Si el usuario es administrador o analista, tendrá acceso al módulo de reportes
+            if($_SESSION["rol"] == "Administrador" || $_SESSION["rol"] == "Analista"){
+               
+                //BOTÓN MENÚ DE INICIO
+                echo'<li class="active">
                     </li>
-                    <li>
-                        <a href="tarifario">
-                            <i class="fa fa-share"></i>
-                            <span>Tarifario TI</span>
+                    <!-- MÓDULO REPORTES -->
+                    <li class="treeview">
+                        <a href="#">
+                            <i class="app-menu__icon fa fa-file-text-o"></i>
+                            <span>Reportes</span>
+                            <span class="pull-right-container">
+                                <i class="fa fa-angle-left pull-right"></i>
                         </a>
-                    </li>
-                    <li>
-                        <a href="resumen-servidores">
-                            <i class="fa fa-share"></i>
-                            <span>Resumen de Servidores</span>
-                        </a>
-                    </li>
-                </ul>
-            </li>
-            <!-- MÓDULO USUARIOS -->
-            <li class="treeview">
+                        <!-- menú desplegable reportes -->
+                        <ul class="treeview-menu">
+                            <li>
+                                <a href="consumo-recursos">
+                                    <i class="fa fa-share"></i>
+                                    <span>Consumo Recursos TI</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="tarifario">
+                                    <i class="fa fa-share"></i>
+                                    <span>Tarifario TI</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="resumen-servidores">
+                                    <i class="fa fa-share"></i>
+                                    <span>Resumen de Servidores</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>';
+            }
+
+            //MÓDULO USUARIOS
+            //Si el usuario es administrador, tendrá acceso al resto de módulos
+            if($_SESSION["rol"] == "Administrador"){
+    
+            echo'<li class="treeview">
                 <a href="#">
                     <i class="app-menu__icon fa fa-users"></i>
                     <span>Usuarios</span>
@@ -52,7 +63,8 @@
                     </li>                  
                 </ul>
             </li>
-            <!-- MÓDULO CALCULADORA SOW -->
+
+            <!-- MÓDULO CALCULADORA SOW -->          
             <li class="treeview">
                 <a href="#">
                     <i class="app-menu__icon fa fa-cogs"></i>
@@ -80,11 +92,12 @@
                             <i class="fa fa-share"></i>
                             <span>Licencia SPLA</span>
                         </a>
-                    </li>
+                    </li>';
+
+
+                }
+                    ?>
                 </ul>
-
-
-
             </li>
         </ul>
     </section>

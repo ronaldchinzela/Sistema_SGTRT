@@ -1,4 +1,13 @@
-<!-- Content Wrapper. Contains page content -->
+<?php
+     //destruyendo la sesión cuando el usuario sin privilegios navege a traves de la url
+     if($_SESSION["rol"] == "Analista"){
+        echo'<script>
+            window.location = "inicio";
+        </script>';
+        return; 
+    }
+?>
+
 <div class="content-wrapper">
 
 <section class="content-header">
