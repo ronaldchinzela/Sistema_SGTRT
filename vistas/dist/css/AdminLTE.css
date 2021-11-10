@@ -5711,7 +5711,7 @@ table.text-center th {
 
 /*================================================ ESTILOS PERSONALIZADOS ===============================================*/
 
-/*ESTILOS costo-mantenimiento*/
+/* ESTILOS costo-mantenimiento */
 .h1-titulo{
   text-align:center;
   font-weight: bold;
@@ -5794,7 +5794,7 @@ table.text-center th {
   border: 1px solid #000;
   background-color: #3C8DBC;
  }
- /*ESTILOS costo-fourwalls*/
+ /* ESTILOS costo-fourwalls */
 
  #color-span{
    color: #0522a3;
@@ -5807,7 +5807,7 @@ table.text-center th {
   font-size: 24px;
  }
 
-  /*ESTILOS usuarios*/
+  /* ESTILOS usuarios */
   #cajas-formulario{
     position: relative;
     top: -40px;
@@ -5823,7 +5823,7 @@ table.text-center th {
     height: 550px;
   }
 
-  /*ESTILOS licencia-spla*/
+  /* ESTILOS licencia-spla */
 
  #ver-listado-1{
   position: relative;
@@ -5831,4 +5831,22 @@ table.text-center th {
   background-color: #15b90f;
  }
 
-   /*ESTILOS */
+   /* ESTILOS consumo-recursos */
+   .href-ver-gráfica{
+    color: rgb(24, 27, 219);
+  }
+  .href-ver-gráfica:hover{
+    color: rgb(20, 168, 7);
+  }
+
+  /* ESTILOS grafico */
+  #h3-cpu{
+    position: relative;
+    left: 522px;
+    font-size: 25px;
+  }
+
+  #section-1{
+    position: relative;
+    top: 80px;
+  }

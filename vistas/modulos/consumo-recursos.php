@@ -1,46 +1,84 @@
-<!-- Content Wrapper. Contains page content -->
 <div class="content-wrapper">
-    <!-- Content Header (Page header) -->
-    <section class="content-header">
+
+<section class="content-header">
       
-<h1>
-REPORTE - CONSUMO RECURSOS TI
+<h1 class="h1-titulo">
+   REPORTE - CONSUMO RECURSOS TI
 </h1>
 
-    <ol class="breadcrumb">
-    <li><a href="#"><i class="fa fa-home"></i>Inicio</a></li>
-    <li class="active">Home</li>
-    </ol>
 </section>
 
-<!-- Contenido temporal para la página de inicio -->
 <section class="content">
 
-<!-- Default box -->
 <div class="box">
-<div class="box-header with-border">
-    <h3 class="box-title">Sistema para el control de tarifarios</h3>
 
-    <div class="box-tools pull-right">
-    <button type="button" class="btn btn-box-tool" data-widget="collapse" data-toggle="tooltip"
-            title="Collapse">
-        <i class="fa fa-minus"></i></button>
-    <button type="button" class="btn btn-box-tool" data-widget="remove" data-toggle="tooltip" title="Remove">
-        <i class="fa fa-times"></i></button>
-    </div>
+<div class="box-header with-border">
+    
+
 </div>
+
+
+<!-- BOTONES Y CONSULTAS -->
+
+
+
+<!-- botón consultar-->
+<input class="btn btn-primary" type="button" value="consultar" onclick="location.href='consumo-recursos'">
+
+
+    <!-- Tabla de usuarios -->
     <div class="box-body">
-    Infraestructura TI
+        <table class="table table-bordered table-striped dt-responsive tablas">
+
+            <thead>
+            <tr>
+                <th class="th02">Activo</th>
+                <th class="th03">ALP</th>
+                <th class="th04">Proyecto</th>
+                <th class="th05">Servidor</th>
+                <th class="th06">CPU</th>
+                <th class="th07">Memoria</th>
+                <th class="th08">Disco</th>
+                <th class="th08">Servicio</th>
+                <th class="th08">Gráfica</th>                                              
+            </tr>
+            </thead>
+
+             <tbody>
+
+            <!-- HACIENDO EL LLAMADO A LA TABLA DE CONSUMO RECURSOS DE LA BD -->
+            <?php
+                 $item = null;
+
+                 $valor = null;
+         
+                 $walls = ControladorConsumos::ctrMostrarConsumos($item, $valor);
+
+                 foreach ($walls as $key => $value) {
+
+                   echo '<tr>
+                            <td>'.$value["activo"].'</td>
+                            <td>'.$value["alp"].'</td>
+                            <td>'.$value["proyecto"].'</td>
+                            <td>'.$value["servidor"].'</td>
+                            <td>'.$value["cpu"].'</td>
+                            <td>'.$value["memoria"].'</td>
+                            <td>'.$value["disco"].'</td>
+                            <td>'.$value["servicio"].'</td>
+                            <td><a href="grafica" class="href-ver-gráfica"><i><b><u>Ver gráfica</u></b></i></a></td>
+                            </tr>';  
+                    
+                } 
+                
+            ?>
+
+            </tbody>
+
+        </table>
     </div>
-    <!-- /.box-body -->
-    <div class="box-footer">
-        SGTRT
-    </div>
-    <!-- /.box-footer-->
-    </div>
-    <!-- /.box -->
+
+</div>
 
 </section>
-<!-- /.content -->
+
 </div>
-<!-- /.content-wrapper -->

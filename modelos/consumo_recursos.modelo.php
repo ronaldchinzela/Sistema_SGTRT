@@ -2,17 +2,17 @@
 
 require_once "conexion.php";
 
-class ModeloWalls{
+class ModeloConsumos{
 
 	/*=============================================
-				MOSTRAR 4WALLS
+			  MOSTRAR CONSUMO DE RECURSOS
 	=============================================*/
 
-	static public function mdlMostrarWalls($tabla, $item, $valor){
+	static public function mdlMostrarConsumos($tabla, $item, $valor){
 
 		if($item != null){
 
-			$stmt = Conexion::conectar()->prepare("SELECT * FROM $tabla WHERE $item = :$item ORDER BY ALP DESC");
+			$stmt = Conexion::conectar()->prepare("SELECT * FROM $tabla WHERE $item = :$item");
 
 			$stmt -> bindParam(":".$item, $valor, PDO::PARAM_STR);
 

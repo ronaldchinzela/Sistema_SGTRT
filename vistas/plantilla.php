@@ -62,6 +62,10 @@
 <!-- SweetAlert 2 -->
     <script src="vistas/plugins/sweetalert2/sweetalert2.all.js"></script>
 
+<!-- Morris.js charts -->
+<script src="vistas/bower_components/raphael/raphael.min.js"></script>
+<script src="vistas/bower_components/morris.js/morris.min.js"></script>
+
 </head>
 <!--===========================================
                 CUERPO DEL DOCUMENTO
@@ -96,6 +100,7 @@
            $_GET["ruta"] == "costo-hp" ||
            $_GET["ruta"] == "licencia-spla" ||
            $_GET["ruta"] == "servidores-spla" ||
+           $_GET["ruta"] == "grafica" ||
            $_GET["ruta"] == "salir"){
 
     //concatenando las páginas con la extención .php
