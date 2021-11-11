@@ -101,6 +101,8 @@
            $_GET["ruta"] == "licencia-spla" ||
            $_GET["ruta"] == "servidores-spla" ||
            $_GET["ruta"] == "grafica" ||
+           $_GET["ruta"] == "grafica-memoria" ||
+           $_GET["ruta"] == "grafica-disco" ||
            $_GET["ruta"] == "salir"){
 
     //concatenando las páginas con la extención .php

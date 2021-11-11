@@ -22,8 +22,8 @@ UNMONRB103
 <!-- botón volver a reporte de consumo-->
 <input class="btn btn-primary" id="volver-1" type="button" value="Volver" onclick="location.href='consumo-recursos'">
 <input class="btn btn-primary" id="volver-1" type="button" value="Generar reporte" onclick="location.href='grafica'">
+<input class="btn btn-primary" id="ver-2" type="button" value="Ver cpu" onclick="location.href='grafica'">
 <input class="btn btn-primary" id="ver-2" type="button" value="Ver memoria" onclick="location.href='grafica-memoria'">
-<input class="btn btn-primary" id="ver-2" type="button" value="Ver disco" onclick="location.href='grafica-disco'">
 
 
       <div class="box">
@@ -31,7 +31,7 @@ UNMONRB103
           <!-- AREA CHART -->
           <div class="box box-primary">
             <div class="box-header with-border">
-              <h3 class="box-title" id="h3-cpu"><b>CPU</b></h3>
+              <h3 class="box-title" id="h3-cpu"><b>DISCO</b></h3>
 
             </div>
             <div class="box-body chart-responsive">

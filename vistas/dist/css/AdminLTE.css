@@ -5839,7 +5839,7 @@ table.text-center th {
     color: rgb(20, 168, 7);
   }
 
-  /* ESTILOS grafico */
+  /* ESTILOS grafica */
   #h3-cpu{
     position: relative;
     left: 522px;
@@ -5848,5 +5848,62 @@ table.text-center th {
 
   #section-1{
     position: relative;
-    top: 80px;
+    top: 55px;
+  }
+
+  #volver-1{
+    position: relative;
+    right: 0px;
+    background-color: #727a72;
+   }
+   #volver-1:hover{
+
+    background-color: #3C8DBC;
+   }
+   #ver-2{
+    position: relative;
+    right: 0px;
+    background-color: #df610d;
+   }
+   #ver-2:hover{
+
+    background-color: #15b90f;
+   }
+
+   #h6-grafica{
+    position: absolute;
+    font-size: 15px;
+    top: -46px;
+    right: 785px;
+  }
+  
+  #fecha-grafica{
+    top: -42px;
+    background-color: #cff5d5;
+    font-size: 17px;
+    position: absolute;
+    right: 612px;
+    border-radius: 0px;
+    border: 1px solid #000;
+  }
+  
+  #h6-grafica-fin{
+    top: -46px;
+    font-size: 15px;
+    position: absolute;
+    right: 523px;
+  }
+  
+  #fecha-grafica-fin{
+    top: -42px;
+    background-color: #cff5d5;
+    font-size: 17px;
+    position: absolute;
+    right: 350px;
+    border-radius: 0px;
+    border: 1px solid #000;
+  }
+  .h1-grafica{
+    text-align:center;
+    font-weight: bold;
   }
