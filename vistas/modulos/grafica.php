@@ -58,34 +58,54 @@ UNMONRB103
         $.ajax({
             url: "ajax/graficos.ajax.php",
             method: "GET",
+            //trayendo la respuesta de la BD en un json
             success: function(respuesta){
-                console.log(respuesta);
-            }
-        });
+                
+                //tranformando la respuesta en un Array
+                var data = JSON.parse(respuesta);
 
+                //array para periodos
+                var periodos = [];
 
-        // LINE CHART
-        var line = new Morris.Line({
-        element: 'line-chart',
-        resize: true,
-        data: [
-            {y: '2011 Q1', item1: 2666},
-            {y: '2011 Q2', item1: 2778},
-            {y: '2011 Q3', item1: 4912},
-            {y: '2011 Q4', item1: 3767},
-            {y: '2012 Q1', item1: 6810},
-            {y: '2012 Q2', item1: 5670},
-            {y: '2012 Q3', item1: 4820},
-            {y: '2012 Q4', item1: 15073},
-            {y: '2013 Q1', item1: 10687},
-            {y: '2013 Q2', item1: 8432}
-        ],
-        xkey: 'y',
-        ykeys: ['item1'],
-        labels: ['Item 1'],
-        lineColors: ['#3c8dbc'],
-        hideHover: 'auto'
-        });
+                //array para tiempos de ejecución
+                var tiempos = [];
+
+                //creando bucle for para recorrer el array
+                for (let index = 0; index < data.length; index++) {
+                    
+                    //posición 1 para los periodos
+                    periodos.push(data[index][1]);
+
+                    //posición 0 para los tiempos
+                    tiempos.push(data[index][0]);
+                    
+                }
+
+                 // GRÁFICO LINE CHAR
+                    var line = new Morris.Line({
+                    element: 'line-chart',
+                    resize: true,
+                    data: [
+                        {y: '2011 Q1', item1: 2666},
+                        {y: '2011 Q2', item1: 2778},
+                        {y: '2011 Q3', item1: 4912},
+                        {y: '2011 Q4', item1: 3767},
+                        {y: '2012 Q1', item1: 6810},
+                        {y: '2012 Q2', item1: 5670},
+                        {y: '2012 Q3', item1: 4820},
+                        {y: '2012 Q4', item1: 15073},
+                        {y: '2013 Q1', item1: 10687},
+                        {y: '2013 Q2', item1: 8432}
+                    ],
+                    xkey: 'y',
+                    ykeys: ['item1'],
+                    labels: ['Item 1'],
+                    lineColors: ['#3c8dbc'],
+                    hideHover: 'auto'
+                    });
+
+                        }
+                    });
 
     })
 

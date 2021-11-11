@@ -6,8 +6,8 @@
 
         static public function mdlListarTiemposGraficos(){
 
-            //ejecutando procedimiento almacenado en la conexión a la BD
-            $stmt = Conexion::conectar()->prepare("CALL procedure_ListarTiemposGraficos");
+            //ejecutando procedimiento almacenado en la conexión a la BD y lo retornamos al controlador
+            $stmt = Conexion::conectar()->prepare("SELECT * FROM procedure_listartiempograficas()");
 
             $stmt -> execute();
 
