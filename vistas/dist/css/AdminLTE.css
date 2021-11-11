@@ -5839,6 +5839,46 @@ table.text-center th {
     color: rgb(20, 168, 7);
   }
 
+  #boton-consultar{
+    position: relative;
+    left: 75%;
+  }
+
+  #h6-grafica-1{
+    position: relative;
+    font-size: 15px;
+    top: 150px;
+    left: 22%;
+  }
+  
+  #fecha-grafica-1{
+    top: 117px;
+    background-color: #cff5d5;
+    font-size: 17px;
+    position: relative;
+    left: 335px;
+    border-radius: 0px;
+    border: 1px solid #000;
+  }
+  
+  #h6-grafica-fin-1{
+    position: relative;
+    font-size: 15px;
+    top: 88px;
+    left: 51%;
+  }
+  
+  #fecha-grafica-fin-1{
+    top: 53px;
+    background-color: #cff5d5;
+    font-size: 17px;
+    position: relative;
+    left: 58%;
+    border-radius: 0px;
+    border: 1px solid #000;
+  }
+
+
   /* ESTILOS grafica */
   #h3-cpu{
     position: relative;

@@ -12,6 +12,12 @@
 
 <div class="box">
 
+ <!-- Fecha inicio-->
+ <h6 id="h6-grafica-1"><b>Fecha Inicio:</b></h6><input id="fecha-grafica-1" type="date">
+                            
+<!-- Fecha fin-->
+<h6 id="h6-grafica-fin-1"><b>Fecha Fin:</b></h6><input id="fecha-grafica-fin-1" type="date">
+
 <div class="box-header with-border">
     
 
@@ -20,14 +26,13 @@
 
 <!-- BOTONES Y CONSULTAS -->
 
-
-
 <!-- botón consultar-->
-<input class="btn btn-primary" type="button" value="consultar" onclick="location.href='consumo-recursos'">
+<input class="btn btn-primary" id="boton-consultar" type="button" value="consultar" onclick="location.href='consumo-recursos'">
 
 
     <!-- Tabla de usuarios -->
     <div class="box-body">
+        
         <table class="table table-bordered table-striped dt-responsive tablas">
 
             <thead>
