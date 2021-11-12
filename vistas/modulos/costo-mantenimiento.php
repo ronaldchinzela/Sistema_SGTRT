@@ -46,10 +46,18 @@
     <option>Octubre</option>                                   
 </select><br>
 
-<!-- botón consultar-->
+<!-- BOTONES-->
 <input class="boton-listar-consultar" type="button" value="consultar" onclick="location.href='#'">
 
-<input class="btn btn-primary" id="cargar-data" type="button" value="Cargar Data" onclick="location.href='#'">
+
+<form action="csv.php" enctype="multipart/form-data" method="POST">
+
+<input type="file" name="csv" id="csv">
+<input type="button" value="Subir CSV" class="btn-file" onclick="document.getElementById('csv').click()">
+
+<button type="submit" class="btn btn-primary" id="enviar">Cargar Data</button>
+
+</form>
 
     <!-- Tabla de usuarios -->
     <div class="box-body" id="boxxx">

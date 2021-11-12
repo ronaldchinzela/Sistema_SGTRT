@@ -5725,11 +5725,42 @@ table.text-center th {
   color: #000;
 }
 
-#cargar-data{
+#csv{
   position: relative;
-  top: -68px;
-  right: 96px;
-  background-color: #3c8dbc;
+  top: -75px;
+  display: none;
+ }
+
+ .btn-file{
+   display: block;
+   top: -100px;
+   position: relative;
+   float: none;
+   padding: 10px 21px;
+   padding-top: 0px;
+   border: none;
+   width: 90px;
+   padding-left: 4px;
+   padding-left: 7px;
+   color: #fff;
+   font-size: 16px;
+   background-color: #3C8DBC;
+   border-radius: 3px;
+   cursor: pointer;
+
+   font-family: sans-serif;
+   text-align: center;
+ }
+ .btn-file:hover{
+   transition: all .4s;
+   background-color: #3748e2;
+ }
+
+ #enviar{
+  position: relative;
+  top: -100px;
+  right: -33%;
+  background-color: #15b90f;
  }
 
 .cbo-año{
@@ -5850,14 +5881,14 @@ table.text-center th {
     top: 0px;
    }
 
-   #erika-buscar{
+   #input-buscar-cliente{
     top: -18px;
     position: relative;
     right: -19px;
     border: 1px solid #000;
   }
   
-  #erika-h6{
+  #h6-cliente{
     position: relative;
     right: -5px;
     top: 10px;

@@ -13,7 +13,7 @@
 <div class="box">
 
 <!-- Buscador cliente -->
-<h6 id="erika-h6">Cliente:</h6><input id="erika-buscar" class="form-control form-control-sm ml-5 w-30" type="text" placeholder="  Buscar por cliente"
+<h6 id="h6-cliente">Cliente:</h6><input id="input-buscar-cliente" class="form-control form-control-sm ml-5 w-30" type="text" placeholder="  Buscar por cliente"
     aria-label="Search">
 
 <!-- Buscador Hostname -->
