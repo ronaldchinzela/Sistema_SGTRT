@@ -8,7 +8,14 @@
             if($_SESSION["rol"] == "Administrador" || $_SESSION["rol"] == "Analista"){
                
                 //BOTÓN MENÚ DE INICIO
-                echo'<li class="active">
+                echo'<li class="inicio-caja">
+
+                <a href="inicio">
+
+                <i class="fa fa-home"></i>
+                <span>Inicio</span>
+
+                </a>
                     </li>
                     <!-- MÓDULO REPORTES -->
                     <li class="treeview">

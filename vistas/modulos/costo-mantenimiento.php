@@ -47,11 +47,12 @@
 </select><br>
 
 <!-- botón consultar-->
-<input class="boton-listar-consultar" type="button" value="consultar" onclick="location.href='costo-mantenimiento'">
+<input class="boton-listar-consultar" type="button" value="consultar" onclick="location.href='#'">
 
+<input class="btn btn-primary" id="cargar-data" type="button" value="Cargar Data" onclick="location.href='#'">
 
     <!-- Tabla de usuarios -->
-    <div class="box-body">
+    <div class="box-body" id="boxxx">
         <table class="table table-bordered table-striped dt-responsive tablas">
 
             <thead>
@@ -61,8 +62,8 @@
                 <th class="th04">Costo Mensual 4Walls</th>
                 <th class="th05">Costo Nexsus</th>
                 <th class="th06">Costo HP DC Care</th>
-                <th class="th07">Total Soles</th>
                 <th class="th08">Total Dólares</th>                                              
+                <th class="th07">Total Soles</th>
             </tr>
             </thead>
 
@@ -91,7 +92,7 @@
           
                             $fourwalls = ControladorFourwalls::ctrMostrarFourwalls($item, $valor);
 
-                            echo '<td><a href="costo-fourwalls" class="href-costos-mantenimiento">S/.&nbsp;&nbsp;'.$fourwalls["costo"].'</a></td>';
+                            echo '<td><a href="costo-fourwalls" class="href-costos-mantenimiento"><b>$</b>&nbsp;&nbsp'.$fourwalls["costo"].'</a></td>';
 
                             //TRAYENDO COSTO DE NEXUS
                             $item = "idnexus";
@@ -99,7 +100,7 @@
           
                             $nexsus = ControladorNexsus::ctrMostrarNexsus($item, $valor);
 
-                             echo '<td><a href="costo-nexsus" class="href-costos-mantenimiento">S/.&nbsp;&nbsp;'.$nexsus["costo"].'</a></td>';
+                             echo '<td><a href="costo-nexsus" class="href-costos-mantenimiento"><b>$</b>&nbsp;&nbsp'.$nexsus["costo"].'</a></td>';
 
                              //TRAYENDO COSTO DE HP
                              $item = "idhp";
@@ -107,11 +108,12 @@
             
                              $hp = ControladorHp::ctrMostrarHp($item, $valor);
 
-                             echo '<td><a href="costo-hp" class="href-costos-mantenimiento">S/.&nbsp;&nbsp;'.$hp["costo"].'</a></td>';
+                             echo '<td><a href="costo-hp" class="href-costos-mantenimiento"><b>$</b>&nbsp;&nbsp'.$hp["costo"].'</a></td>';
 
                              //IMPRIMIENDO COLUMNA TOTAL_SOL Y TOTAL_DOLAR
-                                    echo'<td><b>S/.</b>&nbsp;&nbsp;'.$value["total_sol"].'</td>
-                                         <td><b>$/.</b>&nbsp;&nbsp;'.$value["total_dolar"].'</td>
+                                    echo'
+                                    <td><b>$</b>&nbsp;&nbsp;'.$value["total_dolar"].'</td>
+                                    <td><b>S/.</b>&nbsp;&nbsp;'.$value["total_sol"].'</td>
                                     </tr>';  
                     
                 } 

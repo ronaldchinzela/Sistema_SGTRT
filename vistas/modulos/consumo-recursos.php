@@ -12,6 +12,15 @@
 
 <div class="box">
 
+<!-- Buscador cliente -->
+<h6 id="erika-h6">Cliente:</h6><input id="erika-buscar" class="form-control form-control-sm ml-5 w-30" type="text" placeholder="  Buscar por cliente"
+    aria-label="Search">
+
+<!-- Buscador Hostname -->
+<h6 id="buscador-hostname">Hostname/VMware:</h6><input id="input-buscar-hostname" class="form-control form-control-sm ml-5 w-30" type="text" placeholder="  Buscar por VMware"
+    aria-label="Search">
+
+
  <!-- Fecha inicio-->
  <h6 id="h6-grafica-1"><b>Fecha Inicio:</b></h6><input id="fecha-grafica-1" type="date">
                             
@@ -31,7 +40,7 @@
 
 
     <!-- Tabla de usuarios -->
-    <div class="box-body">
+    <div class="box-body" id="tabla-recursos">
         
         <table class="table table-bordered table-striped dt-responsive tablas">
 

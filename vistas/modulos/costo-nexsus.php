@@ -60,7 +60,7 @@
                     <td>'.$value["idnexus"].'</td>
                     <td>'.$value["nom_proyecto"].'</td>
                     <td>'.$value["punto_red"].'</td>
-                    <td>S/.&nbsp;&nbsp'.$value["costo"].'</td>
+                    <td><b>$</b>&nbsp;&nbsp'.$value["costo"].'</td>
 
                     <td>
 

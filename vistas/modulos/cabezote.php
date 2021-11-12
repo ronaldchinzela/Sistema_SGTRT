@@ -3,7 +3,7 @@
 <!--===========================================
     LOGOTIPO
 ============================================-->
-<a href="inicio" class="logo">
+<a href="inicio" class="logo" id="fondo-logo-canvia">
   <!-- logo mini -->
   <span class="logo-mini">
   <img src="vistas/img/plantilla/logo.png" class="img-responsive" style="padding:1px 1px"> 
