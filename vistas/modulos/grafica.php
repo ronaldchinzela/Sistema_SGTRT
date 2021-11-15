@@ -21,7 +21,7 @@ UNMONRB103
 
 <!-- botón volver a reporte de consumo-->
 <input class="btn btn-primary" id="volver-1" type="button" value="Volver" onclick="location.href='consumo-recursos'">
-<input class="btn btn-primary" id="volver-1" type="button" value="Generar reporte" onclick="location.href='grafica'">
+<input class="btn btn-primary" id="volver-1" type="button" value="Generar reporte" onclick="location.href='#'">
 <input class="btn btn-primary" id="ver-2" type="button" value="Ver memoria" onclick="location.href='grafica-memoria'">
 <input class="btn btn-primary" id="ver-2" type="button" value="Ver disco" onclick="location.href='grafica-disco'">
 

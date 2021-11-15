@@ -5877,8 +5877,9 @@ table.text-center th {
    /* ESTILOS consumo-recursos */
 
    #tabla-recursos{
+    position: absolute;
     position: relative;
-    top: 50px;
+    top: -130px;
    }
 
    #box-consumo{
@@ -5927,39 +5928,50 @@ table.text-center th {
 
   #boton-consultar{
     position: relative;
-    left: 75%;
+    top: -154px;
+    left: 57%;
   }
 
-  #h6-grafica-1{
+  #reporte-consumo{
+    position: absolute;
+    background-color: #727a72;
+    top: 70px;
+    left: 8px;
+  }
+  #reporte-consumo:hover{
+    background-color: #3C8DBC;
+  }
+
+  #h6-1{
     position: relative;
     font-size: 15px;
-    top: 150px;
-    left: 22%;
+    top: -55px;
+    left: 215px;
   }
   
-  #fecha-grafica-1{
-    top: 117px;
+  #fecha-1{
+    top: -87px;
     background-color: #cff5d5;
     font-size: 17px;
     position: relative;
-    left: 335px;
+    left: 307px;
     border-radius: 0px;
     border: 1px solid #000;
   }
   
-  #h6-grafica-fin-1{
+  #h6-fin-1{
     position: relative;
     font-size: 15px;
-    top: 88px;
-    left: 51%;
+    top: -118px;
+    left: 535px;
   }
   
-  #fecha-grafica-fin-1{
-    top: 53px;
+  #fecha-fin-1{
+    top: -150px;
     background-color: #cff5d5;
     font-size: 17px;
     position: relative;
-    left: 58%;
+    left: 610px;
     border-radius: 0px;
     border: 1px solid #000;
   }
@@ -5983,7 +5995,6 @@ table.text-center th {
     background-color: #727a72;
    }
    #volver-1:hover{
-
     background-color: #3C8DBC;
    }
    #ver-2{
