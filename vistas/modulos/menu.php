@@ -17,6 +17,8 @@
 
                 </a>
                     </li>
+                    <div class="box-header with-border" id="line-menu">
+                    </div>
                     <!-- MÓDULO REPORTES -->
                     <li class="treeview">
                         <a href="#">
@@ -46,9 +48,11 @@
                                 </a>
                             </li>
                         </ul>
-                    </li>';
+                    </li>
+                    <div class="box-header with-border" id="line-menu">
+                    </div>';
             }
-
+            
             //MÓDULO USUARIOS
             //Si el usuario es administrador, tendrá acceso al resto de módulos
             if($_SESSION["rol"] == "Administrador"){
@@ -70,6 +74,8 @@
                     </li>                  
                 </ul>
             </li>
+            <div class="box-header with-border" id="line-menu">
+            </div>
 
             <!-- MÓDULO CALCULADORA SOW -->          
             <li class="treeview">

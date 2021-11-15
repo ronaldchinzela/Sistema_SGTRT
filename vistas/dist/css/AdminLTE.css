@@ -5736,14 +5736,14 @@ table.text-center th {
    top: -100px;
    position: relative;
    float: none;
-   padding: 10px 21px;
-   padding-top: 0px;
+   padding: 7px 21px;
+   padding-top: -10px;
    border: none;
    width: 90px;
    padding-left: 4px;
-   padding-left: 7px;
+   padding-left: 11px;
    color: #fff;
-   font-size: 16px;
+   font-size: 14px;
    background-color: #3C8DBC;
    border-radius: 3px;
    cursor: pointer;
@@ -5758,8 +5758,8 @@ table.text-center th {
 
  #enviar{
   position: relative;
-  top: -100px;
-  right: -33%;
+  top: -134px;
+  right: -15%;
   background-color: #15b90f;
  }
 
@@ -5878,31 +5878,44 @@ table.text-center th {
 
    #tabla-recursos{
     position: relative;
+    top: 50px;
+   }
+
+   #box-consumo{
+    position: relative;
     top: 0px;
    }
 
    #input-buscar-cliente{
     top: -18px;
     position: relative;
-    right: -19px;
+    right: -250px;
+    width: 141px;
+    height: 26px;
     border: 1px solid #000;
+    border-radius: 3mm;
   }
   
   #h6-cliente{
     position: relative;
-    right: -5px;
-    top: 10px;
+    right: -195px;
+    top: 12px;
+    font-size: 15px;
   }
-  #buscador-hostname{
+  #h6-buscador-hostname{
     position: relative;
-    right: -649px;
-    top: -40px;
+    right: -630px;
+    top: -47px;
+    font-size: 15px;
   }
   #input-buscar-hostname{
-    top: -67px;
+    top: -77px;
     position: relative;
-    right: -755px;
+    right: -760px;
+    width: 148px;
+    height: 26px;
     border: 1px solid #000;
+    border-radius: 3mm;
   }  
 
    .href-ver-gráfica{
@@ -6024,6 +6037,11 @@ table.text-center th {
   /* ESTILOS menu */
   .inicio-caja{
     background-color: #222d32;
+  }
+
+  #line-menu{
+    padding: 0px;
+    height: 0px;
   }
 
   /* ESTILOS cabezote */

@@ -10,14 +10,14 @@
 
 <section class="content">
 
-<div class="box">
+<div class="box" id="box-consumo">
 
 <!-- Buscador cliente -->
 <h6 id="h6-cliente">Cliente:</h6><input id="input-buscar-cliente" class="form-control form-control-sm ml-5 w-30" type="text" placeholder="  Buscar por cliente"
     aria-label="Search">
 
 <!-- Buscador Hostname -->
-<h6 id="buscador-hostname">Hostname/VMware:</h6><input id="input-buscar-hostname" class="form-control form-control-sm ml-5 w-30" type="text" placeholder="  Buscar por VMware"
+<h6 id="h6-buscador-hostname">Hostname/VMware:</h6><input id="input-buscar-hostname" class="form-control form-control-sm ml-5 w-30" type="text" placeholder="  Buscar por VMware"
     aria-label="Search">
 
 
@@ -36,7 +36,7 @@
 <!-- BOTONES Y CONSULTAS -->
 
 <!-- botón consultar-->
-<input class="btn btn-primary" id="boton-consultar" type="button" value="consultar" onclick="location.href='consumo-recursos'">
+<input class="btn btn-primary" id="boton-consultar" type="button" value="consultar" onclick="location.href='#'">
 
 
     <!-- Tabla de usuarios -->
