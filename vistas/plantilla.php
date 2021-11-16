@@ -103,6 +103,7 @@
            $_GET["ruta"] == "grafica" ||
            $_GET["ruta"] == "grafica-memoria" ||
            $_GET["ruta"] == "grafica-disco" ||
+           $_GET["ruta"] == "csv" ||
            $_GET["ruta"] == "salir"){
 
     //concatenando las páginas con la extención .php
@@ -135,5 +136,6 @@
 <script src="vistas/js/nexsus.js"></script>
 <script src="vistas/js/hp.js"></script>  
 <script src="vistas/js/licencias.js"></script>
+
 </body>
 </html>

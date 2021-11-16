@@ -97,4 +97,32 @@ class ModeloLicencias{
 
 	}
 
+
+	/*=============================================
+					BORRAR LICENCIA
+	=============================================*/
+
+	static public function mdlBorrarLicencia($tabla, $datos){
+
+		$stmt = Conexion::conectar()->prepare("DELETE FROM $tabla WHERE id_licencia = :id_licencia");
+
+		$stmt -> bindParam(":id_licencia", $datos, PDO::PARAM_INT);
+
+		if($stmt -> execute()){
+
+			return "ok";
+		
+		}else{
+
+			return "error";	
+
+		}
+
+		$stmt -> close();
+
+		$stmt = null;
+
+	}
+
+
 }

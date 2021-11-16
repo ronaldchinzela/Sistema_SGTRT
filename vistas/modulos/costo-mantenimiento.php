@@ -50,12 +50,12 @@
 <input class="boton-listar-consultar" type="button" value="consultar" onclick="location.href='#'">
 
 
-<form action="csv.php" enctype="multipart/form-data" method="POST">
+<!-- IMPORTAR ARCHIVO CSV -->
+<form action="csv" enctype="multipart/form-data" method="POST">
 
 <input type="file" name="csv" id="csv">
-<input type="button" value="Subir CSV" class="btn-file" onclick="document.getElementById('csv').click()">
 
-<button type="submit" class="btn btn-primary" id="enviar">Cargar Data</button>
+<button type="submit" class="btn btn-primary" id="enviar" name="enviar">Cargar Data</button>
 
 </form>
 
@@ -84,7 +84,7 @@
                  $valor = null;
          
                  $walls = ControladorWalls::ctrMostrarWalls($item, $valor);
-
+        
                  foreach ($walls as $key => $value) {
 
                    echo '<tr>
@@ -99,25 +99,25 @@
                             $valor = $value["costo_fourwalls"];
           
                             $fourwalls = ControladorFourwalls::ctrMostrarFourwalls($item, $valor);
-
+                            if(is_array($fourwalls)){
                             echo '<td><a href="costo-fourwalls" class="href-costos-mantenimiento"><b>$</b>&nbsp;&nbsp'.$fourwalls["costo"].'</a></td>';
-
+                            }
                             //TRAYENDO COSTO DE NEXUS
                             $item = "idnexus";
                             $valor = $value["costo_nexus"];
           
                             $nexsus = ControladorNexsus::ctrMostrarNexsus($item, $valor);
-
+                            if(is_array($nexsus)){
                              echo '<td><a href="costo-nexsus" class="href-costos-mantenimiento"><b>$</b>&nbsp;&nbsp'.$nexsus["costo"].'</a></td>';
-
+                            }
                              //TRAYENDO COSTO DE HP
                              $item = "idhp";
                              $valor = $value["costo_hp"];
             
                              $hp = ControladorHp::ctrMostrarHp($item, $valor);
-
+                             if(is_array($nexsus)){
                              echo '<td><a href="costo-hp" class="href-costos-mantenimiento"><b>$</b>&nbsp;&nbsp'.$hp["costo"].'</a></td>';
-
+                            }
                              //IMPRIMIENDO COLUMNA TOTAL_SOL Y TOTAL_DOLAR
                                     echo'
                                     <td><b>$</b>&nbsp;&nbsp;'.$value["total_dolar"].'</td>

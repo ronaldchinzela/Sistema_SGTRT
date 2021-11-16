@@ -5727,39 +5727,15 @@ table.text-center th {
 
 #csv{
   position: relative;
-  top: -75px;
-  display: none;
- }
+  top: -95px;
+  right: -9px;
 
- .btn-file{
-   display: block;
-   top: -100px;
-   position: relative;
-   float: none;
-   padding: 7px 21px;
-   padding-top: -10px;
-   border: none;
-   width: 90px;
-   padding-left: 4px;
-   padding-left: 11px;
-   color: #fff;
-   font-size: 14px;
-   background-color: #3C8DBC;
-   border-radius: 3px;
-   cursor: pointer;
-
-   font-family: sans-serif;
-   text-align: center;
- }
- .btn-file:hover{
-   transition: all .4s;
-   background-color: #3748e2;
  }
 
  #enviar{
   position: relative;
-  top: -134px;
-  right: -15%;
+  top: -85px;
+  right: -9px;
   background-color: #15b90f;
  }
 

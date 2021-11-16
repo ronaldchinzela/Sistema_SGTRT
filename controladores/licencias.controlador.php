@@ -155,5 +155,45 @@ class ControladorLicencias{
 
 	}
 
+	/*=============================================
+					BORRAR LICENCIA
+	=============================================*/
+
+	static public function ctrBorrarLicencia(){
+
+		//si viene un dato get llamado idLicencia
+		if(isset($_GET["idLicencia"])){
+
+			//se redireccionará a la tabla licencia_spla de la base de datos
+			$tabla ="licencia_spla";
+			$datos = $_GET["idLicencia"];
+
+			//la respuesta será enviada al modelo
+			$respuesta = ModeloLicencias::mdlBorrarLicencia($tabla, $datos);
+
+			//si la respuesta es ok mostrará alert de borrado correctamente
+			if($respuesta == "ok"){
+
+				echo'<script>
+
+					swal({
+						  type: "success",
+						  title: "La licencia ha sido borrada correctamente",
+						  showConfirmButton: true,
+						  confirmButtonText: "Cerrar"
+						  }).then(function(result){
+									if (result.value) {
+
+									window.location = "licencia-spla";
+
+									}
+								})
+
+					</script>';
+			}
+		}
+		
+	}
+
 }
 

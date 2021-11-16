@@ -83,7 +83,9 @@
                         <div class="btn-group">
                             
                           <button class="btn btn-warning btnEditarLicencia" data-toggle="modal" data-target="#modalEditarLicencia" idLicencia="'.$value["id_licencia"].'"><i class="fa fa-pencil"></i>&nbsp;&nbsp;<b>Editar</b></button>
-
+                          
+                          <button class="btn btn-danger btnEliminarLicencia" idLicencia="'.$value["id_licencia"].'"><i class="fa fa-times"></i>&nbsp;&nbsp;<b>Eliminar</b></button>
+                       
                         </div>  
 
                       </td>
@@ -369,3 +371,9 @@
 </div>
 
 
+<?php
+
+  $borrarLicencia = new ControladorLicencias();
+  $borrarLicencia -> ctrBorrarLicencia();
+
+?>
