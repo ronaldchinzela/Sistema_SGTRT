@@ -58,7 +58,7 @@ if(isset($_GET["fechaInicial"])){
 
             <thead>
             <tr>
-                <th style="width:10px">N°</th>
+                <th style="width:10px">&#8470;</th>
                 <th class="th02">Activo</th>
                 <th class="th03">ALP</th>
                 <th class="th04">Proyecto</th>

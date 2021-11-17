@@ -65,6 +65,7 @@
 
             <thead>
             <tr>
+                <th style="width:10px">&#8470;</th>
                 <th class="th02">ALP</th>
                 <th class="th03">Proyecto</th>
                 <th class="th04">Costo Mensual 4Walls</th>
@@ -88,6 +89,7 @@
                  foreach ($walls as $key => $value) {
 
                    echo '<tr>
+                            <td>'.($key+1).'</td>
                             <td>'.$value["alp"].'</td>
                             <td>'.$value["nom_proyecto"].'</td>';
 
