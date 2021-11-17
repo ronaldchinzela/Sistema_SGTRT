@@ -3,15 +3,10 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
       
-<h1>
-    Página de inicio
-    <small>Panel de control</small>
-    </h1>
+<h1 class="h1-titulo">
+    SGTRT
+</h1>
 
-    <ol class="breadcrumb">
-    <li><a href="#"><i class="fa fa-home"></i>Inicio</a></li>
-    <li class="active">Home</li>
-    </ol>
 </section>
 
 <!-- Contenido temporal para la página de inicio -->
@@ -19,25 +14,13 @@
 
 <!-- Default box -->
 <div class="box">
-<div class="box-header with-border">
-    <h3 class="box-title">Sistema para el control de tarifarios</h3>
 
-    <div class="box-tools pull-right">
-    <button type="button" class="btn btn-box-tool" data-widget="collapse" data-toggle="tooltip"
-            title="Collapse">
-        <i class="fa fa-minus"></i></button>
-    <button type="button" class="btn btn-box-tool" data-widget="remove" data-toggle="tooltip" title="Remove">
-        <i class="fa fa-times"></i></button>
-    </div>
-</div>
-    <div class="box-body">
-    Infraestructura TI
-    </div>
-    <!-- /.box-body -->
-    <div class="box-footer">
-        SGTRT
-    </div>
-    <!-- /.box-footer-->
+<h6 id="h6-tipo">Ingresa el tipo de cambio:</h6><input id="input-tipo-canbio" class="form-control form-control-sm ml-5 w-30" type="text" placeholder="Ingresar tipo de cambio"
+    aria-label="Search">
+    <button type="submit" class="btn btn-primary" id="grabar-tipo" name="enviar">Grabar</button>
+
+
+
     </div>
     <!-- /.box -->
 

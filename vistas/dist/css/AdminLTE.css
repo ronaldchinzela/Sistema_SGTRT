@@ -6035,3 +6035,41 @@ table.text-center th {
   #fondo-logo-canvia{
     background-color: rgb(240, 238, 238);
   }
+
+
+  /* ESTILOS inicio */
+
+  #tabla-recursos{
+    position: absolute;
+    position: relative;
+    top: -130px;
+   }
+
+   #box-consumo{
+    position: relative;
+    top: 0px;
+   }
+
+   #input-tipo-canbio{
+    top: -18px;
+    position: relative;
+    right: -450px;
+    width: 164px;
+    height: 26px;
+    border: 1px solid #000;
+    border-radius: 1mm;
+  }
+  
+  #h6-tipo{
+    position: relative;
+    right: -280px;
+    top: 12px;
+    font-size: 15px;
+  }
+
+  #grabar-tipo{
+    position: relative;
+    top: -15px;
+    right: -450px;
+    background-color: #15b90f;
+   }

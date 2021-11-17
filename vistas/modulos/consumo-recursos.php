@@ -31,15 +31,34 @@
 
 <!-- botón consultar-->
 <input class="btn btn-primary" id="boton-consultar" type="button" value="consultar" onclick="location.href='#'">
-<input class="btn btn-primary" id="reporte-consumo" type="button" value="Generar reporte" onclick="location.href='#'">
 
-    <!-- Tabla de usuarios -->
+<!-- ENLACE PARA LA EXPORTACIÓN DEL REPORTE EN EXCEL -->
+<?php
+
+ //SI EXISTE UNA FECHA INICIAL Y FINAL SELECCIONADA
+if(isset($_GET["fechaInicial"])){
+
+  echo '<a href="vistas/modulos/descargar-reporte.php?reporte=reporte&fechaInicial='.$_GET["fechaInicial"].'&fechaFinal='.$_GET["fechaFinal"].'">';
+
+ //DE LO CONTRARIO IMPRIMIR REPORTE SIN RANGO DE FECHA
+}else{
+
+   echo '<a href="vistas/modulos/descargar-reporte.php?reporte=reporte">';
+
+}         
+
+?>
+<input class="btn btn-primary" id="reporte-consumo" type="button" value="Generar reporte" onclick="location.href='vistas/modulos/imprimir-reporte.php?reporte=reporte'">
+</a>
+
+    <!-- TABLA DE CONSUMO RECURSOS TI -->
     <div class="box-body" id="tabla-recursos">
         
         <table class="table table-bordered table-striped dt-responsive tablas">
 
             <thead>
             <tr>
+                <th style="width:10px">N°</th>
                 <th class="th02">Activo</th>
                 <th class="th03">ALP</th>
                 <th class="th04">Proyecto</th>
@@ -60,11 +79,12 @@
 
                  $valor = null;
          
-                 $walls = ControladorConsumos::ctrMostrarConsumos($item, $valor);
+                 $consumo = ControladorConsumos::ctrMostrarConsumos($item, $valor);
 
-                 foreach ($walls as $key => $value) {
+                 foreach ($consumo as $key => $value) {
 
                    echo '<tr>
+                            <td>'.($key+1).'</td>
                             <td>'.$value["activo"].'</td>
                             <td>'.$value["alp"].'</td>
                             <td>'.$value["proyecto"].'</td>
@@ -83,6 +103,7 @@
             </tbody>
 
         </table>
+
     </div>
 
   </div>
