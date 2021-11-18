@@ -103,7 +103,7 @@
            $_GET["ruta"] == "grafica" ||
            $_GET["ruta"] == "grafica-memoria" ||
            $_GET["ruta"] == "grafica-disco" ||
-           $_GET["ruta"] == "csv" ||
+           $_GET["ruta"] == "prueba" ||
            $_GET["ruta"] == "salir"){
 
     //concatenando las páginas con la extención .php

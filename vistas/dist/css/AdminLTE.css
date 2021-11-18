@@ -6073,3 +6073,11 @@ table.text-center th {
     right: -450px;
     background-color: #15b90f;
    }
+
+  /* ESTILOS prueba */
+   #subir{
+    position: relative;
+    top: 5px;
+    right: 100px;
+    background-color: #15b90f;
+   }
