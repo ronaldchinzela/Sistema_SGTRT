@@ -51,16 +51,16 @@
 
 
 <!-- IMPORTAR ARCHIVO CSV -->
-<form action="csv" enctype="multipart/form-data" method="POST">
+<form method="POST" enctype="multipart/form-data" id="filesForm">
 
-<input type="file" name="csv" id="csv">
+<input type="file" name="fileName" id="fileId" onchange="return validarCsv()">
 
-<button type="submit" class="btn btn-primary" id="enviar" name="enviar">Cargar Data</button>
+<button type="button" onclick="upCSV()" class="btn btn-primary" id="enviar" disabled>Cargar Data</button>
 
 </form>
 
     <!-- Tabla de usuarios -->
-    <div class="box-body" id="boxxx">
+    <div class="box-body" id="table-id">
         <table class="table table-bordered table-striped dt-responsive tablas">
 
             <thead>

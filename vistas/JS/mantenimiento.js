@@ -50,21 +50,6 @@ function validarCSV()
         return false;
     }
 
-    else
-    {
-        //Mostando el documento
-        if (archivoInput.files && archivoInput.files[0]) 
-        {
-            var visor = new FileReader();
-            visor.onload = function(e) 
-            {
-                document.getElementById('visorArchivo').innerHTML = 
-                '<embed src="'+e.target.result+'" width="500" height="375" />';
-            };
-            visor.readAsDataURL(archivoInput.files[0]);
-        }
-    }
-
     //HABILITANDO EL BOTÓN DE ENVÍO CUANDO SE A SELECCIONADO UN ARCHIVO
     const file = document.getElementById("archivoInput");
     const btn = document.getElementById("enviarr");

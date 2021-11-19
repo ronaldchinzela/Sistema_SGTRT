@@ -5712,7 +5712,7 @@ table.text-center th {
 /*================================================ ESTILOS PERSONALIZADOS ===============================================*/
 
 /* ESTILOS costo-mantenimiento */
-#boxxx{
+#table-id{
   position: relative;
   top: -50px;
 }
@@ -5725,7 +5725,7 @@ table.text-center th {
   color: #000;
 }
 
-#csv{
+#fileId{
   position: relative;
   top: -95px;
   right: -9px;

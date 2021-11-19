@@ -35,5 +35,9 @@ class ModeloWalls{
 		$stmt = null;
 
 	}
-
 }
+
+	
+
+
+
