@@ -16,8 +16,8 @@
 
         <form method="POST" enctype="multipart/form-data" id="filesForm">
             
-        <input type="file" name="filePruebas">
-        <button type="button" onclick="uploadPruebas()" class="btn btn-primary" id="enviarr">Cargar Data</button>
+        <input type="file" name="filePruebas" id="archivoInput" onchange="return validarCSV()">
+        <button type="button" onclick="uploadPruebas()" class="btn btn-primary" id="enviarr" disabled>Cargar Data</button>
 
         </form>
 
