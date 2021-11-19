@@ -14,23 +14,18 @@
 
     <div class="box">
 
-      <form name="upload" action="" method="post" enctype="multipart/form-data">
-
-      <div class="form-group">
+        <form method="POST" enctype="multipart/form-data" id="filesForm">
             
-              <input type="file" class="file" name="file">
-              <input type="submit" class="btn btn-primary" id="submit" name="submit" value="Cargar data">
-            </div> 
+        <input type="file" name="filePruebas">
+        <button type="button" onclick="uploadPruebas()" class="btn btn-primary" id="enviarr">Cargar Data</button>
 
         </form>
-      
 
       <div class="box-body">
         
        <table class="table table-bordered table-striped dt-responsive tablas" width="100%">
          
         <thead>
-         
          <tr>    
            <th style="width:10px">&#8470;</th>
            <th>id</th>
@@ -63,22 +58,11 @@
         ?>
 
         </tbody>
-
        </table>
-
       </div>
-
-
 
     </div>
 
   </section>
 
 </div>
-
-
-
-
-
-
-

@@ -6075,9 +6075,10 @@ table.text-center th {
    }
 
   /* ESTILOS prueba */
-   #subir{
+   #enviarr{
     position: relative;
     top: 5px;
-    right: 100px;
+    right: -9px;
     background-color: #15b90f;
    }
+   

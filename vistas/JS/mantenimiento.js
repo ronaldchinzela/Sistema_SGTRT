@@ -1,24 +1,35 @@
 /*=============================================
                   SUBIENDO CSV
 =============================================*/
+    function uploadPruebas()
+    {
+        var Form = new FormData($('#filesForm')[0]);
+        //console.log('FormData');
+        $.ajax({
 
-$(document).ready(function(){
-
-	var dataTable = $('#datos_mantenimiento').DataTable({
-        "processing":true,
-        "serverSide":true,
-        "order":[],
-        "ajax":{
-            url: "obtener_registros.php",
-            type: "POST"
-        },
-        
-        "columnsDefs":[
+            url:"modelos/import.php",
+            type: "POST",
+            data : Form,
+            processData: false,
+            contentType: false,
+            success: function(data)
+            
             {
-                "targets": [0, 3, 4],
-                "orderable":false,
-            },
-        ]
-    });
-});
+                swal({
+                    title: "El registro ha sido cargado correctamente",
+                    type: "success",
+                    confirmButtonText: "¡Cerrar!"
+                  }).then(function(result) {
+                  
+                      if (result.value) {
+  
+                      window.location = "prueba";
+  
+                  }
+  
+                });
+            }
+        });
+}
+
 

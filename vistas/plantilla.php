@@ -46,6 +46,9 @@
 <!-- jQuery 3 -->
     <script src="vistas/bower_components/jquery/dist/jquery.min.js"></script>
 
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
 <!-- Bootstrap 3.3.7 -->
     <script src="vistas/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
 
@@ -136,6 +139,6 @@
 <script src="vistas/js/nexsus.js"></script>
 <script src="vistas/js/hp.js"></script>  
 <script src="vistas/js/licencias.js"></script>
-
+<script type="text/javascript" src="vistas/js/mantenimiento.js"></script>
 </body>
 </html>
