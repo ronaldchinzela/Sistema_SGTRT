@@ -180,7 +180,7 @@
 
           <div class="box-body">
                           
-          <!-- ENTRADA PARA EL CÓDIGO DE DE LICENCIA -->
+          <!-- ENTRADA PARA EL CÓDIGO ALP -->
             
             <div class="form-group">
               
@@ -188,13 +188,13 @@
               
                 <span class="input-group-addon" id="color-span"><i class="fa fa-code"></i></span> 
 
-                <input type="text" class="form-control input-lg" name="nuevoCodigo" placeholder="Ingresar el código" required>
+                <input type="text" class="form-control input-lg" name="nuevoCodigo" placeholder="Ingresar el código ALP" required>
 
               </div>
 
             </div>
 
-            <!-- ENTRADA PARA EL NOMBRE DE LICENCIA -->
+            <!-- ENTRADA PARA EL NOMBRE DEL PROYECTO -->
             
             <div class="form-group">
               
@@ -202,52 +202,183 @@
               
                 <span class="input-group-addon" id="color-span"><i class="fa fa-pencil-square-o"></i></span> 
 
-                <input type="text" class="form-control input-lg" name="nuevoLicencia" placeholder="Ingresar el nombre de la licencia" required>
+                <input type="text" class="form-control input-lg" name="nuevoMantenimiento" placeholder="Ingresar el nombre del proyecto" required>
 
               </div>
 
             </div>
 
-            <!-- ENTRADA PARA EL TIPO -->
+            <div class="col-xs-6" style="padding-left:0px">
+            <!-- ENTRADA PARA EL NOMBRE DEL EQUIPO FOURWALLS -->
             
             <div class="form-group">
               
               <div class="input-group">
               
-                <span class="input-group-addon" id="color-span"><i class="fa fa-server"></i></span> 
+                <span class="input-group-addon" id="color-span"><i class="fa fa-pencil-square-o"></i></span> 
 
-                <select class="form-control input-lg" name="nuevoTipo" required>
-                  
-                  <option value="">Selecionar sistema operativo</option>
-
-                  <option value="Office">Office</option>
-
-                  <option value="Sqlserver">Sqlserver</option>
-
-                  <option value="Remote">Remote</option>
-                  
-                  <option value="Sqlserver - 2">Sqlserver - 2</option>
-
-                </select>
+                <input type="text" class="form-control input-lg" name="nuevoEquipoFourwalls" placeholder="Nombre equipo 4walls" required>
 
               </div>
 
             </div>
 
-            <!-- ENTRADA PARA EL COSTO -->
+            <!-- ENTRADA PARA LA SERIE FOURWALLS -->
             
             <div class="form-group">
               
               <div class="input-group">
               
-                <span class="input-group-addon" id="color-span"><i class="fa fa-money"></i></span> 
+                <span class="input-group-addon" id="color-span"><i class="fa fa-pencil-square-o"></i></span> 
 
-                <input type="text" class="form-control input-lg" name="nuevoCosto" placeholder="Ingresar el costo" required>
+                <input type="text" class="form-control input-lg" name="nuevoSerieFourwalls" placeholder="Serie 4walls" required>
 
               </div>
 
             </div>
 
+            <!-- ENTRADA PARA EL COSTO DEL FOURWALLS -->
+            
+            <div class="form-group">
+              
+              <div class="input-group">
+              
+                <span class="input-group-addon" id="color-span"><i class="fa fa-pencil-square-o"></i></span> 
+
+                <input type="text" class="form-control input-lg" name="nuevoCostoFourwalls" placeholder="Costo 4walls" required>
+
+              </div>
+
+            </div>
+
+            <!-- ENTRADA PARA LA FECHA INICIO FOURWALLS -->
+            
+            <div class="form-group">
+              
+              <div class="input-group">
+              
+                <span class="input-group-addon" id="color-span"><i class="fa fa-pencil-square-o"></i></span> 
+
+                <input type="text" class="form-control input-lg" name="nuevoFechaInicioFourwalls" placeholder="Fecha inicio 4walls" required>
+
+              </div>
+
+            </div>
+
+            <!-- ENTRADA PARA LA FECHA FIN FOURWALLS -->
+            
+            <div class="form-group">
+              
+              <div class="input-group">
+              
+                <span class="input-group-addon" id="color-span"><i class="fa fa-pencil-square-o"></i></span> 
+
+                <input type="text" class="form-control input-lg" name="nuevoFechaFinFourwalls" placeholder="Fecha fin 4walls" required>
+
+              </div>
+
+            </div>
+
+            </div>
+            <!-- ENTRADA PARA EL PUNTO DE RED NEXSUS-->
+            
+            <div class="form-group">
+              
+              <div class="input-group">
+              
+                <span class="input-group-addon" id="color-span"><i class="fa fa-pencil-square-o"></i></span> 
+
+                <input type="text" class="form-control input-lg" name="nuevoPuntoRedNexsus" placeholder="Puntos de red nexsus" required>
+
+              </div>
+
+            </div>
+
+            <!-- ENTRADA PARA EL COSTO NEXSUS -->
+            
+            <div class="form-group">
+              
+              <div class="input-group">
+              
+                <span class="input-group-addon" id="color-span"><i class="fa fa-pencil-square-o"></i></span> 
+
+                <input type="text" class="form-control input-lg" name="nuevoCostoNexsus" placeholder="Costo nexsus" required>
+
+              </div>
+
+            </div>
+
+            <!-- ENTRADA PARA EL NOMBRE DE EQUIPO HP -->
+            
+            <div class="form-group">
+              
+              <div class="input-group">
+              
+                <span class="input-group-addon" id="color-span"><i class="fa fa-pencil-square-o"></i></span> 
+
+                <input type="text" class="form-control input-lg" name="nuevoEquipoHp" placeholder="Nombre equipo hp" required>
+
+              </div>
+
+            </div>
+
+            <!-- ENTRADA PARA LA SERIE HP -->
+            
+            <div class="form-group">
+              
+              <div class="input-group">
+              
+                <span class="input-group-addon" id="color-span"><i class="fa fa-pencil-square-o"></i></span> 
+
+                <input type="text" class="form-control input-lg" name="nuevoSerieHp" placeholder="Número serie hp" required>
+
+              </div>
+
+            </div>
+
+            <!-- ENTRADA PARA EL COSTO HP -->
+            
+            <div class="form-group">
+              
+              <div class="input-group">
+              
+                <span class="input-group-addon" id="color-span"><i class="fa fa-pencil-square-o"></i></span> 
+
+                <input type="text" class="form-control input-lg" name="nuevoCostoHp" placeholder="Costo hp" required>
+
+              </div>
+
+            </div>
+
+           <!-- ENTRADA PARA LA FECHA INICIO HP -->
+            
+           <div class="form-group">
+              
+              <div class="input-group">
+              
+                <span class="input-group-addon" id="color-span"><i class="fa fa-pencil-square-o"></i></span> 
+
+                <input type="text" class="form-control input-lg" name="nuevoFechaInicioHp" placeholder="Fecha inicio hp" required>
+
+              </div>
+
+            </div>
+            
+
+            <!-- ENTRADA PARA LA FECHA FIN HP -->
+            
+            <div class="form-group">
+              
+              <div class="input-group">
+              
+                <span class="input-group-addon" id="color-span"><i class="fa fa-pencil-square-o"></i></span> 
+
+                <input type="text" class="form-control input-lg" name="nuevoFechaFinHp" placeholder="Fecha fin hp" required>
+
+              </div>
+
+            </div>
+           
   
           </div>
 
@@ -261,7 +392,7 @@
 
           <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Salir</button>
 
-          <button type="submit" class="btn btn-primary">Registrar Licencia</button>
+          <button type="submit" class="btn btn-primary">Registrar Mantenimiento</button>
 
         </div>
 
@@ -269,8 +400,8 @@
 
       <?php
 
-        $crearLicencia = new ControladorLicencias();
-        $crearLicencia -> ctrCrearLicencia();
+        $crearMantenimiento = new ControladorWalls();
+        $crearMantenimiento -> ctrCrearMantenimiento();
 
       ?>
 
