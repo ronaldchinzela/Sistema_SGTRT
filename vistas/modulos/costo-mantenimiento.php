@@ -22,10 +22,13 @@
 
 <div class="box">
 
-<div class="box-header with-border">
-    
 
-</div>
+
+<button class="btn btn-primary" id="btn-mantenimiento" data-toggle="modal" data-target="#modalAgregarMantenimiento">
+          
+          Agregar nuevo registro
+
+</button>
 
 <!-- Combox de actividad  -->
 <select class="cbo-año">                            
@@ -59,85 +62,220 @@
 
 </form>
 
-    <!-- Tabla de usuarios -->
-    <div class="box-body" id="table-id">
-        <table class="table table-bordered table-striped dt-responsive tablas">
+<!-- Tabla de usuarios -->
+<div class="box-body" id="table-id">
+    <table class="table table-bordered table-striped dt-responsive tablas">
 
-            <thead>
-            <tr>
-                <th style="width:10px">&#8470;</th>
-                <th class="th02">ALP</th>
-                <th class="th03">Proyecto</th>
-                <th class="th04">Costo Mensual 4Walls</th>
-                <th class="th05">Costo Nexsus</th>
-                <th class="th06">Costo HP DC Care</th>
-                <th class="th08">Total Dólares</th>                                              
-                <th class="th07">Total Soles</th>
-            </tr>
-            </thead>
+        <thead>
+        <tr>
+            <th style="width:10px">&#8470;</th>
+            <th class="th02">ALP</th>
+            <th class="th03">Proyecto</th>
+            <th class="th04">Costo Mensual 4Walls</th>
+            <th class="th05">Costo Nexsus</th>
+            <th class="th06">Costo HP DC Care</th>
+            <th class="th08">Total Dólares</th>                                              
+            <th class="th07">Total Soles</th>
+        </tr>
+        </thead>
 
-             <tbody>
+            <tbody>
 
-            <!-- HACIENDO EL LLAMADO A LA LISTA DE COSTO MANTENIMIENTO DE LA BD -->
-            <?php
-                 $item = null;
+    <!-- HACIENDO EL LLAMADO A LA LISTA DE COSTO MANTENIMIENTO DE LA BD -->
+    <?php
+        $item = null;
 
-                 $valor = null;
-         
-                 $walls = ControladorWalls::ctrMostrarWalls($item, $valor);
-        
-                 foreach ($walls as $key => $value) {
+        $valor = null;
 
-                   echo '<tr>
-                            <td>'.($key+1).'</td>
-                            <td>'.$value["alp"].'</td>
-                            <td>'.$value["nom_proyecto"].'</td>';
+        $walls = ControladorWalls::ctrMostrarWalls($item, $valor);
 
-                            //TRAYENDO COSTO DE FOURWALLS 
-                            //La variable $item almacena el id de la llave foranea
-                            //La variable $valor almacena el nombre del campo de la llave foranea de la tabla actual, donde traerá
-                            //el registro extraido de la llave foránea  
-                            $item = "idfourwalls";
-                            $valor = $value["costo_fourwalls"];
-          
-                            $fourwalls = ControladorFourwalls::ctrMostrarFourwalls($item, $valor);
-                            if(is_array($fourwalls)){
-                            echo '<td><a href="costo-fourwalls" class="href-costos-mantenimiento"><b>$</b>&nbsp;&nbsp'.$fourwalls["costo"].'</a></td>';
-                            }
-                            //TRAYENDO COSTO DE NEXUS
-                            $item = "idnexus";
-                            $valor = $value["costo_nexus"];
-          
-                            $nexsus = ControladorNexsus::ctrMostrarNexsus($item, $valor);
-                            if(is_array($nexsus)){
-                             echo '<td><a href="costo-nexsus" class="href-costos-mantenimiento"><b>$</b>&nbsp;&nbsp'.$nexsus["costo"].'</a></td>';
-                            }
-                             //TRAYENDO COSTO DE HP
-                             $item = "idhp";
-                             $valor = $value["costo_hp"];
+        foreach ($walls as $key => $value) {
+
+        echo '<tr>
+                <td>'.($key+1).'</td>
+                <td>'.$value["alp"].'</td>
+                <td>'.$value["nom_proyecto"].'</td>';
+
+                //TRAYENDO COSTO DE FOURWALLS 
+                //La variable $item almacena el id de la llave foranea
+                //La variable $valor almacena el nombre del campo de la llave foranea de la tabla actual, donde traerá
+                //el registro extraido de la llave foránea  
+                $item = "idfourwalls";
+                $valor = $value["costo_fourwalls"];
+
+                $fourwalls = ControladorFourwalls::ctrMostrarFourwalls($item, $valor);
+                if(is_array($fourwalls)){
+                echo '<td><a href="costo-fourwalls" class="href-costos-mantenimiento"><b>$</b>&nbsp;&nbsp'.$fourwalls["costo"].'</a></td>';
+                }
+                //TRAYENDO COSTO DE NEXUS
+                $item = "idnexus";
+                $valor = $value["costo_nexus"];
+
+                $nexsus = ControladorNexsus::ctrMostrarNexsus($item, $valor);
+                if(is_array($nexsus)){
+                    echo '<td><a href="costo-nexsus" class="href-costos-mantenimiento"><b>$</b>&nbsp;&nbsp'.$nexsus["costo"].'</a></td>';
+                }
+                    //TRAYENDO COSTO DE HP
+                    $item = "idhp";
+                    $valor = $value["costo_hp"];
+
+                    $hp = ControladorHp::ctrMostrarHp($item, $valor);
+                    if(is_array($hp)){
+                    echo '<td><a href="costo-hp" class="href-costos-mantenimiento"><b>$</b>&nbsp;&nbsp'.$hp["costo"].'</a></td>';
+                }
+                    //IMPRIMIENDO COLUMNA TOTAL_SOL Y TOTAL_DOLAR
+                    if(is_array($fourwalls)){
+                        echo'
+                        
+                        <td><b>$</b>&nbsp;&nbsp;'.$fourwalls["costo"] + $nexsus["costo"] + $hp["costo"].'</td>
+                        
+                        <td><b>S/.</b>&nbsp;&nbsp;'.$value["total_sol"].'</td>
+                        </tr>';  
+                    }
+            } 
             
-                             $hp = ControladorHp::ctrMostrarHp($item, $valor);
-                             if(is_array($nexsus)){
-                             echo '<td><a href="costo-hp" class="href-costos-mantenimiento"><b>$</b>&nbsp;&nbsp'.$hp["costo"].'</a></td>';
-                            }
-                             //IMPRIMIENDO COLUMNA TOTAL_SOL Y TOTAL_DOLAR
-                                    echo'
-                                    <td><b>$</b>&nbsp;&nbsp;'.$value["total_dolar"].'</td>
-                                    <td><b>S/.</b>&nbsp;&nbsp;'.$value["total_sol"].'</td>
-                                    </tr>';  
-                    
-                } 
-                
-            ?>
+        ?>
 
 
-            </tbody>
+        </tbody>
 
-        </table>
-    </div>
+    </table>
+</div>
 
 </div>
 
 </section>
+
+</div>
+
+<!--=================================================================================================================================================
+                                               MODAL AGREGAR MANTENIMIENTO
+==================================================================================================================================================-->
+
+<div id="modalAgregarMantenimiento" class="modal fade" role="dialog">
+  
+  <div class="modal-dialog">
+
+    <div class="modal-content">
+
+      <form role="form" method="post">
+
+        <!--=====================================
+        CABEZA DEL MODAL
+        ======================================-->
+
+        <div class="modal-header" style="background:#3c8dbc; color:white">
+
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+
+          <h4 class="modal-title" id="center-titulo">REGISTRO - NUEVO MANTENIMIENTO</h4>
+
+        </div>
+
+        <!--=====================================
+        CUERPO DEL MODAL
+        ======================================-->
+
+        <div class="modal-body">
+
+          <div class="box-body">
+                          
+          <!-- ENTRADA PARA EL CÓDIGO DE DE LICENCIA -->
+            
+            <div class="form-group">
+              
+              <div class="input-group">
+              
+                <span class="input-group-addon" id="color-span"><i class="fa fa-code"></i></span> 
+
+                <input type="text" class="form-control input-lg" name="nuevoCodigo" placeholder="Ingresar el código" required>
+
+              </div>
+
+            </div>
+
+            <!-- ENTRADA PARA EL NOMBRE DE LICENCIA -->
+            
+            <div class="form-group">
+              
+              <div class="input-group">
+              
+                <span class="input-group-addon" id="color-span"><i class="fa fa-pencil-square-o"></i></span> 
+
+                <input type="text" class="form-control input-lg" name="nuevoLicencia" placeholder="Ingresar el nombre de la licencia" required>
+
+              </div>
+
+            </div>
+
+            <!-- ENTRADA PARA EL TIPO -->
+            
+            <div class="form-group">
+              
+              <div class="input-group">
+              
+                <span class="input-group-addon" id="color-span"><i class="fa fa-server"></i></span> 
+
+                <select class="form-control input-lg" name="nuevoTipo" required>
+                  
+                  <option value="">Selecionar sistema operativo</option>
+
+                  <option value="Office">Office</option>
+
+                  <option value="Sqlserver">Sqlserver</option>
+
+                  <option value="Remote">Remote</option>
+                  
+                  <option value="Sqlserver - 2">Sqlserver - 2</option>
+
+                </select>
+
+              </div>
+
+            </div>
+
+            <!-- ENTRADA PARA EL COSTO -->
+            
+            <div class="form-group">
+              
+              <div class="input-group">
+              
+                <span class="input-group-addon" id="color-span"><i class="fa fa-money"></i></span> 
+
+                <input type="text" class="form-control input-lg" name="nuevoCosto" placeholder="Ingresar el costo" required>
+
+              </div>
+
+            </div>
+
+  
+          </div>
+
+        </div>
+
+        <!--=====================================
+        PIE DEL MODAL
+        ======================================-->
+
+        <div class="modal-footer">
+
+          <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Salir</button>
+
+          <button type="submit" class="btn btn-primary">Registrar Licencia</button>
+
+        </div>
+
+      </form>
+
+      <?php
+
+        $crearLicencia = new ControladorLicencias();
+        $crearLicencia -> ctrCrearLicencia();
+
+      ?>
+
+    </div>
+
+  </div>
 
 </div>

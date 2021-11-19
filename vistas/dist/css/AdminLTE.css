@@ -5727,22 +5727,27 @@ table.text-center th {
 
 #fileId{
   position: relative;
-  top: -95px;
+  top: -50px;
   right: -9px;
 
  }
 
  #enviar{
   position: relative;
-  top: -85px;
+  top: -45px;
   right: -9px;
   background-color: #15b90f;
  }
 
+ #btn-mantenimiento{
+   position: relative;
+   right: -9px;
+ }
+
 .cbo-año{
   position: relative;
-  top: 0px;
-  left: 450px;
+  top: 2px;
+  left: 415px;
   width: 60px;
   font-size: 16px;
   font-family: 'Arial', sans-serif;
@@ -5769,8 +5774,8 @@ table.text-center th {
 }
 .cbo-mes{
   position: relative;
-  top: -33px;
-  left: 560px;
+  top: -34px;
+  left: 440px;
   width: 60px;
   font-size: 16px;
   font-family: 'Arial', sans-serif;
@@ -5800,7 +5805,7 @@ table.text-center th {
   box-sizing: border-box;
   float: auto;
   height: 33px;
-  top: -66px;
+  top: -67px;
   position: relative;
   left: 700px;
   width: 100px;
@@ -6053,7 +6058,7 @@ table.text-center th {
    #input-tipo-canbio{
     top: -18px;
     position: relative;
-    right: -450px;
+    right: -535px;
     width: 164px;
     height: 26px;
     border: 1px solid #000;
@@ -6062,7 +6067,7 @@ table.text-center th {
   
   #h6-tipo{
     position: relative;
-    right: -280px;
+    right: -365px;
     top: 12px;
     font-size: 15px;
   }
@@ -6070,7 +6075,7 @@ table.text-center th {
   #grabar-tipo{
     position: relative;
     top: -15px;
-    right: -450px;
+    right: -535px;
     background-color: #15b90f;
    }
 
