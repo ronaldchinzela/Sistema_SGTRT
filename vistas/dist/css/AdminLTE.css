@@ -5714,7 +5714,7 @@ table.text-center th {
 /* ESTILOS costo-mantenimiento */
 #table-id{
   position: relative;
-  top: -50px;
+  top: -35px;
 }
 
 .h1-titulo{
@@ -5818,7 +5818,24 @@ table.text-center th {
   border: 1px solid #000;
   background-color: #3C8DBC;
  }
- /* ESTILOS costo-fourwalls */
+
+.TC{
+  position: absolute;
+  top: 570px;
+  color: #830000;
+}
+
+/*MODAL*/
+#pie-mantenimiento{
+  position: relative;
+  top: -40px;
+}
+
+#dimensiones-form-mantenimiento{
+  position: relative;
+  height: 688px;
+}
+ /*######################################### ESTILOS costo-fourwalls #########################################*/
 
  #color-span{
    color: #0522a3;
@@ -5847,7 +5864,7 @@ table.text-center th {
     height: 550px;
   }
 
-  /* ESTILOS licencia-spla */
+  /*######################################### ESTILOS licencia-spla #########################################*/
 
  #ver-listado-1{
   position: relative;
@@ -5855,7 +5872,7 @@ table.text-center th {
   background-color: #15b90f;
  }
 
-   /* ESTILOS consumo-recursos */
+/*######################################### ESTILOS consumo-recursos #########################################*/
 
    #tabla-recursos{
     position: absolute;
@@ -5958,7 +5975,7 @@ table.text-center th {
   }
 
 
-  /* ESTILOS grafica */
+/*############################################### ESTILOS grafica ###########################################*/
   #h3-cpu{
     position: relative;
     left: 514px;
@@ -6087,3 +6104,4 @@ table.text-center th {
     background-color: #15b90f;
    }
    
+   /*############################################### ESTILOS footer ###########################################*/

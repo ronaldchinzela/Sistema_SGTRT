@@ -143,9 +143,15 @@
     </table>
 </div>
 
+
+</div>
+
+<div>
+    <h4 class="TC"><b><i>T.C: &nbsp;4.01</i></b></h4>
 </div>
 
 </section>
+
 
 </div>
 
@@ -159,7 +165,7 @@
 
     <div class="modal-content">
 
-      <form role="form" method="post">
+      <form role="form" method="post" id="dimensiones-form-mantenimiento">
 
         <!--=====================================
         CABEZA DEL MODAL
@@ -389,7 +395,7 @@
         PIE DEL MODAL
         ======================================-->
 
-        <div class="modal-footer">
+        <div class="modal-footer" id="pie-mantenimiento">
 
           <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Salir</button>
 
