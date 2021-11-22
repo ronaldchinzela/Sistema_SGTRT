@@ -93,8 +93,8 @@
 
         echo '<tr>
                 <td>'.($key+1).'</td>
-                <td>'.$value["alp"].'</td>
-                <td>'.$value["nom_proyecto"].'</td>';
+                <td>'.$value["alp"].'</td>';
+                
 
                 //TRAYENDO COSTO DE FOURWALLS 
                 //La variable $item almacena el id de la llave foranea
@@ -105,7 +105,8 @@
 
                 $fourwalls = ControladorFourwalls::ctrMostrarFourwalls($item, $valor);
                 if(is_array($fourwalls)){
-                echo '<td><a href="costo-fourwalls" class="href-costos-mantenimiento"><b>$</b>&nbsp;&nbsp'.$fourwalls["costo"].'</a></td>';
+                echo '<td>'.$fourwalls["nom_proyecto"].'</td>
+                      <td><a href="costo-fourwalls" class="href-costos-mantenimiento"><b>$</b>&nbsp;&nbsp'.$fourwalls["costo"].'</a></td>';
                 }
                 //TRAYENDO COSTO DE NEXUS
                 $item = "idnexus";
