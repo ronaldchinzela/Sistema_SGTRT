@@ -12,7 +12,7 @@ class ModeloWalls{
 
 		if($item != null){
 
-			$stmt = Conexion::conectar()->prepare("SELECT * FROM $tabla WHERE $item = :$item ORDER BY ALP DESC");
+			$stmt = Conexion::conectar()->prepare("SELECT * FROM $tabla WHERE $item = :$item ORDER BY ALP ASC");
 
 			$stmt -> bindParam(":".$item, $valor, PDO::PARAM_STR);
 

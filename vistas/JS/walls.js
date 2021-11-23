@@ -92,6 +92,73 @@ $(".tablas").on("click", ".verFourwalls", function(){
 
 })
 
+//LIMITAR INGRESAR SOLO NÚMEROS EL CÓDIGO ALP
+function solonumeroMantenimiento(e){
+ 
+    if(window.event){
+      keynum = e.keyCode;
+    }
+    else{
+      keynum = e.which;
+    }
+  
+    //números de los códigos ASCII
+    if((keynum > 47 && keynum < 58) || keynum == 8 || keynum == 13)
+    {
+      return true;
+    }
+    else
+    {
+      alert("Ingresar solo números");
+      return false;
+    }
+  
+  }
+  //LIMITAR INGRESAR SOLO NÚMEROS PUNTO DE RED
+function solonumeroPunto(e){
+ 
+    if(window.event){
+      keynum = e.keyCode;
+    }
+    else{
+      keynum = e.which;
+    }
+  
+    //números de los códigos ASCII
+    if((keynum > 47 && keynum < 58) || keynum == 8 || keynum == 13)
+    {
+      return true;
+    }
+    else
+    {
+      alert("Ingresar números enteros");
+      return false;
+    }
+  
+  }
+  //LIMITAR INGRESAR SOLO NÚMEROS EN COSTO
+function solonumeroCosto(e){
+ 
+    if(window.event){
+      keynum = e.keyCode;
+    }
+    else{
+      keynum = e.which;
+    }
+  
+    //
+    if((keynum > 47 && keynum < 58) || keynum == 8 || keynum == 13 || keynum == 46)
+    {
+      return true;
+    }
+    else
+    {
+      alert("Ingresar solo números");
+      return false;
+    }
+  
+  }
+
 
 
 

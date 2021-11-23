@@ -28,3 +28,27 @@ $(".btnEditarCambio").click(function(){
   	});
 
 })
+
+
+//LIMITAR INGRESAR SOLO NÚMEROS EN LA CAJA DEL FORMULARIO
+function solonumero(e){
+ 
+  if(window.event){
+    keynum = e.keyCode;
+  }
+  else{
+    keynum = e.which;
+  }
+
+  //
+  if((keynum > 47 && keynum < 58) || keynum == 8 || keynum == 13 || keynum == 46)
+  {
+    return true;
+  }
+  else
+  {
+    alert("Ingresar solo números");
+    return false;
+  }
+
+}

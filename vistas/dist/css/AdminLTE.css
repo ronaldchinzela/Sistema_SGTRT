@@ -5820,9 +5820,13 @@ table.text-center th {
  }
 
 .TC{
-  position: absolute;
-  top: 570px;
+  position: relative;
+  top: 15px;
   color: #830000;
+}
+
+#borde-tabla{
+  border-color: #000;
 }
 
 /*MODAL*/
@@ -5835,6 +5839,39 @@ table.text-center th {
   position: relative;
   height: 688px;
 }
+
+#alpCod{
+  border-color: #000;
+}
+#alpCod{
+  color: #0522a3;
+  font-size: 20px;
+}
+#equipoFourwalls{
+  background-color: #eeeeee;
+  border-color: #000;
+}
+#equipoFourwalls{
+  color: #0522a3;
+  font-size: 20px;
+}
+#equipoNexus{
+  background-color: #eeeeee;
+  border-color: #000;
+}
+#equipoNexus{
+  color: #0522a3;
+  font-size: 20px;
+}
+#equipoHp{
+  background-color: #eeeeee;
+  border-color: #000;
+}
+#equipoHp{
+  color: #0522a3;
+  font-size: 20px;
+}
+
  /*######################################### ESTILOS costo-fourwalls #########################################*/
 
  #color-span{
@@ -6060,6 +6097,9 @@ table.text-center th {
 
 
   /* ESTILOS inicio */
+  .btnEditarCambio:hover{
+    background-color: #3C8DBC;
+  }
 
   #cajas-formulario{
     position: relative;

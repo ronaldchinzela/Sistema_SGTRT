@@ -36,7 +36,7 @@
     </div>
 
     <div class="box-body">
-    <button class="btn btn-warning btnEditarCambio" idCambio="'.$value["idtipo"].'" data-toggle="modal" data-target="#modalEditarCambio"></i>&nbsp;&nbsp;<b>Editar el tipo de cambio actual</b></button>
+    <button class="btn btn-warning btnEditarCambio" idCambio="'.$value["idtipo"].'" data-toggle="modal" data-target="#modalEditarCambio"></i>&nbsp;&nbsp;<b>Editar el tipo de cambio</b></button>
     </div>';
 
     }
@@ -84,7 +84,7 @@
               <div class="input-group">
 
                   <span class="input-group-addon"><i class="fa fa-money"></i></span>
-                  <input type="text" class="form-control input-lg" id="editarCambio" name="editarCambio" placeholder="Ingresar el valor" required>
+                  <input type="text" class="form-control input-lg" id="editarCambio" name="editarCambio" onkeypress="return solonumero(event);" maxlength="5" onpaste="return false" placeholder="Ingresar el valor" required>
                   <input type="hidden" id="idCambio" name="idCambio">
               </div>
 

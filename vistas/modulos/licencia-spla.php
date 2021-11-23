@@ -104,9 +104,19 @@
 
     </div>
 
-<div>
-    <h4 class="TC"><b><i>T.C: &nbsp;4.01</i></b></h4>
-</div>
+    <div>
+<?php                    
+    $item = null;
+    $valor = null;
+
+    $cambios = ControladorCambios::ctrMostrarCambios($item, $valor);
+
+    foreach ($cambios as $key => $value){
+    echo'  
+    <h4 class="TC"><b><i>T.C: &nbsp;'.$value["valor"].'</i></b></h4>
+</div>';
+}
+?>
 
   </section>
 

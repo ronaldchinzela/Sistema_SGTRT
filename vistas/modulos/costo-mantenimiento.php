@@ -148,8 +148,18 @@
 </div>
 
 <div>
-    <h4 class="TC"><b><i>T.C: &nbsp;4.01</i></b></h4>
-</div>
+<?php                    
+    $item = null;
+    $valor = null;
+
+    $cambios = ControladorCambios::ctrMostrarCambios($item, $valor);
+
+    foreach ($cambios as $key => $value){
+    echo'  
+    <h4 class="TC"><b><i>T.C: &nbsp;'.$value["valor"].'</i></b></h4>
+</div>';
+}
+?>
 
 </section>
 
@@ -194,9 +204,9 @@
               
               <div class="input-group">
               
-                <span class="input-group-addon" id="color-span"><i class="fa fa-code"></i></span> 
+                <span class="input-group-addon" id="alpCod"><i class="fa fa-code"></i></span> 
 
-                <input type="text" class="form-control input-lg" name="nuevoCodigo" placeholder="Ingresar el código ALP" required>
+                <input type="text" class="form-control input-lg" id="alpCod" name="nuevoCodigo" onkeypress="return solonumeroMantenimiento(event);" maxlength="6" onpaste="return false" placeholder="Ingresar el código ALP" required>
 
               </div>
 
@@ -208,9 +218,9 @@
               
               <div class="input-group">
               
-                <span class="input-group-addon" id="color-span"><i class="fa fa-pencil-square-o"></i></span> 
+                <span class="input-group-addon" id="alpCod"><i class="fa fa-pencil-square-o"></i></span> 
 
-                <input type="text" class="form-control input-lg" name="nuevoMantenimiento" placeholder="Ingresar el nombre del proyecto" required>
+                <input type="text" class="form-control input-lg" id="alpCod" name="nuevoMantenimiento" placeholder="Ingresar el nombre del proyecto" required>
 
               </div>
 
@@ -223,9 +233,9 @@
               
               <div class="input-group">
               
-                <span class="input-group-addon" id="color-span"><i class="fa fa-pencil-square-o"></i></span> 
+                <span class="input-group-addon" id="equipoFourwalls"><i class="fa fa-pencil-square-o"></i></span> 
 
-                <input type="text" class="form-control input-lg" name="nuevoEquipoFourwalls" placeholder="Nombre equipo 4walls" required>
+                <input type="text" class="form-control input-lg" id="equipoFourwalls" name="nuevoEquipoFourwalls" placeholder="Nombre equipo 4walls" required>
 
               </div>
 
@@ -237,9 +247,9 @@
               
               <div class="input-group">
               
-                <span class="input-group-addon" id="color-span"><i class="fa fa-pencil-square-o"></i></span> 
+                <span class="input-group-addon" id="equipoFourwalls"><i class="fa fa-pencil-square-o"></i></span> 
 
-                <input type="text" class="form-control input-lg" name="nuevoSerieFourwalls" placeholder="Serie 4walls" required>
+                <input type="text" class="form-control input-lg" id="equipoFourwalls" name="nuevoSerieFourwalls" placeholder="Serie 4walls" required>
 
               </div>
 
@@ -251,9 +261,9 @@
               
               <div class="input-group">
               
-                <span class="input-group-addon" id="color-span"><i class="fa fa-pencil-square-o"></i></span> 
+                <span class="input-group-addon" id="equipoFourwalls"><i class="fa fa-money"></i></span> 
 
-                <input type="text" class="form-control input-lg" name="nuevoCostoFourwalls" placeholder="Costo 4walls" required>
+                <input type="text" class="form-control input-lg" id="equipoFourwalls" name="nuevoCostoFourwalls" onkeypress="return solonumeroCosto(event);" maxlength="11" onpaste="return false" placeholder="Costo 4walls" required>
 
               </div>
 
@@ -265,9 +275,9 @@
               
               <div class="input-group">
               
-                <span class="input-group-addon" id="color-span"><i class="fa fa-pencil-square-o"></i></span> 
+                <span class="input-group-addon" id="equipoFourwalls"><i class="fa fa-calendar"></i></span> 
 
-                <input type="text" class="form-control input-lg" name="nuevoFechaInicioFourwalls" placeholder="Fecha inicio 4walls" required>
+                <input type="text" class="form-control input-lg" id="equipoFourwalls" name="nuevoFechaInicioFourwalls" placeholder="Fecha inicio 4walls" required>
 
               </div>
 
@@ -279,9 +289,9 @@
               
               <div class="input-group">
               
-                <span class="input-group-addon" id="color-span"><i class="fa fa-pencil-square-o"></i></span> 
+                <span class="input-group-addon" id="equipoFourwalls"><i class="fa fa-calendar"></i></span> 
 
-                <input type="text" class="form-control input-lg" name="nuevoFechaFinFourwalls" placeholder="Fecha fin 4walls" required>
+                <input type="text" class="form-control input-lg" id="equipoFourwalls" name="nuevoFechaFinFourwalls" placeholder="Fecha fin 4walls" required>
 
               </div>
 
@@ -294,9 +304,9 @@
               
               <div class="input-group">
               
-                <span class="input-group-addon" id="color-span"><i class="fa fa-pencil-square-o"></i></span> 
+                <span class="input-group-addon" id="equipoNexus"><i class="fa fa-pencil-square-o"></i></span> 
 
-                <input type="text" class="form-control input-lg" name="nuevoPuntoRedNexsus" placeholder="Puntos de red nexsus" required>
+                <input type="text" class="form-control input-lg" id="equipoNexus" name="nuevoPuntoRedNexsus"  onkeypress="return solonumeroPunto(event);" maxlength="3" onpaste="return false"  placeholder="Puntos de red nexsus" required>
 
               </div>
 
@@ -308,9 +318,9 @@
               
               <div class="input-group">
               
-                <span class="input-group-addon" id="color-span"><i class="fa fa-pencil-square-o"></i></span> 
+                <span class="input-group-addon" id="equipoNexus"><i class="fa fa-money"></i></span> 
 
-                <input type="text" class="form-control input-lg" name="nuevoCostoNexsus" placeholder="Costo nexsus" required>
+                <input type="text" class="form-control input-lg" id="equipoNexus" name="nuevoCostoNexsus" onkeypress="return solonumeroCosto(event);" maxlength="11" onpaste="return false" placeholder="Costo nexsus" required>
 
               </div>
 
@@ -322,9 +332,9 @@
               
               <div class="input-group">
               
-                <span class="input-group-addon" id="color-span"><i class="fa fa-pencil-square-o"></i></span> 
+                <span class="input-group-addon" id="equipoHp"><i class="fa fa-pencil-square-o"></i></span> 
 
-                <input type="text" class="form-control input-lg" name="nuevoEquipoHp" placeholder="Nombre equipo hp" required>
+                <input type="text" class="form-control input-lg" id="equipoHp" name="nuevoEquipoHp" placeholder="Nombre equipo hp" required>
 
               </div>
 
@@ -336,9 +346,9 @@
               
               <div class="input-group">
               
-                <span class="input-group-addon" id="color-span"><i class="fa fa-pencil-square-o"></i></span> 
+                <span class="input-group-addon" id="equipoHp"><i class="fa fa-pencil-square-o"></i></span> 
 
-                <input type="text" class="form-control input-lg" name="nuevoSerieHp" placeholder="Número serie hp" required>
+                <input type="text" class="form-control input-lg" id="equipoHp" name="nuevoSerieHp" placeholder="Número serie hp" required>
 
               </div>
 
@@ -350,9 +360,9 @@
               
               <div class="input-group">
               
-                <span class="input-group-addon" id="color-span"><i class="fa fa-pencil-square-o"></i></span> 
+                <span class="input-group-addon" id="equipoHp"><i class="fa fa-money"></i></span> 
 
-                <input type="text" class="form-control input-lg" name="nuevoCostoHp" placeholder="Costo hp" required>
+                <input type="text" class="form-control input-lg" id="equipoHp" name="nuevoCostoHp" onkeypress="return solonumeroCosto(event);" maxlength="11" onpaste="return false" placeholder="Costo hp" required>
 
               </div>
 
@@ -364,9 +374,9 @@
               
               <div class="input-group">
               
-                <span class="input-group-addon" id="color-span"><i class="fa fa-pencil-square-o"></i></span> 
+                <span class="input-group-addon" id="equipoHp"><i class="fa fa-calendar"></i></span> 
 
-                <input type="text" class="form-control input-lg" name="nuevoFechaInicioHp" placeholder="Fecha inicio hp" required>
+                <input type="text" class="form-control input-lg" id="equipoHp" name="nuevoFechaInicioHp" placeholder="Fecha inicio hp" required>
 
               </div>
 
@@ -379,9 +389,9 @@
               
               <div class="input-group">
               
-                <span class="input-group-addon" id="color-span"><i class="fa fa-pencil-square-o"></i></span> 
+                <span class="input-group-addon" id="equipoHp"><i class="fa fa-calendar"></i></span> 
 
-                <input type="text" class="form-control input-lg" name="nuevoFechaFinHp" placeholder="Fecha fin hp" required>
+                <input type="text" class="form-control input-lg" id="equipoHp" name="nuevoFechaFinHp" placeholder="Fecha fin hp" required>
 
               </div>
 
