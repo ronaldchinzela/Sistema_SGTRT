@@ -26,31 +26,30 @@
 
     <b><i id="valor-cambio">&nbsp;'.$value["valor"].'</i></b> 
 
-    </h3>';
-    }
-?>
+    </h3>
+
     <div class="box-tools pull-right">
     <button type="button" class="btn btn-box-tool" data-widget="collapse" data-toggle="tooltip"
             title="Collapse">
         <i class="fa fa-minus"></i></button>
     </div>
-</div>
+    </div>
+
     <div class="box-body">
-    <button class="btn btn-warning btnEditarCambio" idCambio="'.$value["idcambio"].'" data-toggle="modal" data-target="#modalEditarCambio"></i>&nbsp;&nbsp;<b>Editar el tipo de cambio actual</b></button>
-    </div>
-    <!-- /.box-body -->
+    <button class="btn btn-warning btnEditarCambio" idCambio="'.$value["idtipo"].'" data-toggle="modal" data-target="#modalEditarCambio"></i>&nbsp;&nbsp;<b>Editar el tipo de cambio actual</b></button>
+    </div>';
 
-    <!-- /.box-footer-->
-    </div>
-    <!-- /.box -->
-   
-<div>
-
+    }
+?>
     </div>
 
-    </section>
+    <div>
 
-    </div>
+  </div>
+
+</section>
+
+</div>
 
 
 <!--======================================================================================================================================
@@ -85,7 +84,7 @@
               <div class="input-group">
 
                   <span class="input-group-addon"><i class="fa fa-money"></i></span>
-                  <input type="text" class="form-control input-lg" name="editarCambio" placeholder="Ingresar el valor" required>
+                  <input type="text" class="form-control input-lg" id="editarCambio" name="editarCambio" placeholder="Ingresar el valor" required>
                   <input type="hidden" id="idCambio" name="idCambio">
               </div>
 

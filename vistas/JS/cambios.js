@@ -1,11 +1,11 @@
 /*=============================================
                   EDITAR CAMBIO
 =============================================*/
-$(".tablas").on("click", ".btnEditarCambio", function(){
+$(".btnEditarCambio").click(function(){
 
 	var idCambio = $(this).attr("idCambio");
 
-	var datos = new FormData();
+	  var datos = new FormData();
     datos.append("idCambio", idCambio);
 
     $.ajax({
@@ -18,11 +18,13 @@ $(".tablas").on("click", ".btnEditarCambio", function(){
       processData: false,
       dataType:"json",
       success:function(respuesta){
+
+        console.log("respuesta", respuesta);
       
       	 $("#idCambio").val(respuesta["idtipo"]);
-	       $("#editarCambio").val(respuesta["valor"]);
+	       $("#editarCambio").val(respuesta["valor"]); 
 	  }
 
-  	})
+  	});
 
 })

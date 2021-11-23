@@ -30,12 +30,12 @@
             $stmt = null;
         }
 
-        //REGISTRANDO UN NUEVO T.CAMBIO
-        static public function mdlIngresarCambio($tabla, $datos){
+        //EDITANDO EL T.CAMBIO
+        static public function mdlEditarCambio($tabla, $datos){
 
-            $stmt = Conexion::conectar()->prepare("INSERT INTO $tabla(valor)
-                                                    VALUES (:valor)");
+            $stmt = Conexion::conectar()->prepare("UPDATE $tabla SET valor = :valor WHERE idtipo = :idtipo");
             
+            $stmt->bindParam(":idtipo", $datos["idtipo"], PDO::PARAM_INT);
             $stmt->bindParam(":valor", $datos["valor"], PDO::PARAM_STR);      
     
             if($stmt -> execute()){

@@ -1,7 +1,7 @@
 <?php
 
-require_once "../controladores/cambios.controlador.php";
-require_once "../modelos/cambios.modelo.php";
+require_once "../controladores/cambio.controlador.php";
+require_once "../modelos/cambio.modelo.php";
 
 class AjaxCambios{
 
@@ -12,6 +12,8 @@ class AjaxCambios{
 	public $idCambio;
 
 	public function ajaxEditarCambio(){
+
+		//RECIBIENDO LA RESPUESTA DEL MODELO Y CONTROLADOR
 
 		$item = "idtipo";
 		$valor = $this->idCambio;
@@ -31,8 +33,8 @@ class AjaxCambios{
 
 if(isset($_POST["idCambio"])){
 
-	$cambio = new AjaxCambios();
-	$cambio -> idCambio = $_POST["idCambio"];
-	$cambio -> ajaxEditarCambio();
+	$editar = new AjaxCambios();
+	$editar -> idCambio = $_POST["idCambio"];
+	$editar -> ajaxEditarCambio();
 
 }

@@ -73,9 +73,9 @@ class ModeloWalls{
 		$statement2->bindParam(":punto_red", $datos["punto_red"], PDO::PARAM_STR);
 		$statement2->bindParam(":costo", $datos["costo"], PDO::PARAM_STR);
 	   
-	   $statement2 -> execute();
-	   $statement2 = null;
-	   $stmt2 = null;
+	    $statement2 -> execute();
+	    $statement2 = null;
+	    $stmt2 = null;
 	
 	   }else if($tabla == "hp"){
 	   
