@@ -92,6 +92,44 @@ $(".tablas").on("click", ".verFourwalls", function(){
 
 })
 
+/*=============================================
+      REVISAR SI EL CÓDIGO ALP YA EXISTE
+=============================================*/
+
+$("#nuevoAlp").change(function(){
+
+	$(".alert").remove();
+
+	var mantenimiento = $(this).val();
+
+	var datos = new FormData();
+	datos.append("validarAlp", mantenimiento);
+
+	 $.ajax({
+	    url:"ajax/mantenimiento.ajax.php",
+	    method:"POST",
+	    data: datos,
+	    cache: false,
+	    contentType: false,
+	    processData: false,
+	    dataType: "json",
+	    success:function(respuesta){
+        console.log("respuesta", respuesta);
+	    	//EL AJAX TRAERÁ UN ARRAY CON LOS CÓDIGOS ALP EXISTENTES EN CASO SE INGRESE UNO EN USO
+        //SI EL ARRAY EXISTE DEVOLVERÁ ALERTA DE ERROR 
+	    	if(respuesta){
+
+	    		$("#nuevoAlp").parent().after('<div class="alert alert-warning">Este alp ya existe en la base de datos</div>');
+
+	    		$("#nuevoAlp").val("");
+
+	    	}
+
+	    }
+
+	})
+})
+
 //LIMITAR INGRESAR SOLO NÚMEROS EL CÓDIGO ALP
 function solonumeroMantenimiento(e){
  

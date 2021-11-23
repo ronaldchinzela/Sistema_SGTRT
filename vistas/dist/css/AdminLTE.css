@@ -5714,7 +5714,7 @@ table.text-center th {
 /* ESTILOS costo-mantenimiento */
 #table-id{
   position: relative;
-  top: -35px;
+  top: -5px;
 }
 
 .h1-titulo{
@@ -5727,14 +5727,14 @@ table.text-center th {
 
 #fileId{
   position: relative;
-  top: -50px;
+  top: -28px;
   right: -9px;
 
  }
 
  #enviar{
   position: relative;
-  top: -45px;
+  top: -15px;
   right: -9px;
   background-color: #15b90f;
  }
@@ -5742,11 +5742,12 @@ table.text-center th {
  #btn-mantenimiento{
    position: relative;
    right: -9px;
+   top: 10px;
  }
 
 .cbo-año{
   position: relative;
-  top: 2px;
+  top: 12px;
   left: 415px;
   width: 60px;
   font-size: 16px;
@@ -5774,8 +5775,8 @@ table.text-center th {
 }
 .cbo-mes{
   position: relative;
-  top: -34px;
-  left: 440px;
+  top: -24px;
+  left: 435px;
   width: 60px;
   font-size: 16px;
   font-family: 'Arial', sans-serif;
@@ -5804,8 +5805,8 @@ table.text-center th {
  .boton-listar-consultar{
   box-sizing: border-box;
   float: auto;
-  height: 33px;
-  top: -67px;
+  height: 32px;
+  top: -58px;
   position: relative;
   left: 700px;
   width: 100px;
@@ -5821,7 +5822,7 @@ table.text-center th {
 
 .TC{
   position: relative;
-  top: 15px;
+  top: -13px;
   color: #830000;
 }
 
@@ -5837,7 +5838,16 @@ table.text-center th {
 
 #dimensiones-form-mantenimiento{
   position: relative;
-  height: 688px;
+  height: 735px;
+}
+
+#nuevoAlp{
+  border-color: #000;
+}
+#nuevoAlpSpan{
+  color: #0522a3;
+  font-size: 20px;
+  border-color: #000;
 }
 
 #alpCod{
@@ -5902,7 +5912,6 @@ table.text-center th {
   }
 
   /*######################################### ESTILOS licencia-spla #########################################*/
-
  #ver-listado-1{
   position: relative;
   right: -10px;

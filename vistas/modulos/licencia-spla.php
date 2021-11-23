@@ -104,7 +104,7 @@
 
     </div>
 
-    <div>
+<div>
 <?php                    
     $item = null;
     $valor = null;
@@ -113,10 +113,10 @@
 
     foreach ($cambios as $key => $value){
     echo'  
-    <h4 class="TC"><b><i>T.C: &nbsp;'.$value["valor"].'</i></b></h4>
-</div>';
-}
-?>
+    <h4 class="TC"><b><i>T.C: &nbsp;'.$value["valor"].'</i></b></h4>';
+   }
+  ?>
+</div>
 
   </section>
 

@@ -204,9 +204,9 @@
               
               <div class="input-group">
               
-                <span class="input-group-addon" id="alpCod"><i class="fa fa-code"></i></span> 
+                <span class="input-group-addon" id="nuevoAlpSpan"><i class="fa fa-code"></i></span> 
 
-                <input type="text" class="form-control input-lg" id="alpCod" name="nuevoCodigo" onkeypress="return solonumeroMantenimiento(event);" maxlength="6" onpaste="return false" placeholder="Ingresar el código ALP" required>
+                <input type="text" class="form-control input-lg" id="nuevoAlp" name="nuevoCodigo" onkeypress="return solonumeroMantenimiento(event);" maxlength="6" onpaste="return false" placeholder="Ingresar el código ALP" required>
 
               </div>
 

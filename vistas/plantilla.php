@@ -134,12 +134,12 @@
 <!-- vinculando los archivos js de la carpeta vistas/js/ -->
 <script src="vistas/js/plantilla.js"></script>  
 <script src="vistas/js/usuarios.js"></script> 
-<script type="text/javascript" src="vistas/js/walls.js"></script>
 <script src="vistas/js/fourwalls.js"></script>
 <script src="vistas/js/nexsus.js"></script>
 <script src="vistas/js/hp.js"></script>  
 <script src="vistas/js/licencias.js"></script>
 <script type="text/javascript" src="vistas/js/mantenimiento.js"></script>
+<script type="text/javascript" src="vistas/js/walls.js"></script>
 <script src="vistas/js/cambios.js"></script>
 </body>
 </html>
