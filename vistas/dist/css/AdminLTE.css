@@ -6061,12 +6061,44 @@ table.text-center th {
 
   /* ESTILOS inicio */
 
+  #cajas-formulario{
+    position: relative;
+    top: -10px;
+  }
+
+  #pie{
+    position: relative;
+    top: -45px;
+  }
+
+  #dimensiones-form{
+    position: relative;
+    height: 195px;
+    width: 350px;
+  }
+
+  #modal-contenido{
+    width: 350px;
+  }
+
+  #modalEditarCambio{
+    right: -490px;
+    top: 40px;
+    position: absolute;
+  }
+
   #tabla-recursos{
     position: absolute;
     position: relative;
     top: -130px;
    }
-
+   
+   #TC{
+    color: #000;
+  }
+  #valor-cambio{
+    color:#830000;
+  }
    #box-consumo{
     position: relative;
     top: 0px;

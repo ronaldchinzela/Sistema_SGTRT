@@ -11,6 +11,7 @@ require_once "controladores/licencias.controlador.php";
 require_once "controladores/servidores_licencias.controlador.php";
 require_once "controladores/consumo_recursos.controlador.php";
 require_once "controladores/prueba.controlador.php";
+require_once "controladores/cambio.controlador.php";
 
 //LLAMANDO A LOS MODELOS DE LAS VISTAS
 require_once "modelos/usuarios.modelo.php";
@@ -22,6 +23,7 @@ require_once "modelos/licencias.modelo.php";
 require_once "modelos/servidores_licencias.modelo.php";
 require_once "modelos/consumo_recursos.modelo.php";
 require_once "modelos/prueba.modelo.php";
+require_once "modelos/cambio.modelo.php";
 
 $plantilla = new ControladorPlantilla();
 $plantilla -> ctrPlantilla();

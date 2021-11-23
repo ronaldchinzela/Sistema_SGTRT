@@ -30,7 +30,7 @@ class ControladorWalls{
 
 			   	$tabla = "fourwalls";
 
-			   	$datos = array("idfourwalls"=>$_POST["nuevoCodigo"],
+			   	$datos = array("alp"=>$_POST["nuevoCodigo"],
 					           "nom_proyecto"=>$_POST["nuevoMantenimiento"],
 							   "equipo" => $_POST["nuevoEquipoFourwalls"], 
 							   "serie"=>$_POST["nuevoSerieFourwalls"],
@@ -221,9 +221,9 @@ class ControladorWalls{
 
 			   	$datos = array("alp"=>$_POST["nuevoCodigo"],
 					           "nom_proyecto"=>$_POST["nuevoMantenimiento"],
-							   "costof" => $_POST["nuevoEquipoFourwalls"], 							  
-							   "coston" => $_POST["nuevoCostoFourwalls"], 					   
-					           "costoh"=>$_POST["nuevoCostoNexsus"]);
+							   "costoFourwalls" => $_POST["nuevoCostoFourwalls"], 							  
+							   "costoNexus" => $_POST["nuevoCostoNexsus"], 					   
+					           "costoHp"=>$_POST["nuevoCostoHp"]);
 
 			   	$respuesta = ModeloWalls::mdlIngresarMantenimiento($tabla, $datos);
 

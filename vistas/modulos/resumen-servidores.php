@@ -11,6 +11,7 @@ Resumen Servidores - Cloud
     <li><a href="#"><i class="fa fa-home"></i>Inicio</a></li>
     <li class="active">Home</li>
     </ol>
+    
 </section>
 
 <!-- Contenido temporal para la página de inicio -->

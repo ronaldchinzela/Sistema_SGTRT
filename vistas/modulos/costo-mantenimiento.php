@@ -6,6 +6,7 @@
         </script>';
         return; 
     }
+
 ?>
 
 <div class="content-wrapper">
