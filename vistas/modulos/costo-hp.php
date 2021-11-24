@@ -36,6 +36,7 @@
 
             <thead>
             <tr>
+                <th style="width:10px">&#8470;</th>
                 <th class="th003">Proyecto</th>
                 <th class="th004">Equipo</th>
                 <th class="th005">serie</th>
@@ -58,7 +59,7 @@
                   foreach($hp as $key => $value) {
                     
                     echo ' <tr>
-
+                    <td>'.($key+1).'</td>
                     <td>'.$value["nom_proyecto"].'</td>
                     <td>'.$value["equipo"].'</td>
                     <td>'.$value["serie"].'</td>
@@ -96,11 +97,10 @@
 
     foreach ($cambios as $key => $value){
     echo'  
-    <h4 class="TC"><b><i>T.C: &nbsp;'.$value["valor"].'</i></b></h4>
-</div>';
-}
+    <h4 class="TC"><b><i>T.C: &nbsp;'.$value["valor"].'</i></b></h4>';
+  }
 ?>
-
+</div>
 </section>
 
 </div>

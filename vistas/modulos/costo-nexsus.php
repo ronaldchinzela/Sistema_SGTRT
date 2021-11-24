@@ -36,6 +36,7 @@
 
             <thead>
             <tr>
+                <th style="width:10px">&#8470;</th>
                 <th class="th003">ALP</th>
                 <th class="th004">Proyecto</th>
                 <th class="th005">Punto de red</th>
@@ -56,7 +57,7 @@
                   foreach($nexsus as $key => $value) {
                     
                     echo ' <tr>
-
+                    <td>'.($key+1).'</td>
                     <td>'.$value["idnexus"].'</td>
                     <td>'.$value["nom_proyecto"].'</td>
                     <td>'.$value["punto_red"].'</td>
@@ -93,10 +94,10 @@
 
     foreach ($cambios as $key => $value){
     echo'  
-    <h4 class="TC"><b><i>T.C: &nbsp;'.$value["valor"].'</i></b></h4>
-</div>';
-}
+    <h4 class="TC"><b><i>T.C: &nbsp;'.$value["valor"].'</i></b></h4>';
+  }
 ?>
+</div>
 
 </section>
 

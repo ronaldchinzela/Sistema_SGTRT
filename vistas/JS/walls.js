@@ -119,7 +119,7 @@ $("#nuevoAlp").change(function(){
         //SI EL ARRAY EXISTE DEVOLVERÁ ALERTA DE ERROR 
 	    	if(respuesta){
 
-	    		$("#nuevoAlp").parent().after('<div class="alert alert-warning">Este alp ya existe en la base de datos</div>');
+	    		$("#nuevoAlp").parent().after('<div class="alert alert-danger">Este alp ya existe en la base de datos</div>');
 
 	    		$("#nuevoAlp").val("");
 
