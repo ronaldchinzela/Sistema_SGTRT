@@ -62,33 +62,31 @@ function validarCsv()
 
 }
 
-//
-$(".tablas").on("click", ".verFourwalls", function(){
+//TRAER REGISTROS POR ID
+$("#verFourwalls").change(function(){
 
-	//Almacenando en una variable el atributo idnexus de la BD 
-	var idNexsus = $(this).attr("idNexsus");
-
+	var idFourwalls = $(this).attr("idFourwalls");
+	
 	var datos = new FormData();
-	datos.append("idNexsus", idNexsus);
+	datos.append("idFourwalls", idFourwalls);
 
-	$.ajax({
-		url: "ajax/nexsus.ajax.php",
-		method: "POST",
-      	data: datos,
-      	cache: false,
-     	contentType: false,
-     	processData: false,
-     	dataType:"json",
-     	success: function(respuesta){
+    //EJECUTANDO AJAX PARA TRAER LOS DATOS DE LA BD
+    $.ajax({
 
-			$("#idNexsus").val(respuesta["idnexus"]);
-				$("#editarNombre").val(respuesta["nom_proyecto"]);
-				$("#editarPunto").val(respuesta["punto_red"]);
-				$("#editarCosto").val(respuesta["costo"]);
-     	}
+        url:"ajax/mantenimiento.ajax.php",
+        method: "POST",
+        data: datos,
+        cache: false,
+        contentType: false,
+        processData: false,
+        dataType: "json",
+        success: function(respuesta){
 
-	})
+          console.log("respuesta", respuesta);
 
+        }
+
+    });
 
 })
 

@@ -5857,6 +5857,16 @@ table.text-center th {
   color: #0522a3;
   font-size: 20px;
 }
+#nuevoCostoFourwalls{
+  background-color: #eeeeee;
+  border-color: #000;
+}
+#costoFourwallsSpan{
+  color: #0522a3;
+  font-size: 20px;
+  border-color: #000;
+  background-color: #eeeeee;
+}
 #equipoFourwalls{
   background-color: #eeeeee;
   border-color: #000;

@@ -106,7 +106,7 @@
 
                 $fourwalls = ControladorFourwalls::ctrMostrarFourwalls($item, $valor);
                 if(is_array($fourwalls)){
-                echo '<td>'.$fourwalls["nom_proyecto"].'</td>
+                echo '<td>'.$fourwalls["nom_proyecto"].'</td>  
                       <td><a href="costo-fourwalls" class="href-costos-mantenimiento"><b>$</b>&nbsp;&nbsp'.$fourwalls["costo"].'</a></td>';
                 }
                 //TRAYENDO COSTO DE NEXUS
@@ -129,11 +129,21 @@
                     if(is_array($fourwalls)){
                         echo'
                         
-                        <td><b>$</b>&nbsp;&nbsp;'.$fourwalls["costo"] + $nexsus["costo"] + $hp["costo"].'</td>
+                        <td><b>$</b>&nbsp;&nbsp;'.$fourwalls["costo"] + $nexsus["costo"] + $hp["costo"].'</td>';
                         
-                        <td><b>S/.</b>&nbsp;&nbsp;'.$value["total_sol"].'</td>
-                        </tr>';  
+                      }
+
+                    //TRAYENDO TC Y MULTIPLICANDO POR EL MISMO
+                    $item = null;
+                    $valor = null;
+                
+                    $cambios = ControladorCambios::ctrMostrarCambios($item, $valor);
+                
+                    foreach ($cambios as $key => $value){
+                    echo' <td><b>S/.</b>&nbsp;&nbsp;'.($fourwalls["costo"] + $nexsus["costo"] + $hp["costo"])*$value["valor"].'</td>';
                     }
+                      echo' </tr>';  
+                    
             } 
             
         ?>
@@ -261,10 +271,9 @@
               
               <div class="input-group">
               
-                <span class="input-group-addon" id="equipoFourwalls"><i class="fa fa-money"></i></span> 
+                <span class="input-group-addon" id="costoFourwallsSpan"><i class="fa fa-money"></i></span> 
 
-                <input type="text" class="form-control input-lg" id="equipoFourwalls" name="nuevoCostoFourwalls" onkeypress="return solonumeroCosto(event);" maxlength="11" onpaste="return false" placeholder="Costo 4walls" required>
-
+                <input type="text" class="form-control input-lg" id="nuevoCostoFourwalls" name="nuevoCostoFourwalls" onkeypress="return solonumeroCosto(event);" maxlength="11" onpaste="return false" placeholder="Costo 4walls" required>
               </div>
 
             </div>
