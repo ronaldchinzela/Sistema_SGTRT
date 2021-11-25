@@ -5721,7 +5721,13 @@ table.text-center th {
   text-align:center;
   font-weight: bold;
 }
-.href-costos-mantenimiento{
+.verFourwalls{
+  color: #000;
+}
+.verNexus{
+  color: #000;
+}
+.verHp{
   color: #000;
 }
 
@@ -5819,12 +5825,6 @@ table.text-center th {
   border: 1px solid #000;
   background-color: #3C8DBC;
  }
-
-.TC{
-  position: relative;
-  top: -13px;
-  color: #830000;
-}
 
 #borde-tabla{
   border-color: #000;
@@ -5930,16 +5930,16 @@ table.text-center th {
 
 /*######################################### ESTILOS consumo-recursos #########################################*/
 
-   #tabla-recursos{
-    position: absolute;
-    position: relative;
-    top: -130px;
-   }
+#idtableconsumo{
+  position: relative;
+  top: -120px;
+}
 
-   #box-consumo{
-    position: relative;
-    top: 0px;
-   }
+#box-consumo{
+ position: relative;
+ top: 0px;
+ height: 715px;
+}
 
    #input-buscar-cliente{
     top: -18px;
@@ -6145,12 +6145,6 @@ table.text-center th {
     top: 40px;
     position: absolute;
   }
-
-  #tabla-recursos{
-    position: absolute;
-    position: relative;
-    top: -130px;
-   }
    
    #TC{
     color: #000;
@@ -6158,10 +6152,6 @@ table.text-center th {
   #valor-cambio{
     color:#830000;
   }
-   #box-consumo{
-    position: relative;
-    top: 0px;
-   }
 
    #input-tipo-canbio{
     top: -18px;
@@ -6196,3 +6186,14 @@ table.text-center th {
    }
    
    /*############################################### ESTILOS footer ###########################################*/
+  .erikamonteza{
+    position: absolute;
+    left: 1288px;
+    top: 627px;
+  }
+  .TC{
+    position: absolute;
+    top: -12px;
+    font-size: 14px;
+    white-space: nowrap;
+  }

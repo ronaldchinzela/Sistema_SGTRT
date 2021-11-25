@@ -52,7 +52,7 @@ if(isset($_GET["fechaInicial"])){
 </a>
 
     <!-- TABLA DE CONSUMO RECURSOS TI -->
-    <div class="box-body" id="tabla-recursos">
+    <div class="box-body"  id="idtableconsumo">
         
         <table class="table table-bordered table-striped dt-responsive tablas">
 

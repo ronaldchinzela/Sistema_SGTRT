@@ -10,16 +10,18 @@ class ModeloFourwalls{
 
 	static public function mdlMostrarFourwalls($tabla, $item, $valor){
 
+		//SI LA CONSULTA ES DIFERENTE A NULL, ENCONTRARÁ REGISTROS Y DEVOLVERÁ UNA FILA
 		if($item != null){
 
-			$stmt = Conexion::conectar()->prepare("SELECT * FROM $tabla WHERE $item = :$item");
+			$stmt = Conexion::conectar()->prepare("SELECT * FROM $tabla WHERE idfourwalls = :idFourwalls");
 
-			$stmt -> bindParam(":".$item, $valor, PDO::PARAM_STR);
+			$stmt -> bindParam(":idFourwalls", $valor, PDO::PARAM_STR);
 
 			$stmt -> execute();
 
 			return $stmt -> fetch();
 
+		//SI VIENE
 		}else{
 
 			$stmt = Conexion::conectar()->prepare("SELECT * FROM $tabla");

@@ -107,7 +107,7 @@
                 $fourwalls = ControladorFourwalls::ctrMostrarFourwalls($item, $valor);
                 if(is_array($fourwalls)){
                 echo '<td>'.$fourwalls["nom_proyecto"].'</td>  
-                      <td><a href="costo-fourwalls" class="href-costos-mantenimiento"><b>$</b>&nbsp;&nbsp'.$fourwalls["costo"].'</a></td>';
+                      <td><a href="costo-fourwalls" class="verFourwalls"><b>$</b>&nbsp;&nbsp'.$fourwalls["costo"].'</a></td>';
                 }
                 //TRAYENDO COSTO DE NEXUS
                 $item = "idnexus";
@@ -115,7 +115,7 @@
 
                 $nexsus = ControladorNexsus::ctrMostrarNexsus($item, $valor);
                 if(is_array($nexsus)){
-                    echo '<td><a href="costo-nexsus" class="href-costos-mantenimiento"><b>$</b>&nbsp;&nbsp'.$nexsus["costo"].'</a></td>';
+                    echo '<td><a href="costo-nexsus" class="verNexus"><b>$</b>&nbsp;&nbsp'.$nexsus["costo"].'</a></td>';
                 }
                     //TRAYENDO COSTO DE HP
                     $item = "idhp";
@@ -123,7 +123,7 @@
 
                     $hp = ControladorHp::ctrMostrarHp($item, $valor);
                     if(is_array($hp)){
-                    echo '<td><a href="costo-hp" class="href-costos-mantenimiento"><b>$</b>&nbsp;&nbsp'.$hp["costo"].'</a></td>';
+                    echo '<td><a href="costo-hp" class="verHp"><b>$</b>&nbsp;&nbsp'.$hp["costo"].'</a></td>';
                 }
                     //IMPRIMIENDO COLUMNA TOTAL_SOL Y TOTAL_DOLAR
                     if(is_array($fourwalls)){
@@ -157,24 +157,16 @@
 
 </div>
 
-<div>
-<?php                    
-    $item = null;
-    $valor = null;
-
-    $cambios = ControladorCambios::ctrMostrarCambios($item, $valor);
-
-    foreach ($cambios as $key => $value){
-    echo'  
-    <h4 class="TC"><b><i>T.C: &nbsp;'.$value["valor"].'</i></b></h4>
-</div>';
-}
-?>
-
 </section>
 
 
 </div>
+
+<form id="formFourwalls">
+
+<input type="hidden" id="idFourwalls" name="idFourwalls">
+
+</form>
 
 <!--=================================================================================================================================================
                                                MODAL AGREGAR MANTENIMIENTO
@@ -273,7 +265,7 @@
               
                 <span class="input-group-addon" id="costoFourwallsSpan"><i class="fa fa-money"></i></span> 
 
-                <input type="text" class="form-control input-lg" id="nuevoCostoFourwalls" name="nuevoCostoFourwalls" onkeypress="return solonumeroCosto(event);" maxlength="11" onpaste="return false" placeholder="Costo 4walls" required>
+                <input type="text" class="form-control input-lg" id="nuevoCostoFourwalls" name="nuevoCostoFourwalls" onkeypress="return solonumeroCosto(event);" maxlength="11" onpaste="return false" placeholder="Costo 4walls" required>               
               </div>
 
             </div>

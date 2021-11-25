@@ -56,7 +56,7 @@ if(isset( $_POST["validarAlp"])){
     =============================================*/	
 	if(isset($_POST["idFourwalls"])){
 
-		$fourwalls = new AjaxFourwalls();
+		$fourwalls = new AjaxMantenimientos();
 		$fourwalls -> idFourwalls = $_POST["idFourwalls"];
 		$fourwalls -> ajaxVerFourwalls();
 	}

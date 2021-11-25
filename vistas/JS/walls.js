@@ -62,31 +62,51 @@ function validarCsv()
 
 }
 
-//TRAER REGISTROS POR ID
-$("#verFourwalls").change(function(){
+//TRAER REGISTROS FOURWALLS POR ID
+/*$(".verFourwalls").click(function(e){
+
+  e.preventDefault();
 
 	var idFourwalls = $(this).attr("idFourwalls");
 	
-	var datos = new FormData();
-	datos.append("idFourwalls", idFourwalls);
+  var datos = new FormData();
+  datos.append("idFourwalls", idFourwalls);
+	
+  $.ajax({
 
-    //EJECUTANDO AJAX PARA TRAER LOS DATOS DE LA BD
-    $.ajax({
+		url:"ajax/mantenimiento.ajax.php",
+		method: "POST",
+		data: datos,
+		cache: false,
+		contentType: false,
+		processData: false,
+		dataType: "json",
+		success: function(respuesta){
 
-        url:"ajax/mantenimiento.ajax.php",
-        method: "POST",
-        data: datos,
-        cache: false,
-        contentType: false,
-        processData: false,
-        dataType: "json",
-        success: function(respuesta){
+     console.log("respuesta", respuesta);
+			
+			$("#traerNombre").html(respuesta["nom_proyecto"]);
+			$("#traerEquipo").html(respuesta["equipo"]);
+			$("#traerSerie").html(respuesta["serie"]);
+			$("#traerCosto").html(respuesta["costo"]);
+			$("#traerFecIni").html(respuesta["fec_inicio"]);
+			$("#traerFecFin").html(respuesta["fec_fin"]);
 
-          console.log("respuesta", respuesta);
 
-        }
+		}
 
-    });
+	});
+
+})*/
+
+$(".verFourwalls").click(function(e){
+
+  e.preventDefault();
+  
+  let id = $(this).attr("idFourwalls");
+  document.getElementById("idFourwalls").value = id;
+
+  document.getElementById("#idFourwalls").submit();
 
 })
 
