@@ -5906,7 +5906,7 @@ table.text-center th {
  }
 
   /* ESTILOS usuarios */
-  #cajas-formulario{
+  #formulario-usuarios{
     position: relative;
     top: -40px;
   }
@@ -5916,7 +5916,7 @@ table.text-center th {
     top: -40px;
   }
 
-  #dimensiones-form{
+  #dimensiones-form-usuario{
     position: relative;
     height: 550px;
   }

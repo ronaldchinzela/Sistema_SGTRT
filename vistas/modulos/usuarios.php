@@ -113,7 +113,7 @@
 
     <div class="modal-content">
 
-    <form role="form" method="post" id="dimensiones-form">
+    <form role="form" method="post" id="dimensiones-form-usuario">
 
 <!--===========================================
         CABECERA DEL MODAL
@@ -128,7 +128,7 @@
 ============================================-->
     <div class="modal-body">
         
-        <div class="box-body" id="cajas-formulario">
+        <div class="box-body" id="formulario-usuarios">
 
         <!-- ENTRADA PARA EL USUARIO -->
 
@@ -249,7 +249,7 @@
 
     <div class="modal-content">
 
-    <form role="form" method="post" id="dimensiones-form">
+    <form role="form" method="post" id="dimensiones-form-usuario">
 
 <!--===========================================
         CABECERA DEL MODAL EDITAR USUARIO
@@ -264,7 +264,7 @@
 ============================================-->
     <div class="modal-body">
         
-        <div class="box-body" id="cajas-formulario">
+        <div class="box-body" id="formulario-usuarios">
 
          <!-- ENTRADA PARA EL USUARIO -->
 
