@@ -69,7 +69,7 @@
     }*/
 
     /*=============================================
-					EDITAR LICENCIA
+					EDITAR CAMBIO
 	=============================================*/
 
 	static public function ctrEditarCambio(){

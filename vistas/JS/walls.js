@@ -99,7 +99,7 @@ function validarCsv()
 
 })*/
 
-$(".verFourwalls").click(function(e){
+/*$(".verFourwalls").click(function(e){
 
   e.preventDefault();
   
@@ -108,7 +108,7 @@ $(".verFourwalls").click(function(e){
 
   document.getElementById("#idFourwalls").submit();
 
-})
+})*/
 
 /*=============================================
       REVISAR SI EL CÓDIGO ALP YA EXISTE

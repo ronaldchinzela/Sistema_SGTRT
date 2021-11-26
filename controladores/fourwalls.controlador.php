@@ -86,4 +86,79 @@ class ControladorFourwalls{
 		}
 
 	}
+
+	/*=============================================
+					BORRAR FOURWALLS
+	=============================================*/
+
+	static public function ctrBorrarFourwalls(){
+
+		//si viene un dato get llamado idFourwalls
+		if(isset($_GET["idFourwalls"])){
+
+			//se redireccionará a la tabla Fourwalls de la base de datos
+			$tabla ="mantenimientos";
+			$datos = $_GET["idFourwalls"];
+
+			//la respuesta será enviada al modelo
+			$respuesta = ModeloFourwalls::mdlBorrarFourwalls($tabla, $datos);
+
+			//si la respuesta es ok mostrará alert de borrado correctamente
+			if($respuesta == "ok"){
+
+				echo'<script>
+
+					swal({
+						  type: "success",
+						  title: "El fourwalls ha sido borrado correctamente",
+						  showConfirmButton: true,
+						  confirmButtonText: "Cerrar"
+						  }).then(function(result){
+									if (result.value) {
+
+									window.location = "costo-fourwalls";
+
+									}
+								})
+
+					</script>';
+			}
+		}
+
+		//ELIMINAR TABLA FOURWALLS
+		
+		//si viene un dato get llamado idFourwalls
+		if(isset($_GET["idFourwalls"])){
+
+			//se redireccionará a la tabla Fourwalls de la base de datos
+			$tabla ="fourwalls";
+			$datos = $_GET["idFourwalls"];
+
+			//la respuesta será enviada al modelo
+			$respuesta = ModeloFourwalls::mdlBorrarFourwalls($tabla, $datos);
+
+			//si la respuesta es ok mostrará alert de borrado correctamente
+			if($respuesta == "ok"){
+
+				echo'<script>
+
+					swal({
+						  type: "success",
+						  title: "El fourwalls ha sido borrado correctamente",
+						  showConfirmButton: true,
+						  confirmButtonText: "Cerrar"
+						  }).then(function(result){
+									if (result.value) {
+
+									window.location = "costo-fourwalls";
+
+									}
+								})
+
+					</script>';
+			}
+		}
+
+	}
+
 }

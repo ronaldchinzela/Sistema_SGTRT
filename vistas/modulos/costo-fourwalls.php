@@ -72,7 +72,8 @@
                       <div class="btn-group">
                           
                         <button class="btn btn-warning btnEditarFourwalls" idFourwalls="'.$value["idfourwalls"].'" data-toggle="modal" data-target="#modalEditarFourwalls"><i class="fa fa-pencil"></i></button>
-
+                        <button class="btn btn-danger btnEliminarFourwalls" idFourwalls="'.$value["idfourwalls"].'"><i class="fa fa-times"></i></button>
+                      
                       </div>  
 
                     </td>
@@ -112,7 +113,7 @@
 
           <button type="button" class="close" data-dismiss="modal">&times;</button>
 
-          <h4 class="modal-title" id="center-titulo">Editar 4-Wall</h4>
+          <h4 class="modal-title" id="center-titulo">Editar 4-Walls</h4>
 
         </div>
 
@@ -214,7 +215,7 @@
         </div>
 
         <!--=====================================
-        PIE DEL MODAL
+                      PIE DEL MODAL
         ======================================-->
 
         <div class="modal-footer">
@@ -239,4 +240,9 @@
   </div>
 
 </div>
+<?php
 
+  $borrarFourwalls = new ControladorFourwalls();
+  $borrarFourwalls -> ctrBorrarFourwalls();
+
+?>

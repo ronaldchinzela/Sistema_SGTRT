@@ -1,16 +1,16 @@
 <?php
 
-class ControladorWalls{
+class ControladorMantenimientos{
 
 	/*=============================================
 					MOSTRAR MANTENIMIENTOS
 	=============================================*/
 
-	static public function ctrMostrarWalls($item, $valor){
+	static public function ctrMostrarMantenimientos($item, $valor){
 
 		$tabla = "mantenimientos";
 
-		$respuesta = ModeloWalls::mdlMostrarWalls($tabla, $item, $valor);
+		$respuesta = ModeloMantenimientos::mdlMostrarMantenimientos($tabla, $item, $valor);
 
 		return $respuesta;
 

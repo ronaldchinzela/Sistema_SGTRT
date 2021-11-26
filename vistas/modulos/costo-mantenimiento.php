@@ -88,61 +88,78 @@
 
         $valor = null;
 
-        $walls = ControladorWalls::ctrMostrarWalls($item, $valor);
+        $mantenimientos = ControladorMantenimientos::ctrMostrarMantenimientos($item, $valor);
 
-        foreach ($walls as $key => $value) {
+        foreach ($mantenimientos as $key => $value) {
 
         echo '<tr>
-                <td>'.($key+1).'</td>
-                <td>'.$value["alp"].'</td>';
+                <td>'.($key+1).'</td>';
+
+                //TRAYENDO ALP Y NOMBRE DE PROYECTO
+                $item = "idproyecto";
+                $valor = $value["idproyecto"];
+
+                $proyectos = ControladorProyectos::ctrMostrarProyectos($item, $valor);
+                if(is_array($proyectos)){
                 
+                echo '<td>'.$proyectos["idproyecto"].'</td>
+                      <td>'.$proyectos["nombre"].'</td>';
+                               
+                }
 
                 //TRAYENDO COSTO DE FOURWALLS 
                 //La variable $item almacena el id de la llave foranea
-                //La variable $valor almacena el nombre del campo de la llave foranea de la tabla actual, donde traerá
+                //La variable $valor almacena el nombre del campo de la tabla actual, donde traerá
                 //el registro extraido de la llave foránea  
                 $item = "idfourwalls";
-                $valor = $value["costo_fourwalls"];
+                $valor = $value["idfourwalls"];
 
                 $fourwalls = ControladorFourwalls::ctrMostrarFourwalls($item, $valor);
                 if(is_array($fourwalls)){
-                echo '<td>'.$fourwalls["nom_proyecto"].'</td>  
-                      <td><a href="costo-fourwalls" class="verFourwalls"><b>$</b>&nbsp;&nbsp'.$fourwalls["costo"].'</a></td>';
+
+                echo '<td><a href="costo-fourwalls" class="verFourwalls"><b>$</b>&nbsp;&nbsp'.$fourwalls["costo"].'</a></td>';
+                
                 }
+
                 //TRAYENDO COSTO DE NEXUS
                 $item = "idnexus";
-                $valor = $value["costo_nexus"];
+                $valor = $value["idnexus"];
 
                 $nexsus = ControladorNexsus::ctrMostrarNexsus($item, $valor);
                 if(is_array($nexsus)){
+
                     echo '<td><a href="costo-nexsus" class="verNexus"><b>$</b>&nbsp;&nbsp'.$nexsus["costo"].'</a></td>';
                 }
-                    //TRAYENDO COSTO DE HP
-                    $item = "idhp";
-                    $valor = $value["costo_hp"];
 
-                    $hp = ControladorHp::ctrMostrarHp($item, $valor);
-                    if(is_array($hp)){
-                    echo '<td><a href="costo-hp" class="verHp"><b>$</b>&nbsp;&nbsp'.$hp["costo"].'</a></td>';
+                //TRAYENDO COSTO DE HP
+                $item = "idhp";
+                $valor = $value["idhp"];
+
+                $hp = ControladorHp::ctrMostrarHp($item, $valor);
+                if(is_array($hp)){
+
+                echo '<td><a href="costo-hp" class="verHp"><b>$</b>&nbsp;&nbsp'.$hp["costo"].'</a></td>';
+
+                 }
+
+                //IMPRIMIENDO COLUMNA TOTAL_SOL Y TOTAL_DOLAR
+                if(is_array($fourwalls)){
+                    echo '<td><b>$</b>&nbsp;&nbsp;'.$fourwalls["costo"] + $nexsus["costo"] + $hp["costo"].'</td>';
+                    
+                  }
+
+                //TRAYENDO TC Y MULTIPLICANDO POR EL MISMO
+                $item = null;
+                $valor = null;
+            
+                $cambios = ControladorCambios::ctrMostrarCambios($item, $valor);
+            
+                foreach ($cambios as $key => $value){
+
+                echo '<td><b>S/.</b>&nbsp;&nbsp;'.($fourwalls["costo"] + $nexsus["costo"] + $hp["costo"])*$value["valor"].'</td>';
+                
                 }
-                    //IMPRIMIENDO COLUMNA TOTAL_SOL Y TOTAL_DOLAR
-                    if(is_array($fourwalls)){
-                        echo'
-                        
-                        <td><b>$</b>&nbsp;&nbsp;'.$fourwalls["costo"] + $nexsus["costo"] + $hp["costo"].'</td>';
-                        
-                      }
-
-                    //TRAYENDO TC Y MULTIPLICANDO POR EL MISMO
-                    $item = null;
-                    $valor = null;
-                
-                    $cambios = ControladorCambios::ctrMostrarCambios($item, $valor);
-                
-                    foreach ($cambios as $key => $value){
-                    echo' <td><b>S/.</b>&nbsp;&nbsp;'.($fourwalls["costo"] + $nexsus["costo"] + $hp["costo"])*$value["valor"].'</td>';
-                    }
-                      echo' </tr>';  
+                  echo '</tr>';  
                     
             } 
             
@@ -419,7 +436,7 @@
 
       <?php
 
-        $crearMantenimiento = new ControladorWalls();
+        $crearMantenimiento = new ControladorMantenimientos();
         $crearMantenimiento -> ctrCrearMantenimiento();
 
       ?>

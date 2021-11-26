@@ -2,13 +2,13 @@
 
 require_once "conexion.php";
 
-class ModeloWalls{
+class ModeloMantenimientos{
 
 	/*=============================================
-				MOSTRAR 4WALLS
+				MOSTRAR MANTENIMIENTOS
 	=============================================*/
 
-	static public function mdlMostrarWalls($tabla, $item, $valor){
+	static public function mdlMostrarMantenimientos($tabla, $item, $valor){
 
 		if($item != null){
 

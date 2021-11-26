@@ -34,3 +34,34 @@ $(".tablas").on("click", ".btnEditarFourwalls", function(){
 
 
 })
+  /*=============================================
+                  ELIMINAR FOURWALLS
+  =============================================*/
+  //creando alerta suave sweetalert
+  $(".tablas").on("click", ".btnEliminarFourwalls", function(){
+
+    //capturando el id del fourwalls
+    var idFourwalls = $(this).attr("idFourwalls");
+
+    //mostrarndo la alerta para el id seleccionado
+    swal({
+      title: '¿Está seguro de borrar este fourwalls?',
+      text: "¡Si no lo está puede cancelar la acción!",
+      type: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      cancelButtonText: 'Cancelar',
+      confirmButtonText: 'Si, borrar Fourwalls!'
+    }).then(function(result){
+
+      //redireccionando a la página de fourwalls en caso la acción sea ejecutada
+      if(result.value){
+
+        window.location = "index.php?ruta=costo-fourwalls&idFourwalls="+idFourwalls;
+
+      }
+
+    })
+
+})
