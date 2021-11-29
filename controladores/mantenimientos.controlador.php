@@ -124,7 +124,7 @@ class ControladorMantenimientos{
 						  type: "success",
 						  title: "¡Los datos han sido registrados exitósamente!",
 						  showConfirmButton: true,
-						  confirmButtonText: "Cerrar"
+						  confirmButtonText: "Aceptar"
 						  }).then(function(result){
 									if (result.value) {
 
