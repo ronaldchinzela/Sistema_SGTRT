@@ -37,13 +37,13 @@
             <thead>
             <tr>
                 <th style="width:10px">&#8470;</th>
-                <th class="th003">Proyecto</th>
-                <th class="th004">Equipo</th>
+                <th>Proyecto</th>
+                <th>Equipo</th>
                 <th class="th005">serie</th>
-                <th class="th006">Costo de equipo</th>
-                <th class="th007">fecha de inicio de contrato</th>
-                <th class="th008">fecha de fin de contrato</th>
-                <th class="th008">Editar</th>                                                 
+                <th>Costo de equipo</th>
+                <th>fecha de inicio de contrato</th>
+                <th>fecha de fin de contrato</th>
+                <th style="width:139px">Acciones</th>                                                 
             </tr>
             </thead>
 
@@ -71,7 +71,8 @@
 
                       <div class="btn-group">
                           
-                        <button class="btn btn-warning btnEditarHp" idHp="'.$value["idhp"].'" data-toggle="modal" data-target="#modalEditarHp"><i class="fa fa-pencil"></i></button>
+                        <button class="btn btn-warning btnEditarHp" idHp="'.$value["idhp"].'" data-toggle="modal" data-target="#modalEditarHp"><i class="fa fa-pencil"></i>&nbsp;Editar</button>
+                        <button class="btn btn-danger btnEliminarHp" idHp="'.$value["idhp"].'"><i class="fa fa-times"></i>&nbsp;Eliminar</button>
 
                       </div>  
 
@@ -239,3 +240,9 @@
   </div>
 
 </div>
+<?php
+
+  $borrarHp = new ControladorHp();
+  $borrarHp -> ctrBorrarHp();
+
+?>

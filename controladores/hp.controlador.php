@@ -86,4 +86,51 @@ class ControladorHp{
 		}
 
 	}
+
+	/*=============================================
+					BORRAR HP
+	=============================================*/
+
+	static public function ctrBorrarHp(){
+
+		//ACTUALIZANDO REGISTRO ELIMINADO EN LA TABLA MANTENIMIENTO
+		if(isset($_GET["idHp"])){
+
+			$tabla ="mantenimientos";
+			$datos = array("idHp" => $_GET["idHp"]);
+
+			$respuesta = ModeloHp::mdlEditarMantenimientoHp($tabla, $datos);
+		}
+
+		//ELIMINAR REGISTRO DE LA TABLA HP
+		if(isset($_GET["idHp"])){
+
+			$tabla ="hp";
+			$datos = $_GET["idHp"];
+
+			$respuesta = ModeloHp::mdlBorrarHp($tabla, $datos);
+
+			if($respuesta == "ok"){
+
+				echo'<script>
+
+					swal({
+						  type: "success",
+						  title: "El registro ha sido borrado correctamente",
+						  showConfirmButton: true,
+						  confirmButtonText: "Aceptar"
+						  }).then(function(result){
+									if (result.value) {
+
+									window.location = "costo-hp";
+
+									}
+								})
+
+					</script>';
+			}
+		}
+
+	}
+
 }

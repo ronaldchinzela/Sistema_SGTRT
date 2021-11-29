@@ -70,4 +70,56 @@ class ModeloHp{
 
 	}
 
+	/*=============================================
+					BORRAR HP
+	=============================================*/
+
+	static public function mdlBorrarHp($tabla, $datos){
+
+		$stmt = Conexion::conectar()->prepare("DELETE FROM $tabla WHERE idhp = :idhp");
+
+		$stmt -> bindParam(":idhp", $datos, PDO::PARAM_INT);
+
+		if($stmt -> execute()){
+			
+			return "ok";
+		
+		}else{
+
+			return "error";	
+
+		}
+
+		$stmt -> close();
+
+		$stmt = null;
+
+	}
+
+	/*=============================================
+		EDITAR MANTENIMIENTO HP ELIMINADO
+	=============================================*/
+
+	static public function mdlEditarMantenimientoHp($tabla, $datos){
+
+		$stmt = Conexion::conectar()->prepare("UPDATE $tabla SET idhp = null 
+																 WHERE idhp = :idhp");
+
+		$stmt->bindParam(":idhp", $datos["idHp"], PDO::PARAM_INT);
+
+		if($stmt->execute()){
+
+			return "ok";
+
+		}else{
+
+			return "error";
+		
+		}
+
+		$stmt->close();
+		$stmt = null;
+
+	}
+
 }
