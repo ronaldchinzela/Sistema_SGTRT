@@ -119,7 +119,7 @@
 
                 $fourwalls = ControladorFourwalls::ctrMostrarFourwalls($item, $valor);
                 if(is_array($fourwalls)){
-                $costoFourwalls = $fourwalls["costo"];
+                   $costoFourwalls = $fourwalls["costo"];
 
                 echo '<td><a href="costo-fourwalls" class="verFourwalls"><b>$</b>&nbsp;&nbsp'.$fourwalls["costo"].'</a></td>';
                 
@@ -131,14 +131,23 @@
                }
 
                 //TRAYENDO COSTO DE NEXUS
+                $costoNexsus = 0;
+                if($value["idnexus"] != null){
+
                 $item = "idnexus";
                 $valor = $value["idnexus"];
 
                 $nexsus = ControladorNexsus::ctrMostrarNexsus($item, $valor);
                 if(is_array($nexsus)){
+                   $costoNexsus = $nexsus["costo"];
 
                     echo '<td><a href="costo-nexsus" class="verNexus"><b>$</b>&nbsp;&nbsp'.$nexsus["costo"].'</a></td>';
                 }
+                  } else {
+
+                echo '<td><small>NA</small></td>';
+
+               }
 
                 //TRAYENDO COSTO DE HP
                 $item = "idhp";
@@ -153,7 +162,7 @@
 
                 //IMPRIMIENDO COLUMNA TOTAL_SOL Y TOTAL_DOLAR
                 
-                    echo '<td><b>$</b>&nbsp;&nbsp;'.$costoFourwalls + $nexsus["costo"] + $hp["costo"].'</td>';
+                    echo '<td><b>$</b>&nbsp;&nbsp;'.$costoFourwalls + $costoNexsus + $hp["costo"].'</td>';
                     
                  
 
@@ -165,7 +174,7 @@
             
                 foreach ($cambios as $key => $value){
 
-                echo '<td><b>S/.</b>&nbsp;&nbsp;'.($costoFourwalls + $nexsus["costo"] + $hp["costo"])*$value["valor"].'</td>';
+                echo '<td><b>S/.</b>&nbsp;&nbsp;'.($costoFourwalls + $costoNexsus + $hp["costo"])*$value["valor"].'</td>';
                 
                 }
                   echo '</tr>';  
