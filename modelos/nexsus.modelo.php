@@ -65,5 +65,58 @@ class ModeloNexsus{
 
 	}
 
+	/*=============================================
+					BORRAR NEXSUS
+	=============================================*/
+
+	static public function mdlBorrarNexsus($tabla, $datos){
+
+		$stmt = Conexion::conectar()->prepare("DELETE FROM $tabla WHERE idnexus = :idnexus");
+
+		$stmt -> bindParam(":idnexus", $datos, PDO::PARAM_INT);
+
+		if($stmt -> execute()){
+			
+			return "ok";
+		
+		}else{
+
+			return "error";	
+
+		}
+
+		$stmt -> close();
+
+		$stmt = null;
+
+	}
+
+	/*=============================================
+		EDITAR MANTENIMIENTO NEXSUS ELIMINADO
+	=============================================*/
+
+	static public function mdlEditarMantenimientoNexsus($tabla, $datos){
+
+		$stmt = Conexion::conectar()->prepare("UPDATE $tabla SET idnexus = null 
+																 WHERE idnexus = :idnexus");
+
+		$stmt->bindParam(":idnexus", $datos["idNexsus"], PDO::PARAM_INT);
+
+		if($stmt->execute()){
+
+			return "ok";
+
+		}else{
+
+			return "error";
+		
+		}
+
+		$stmt->close();
+		$stmt = null;
+
+	}
+
+
 }
 

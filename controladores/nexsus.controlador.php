@@ -82,4 +82,53 @@ class ControladorNexsus{
 		}
 
 	}
+
+	/*=============================================
+					BORRAR NEXSUS
+	=============================================*/
+
+	static public function ctrBorrarNexsus(){
+
+		if(isset($_GET["idNexsus"])){
+
+			$tabla ="mantenimientos";
+			$datos = array("idNexsus" => $_GET["idNexsus"]);
+
+			$respuesta = ModeloNexsus::mdlEditarMantenimientoNexsus($tabla, $datos);
+		}
+
+		//ELIMINAR REGISTRO DE LA TABLA NEXSUS
+	
+		if(isset($_GET["idNexsus"])){
+
+			$tabla ="nexus";
+			$datos = $_GET["idNexsus"];
+
+			//la respuesta será enviada al modelo
+			$respuesta = ModeloNexsus::mdlBorrarNexsus($tabla, $datos);
+
+			//si la respuesta es ok mostrará alert de borrado correctamente
+			if($respuesta == "ok"){
+
+				echo'<script>
+
+					swal({
+						  type: "success",
+						  title: "El registro nexsus ha sido borrado correctamente",
+						  showConfirmButton: true,
+						  confirmButtonText: "Aceptar"
+						  }).then(function(result){
+									if (result.value) {
+
+									window.location = "costo-nexsus";
+
+									}
+								})
+
+					</script>';
+			}
+		}
+
+	}
+
 }

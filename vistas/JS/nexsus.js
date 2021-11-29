@@ -29,3 +29,35 @@ $(".tablas").on("click", ".btnEditarNexsus", function(){
 
 
 })
+  /*=============================================
+                  ELIMINAR NEXSUS
+  =============================================*/
+  //creando alerta suave sweetalert
+  $(".tablas").on("click", ".btnEliminarNexsus", function(){
+
+    //capturando el id del Nexsus
+    var idNexsus = $(this).attr("idNexsus");
+
+    //mostrarndo la alerta para el id seleccionado
+    swal({
+      title: '¿Está seguro de borrar este registro?',
+      text: "¡Si no lo está puede cancelar la acción!",
+      type: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      cancelButtonText: 'Cancelar',
+      confirmButtonText: 'Si, borrar Nexsus!'
+    }).then(function(result){
+
+      //redireccionando a la página de Nexsus en caso la acción sea ejecutada
+      if(result.value){
+
+        window.location = "index.php?ruta=costo-nexsus&idNexsus="+idNexsus;
+
+      }
+
+    })
+
+})
+

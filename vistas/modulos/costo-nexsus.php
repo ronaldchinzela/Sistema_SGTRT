@@ -37,10 +37,10 @@
             <thead>
             <tr>
                 <th style="width:10px">&#8470;</th>
-                <th>ALP</th>
-                <th>Proyecto</th>
-                <th>Punto de red</th>
-                <th>Costo</th>
+                <th style="width:90px">ALP</th>
+                <th>Nombre del proyecto</th>
+                <th style="width:125px">Punto de red</th>
+                <th style="width:135px">Costo</th>
                 <th style="width:145px">Acciones</th>                                            
             </tr>
             </thead>
@@ -196,3 +196,9 @@
   </div>
 
 </div>
+<?php
+
+  $borrarNexsus = new ControladorNexsus();
+  $borrarNexsus -> ctrBorrarNexsus();
+
+?>
