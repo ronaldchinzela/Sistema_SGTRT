@@ -42,7 +42,20 @@ class ModeloMantenimientos{
 
 	static public function mdlIngresarMantenimiento($tabla, $datos){
 
-		if($tabla == "fourwalls"){
+		if($tabla == "proyecto"){
+
+			$stmt1 = Conexion::conectar();
+			$statement = $stmt1 -> prepare("INSERT INTO $tabla(idproyecto, nombre) 
+												VALUES (:alp, :nom_proyecto)");
+		  
+			$statement->bindParam(":alp", $datos["alp"], PDO::PARAM_INT);
+			$statement->bindParam(":nom_proyecto", $datos["nom_proyecto"], PDO::PARAM_STR);
+		  
+			$statement -> execute();
+			$statement = null;
+			$stmt1 = null;
+
+		}else if($tabla == "fourwalls"){
 
 		$stmt1 = Conexion::conectar();
 		$statement = $stmt1 -> prepare("INSERT INTO $tabla(idfourwalls, nom_proyecto, equipo, serie, costo, 
@@ -100,7 +113,7 @@ class ModeloMantenimientos{
 	   }else if($tabla == "mantenimientos"){
 
 		$stmt4 = Conexion::conectar();
-		$statement4 = $stmt4 -> prepare("INSERT INTO $tabla(alp, nom_proyecto, costo_fourwalls, costo_nexus, costo_hp) 
+		$statement4 = $stmt4 -> prepare("INSERT INTO $tabla(id_mantenimiento, idproyecto, idfourwalls, idnexus, idhp) 
 						 VALUES (:alp, :nom_proyecto, :costoFourwalls, :costoNexus,:costoHp)");
 	  
 		$statement4->bindParam(":alp", $datos["alp"], PDO::PARAM_INT);

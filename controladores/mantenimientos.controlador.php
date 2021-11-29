@@ -22,6 +22,22 @@ class ControladorMantenimientos{
 
 	static public function ctrCrearMantenimiento(){
 
+		//TABLA PROYECTO
+		if(isset($_POST["nuevoCodigo"])){
+
+			if(preg_match('/^[0-9]+$/', $_POST["nuevoCodigo"]) &&
+			   preg_match('/[#\.\-a-zA-Z0-9ñÑáéíóúÁÉÍÓÚ ]+$/', $_POST["nuevoMantenimiento"])){
+
+			   	$tabla = "proyecto";
+
+			   	$datos = array("alp"=>$_POST["nuevoCodigo"],
+					           "nom_proyecto"=>$_POST["nuevoMantenimiento"]);
+
+			   	$respuesta = ModeloMantenimientos::mdlIngresarMantenimiento($tabla, $datos);
+
+		}
+	}
+
 		//TABLA FOURWALLS
 		if(isset($_POST["nuevoCodigo"])){
 
@@ -38,53 +54,10 @@ class ControladorMantenimientos{
 							   "fec_inicio"=>$_POST["nuevoFechaInicioFourwalls"],
 					           "fec_fin"=>$_POST["nuevoFechaFinFourwalls"]);
 
-			   	$respuesta = ModeloWalls::mdlIngresarMantenimiento($tabla, $datos);
-
-			   	if($respuesta == "ok"){
-
-					echo'<script>
-
-					swal({
-						  type: "success",
-						  title: "¡Los datos han sido registrados exitósamente!",
-						  showConfirmButton: true,
-						  confirmButtonText: "Cerrar"
-						  }).then(function(result){
-									if (result.value) {
-
-									window.location = "costo-mantenimiento";
-
-									}
-								})
-
-					</script>';
-
-				}
-
-			}else{
-
-				echo'<script>
-
-					swal({
-						  type: "error",
-						  title: "¡Los datos ingresados no pueden ir vacíos o llevar caracteres especiales!",
-						  showConfirmButton: true,
-						  confirmButtonText: "Cerrar"
-						  }).then(function(result){
-							if (result.value) {
-
-							window.location = "costo-mantenimiento";
-
-							}
-						})
-
-			  	</script>';
-
-
-
-			}
+			   	$respuesta = ModeloMantenimientos::mdlIngresarMantenimiento($tabla, $datos);
 
 		}
+	}
 
 		//TABLA NEXSUS
 		if(isset($_POST["nuevoCodigo"])){
@@ -99,49 +72,7 @@ class ControladorMantenimientos{
 							   "punto_red"=>$_POST["nuevoPuntoRedNexsus"],
 					           "costo"=>$_POST["nuevoCostoNexsus"]);
 
-			   	$respuesta = ModeloWalls::mdlIngresarMantenimiento($tabla, $datos);
-
-			   	if($respuesta == "ok"){
-
-					echo'<script>
-
-					swal({
-						  type: "success",
-						  title: "¡Los datos han sido registrados exitósamente!",
-						  showConfirmButton: true,
-						  confirmButtonText: "Cerrar"
-						  }).then(function(result){
-									if (result.value) {
-
-									window.location = "costo-mantenimiento";
-
-									}
-								})
-
-					</script>';
-
-				}
-
-			}else{
-
-				echo'<script>
-
-					swal({
-						  type: "error",
-						  title: "¡Los datos ingresados no pueden ir vacíos o llevar caracteres especiales!",
-						  showConfirmButton: true,
-						  confirmButtonText: "Cerrar"
-						  }).then(function(result){
-							if (result.value) {
-
-							window.location = "costo-mantenimiento";
-
-							}
-						})
-
-			  	</script>';
-
-
+			   	$respuesta = ModeloMantenimientos::mdlIngresarMantenimiento($tabla, $datos);
 
 			}
 
@@ -163,49 +94,7 @@ class ControladorMantenimientos{
 							   "fec_inicio" => $_POST["nuevoFechaInicioHp"],       
 					           "fec_fin"=>$_POST["nuevoFechaFinHp"]);
 
-			   	$respuesta = ModeloWalls::mdlIngresarMantenimiento($tabla, $datos);
-
-			   	if($respuesta == "ok"){
-
-					echo'<script>
-
-					swal({
-						  type: "success",
-						  title: "¡Los datos han sido registrados exitósamente!",
-						  showConfirmButton: true,
-						  confirmButtonText: "Cerrar"
-						  }).then(function(result){
-									if (result.value) {
-
-									window.location = "costo-mantenimiento";
-
-									}
-								})
-
-					</script>';
-
-				}
-
-			}else{
-
-				echo'<script>
-
-					swal({
-						  type: "error",
-						  title: "¡Los datos ingresados no pueden ir vacíos o llevar caracteres especiales!",
-						  showConfirmButton: true,
-						  confirmButtonText: "Cerrar"
-						  }).then(function(result){
-							if (result.value) {
-
-							window.location = "costo-mantenimiento";
-
-							}
-						})
-
-			  	</script>';
-
-
+			   	$respuesta = ModeloMantenimientos::mdlIngresarMantenimiento($tabla, $datos);
 
 			}
 
@@ -225,7 +114,7 @@ class ControladorMantenimientos{
 							   "costoNexus" => $_POST["nuevoCostoNexsus"], 					   
 					           "costoHp"=>$_POST["nuevoCostoHp"]);
 
-			   	$respuesta = ModeloWalls::mdlIngresarMantenimiento($tabla, $datos);
+			   	$respuesta = ModeloMantenimientos::mdlIngresarMantenimiento($tabla, $datos);
 
 			   	if($respuesta == "ok"){
 
