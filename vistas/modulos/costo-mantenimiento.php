@@ -70,13 +70,13 @@
         <thead>
         <tr>
             <th style="width:10px">&#8470;</th>
-            <th class="th02">ALP</th>
-            <th class="th03">Proyecto</th>
-            <th class="th04">Costo Mensual 4Walls</th>
-            <th class="th05">Costo Nexsus</th>
-            <th class="th06">Costo HP DC Care</th>
-            <th class="th08">Total Dólares</th>                                              
-            <th class="th07">Total Soles</th>
+            <th>ALP</th>
+            <th style="width:160px">Proyecto</th>
+            <th style="width:135px">Costo Mensual 4Walls</th>
+            <th>Costo Nexsus</th>
+            <th>Costo HP DC Care</th>
+            <th>Total Dólares</th>                                              
+            <th>Total Soles</th>
         </tr>
         </thead>
 
@@ -150,21 +150,31 @@
                }
 
                 //TRAYENDO COSTO DE HP
+                $costoHp = 0;
+                if($value["idhp"] != null){
+
                 $item = "idhp";
                 $valor = $value["idhp"];
 
                 $hp = ControladorHp::ctrMostrarHp($item, $valor);
                 if(is_array($hp)){
+                  $costoHp = $hp["costo"];
 
                 echo '<td><a href="costo-hp" class="verHp"><b>$</b>&nbsp;&nbsp'.$hp["costo"].'</a></td>';
 
+                }
+                  } else {
+
+                  echo '<td><small>NA</small></td>';
+  
                  }
 
-                //IMPRIMIENDO COLUMNA TOTAL_SOL Y TOTAL_DOLAR
+                //IMPRIMIENDO COLUMNA TOTAL_DOLAR
                 
-                    echo '<td><b>$</b>&nbsp;&nbsp;'.$costoFourwalls + $costoNexsus + $hp["costo"].'</td>';
+                    echo '<td><b>$</b>&nbsp;&nbsp;'.$costoFourwalls + $costoNexsus + $costoHp.'</td>';
                     
                  
+                //IMPRIMIENDO COLUMNA TOTAL_SOL
 
                 //TRAYENDO TC Y MULTIPLICANDO POR EL MISMO
                 $item = null;
@@ -174,7 +184,7 @@
             
                 foreach ($cambios as $key => $value){
 
-                echo '<td><b>S/.</b>&nbsp;&nbsp;'.($costoFourwalls + $costoNexsus + $hp["costo"])*$value["valor"].'</td>';
+                echo '<td><b>S/.</b>&nbsp;&nbsp;'.($costoFourwalls + $costoNexsus + $costoHp)*$value["valor"].'</td>';
                 
                 }
                   echo '</tr>';  
