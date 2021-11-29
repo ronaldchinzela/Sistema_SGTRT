@@ -267,7 +267,7 @@ static public function ctrBorrarUsuario(){
                   type: "success",
                   title: "El usuario ha sido borrado correctamente",
                   showConfirmButton: true,
-                  confirmButtonText: "Cerrar"
+                  confirmButtonText: "Aceptar"
                   }).then(function(result){
                             if (result.value) {
 

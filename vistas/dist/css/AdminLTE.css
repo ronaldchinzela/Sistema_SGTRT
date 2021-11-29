@@ -6187,9 +6187,9 @@ table.text-center th {
    
    /*############################################### ESTILOS footer ###########################################*/
   .erikamonteza{
-    position: absolute;
-    left: 1288px;
-    top: 627px;
+    position: relative;
+    left: 1043px;
+    top: -15px;
   }
   #TC{
     position: relative;

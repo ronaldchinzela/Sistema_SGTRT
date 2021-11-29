@@ -5,7 +5,7 @@
 
     <div class="erikamonteza">
     <?php    
-    if( $_GET["ruta"] == "licencia-spla" ||  $_GET["ruta"] == "costo-mantenimiento" || $_GET["ruta"] == "costo-nexsus" || $_GET["ruta"] == "costo-hp" || $_GET["ruta"] == "costo-fourwalls" || $_GET["ruta"] == "sow"){
+    if( $_GET["ruta"] == "licencia-spla" ||  $_GET["ruta"] == "costo-mantenimiento" || $_GET["ruta"] == "costo-nexsus" || $_GET["ruta"] == "costo-hp" || $_GET["ruta"] == "costo-fourwalls" || $_GET["ruta"] == "sow" || $_GET["ruta"] == "servidores-spla"){
     
     $item = null;
     $valor = null;
