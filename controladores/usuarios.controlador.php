@@ -94,7 +94,7 @@
                                             title: "¡El usuario ha sido registrado correctamente!", 
                                             text: "'.$datos['usuario'].'",                                      
                                             showConfirmButton: true,
-                                            confirmButtonText: "Cerrar",
+                                            confirmButtonText: "Aceptar",
                                             closeOnConfirm: false
 
                                             }).then((result)=>{
@@ -207,7 +207,7 @@ static public function ctrEditarUsuario(){
                             type: "success",
                             title: "El usuario ha sido editado correctamente",
                             showConfirmButton: true,
-                            confirmButtonText: "Cerrar"
+                            confirmButtonText: "Aceptar"
                             }).then(function(result){
                                         if (result.value) {
 

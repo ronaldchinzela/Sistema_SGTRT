@@ -46,7 +46,7 @@ class ControladorNexsus{
 							  type: "success",
 							  title: "El registro se actualizó correctamente",
 							  showConfirmButton: true,
-							  confirmButtonText: "Cerrar"
+							  confirmButtonText: "Aceptar"
 							  }).then(function(result){
 										if (result.value) {
 

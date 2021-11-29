@@ -126,7 +126,7 @@ class ControladorFourwalls{
 						  type: "success",
 						  title: "El fourwalls ha sido borrado correctamente",
 						  showConfirmButton: true,
-						  confirmButtonText: "Cerrar"
+						  confirmButtonText: "Aceptar"
 						  }).then(function(result){
 									if (result.value) {
 

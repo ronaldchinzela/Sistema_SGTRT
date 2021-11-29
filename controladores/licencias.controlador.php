@@ -115,7 +115,7 @@ class ControladorLicencias{
 						  type: "success",
 						  title: "La licencia ha sido actualizada correctamente",
 						  showConfirmButton: true,
-						  confirmButtonText: "Cerrar"
+						  confirmButtonText: "Aceptar"
 						  }).then(function(result){
 									if (result.value) {
 
@@ -180,7 +180,7 @@ class ControladorLicencias{
 						  type: "success",
 						  title: "La licencia ha sido borrada correctamente",
 						  showConfirmButton: true,
-						  confirmButtonText: "Cerrar"
+						  confirmButtonText: "Aceptar"
 						  }).then(function(result){
 									if (result.value) {
 

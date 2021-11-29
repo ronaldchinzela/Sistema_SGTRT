@@ -45,7 +45,7 @@ $(".tablas").on("click", ".btnEditarFourwalls", function(){
 
     //mostrarndo la alerta para el id seleccionado
     swal({
-      title: '¿Está seguro de borrar este fourwalls?',
+      title: '¿Está seguro de borrar este registro?',
       text: "¡Si no lo está puede cancelar la acción!",
       type: 'warning',
       showCancelButton: true,

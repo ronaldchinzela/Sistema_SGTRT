@@ -39,10 +39,11 @@
 
             <thead>
                 <tr>
+                    <th style="width:10px">&#8470;</th>
                     <th>Usuario</th>
                     <th>Rol</th>
                     <th>estado</th>
-                    <th>Acciones</th>
+                    <th style="width:155px">Acciones</th>
                 </tr>
             </thead>
 
@@ -60,7 +61,7 @@
                         //DENTRO DE LA VARIABLE $value INGRESAMOS EL NOMBRE DEL CAMPO DE LA TABLA DE LA BD QUE VAMOS A TRAER
                         echo'
                             <tr>
-                            
+                                <td>'.($key+1).'</td>
                                 <td>'.$value["usuario"].'</td>';
 
                                 echo '<td>'.$value["rol"].'</td>';

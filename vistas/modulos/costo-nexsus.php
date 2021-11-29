@@ -37,11 +37,11 @@
             <thead>
             <tr>
                 <th style="width:10px">&#8470;</th>
-                <th class="th003">ALP</th>
-                <th class="th004">Proyecto</th>
-                <th class="th005">Punto de red</th>
-                <th class="th006">Costo</th>
-                <th class="th008">Editar</th>                                            
+                <th>ALP</th>
+                <th>Proyecto</th>
+                <th>Punto de red</th>
+                <th>Costo</th>
+                <th style="width:145px">Acciones</th>                                            
             </tr>
             </thead>
 
@@ -67,8 +67,9 @@
 
                       <div class="btn-group">
                           
-                        <button class="btn btn-warning btnEditarNexsus" idNexsus="'.$value["idnexus"].'" data-toggle="modal" data-target="#modalEditarNexsus"><i class="fa fa-pencil"></i></button>
-
+                        <button class="btn btn-warning btnEditarNexsus" idNexsus="'.$value["idnexus"].'" data-toggle="modal" data-target="#modalEditarNexsus"><i class="fa fa-pencil"></i>&nbsp;&nbsp;Editar</button>
+                        
+                        <button class="btn btn-danger btnEliminarNexsus" idNexsus="'.$value["idnexus"].'"><i class="fa fa-times"></i>&nbsp;&nbsp;Eliminar</button>
                       </div>  
 
                     </td>

@@ -45,12 +45,12 @@
         <thead>
          
          <tr>
-           
+            <th style="width:10px">&#8470;</th>
             <th>Código licencia</th>
             <th>Nombre de licencia</th>
             <th>Tipo SO</th>
             <th>Costo</th>
-            <th>Acciones</th>
+            <th style="width:150px">Acciones</th>
 
          </tr> 
 
@@ -69,7 +69,7 @@
               
 
               echo '<tr>
-
+                      <td>'.($key+1).'</td>
                       <td>'.$value["cod_licencia"].'</td>
 
                       <td>'.$value["nom_licencia"].'</td>';
