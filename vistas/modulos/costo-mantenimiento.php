@@ -184,7 +184,7 @@
             
                 foreach ($cambios as $key => $value){
 
-                echo '<td><b>S/.</b>&nbsp;&nbsp;'.($costoFourwalls + $costoNexsus + $costoHp)*$value["valor"].'</td>';
+                echo '<td><b>S/.</b>&nbsp;&nbsp;'.number_format(($costoFourwalls + $costoNexsus + $costoHp)*$value["valor"],2).'</td>';
                 
                 }
                   echo '</tr>';  

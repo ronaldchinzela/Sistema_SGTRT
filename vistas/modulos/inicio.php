@@ -24,7 +24,7 @@
             echo'
     <h3 class="box-title" id="TC-INICIO">Tipo de cambio actual:
 
-    <b><i id="valor-cambio">&nbsp;'.$value["valor"].'</i></b> 
+    <b><i id="valor-cambio">&nbsp;'.number_format($value["valor"],2).'</i></b> 
 
     </h3>
 
@@ -84,7 +84,7 @@
               <div class="input-group">
 
                   <span class="input-group-addon"><i class="fa fa-money"></i></span>
-                  <input type="text" class="form-control input-lg" id="editarCambio" name="editarCambio" onkeypress="return solonumero(event);" maxlength="5" onpaste="return false" placeholder="Ingresar el valor" required>
+                  <input type="text" class="form-control input-lg" id="editarCambio" name="editarCambio" onkeypress="return solonumero(event);" maxlength="4" onpaste="return false" placeholder="Ingresar el valor" required>
                   <input type="hidden" id="idCambio" name="idCambio">
               </div>
 

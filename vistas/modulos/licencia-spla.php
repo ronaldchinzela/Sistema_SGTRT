@@ -50,7 +50,7 @@
             <th>Nombre de licencia</th>
             <th>Tipo SO</th>
             <th>Costo</th>
-            <th style="width:150px">Acciones</th>
+            <th style="width:152px">Acciones</th>
 
          </tr> 
 

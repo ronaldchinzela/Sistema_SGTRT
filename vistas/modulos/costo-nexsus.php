@@ -41,7 +41,7 @@
                 <th>Nombre del proyecto</th>
                 <th style="width:125px">Punto de red</th>
                 <th style="width:135px">Costo</th>
-                <th style="width:145px">Acciones</th>                                            
+                <th style="width:148px">Acciones</th>                                            
             </tr>
             </thead>
 

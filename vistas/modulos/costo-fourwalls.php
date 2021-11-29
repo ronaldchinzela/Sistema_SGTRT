@@ -42,7 +42,7 @@
                 <th>Costo de equipo</th>
                 <th>fecha de inicio de contrato</th>
                 <th>fecha de fin de contrato</th> 
-                <th style="width:139px">Acciones</th>                                              
+                <th style="width:142px">Acciones</th>                                              
             </tr>
             </thead>
 
