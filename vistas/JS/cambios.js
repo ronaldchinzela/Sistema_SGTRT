@@ -18,8 +18,6 @@ $(".btnEditarCambio").click(function(){
       processData: false,
       dataType:"json",
       success:function(respuesta){
-
-        console.log("respuesta", respuesta);
       
       	 $("#idCambio").val(respuesta["idtipo"]);
 	       $("#editarCambio").val(respuesta["valor"]); 
