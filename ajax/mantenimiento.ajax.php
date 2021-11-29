@@ -13,7 +13,7 @@ class AjaxMantenimientos{
 
 	public function ajaxValidarAlp(){
 
-		$item = "alp";
+		$item = "id_mantenimiento";
 		$valor = $this->validarAlp;
 
 		$respuesta = ControladorMantenimientos::ctrMostrarMantenimientos($item, $valor);

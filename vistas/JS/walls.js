@@ -116,7 +116,7 @@ function validarCsv()
 
 $("#nuevoAlp").change(function(){
 
-	$(".alert").remove();
+//	$(".alert").remove();
 
 	var mantenimiento = $(this).val();
 
@@ -135,13 +135,13 @@ $("#nuevoAlp").change(function(){
         console.log("respuesta", respuesta);
 	    	//EL AJAX TRAERÁ UN ARRAY CON LOS CÓDIGOS ALP EXISTENTES EN CASO SE INGRESE UNO EN USO
         //SI EL ARRAY EXISTE DEVOLVERÁ ALERTA DE ERROR 
-	    	if(respuesta){
+	    	/*if(respuesta){
 
 	    		$("#nuevoAlp").parent().after('<div class="alert alert-danger">Este alp ya existe en la base de datos</div>');
 
 	    		$("#nuevoAlp").val("");
 
-	    	}
+	    	}*/
 
 	    }
 
