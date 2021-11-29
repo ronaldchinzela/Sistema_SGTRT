@@ -94,7 +94,7 @@
 						  title: "El tipo de cambio ha sido actualizado correctamente",
                           text: "'.$datos['valor'].'",
 						  showConfirmButton: true,
-						  confirmButtonText: "Cerrar"
+						  confirmButtonText: "Aceptar"
 						  }).then(function(result){
 									if (result.value) {
 
