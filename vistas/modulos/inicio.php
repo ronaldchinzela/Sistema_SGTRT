@@ -22,7 +22,7 @@
 
         foreach ($cambios as $key => $value){
             echo'
-    <h3 class="box-title" id="TC">Tipo de cambio actual:
+    <h3 class="box-title" id="TC-INICIO">Tipo de cambio actual:
 
     <b><i id="valor-cambio">&nbsp;'.$value["valor"].'</i></b> 
 

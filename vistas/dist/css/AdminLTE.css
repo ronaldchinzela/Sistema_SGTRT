@@ -6146,7 +6146,7 @@ table.text-center th {
     position: absolute;
   }
    
-   #TC{
+   #TC-INICIO{
     color: #000;
   }
   #valor-cambio{
@@ -6191,9 +6191,11 @@ table.text-center th {
     left: 1288px;
     top: 627px;
   }
-  .TC{
+  #TC{
+    position: relative;
     position: absolute;
     top: -12px;
     font-size: 14px;
     white-space: nowrap;
   }
+  

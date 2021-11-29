@@ -14,7 +14,7 @@
 
     foreach ($cambios as $key => $value){
     echo'  
-    <h4 class="TC"><b><i>T.C: &nbsp;'.$value["valor"].'</i></b></h4>';
+    <h4 id="TC"><b><i>T.C: &nbsp;'.$value["valor"].'</i></b></h4>';
   }
 }
 ?>
