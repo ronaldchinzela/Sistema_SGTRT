@@ -98,5 +98,31 @@ class ModeloFourwalls{
 
 	}
 
+	/*=============================================
+		EDITAR MANTENIMIENTO FOURWALLS ELIMINADO
+	=============================================*/
+
+	static public function mdlEditarMantenimientoFourwalls($tabla, $datos){
+
+		$stmt = Conexion::conectar()->prepare("UPDATE $tabla SET idfourwalls = null 
+																 WHERE idfourwalls = :idfourwalls");
+
+		$stmt->bindParam(":idfourwalls", $datos["idFourwalls"], PDO::PARAM_INT);
+
+		if($stmt->execute()){
+
+			return "ok";
+
+		}else{
+
+			return "error";
+		
+		}
+
+		$stmt->close();
+		$stmt = null;
+
+	}
+
 }
 

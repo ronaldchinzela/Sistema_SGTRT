@@ -93,40 +93,20 @@ class ControladorFourwalls{
 
 	static public function ctrBorrarFourwalls(){
 
+		//ACTUALIZANDO REGISTRO ELIMINADO EN LA TABLA MANTENIMIENTO
 		//si viene un dato get llamado idFourwalls
 		if(isset($_GET["idFourwalls"])){
 
 			//se redireccionará a la tabla Fourwalls de la base de datos
 			$tabla ="mantenimientos";
-			$datos = $_GET["idFourwalls"];
+			$datos = array("idFourwalls" => $_GET["idFourwalls"]);
 
 			//la respuesta será enviada al modelo
-			$respuesta = ModeloFourwalls::mdlBorrarFourwalls($tabla, $datos);
-
-			//si la respuesta es ok mostrará alert de borrado correctamente
-			if($respuesta == "ok"){
-
-				echo'<script>
-
-					swal({
-						  type: "success",
-						  title: "El fourwalls ha sido borrado correctamente",
-						  showConfirmButton: true,
-						  confirmButtonText: "Cerrar"
-						  }).then(function(result){
-									if (result.value) {
-
-									window.location = "costo-fourwalls";
-
-									}
-								})
-
-					</script>';
-			}
+			$respuesta = ModeloFourwalls::mdlEditarMantenimientoFourwalls($tabla, $datos);
 		}
 
-		//ELIMINAR TABLA FOURWALLS
-		
+		//ELIMINAR REGISTRO DE LA TABLA FOURWALLS
+	
 		//si viene un dato get llamado idFourwalls
 		if(isset($_GET["idFourwalls"])){
 

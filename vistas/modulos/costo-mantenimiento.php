@@ -110,16 +110,25 @@
                 //TRAYENDO COSTO DE FOURWALLS 
                 //La variable $item almacena el id de la llave foranea
                 //La variable $valor almacena el nombre del campo de la tabla actual, donde traerá
-                //el registro extraido de la llave foránea  
+                //el registro extraido de la llave foránea 
+                $costoFourwalls = 0;  //igualando variable a cero para asignarlo al costo eliminado
+                if($value["idfourwalls"] != null){
+
                 $item = "idfourwalls";
                 $valor = $value["idfourwalls"];
 
                 $fourwalls = ControladorFourwalls::ctrMostrarFourwalls($item, $valor);
                 if(is_array($fourwalls)){
+                $costoFourwalls = $fourwalls["costo"];
 
                 echo '<td><a href="costo-fourwalls" class="verFourwalls"><b>$</b>&nbsp;&nbsp'.$fourwalls["costo"].'</a></td>';
                 
                 }
+                  } else {
+
+                   echo '<td><small>NA</small></td>';
+
+               }
 
                 //TRAYENDO COSTO DE NEXUS
                 $item = "idnexus";
@@ -143,10 +152,10 @@
                  }
 
                 //IMPRIMIENDO COLUMNA TOTAL_SOL Y TOTAL_DOLAR
-                if(is_array($fourwalls)){
-                    echo '<td><b>$</b>&nbsp;&nbsp;'.$fourwalls["costo"] + $nexsus["costo"] + $hp["costo"].'</td>';
+                
+                    echo '<td><b>$</b>&nbsp;&nbsp;'.$costoFourwalls + $nexsus["costo"] + $hp["costo"].'</td>';
                     
-                  }
+                 
 
                 //TRAYENDO TC Y MULTIPLICANDO POR EL MISMO
                 $item = null;
@@ -156,7 +165,7 @@
             
                 foreach ($cambios as $key => $value){
 
-                echo '<td><b>S/.</b>&nbsp;&nbsp;'.($fourwalls["costo"] + $nexsus["costo"] + $hp["costo"])*$value["valor"].'</td>';
+                echo '<td><b>S/.</b>&nbsp;&nbsp;'.($costoFourwalls + $nexsus["costo"] + $hp["costo"])*$value["valor"].'</td>';
                 
                 }
                   echo '</tr>';  
