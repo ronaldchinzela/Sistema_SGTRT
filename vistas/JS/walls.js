@@ -137,25 +137,19 @@ $("#nuevoAlp").change(function(){
         //SI EL ARRAY EXISTE DEVOLVERÁ ALERTA DE ERROR 
 	    	if(respuesta){
 
-          $("#idLicencia").val(respuesta["id_licencia"]);
-          $("#editarCodigo").val(respuesta["cod_licencia"]);
-          $("#editarLicencia").val(respuesta["nom_licencia"]);
-          $("#idLicencia").val(respuesta["id_licencia"]);
-          $("#editarCodigo").val(respuesta["cod_licencia"]);
-          $("#editarLicencia").val(respuesta["nom_licencia"]);
-          $("#idLicencia").val(respuesta["id_licencia"]);
-          $("#editarCodigo").val(respuesta["cod_licencia"]);
-          $("#editarLicencia").val(respuesta["nom_licencia"]);
-          $("#idLicencia").val(respuesta["id_licencia"]);
-          $("#editarCodigo").val(respuesta["cod_licencia"]);
-          $("#editarLicencia").val(respuesta["nom_licencia"]);
-          $("#idLicencia").val(respuesta["id_licencia"]);
-          $("#editarCodigo").val(respuesta["cod_licencia"]);
-          
-
-	    		//$("#nuevoAlp").parent().after('<div class="alert alert-danger">Este alp ya existe en la base de datos</div>');
-
-	    		//$("#nuevoAlp").val("");
+          $("#alpCod").val(respuesta["id_mantenimiento"]);
+          $("#nuevoEquipoFourwalls").val(respuesta["equipo"]);
+          $("#nuevoSerieFourwalls").val(respuesta["serie"]);
+          $("#nuevoCostoFourwalls").val(respuesta["costo"]);
+          $("#nuevoFechaInicioFourwalls").val(respuesta["fec_inicio"]);
+          $("#nuevoFechaFinFourwalls").val(respuesta["fec_fin"]);
+          $("#nuevoPuntoRedNexsus").val(respuesta["punto_red"]);
+          $("#nuevoCostoNexsus").val(respuesta["costo"]);
+          $("#nuevoEquipoHp").val(respuesta["equipo"]);
+          $("#nuevoSerieHp").val(respuesta["serie"]);
+          $("#nuevoCostoHp").val(respuesta["costo"]);
+          $("#nuevoFechaInicioHp").val(respuesta["fec_inicio"]);
+          $("#nuevoFechaFinHp").val(respuesta["fec_fin"]);
 
 	    	}
 
