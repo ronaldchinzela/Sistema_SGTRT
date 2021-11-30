@@ -5838,7 +5838,7 @@ table.text-center th {
 
 #dimensiones-form-mantenimiento{
   position: relative;
-  height: 735px;
+  height: 695px;
 }
 
 #nuevoAlp{
@@ -5861,19 +5861,61 @@ table.text-center th {
   background-color: #eeeeee;
   border-color: #000;
 }
+#nuevoSerieFourwalls{
+  background-color: #eeeeee;
+  border-color: #000;
+}
 #costoFourwallsSpan{
   color: #0522a3;
   font-size: 20px;
   border-color: #000;
   background-color: #eeeeee;
 }
-#equipoFourwalls{
+#nuevoFechaInicioFourwalls{
+  background-color: #eeeeee;
+  border-color: #000;
+}
+#nuevoFechaFinFourwalls{
+  background-color: #eeeeee;
+  border-color: #000;
+}
+#nuevoPuntoRedNexsus{
+  background-color: #eeeeee;
+  border-color: #000;
+}
+#nuevoCostoNexsus{
+  background-color: #eeeeee;
+  border-color: #000;
+}
+#nuevoEquipoHp{
   background-color: #eeeeee;
   border-color: #000;
 }
 #equipoFourwalls{
   color: #0522a3;
+  background-color: #eeeeee;
   font-size: 20px;
+  border-color: #000;
+}
+#nuevoEquipoFourwalls{
+  background-color: #eeeeee;
+  border-color: #000;
+}
+#nuevoSerieHp{
+  background-color: #eeeeee;
+  border-color: #000;
+}
+#nuevoCostoHp{
+  background-color: #eeeeee;
+  border-color: #000;
+}
+#nuevoFechaInicioHp{
+  background-color: #eeeeee;
+  border-color: #000;
+}
+#nuevoFechaFinHp{
+  background-color: #eeeeee;
+  border-color: #000;
 }
 #equipoNexus{
   background-color: #eeeeee;
@@ -5890,6 +5932,7 @@ table.text-center th {
 #equipoHp{
   color: #0522a3;
   font-size: 20px;
+  border-color: #000;
 }
 
  /*######################################### ESTILOS costo-fourwalls #########################################*/

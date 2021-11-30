@@ -20,6 +20,9 @@ class AjaxCambios{
 
 		$respuesta = ControladorCambios::ctrMostrarCambios($item, $valor);
 
+		//CONVIRTIENDO EL VALOR NUMÉRICO DEL INPUT A number_format
+		$respuesta["valor"] = number_format($respuesta["valor"], 2);
+
 		echo json_encode($respuesta);
 
 
