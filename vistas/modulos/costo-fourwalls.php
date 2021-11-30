@@ -62,7 +62,7 @@
                     <td>'.$value["nom_proyecto"].'</td>
                     <td>'.$value["equipo"].'</td>
                     <td>'.$value["serie"].'</td>
-                    <td><b>$</b>&nbsp;&nbsp'.$value["costo"].'</td>
+                    <td><b>$</b>&nbsp;&nbsp'.number_format($value["costo"],2).'</td>
                     <td>'.$value["fec_inicio"].'</td>
                     <td>'.$value["fec_fin"].'</td>
                       

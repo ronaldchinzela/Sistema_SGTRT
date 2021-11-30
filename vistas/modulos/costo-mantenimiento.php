@@ -121,7 +121,7 @@
                 if(is_array($fourwalls)){
                    $costoFourwalls = $fourwalls["costo"];
 
-                echo '<td><a href="costo-fourwalls" class="verFourwalls"><b>$</b>&nbsp;&nbsp'.$fourwalls["costo"].'</a></td>';
+                echo '<td><a href="costo-fourwalls" class="verFourwalls"><b>$</b>&nbsp;&nbsp'.number_format($fourwalls["costo"],2).'</a></td>';
                 
                 }
                   } else {
@@ -141,7 +141,7 @@
                 if(is_array($nexsus)){
                    $costoNexsus = $nexsus["costo"];
 
-                    echo '<td><a href="costo-nexsus" class="verNexus"><b>$</b>&nbsp;&nbsp'.$nexsus["costo"].'</a></td>';
+                    echo '<td><a href="costo-nexsus" class="verNexus"><b>$</b>&nbsp;&nbsp'.number_format($nexsus["costo"],2).'</a></td>';
                 }
                   } else {
 
@@ -160,7 +160,7 @@
                 if(is_array($hp)){
                   $costoHp = $hp["costo"];
 
-                echo '<td><a href="costo-hp" class="verHp"><b>$</b>&nbsp;&nbsp'.$hp["costo"].'</a></td>';
+                echo '<td><a href="costo-hp" class="verHp"><b>$</b>&nbsp;&nbsp'.number_format($hp["costo"],2).'</a></td>';
 
                 }
                   } else {

@@ -18,6 +18,7 @@ class AjaxNexsus{
 
 		$respuesta = ControladorNexsus::ctrMostrarNexsus($item, $valor);
 
+		$respuesta["costo"] = number_format($respuesta["costo"], 2);
 		echo json_encode($respuesta);
 
 	}
