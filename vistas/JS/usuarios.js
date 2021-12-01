@@ -169,3 +169,31 @@ $(document).on("click", ".btnEliminarUsuario", function(){
       }
 
   }
+  //INGRESAR SOLO LETRAS EN EL CAMPO INGRESAR NOMBRE
+  function soloLetrasNomApe(e)
+
+  {
+    key = e.keycode || e.which;
+    tecla = String.fromCharCode(key).toString();
+    letras = "ABCDEFGHIJKLMNÑOPQRSTUVWXYZÁÉÍÓÚabcdefghijklmnñopqrstuvwxyzáéíóú";
+
+    especiales = [8, 13, 32];
+    tecla_especial = false
+
+    for(var i in especiales){
+
+      if(key == especiales[i]){
+
+        tecla_especial = true;
+        break;
+
+      }
+    }
+
+    if(letras.indexOf(tecla) == -1 && !tecla_especial)
+    {
+      alert("Ingresar solo letras");
+      return false;
+    }
+
+  }

@@ -202,7 +202,7 @@
               
                 <span class="input-group-addon" id="color-span"><i class="fa fa-money"></i></span> 
 
-                <input type="text" class="form-control input-lg" name="nuevoCosto" placeholder="Ingresar el costo" required>
+                <input type="text" class="form-control input-lg" name="nuevoCosto" onkeypress="return solonumeroCosto(event);" maxlength="11" onpaste="return false" placeholder="Ingresar el costo" required>
 
               </div>
 

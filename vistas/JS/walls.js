@@ -116,8 +116,6 @@ function validarCsv()
 
 $("#nuevoAlp").change(function(){
 
-//	$(".alert").remove();
-
 	var mantenimiento = $(this).val();
 
 	var datos = new FormData();
@@ -133,25 +131,6 @@ $("#nuevoAlp").change(function(){
 	    dataType: "json",
 	    success:function(respuesta){
         console.log("respuesta", respuesta);
-	    	//EL AJAX TRAERÁ UN ARRAY CON LOS CÓDIGOS ALP EXISTENTES EN CASO SE INGRESE UNO EN USO
-        //SI EL ARRAY EXISTE DEVOLVERÁ ALERTA DE ERROR 
-	    	if(respuesta){
-
-          $("#alpCod").val(respuesta["id_mantenimiento"]);
-          $("#nuevoEquipoFourwalls").val(respuesta["equipo"]);
-          $("#nuevoSerieFourwalls").val(respuesta["serie"]);
-          $("#nuevoCostoFourwalls").val(respuesta["costo"]);
-          $("#nuevoFechaInicioFourwalls").val(respuesta["fec_inicio"]);
-          $("#nuevoFechaFinFourwalls").val(respuesta["fec_fin"]);
-          $("#nuevoPuntoRedNexsus").val(respuesta["punto_red"]);
-          $("#nuevoCostoNexsus").val(respuesta["costo"]);
-          $("#nuevoEquipoHp").val(respuesta["equipo"]);
-          $("#nuevoSerieHp").val(respuesta["serie"]);
-          $("#nuevoCostoHp").val(respuesta["costo"]);
-          $("#nuevoFechaInicioHp").val(respuesta["fec_inicio"]);
-          $("#nuevoFechaFinHp").val(respuesta["fec_fin"]);
-
-	    	}
 
 	    }
 

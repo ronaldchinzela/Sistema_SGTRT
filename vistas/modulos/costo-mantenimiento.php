@@ -324,7 +324,7 @@
                 <span class="input-group-addon" id="equipoFourwalls"><i class="fa fa-calendar"></i></span> 
 
                 <input type="text" class="form-control input-lg" id="nuevoFechaInicioFourwalls" name="nuevoFechaInicioFourwalls" placeholder="Fecha inicio 4walls" required>
-
+              
               </div>
 
             </div>

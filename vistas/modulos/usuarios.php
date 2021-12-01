@@ -151,7 +151,7 @@
                 <div class="input-group">
 
                     <span class="input-group-addon"><i class="fa fa-user"></i></span>
-                    <input type="text" class="form-control input-lg" name="nuevoNombre" placeholder="Ingresar el nombre" required>
+                    <input type="text" onkeypress="return soloLetrasNomApe(event);" onpaste="return false" maxlength="60" class="form-control input-lg" name="nuevoNombre" placeholder="Ingresar el nombre" required>
 
                 </div>
 
@@ -162,7 +162,7 @@
                 <div class="input-group">
 
                     <span class="input-group-addon"><i class="fa fa-id-card"></i></span>
-                    <input type="text" class="form-control input-lg" name="nuevoApellido" placeholder="Ingresar los apellidos" required>
+                    <input type="text" onkeypress="return soloLetrasNomApe(event);" onpaste="return false" maxlength="60" class="form-control input-lg" name="nuevoApellido" placeholder="Ingresar los apellidos" required>
 
                 </div>
 
@@ -288,7 +288,7 @@
                 <div class="input-group">
 
                     <span class="input-group-addon"><i class="fa fa-user"></i></span>
-                    <input type="text" class="form-control input-lg" id="editarNombre" name="editarNombre" value="" required>
+                    <input type="text" onkeypress="return soloLetrasNomApe(event);" onpaste="return false" maxlength="60" class="form-control input-lg" id="editarNombre" name="editarNombre" value="" required>
                     <input type="hidden"  name="idUsuario" id="idUsuario" required> 
                 </div>
 
@@ -299,7 +299,7 @@
                 <div class="input-group">
 
                     <span class="input-group-addon"><i class="fa fa-id-card"></i></span>
-                    <input type="text" class="form-control input-lg" id="editarApellido" name="editarApellido" value="" required>
+                    <input type="text" onkeypress="return soloLetrasNomApe(event);" onpaste="return false" maxlength="60" class="form-control input-lg" id="editarApellido" name="editarApellido" value="" required>
 
                 </div>
 
