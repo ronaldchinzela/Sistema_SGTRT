@@ -4,12 +4,12 @@ require_once "../controladores/Mantenimientos.controlador.php";
 require_once "../modelos/Mantenimientos.modelo.php";
 require_once "../controladores/proyecto.controlador.php";
 require_once "../modelos/proyecto.modelo.php";
-require_once "../controladores/fourwalls.controlador.php";
+/*require_once "../controladores/fourwalls.controlador.php";
 require_once "../modelos/fourwalls.modelo.php";
 require_once "../controladores/nexsus.controlador.php";
 require_once "../modelos/nexsus.modelo.php";
 require_once "../controladores/hp.controlador.php";
-require_once "../modelos/hp.modelo.php";
+require_once "../modelos/hp.modelo.php";*/
 
 class AjaxMantenimientos{
 
@@ -26,14 +26,16 @@ class AjaxMantenimientos{
 
 		$respuesta = ControladorMantenimientos::ctrMostrarMantenimientos("id_mantenimiento", $this->validarAlp);
 		$respuestaProyecto = ControladorProyectos::ctrMostrarProyectos("idproyecto", $respuesta["idproyecto"]);
-		$respuestaFourwalls = ControladorFourwalls::ctrMostrarFourwalls("idfourwalls", $respuesta["idfourwalls"]);	
+		/*$respuestaFourwalls = ControladorFourwalls::ctrMostrarFourwalls("idfourwalls", $respuesta["idfourwalls"]);	
 		$respuestaNexsus = ControladorNexsus::ctrMostrarNexsus("idnexus", $respuesta["idnexus"]);
-		$respuestaHp = ControladorHp::ctrMostrarHp("idhp", $respuesta["idhp"]);
+		$respuestaHp = ControladorHp::ctrMostrarHp("idhp", $respuesta["idhp"]);*/
 
-		echo json_encode(["idproyecto" => $respuestaProyecto,
+		echo json_encode(["idproyecto" => $respuestaProyecto]);
+
+		/*echo json_encode(["idproyecto" => $respuestaProyecto,
 						  "idfourwalls" => $respuestaFourwalls,
 						  "idnexus" => $respuestaNexsus,
-						  "idhp" => $respuestaHp]);
+						  "idhp" => $respuestaHp]);*/
 
 	}
 

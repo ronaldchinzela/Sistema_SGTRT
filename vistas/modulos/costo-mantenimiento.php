@@ -267,7 +267,7 @@
               
                 <span class="input-group-addon" id="alpCod"><i class="fa fa-pencil-square-o"></i></span> 
 
-                <input type="text" class="form-control input-lg" id="alpCod" name="nuevoMantenimiento" placeholder="Ingresar el nombre del proyecto" required>
+                <input type="text" class="form-control input-lg" id="nuevoMantenimiento" name="nuevoMantenimiento" placeholder="Ingresar el nombre del proyecto" required>
 
               </div>
 

@@ -5850,12 +5850,13 @@ table.text-center th {
   border-color: #000;
 }
 
-#alpCod{
+#nuevoMantenimiento{
   border-color: #000;
 }
 #alpCod{
   color: #0522a3;
   font-size: 20px;
+  border-color: #000;
 }
 #nuevoCostoFourwalls{
   background-color: #eeeeee;
