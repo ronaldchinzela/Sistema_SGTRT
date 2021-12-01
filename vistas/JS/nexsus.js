@@ -60,4 +60,26 @@ $(".tablas").on("click", ".btnEditarNexsus", function(){
     })
 
 })
+//LIMITAR INGRESAR SOLO NÚMEROS PUNTO DE RED
+function solonumeroNexsusPuntoRed(e){
+ 
+  if(window.event){
+    keynum = e.keyCode;
+  }
+  else{
+    keynum = e.which;
+  }
+
+  //números de los códigos ASCII
+  if((keynum > 47 && keynum < 58) || keynum == 8 || keynum == 13)
+  {
+    return true;
+  }
+  else
+  {
+    alert("Ingresar solo números");
+    return false;
+  }
+
+}
 

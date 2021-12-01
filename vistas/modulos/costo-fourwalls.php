@@ -177,7 +177,7 @@
               
                 <span class="input-group-addon" id="color-span"><i class="fa fa-money"></i>&nbsp;&nbsp;Costo&nbsp;&nbsp;&nbsp;&nbsp;</span> 
 
-                <input type="text" class="form-control input-lg" name="editarCosto" id="editarCosto" min="0" required>
+                <input type="text" class="form-control input-lg" name="editarCosto" id="editarCosto" min="0" onkeypress="return solonumeroCosto(event);" maxlength="9" onpaste="return false" required>
 
               </div>
 

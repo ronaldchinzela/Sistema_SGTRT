@@ -191,7 +191,10 @@ function solonumeroCosto(e){
       keynum = e.which;
     }
   
-    //
+    // > 47 && < 58 equivale a números del 0 al 9
+    // 8 equivale a retroceso
+    //13 al retorno 
+    //46 equivale al punto
     if((keynum > 47 && keynum < 58) || keynum == 8 || keynum == 13 || keynum == 46)
     {
       return true;

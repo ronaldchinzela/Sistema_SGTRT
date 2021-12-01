@@ -146,7 +146,7 @@
               
                 <span class="input-group-addon" id="color-span"><i class="fa fa-dot-circle-o"></i>&nbsp;&nbsp;Punto Red</span> 
 
-                <input type="text" class="form-control input-lg" name="editarPunto" id="editarPunto" required>
+                <input type="text" class="form-control input-lg" name="editarPunto" id="editarPunto" onkeypress="return solonumeroNexsusPuntoRed(event);" maxlength="4" onpaste="return false" required>
 
               </div>
 
@@ -160,7 +160,7 @@
               
                 <span class="input-group-addon" id="color-span"><i class="fa fa-money"></i>&nbsp;&nbsp;Costo&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> 
 
-                <input type="text" class="form-control input-lg" name="editarCosto" id="editarCosto" min="0" required>
+                <input type="text" class="form-control input-lg" name="editarCosto" id="editarCosto" min="0" onkeypress="return solonumeroCosto(event);" maxlength="9" onpaste="return false" required>
 
               </div>
 
