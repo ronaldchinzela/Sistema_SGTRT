@@ -126,7 +126,7 @@
                 }
                   } else {
 
-                   echo '<td><small style="color:#081033">NA</small></td>';
+                   echo '<td style="color:#000"><b>$&nbsp;&nbsp</b>0</td>';
 
                }
 
@@ -145,7 +145,7 @@
                 }
                   } else {
 
-                echo '<td><small style="color:#081033">NA</small></td>';
+                    echo '<td style="color:#000"><b>$&nbsp;&nbsp</b>0</td>';
 
                }
 
@@ -165,7 +165,7 @@
                 }
                   } else {
 
-                  echo '<td><small style="color:#081033">NA</small></td>';
+                    echo '<td style="color:#000"><b>$&nbsp;&nbsp</b>0</td>';
   
                  }
 
