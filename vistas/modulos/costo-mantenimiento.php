@@ -82,115 +82,41 @@
 
             <tbody>
 
-    <!-- HACIENDO EL LLAMADO A LA LISTA DE COSTO MANTENIMIENTO DE LA BD -->
+    <!-- HACIENDO EL LLAMADO A LA LISTA DE PROYECTOS Y COSTOS DE LA BD -->
     <?php
         $item = null;
 
         $valor = null;
 
-        $mantenimientos = ControladorMantenimientos::ctrMostrarMantenimientos($item, $valor);
+        $proyectos = ControladorProyectos::ctrMostrarProyectos($item, $valor);
 
-        foreach ($mantenimientos as $key => $value) {
-
+        foreach ($proyectos as $key => $value) {
         echo '<tr>
-                <td>'.($key+1).'</td>';
+                <td>'.($key+1).'</td>         
+              
+                <td>'.$value["idproyecto"].'</td>
+                <td>'.$value["nombre"].'</td>
+                <td><a href="costo-fourwalls" class="verFourwalls"><b>$</b>&nbsp;&nbsp'.number_format($value["costofourwalls"],2).'</a></td>
+                <td><a href="costo-nexsus" class="verNexus"><b>$</b>&nbsp;&nbsp'.number_format($value["costonexus"],2).'</a></td>
+                <td><a href="costo-hp" class="verHp"><b>$</b>&nbsp;&nbsp'.number_format($value["costohp"],2).'</a></td>
+                <td><b>$</b>&nbsp;&nbsp;'.number_format($value["costofourwalls"] + $value["costonexus"] + $value["costohp"],2).'</td>';
 
-                //TRAYENDO ALP Y NOMBRE DE PROYECTO
-                $item = "idproyecto";
-                $valor = $value["idproyecto"];
 
-                $proyectos = ControladorProyectos::ctrMostrarProyectos($item, $valor);
-                if(is_array($proyectos)){
-                
-                echo '<td>'.$proyectos["idproyecto"].'</td>
-                      <td>'.$proyectos["nombre"].'</td>';
-                               
-                }
-
-                //TRAYENDO COSTO DE FOURWALLS 
-                //La variable $item almacena el id de la llave foranea
-                //La variable $valor almacena el nombre del campo de la tabla actual, donde traerá
-                //el registro extraido de la llave foránea 
-                $costoFourwalls = 0;  //igualando variable a cero para asignarlo al costo eliminado
-                if($value["idfourwalls"] != null){
-
-                $item = "idfourwalls";
-                $valor = $value["idfourwalls"];
-
-                $fourwalls = ControladorFourwalls::ctrMostrarFourwalls($item, $valor);
-                if(is_array($fourwalls)){
-                   $costoFourwalls = $fourwalls["costo"];
-
-                echo '<td><a href="costo-fourwalls" class="verFourwalls"><b>$</b>&nbsp;&nbsp'.number_format($fourwalls["costo"],2).'</a></td>';
-                
-                }
-                  } else {
-
-                   echo '<td style="color:#000"><b>$&nbsp;&nbsp</b>0</td>';
-
-               }
-
-                //TRAYENDO COSTO DE NEXUS
-                $costoNexsus = 0;
-                if($value["idnexus"] != null){
-
-                $item = "idnexus";
-                $valor = $value["idnexus"];
-
-                $nexsus = ControladorNexsus::ctrMostrarNexsus($item, $valor);
-                if(is_array($nexsus)){
-                   $costoNexsus = $nexsus["costo"];
-
-                    echo '<td><a href="costo-nexsus" class="verNexus"><b>$</b>&nbsp;&nbsp'.number_format($nexsus["costo"],2).'</a></td>';
-                }
-                  } else {
-
-                    echo '<td style="color:#000"><b>$&nbsp;&nbsp</b>0</td>';
-
-               }
-
-                //TRAYENDO COSTO DE HP
-                $costoHp = 0;
-                if($value["idhp"] != null){
-
-                $item = "idhp";
-                $valor = $value["idhp"];
-
-                $hp = ControladorHp::ctrMostrarHp($item, $valor);
-                if(is_array($hp)){
-                  $costoHp = $hp["costo"];
-
-                echo '<td><a href="costo-hp" class="verHp"><b>$</b>&nbsp;&nbsp'.number_format($hp["costo"],2).'</a></td>';
-
-                }
-                  } else {
-
-                    echo '<td style="color:#000"><b>$&nbsp;&nbsp</b>0</td>';
-  
-                 }
-
-                //IMPRIMIENDO COLUMNA TOTAL_DOLAR
-                
-                    echo '<td><b>$</b>&nbsp;&nbsp;'.$costoFourwalls + $costoNexsus + $costoHp.'</td>';
-                    
-                 
-                //IMPRIMIENDO COLUMNA TOTAL_SOL
-
-                //TRAYENDO TC Y MULTIPLICANDO POR EL MISMO
+                //TRAYENDO TC Y MULTIPLICANDOLO POR EL TOTAL DE LOS COSTOS
                 $item = null;
                 $valor = null;
             
                 $cambios = ControladorCambios::ctrMostrarCambios($item, $valor);
             
-                foreach ($cambios as $key => $value){
-
-                echo '<td><b>S/.</b>&nbsp;&nbsp;'.number_format(($costoFourwalls + $costoNexsus + $costoHp)*$value["valor"],2).'</td>';
+                foreach ($cambios as $key => $valueTC){
+                
+                 echo '<td><b>S/.</b>&nbsp;&nbsp;'.number_format(($value["costofourwalls"] + $value["costonexus"] + $value["costohp"])*$valueTC["valor"],2).'</td>';
                 
                 }
-                  echo '</tr>';  
-                    
-            } 
-            
+                  
+          } 
+              
+          
         ?>
 
 
@@ -221,7 +147,7 @@
   
   <div class="modal-dialog">
 
-    <div class="modal-content">
+    <div class="modal-content" id="modal-content-mantenimiento">
 
       <form role="form" method="post" id="dimensiones-form-mantenimiento">
 
@@ -251,7 +177,7 @@
               
               <div class="input-group">
               
-                <span class="input-group-addon" id="nuevoAlpSpan"><i class="fa fa-code"></i></span> 
+                <span class="input-group-addon" id="nuevoAlpSpan"><i class="fa fa-code">&nbsp;&nbsp;Código ALP</i></span> 
 
                 <input type="text" class="form-control input-lg" id="nuevoAlp" name="nuevoCodigo" onkeypress="return solonumeroMantenimiento(event);" maxlength="6" onpaste="return false" placeholder="Ingresar el código ALP" required>
 
@@ -265,22 +191,22 @@
               
               <div class="input-group">
               
-                <span class="input-group-addon" id="alpCod"><i class="fa fa-pencil-square-o"></i></span> 
+                <span class="input-group-addon" id="alpCod"><i class="fa fa-pencil-square-o">&nbsp;&nbsp;Proyecto&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</i></span> 
 
-                <input type="text" class="form-control input-lg" id="nuevoMantenimiento" name="nuevoMantenimiento" placeholder="Ingresar el nombre del proyecto" required>
+                <input type="text" class="form-control input-lg" id="nuevoMantenimiento" name="nuevoMantenimiento" placeholder="Ingresar nombre de proyecto" required>
 
               </div>
 
             </div>
 
-            <div class="col-xs-6" style="padding-left:0px">
+            <!--<div class="col-xs-6" style="padding-left:0px"> -->
             <!-- ENTRADA PARA EL NOMBRE DEL EQUIPO FOURWALLS -->
             
             <div class="form-group">
               
               <div class="input-group">
               
-                <span class="input-group-addon" id="equipoFourwalls"><i class="fa fa-pencil-square-o"></i></span> 
+                <span class="input-group-addon" id="equipoFourwalls"><i class="fa fa-pencil-square-o">&nbsp;&nbsp;Equipo 4walls&nbsp;&nbsp;&nbsp;</i></span> 
 
                 <input type="text" class="form-control input-lg" id="nuevoEquipoFourwalls" name="nuevoEquipoFourwalls" placeholder="Nombre equipo 4walls" required>
 
@@ -294,7 +220,7 @@
               
               <div class="input-group">
               
-                <span class="input-group-addon" id="equipoFourwalls"><i class="fa fa-pencil-square-o"></i></span> 
+                <span class="input-group-addon" id="equipoFourwalls"><i class="fa fa-barcode">&nbsp;&nbsp;Serie 4walls&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</i></span> 
 
                 <input type="text" class="form-control input-lg" id="nuevoSerieFourwalls" name="nuevoSerieFourwalls" placeholder="Serie 4walls" required>
 
@@ -308,7 +234,7 @@
               
               <div class="input-group">
               
-                <span class="input-group-addon" id="costoFourwallsSpan"><i class="fa fa-money"></i></span> 
+                <span class="input-group-addon" id="costoFourwallsSpan"><i class="fa fa-money">&nbsp;&nbsp;Costo 4walls&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</i></span> 
 
                 <input type="text" class="form-control input-lg" id="nuevoCostoFourwalls" name="nuevoCostoFourwalls" onkeypress="return solonumeroCosto(event);" maxlength="11" onpaste="return false" placeholder="Costo 4walls" required>               
               </div>
@@ -321,7 +247,7 @@
               
               <div class="input-group">
               
-                <span class="input-group-addon" id="equipoFourwalls"><i class="fa fa-calendar"></i></span> 
+                <span class="input-group-addon" id="equipoFourwalls"><i class="fa fa-calendar">&nbsp;&nbsp;Fecha inicio 4walls</i></span> 
 
                 <input type="text" class="form-control input-lg" id="nuevoFechaInicioFourwalls" name="nuevoFechaInicioFourwalls" placeholder="Fecha inicio 4walls" required>
               
@@ -335,7 +261,7 @@
               
               <div class="input-group">
               
-                <span class="input-group-addon" id="equipoFourwalls"><i class="fa fa-calendar"></i></span> 
+                <span class="input-group-addon" id="equipoFourwalls"><i class="fa fa-calendar">&nbsp;&nbsp;Fecha fin 4walls&nbsp;&nbsp;&nbsp;&nbsp;</i></span> 
 
                 <input type="text" class="form-control input-lg" id="nuevoFechaFinFourwalls" name="nuevoFechaFinFourwalls" placeholder="Fecha fin 4walls" required>
 
@@ -343,14 +269,14 @@
 
             </div>
 
-            </div>
+          <!--  </div> -->
             <!-- ENTRADA PARA EL PUNTO DE RED NEXSUS-->
             
             <div class="form-group">
               
               <div class="input-group">
               
-                <span class="input-group-addon" id="equipoNexus"><i class="fa fa-pencil-square-o"></i></span> 
+                <span class="input-group-addon" id="equipoNexus"><i class="fa fa-pencil-square-o">&nbsp;&nbsp;Punto de red Nexsus</i></span> 
 
                 <input type="text" class="form-control input-lg" id="nuevoPuntoRedNexsus" name="nuevoPuntoRedNexsus"  onkeypress="return solonumeroPunto(event);" maxlength="3" onpaste="return false"  placeholder="Puntos de red nexsus" required>
 
@@ -364,7 +290,7 @@
               
               <div class="input-group">
               
-                <span class="input-group-addon" id="equipoNexus"><i class="fa fa-money"></i></span> 
+                <span class="input-group-addon" id="equipoNexus"><i class="fa fa-money">&nbsp;&nbsp;Costo Nexsus&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</i></span> 
 
                 <input type="text" class="form-control input-lg" id="nuevoCostoNexsus" name="nuevoCostoNexsus" onkeypress="return solonumeroCosto(event);" maxlength="11" onpaste="return false" placeholder="Costo nexsus" required>
 
@@ -378,7 +304,7 @@
               
               <div class="input-group">
               
-                <span class="input-group-addon" id="equipoHp"><i class="fa fa-pencil-square-o"></i></span> 
+                <span class="input-group-addon" id="equipoHp"><i class="fa fa-pencil-square-o">&nbsp;&nbsp;Equipo Nexsus&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</i></span> 
 
                 <input type="text" class="form-control input-lg" id="nuevoEquipoHp" name="nuevoEquipoHp" placeholder="Nombre equipo hp" required>
 
@@ -392,7 +318,7 @@
               
               <div class="input-group">
               
-                <span class="input-group-addon" id="equipoHp"><i class="fa fa-pencil-square-o"></i></span> 
+                <span class="input-group-addon" id="equipoHp"><i class="fa fa-barcode">&nbsp;&nbsp;Serie Nexsus&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</i></span> 
 
                 <input type="text" class="form-control input-lg" id="nuevoSerieHp" name="nuevoSerieHp" placeholder="Número serie hp" required>
 
@@ -406,7 +332,7 @@
               
               <div class="input-group">
               
-                <span class="input-group-addon" id="equipoHp"><i class="fa fa-money"></i></span> 
+                <span class="input-group-addon" id="equipoHp"><i class="fa fa-money">&nbsp;&nbsp;Costo Hp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</i></span> 
 
                 <input type="text" class="form-control input-lg" id="nuevoCostoHp" name="nuevoCostoHp" onkeypress="return solonumeroCosto(event);" maxlength="11" onpaste="return false" placeholder="Costo hp" required>
 
@@ -420,7 +346,7 @@
               
               <div class="input-group">
               
-                <span class="input-group-addon" id="equipoHp"><i class="fa fa-calendar"></i></span> 
+                <span class="input-group-addon" id="equipoHp"><i class="fa fa-calendar">&nbsp;&nbsp;Fecha inicio HP&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</i></span> 
 
                 <input type="text" class="form-control input-lg" id="nuevoFechaInicioHp" name="nuevoFechaInicioHp" placeholder="Fecha inicio hp" required>
 
@@ -435,7 +361,7 @@
               
               <div class="input-group">
               
-                <span class="input-group-addon" id="equipoHp"><i class="fa fa-calendar"></i></span> 
+                <span class="input-group-addon" id="equipoHp"><i class="fa fa-calendar">&nbsp;&nbsp;Fecha fin HP&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</i></span> 
 
                 <input type="text" class="form-control input-lg" id="nuevoFechaFinHp" name="nuevoFechaFinHp" placeholder="Fecha fin hp" required>
 

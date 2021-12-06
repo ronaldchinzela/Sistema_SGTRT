@@ -59,15 +59,22 @@
                   foreach($hp as $key => $value) {
                     
                     echo ' <tr>
-                    <td>'.($key+1).'</td>
-                    <td>'.$value["nom_proyecto"].'</td>
-                    <td>'.$value["equipo"].'</td>
-                    <td>'.$value["serie"].'</td>
-                    <td><b>$</b>&nbsp;&nbsp'.number_format($value["costo"],2).'</td>
-                    <td>'.$value["fec_inicio"].'</td>
-                    <td>'.$value["fec_fin"].'</td>
+                    <td>'.($key+1).'</td>';
 
-                    <td>
+                    //TRAYEDO EL NOMBRE DEL PROYECTO DE LA TABLA PROYECTO
+                    $item = "idproyecto";
+                    $valor = $value["idproyecto"];
+
+                    $proyectos = ControladorProyectos::ctrMostrarProyectos($item, $valor);
+
+                    echo'<td>'.$proyectos["nombre"].'</td>
+                         <td>'.$value["equipo"].'</td>
+                         <td>'.$value["serie"].'</td>
+                         <td><b>$</b>&nbsp;&nbsp'.number_format($value["costo"],2).'</td>
+                         <td>'.$value["fec_inicio"].'</td>
+                         <td>'.$value["fec_fin"].'</td>
+
+                     <td>
 
                       <div class="btn-group">
                           
@@ -133,7 +140,7 @@
               
                 <span class="input-group-addon" id="color-span"><i class="fa fa-file-code-o"></i>&nbsp;&nbsp;Proyecto</span> 
 
-                <input type="text" class="form-control input-lg" name="editarNombre" id="editarNombre" required>
+                <input type="text" class="form-control input-lg" name="editarNombre" id="editarNombre" readonly>
 
                  <input type="hidden"  name="idHp" id="idHp" required> 
 

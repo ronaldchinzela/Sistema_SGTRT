@@ -32,13 +32,13 @@ class ControladorHp{
 
 				$tabla = "hp";
 
-				$datos = array ("idhp"=>$_POST["idHp"],
-								"nom_proyecto" => $_POST["editarNombre"],
+				$datos = array ("idhp"=>$_POST["idHp"],			
 								"equipo" => $_POST["editarEquipo"],
 								"serie" => $_POST["editarSerie"],
 								"costo" => $_POST["editarCosto"],
 								"fec_inicio" => $_POST["editarFechaInicio"],
-								"fec_fin" => $_POST["editarFechaFin"]);
+								"fec_fin" => $_POST["editarFechaFin"],
+								"idproyecto" => $_POST["editarNombre"]);
 
 				$respuesta = ModeloHp::mdlEditarHp($tabla, $datos);
 
@@ -92,15 +92,6 @@ class ControladorHp{
 	=============================================*/
 
 	static public function ctrBorrarHp(){
-
-		//ACTUALIZANDO REGISTRO ELIMINADO EN LA TABLA MANTENIMIENTO
-		if(isset($_GET["idHp"])){
-
-			$tabla ="mantenimientos";
-			$datos = array("idHp" => $_GET["idHp"]);
-
-			$respuesta = ModeloHp::mdlEditarMantenimientoHp($tabla, $datos);
-		}
 
 		//ELIMINAR REGISTRO DE LA TABLA HP
 		if(isset($_GET["idHp"])){

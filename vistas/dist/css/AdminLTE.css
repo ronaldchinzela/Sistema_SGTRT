@@ -5838,7 +5838,12 @@ table.text-center th {
 
 #dimensiones-form-mantenimiento{
   position: relative;
-  height: 695px;
+  height: 1000px;
+  width: 470px;
+}
+#modal-content-mantenimiento{
+  width: 470px;
+  right: -90px;
 }
 
 #nuevoAlp{

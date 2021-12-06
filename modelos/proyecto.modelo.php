@@ -11,7 +11,6 @@ class ModeloProyectos{
 
 	static public function mdlMostrarProyectos($tabla, $item, $valor){
 
-		//SI LA CONSULTA ES DIFERENTE A NULL, ENCONTRARÁ REGISTROS Y DEVOLVERÁ UNA FILA
 		if($item != null){
 
 			$stmt = Conexion::conectar()->prepare("SELECT * FROM $tabla WHERE $item = :$item");
@@ -22,10 +21,13 @@ class ModeloProyectos{
 
 			return $stmt -> fetch();
 
-		//SI VIENE CON REGISTROS
 		}else{
 
-			$stmt = Conexion::conectar()->prepare("SELECT * FROM $tabla");
+			$stmt = Conexion::conectar()->prepare("SELECT p.idproyecto, p.nombre, 
+			(SELECT SUM(f.costo) FROM fourwalls AS f WHERE p.idproyecto = f.idproyecto) AS costoFourwalls,
+			(SELECT SUM(n.costo) FROM nexus AS n WHERE p.idproyecto = n.idproyecto) AS costoNexus,
+			(SELECT SUM(h.costo) FROM hp AS h WHERE p.idproyecto = h.idproyecto) AS costoHp
+			 FROM proyecto AS p;");
 
 			$stmt -> execute();
 

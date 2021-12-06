@@ -18,9 +18,9 @@ $(".tablas").on("click", ".btnEditarNexsus", function(){
      	processData: false,
      	dataType:"json",
      	success: function(respuesta){
-
+      //console.log(respuesta);
 			$("#idNexsus").val(respuesta["idnexus"]);
-				$("#editarNombre").val(respuesta["nom_proyecto"]);
+				$("#editarNombre").val(respuesta["nombre"]);
 				$("#editarPunto").val(respuesta["punto_red"]);
 				$("#editarCosto").val(respuesta["costo"]);
      	}

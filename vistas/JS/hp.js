@@ -18,20 +18,18 @@ $(".tablas").on("click", ".btnEditarHp", function(){
      	processData: false,
      	dataType:"json",
      	success: function(respuesta){
-
-			$("#idHp").val(respuesta["idhp"]);
-				$("#editarNombre").val(respuesta["nom_proyecto"]);
+        console.log(respuesta);
+			  $("#idHp").val(respuesta["idhp"]);
+				$("#editarNombre").val(respuesta["nombre"]);
 				$("#editarEquipo").val(respuesta["equipo"]);
 				$("#editarSerie").val(respuesta["serie"]);
 				$("#editarCosto").val(respuesta["costo"]);
 				$("#editarFechaInicio").val(respuesta["fec_inicio"]);
 				$("#editarFechaFin").val(respuesta["fec_fin"]);
      		
-
      	}
 
 	})
-
 
 })
 

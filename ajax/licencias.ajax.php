@@ -17,7 +17,7 @@ class AjaxLicencias{
 		$valor = $this->idLicencia;
 
 		$respuesta = ControladorLicencias::ctrMostrarLicencias($item, $valor);
-
+		$respuesta["costo"] = number_format($respuesta["costo"], 2);
 		echo json_encode($respuesta);
 
 

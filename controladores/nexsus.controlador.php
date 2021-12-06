@@ -34,7 +34,8 @@ class ControladorNexsus{
 				$datos = array ("idnexus"=>$_POST["idNexsus"],
 								"nom_proyecto" => $_POST["editarNombre"],
 								"punto_red" => $_POST["editarPunto"],
-								"costo" => $_POST["editarCosto"]);
+								"costo" => $_POST["editarCosto"],
+								"idproyecto" => $_POST["editarNombre"]);
 
 				$respuesta = ModeloNexsus::mdlEditarNexsus($tabla, $datos);
 
@@ -89,13 +90,13 @@ class ControladorNexsus{
 
 	static public function ctrBorrarNexsus(){
 
-		if(isset($_GET["idNexsus"])){
+		/*if(isset($_GET["idNexsus"])){
 
 			$tabla ="mantenimientos";
 			$datos = array("idNexsus" => $_GET["idNexsus"]);
 
 			$respuesta = ModeloNexsus::mdlEditarMantenimientoNexsus($tabla, $datos);
-		}
+		}*/
 
 		//ELIMINAR REGISTRO DE LA TABLA NEXSUS
 	

@@ -12,9 +12,10 @@ class ModeloNexsus{
 
 		if($item != null){
 
-			$stmt = Conexion::conectar()->prepare("SELECT * FROM $tabla WHERE $item = :$item");
+			$stmt = Conexion::conectar()->prepare("SELECT n.idnexus, n.punto_red, n.costo, n.idproyecto, p.nombre
+			FROM nexus AS n JOIN proyecto AS p ON n.idproyecto = p.idproyecto WHERE idnexus = :idNexus");
 
-			$stmt -> bindParam(":".$item, $valor, PDO::PARAM_STR);
+			$stmt -> bindParam(":idNexus", $valor, PDO::PARAM_STR);
 
 			$stmt -> execute();
 
@@ -42,13 +43,14 @@ class ModeloNexsus{
 
 	static public function mdlEditarNexsus($tabla, $datos){
 
-		$stmt = Conexion::conectar()->prepare("UPDATE $tabla SET nom_proyecto = :nom_proyecto, punto_red = :punto_red, 
+		$stmt = Conexion::conectar()->prepare("UPDATE $tabla SET punto_red = :punto_red, 
 																 costo = :costo WHERE idnexus = :idnexus");
 
-		$stmt -> bindParam(":nom_proyecto", $datos["nom_proyecto"], PDO::PARAM_STR);
+		$stmt -> bindParam(":idnexus", $datos["idnexus"], PDO::PARAM_INT);
+		//$stmt -> bindParam(":nom_proyecto", $datos["nom_proyecto"], PDO::PARAM_STR);
 		$stmt -> bindParam(":punto_red", $datos["punto_red"], PDO::PARAM_INT);
 		$stmt -> bindParam(":costo", $datos["costo"], PDO::PARAM_INT);
-		$stmt -> bindParam(":idnexus", $datos["idnexus"], PDO::PARAM_INT);
+		
 
 		if($stmt->execute()){
 
@@ -90,33 +92,6 @@ class ModeloNexsus{
 		$stmt = null;
 
 	}
-
-	/*=============================================
-		EDITAR MANTENIMIENTO NEXSUS ELIMINADO
-	=============================================*/
-
-	static public function mdlEditarMantenimientoNexsus($tabla, $datos){
-
-		$stmt = Conexion::conectar()->prepare("UPDATE $tabla SET idnexus = null 
-																 WHERE idnexus = :idnexus");
-
-		$stmt->bindParam(":idnexus", $datos["idNexsus"], PDO::PARAM_INT);
-
-		if($stmt->execute()){
-
-			return "ok";
-
-		}else{
-
-			return "error";
-		
-		}
-
-		$stmt->close();
-		$stmt = null;
-
-	}
-
 
 }
 

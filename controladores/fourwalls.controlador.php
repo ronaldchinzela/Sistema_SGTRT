@@ -33,12 +33,12 @@ class ControladorFourwalls{
 				$tabla = "fourwalls";
 
 				$datos = array ("idfourwalls"=>$_POST["idFourwalls"],
-								"nom_proyecto" => $_POST["editarNombre"],
 								"equipo" => $_POST["editarEquipo"],
 								"serie" => $_POST["editarSerie"],
 								"costo" => $_POST["editarCosto"],
 								"fec_inicio" => $_POST["editarFechaInicio"],
-								"fec_fin" => $_POST["editarFechaFin"]);
+								"fec_fin" => $_POST["editarFechaFin"],
+								"idproyecto" => $_POST["editarNombre"]);
 
 				$respuesta = ModeloFourwalls::mdlEditarFourwalls($tabla, $datos);
 
@@ -92,20 +92,6 @@ class ControladorFourwalls{
 	=============================================*/
 
 	static public function ctrBorrarFourwalls(){
-
-		//ACTUALIZANDO REGISTRO ELIMINADO EN LA TABLA MANTENIMIENTO
-		//si viene un dato get llamado idFourwalls
-		if(isset($_GET["idFourwalls"])){
-
-			//se redireccionará a la tabla Fourwalls de la base de datos
-			$tabla ="mantenimientos";
-			$datos = array("idFourwalls" => $_GET["idFourwalls"]);
-
-			//la respuesta será enviada al modelo
-			$respuesta = ModeloFourwalls::mdlEditarMantenimientoFourwalls($tabla, $datos);
-		}
-
-		//ELIMINAR REGISTRO DE LA TABLA FOURWALLS
 	
 		//si viene un dato get llamado idFourwalls
 		if(isset($_GET["idFourwalls"])){

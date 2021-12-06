@@ -76,7 +76,7 @@
 
                       echo '<td>'.$value["tipo"].'</td>';         
 
-                      echo'<td><b>$</b>&nbsp;'.$value["costo"].'</td>
+                      echo'<td><b>$</b>&nbsp;'.number_format($value["costo"],2).'</td>
 
                       <td>
 
@@ -278,7 +278,7 @@
               
               <div class="input-group">
               
-                <span class="input-group-addon"><i class="fa fa-user"></i></span> 
+                <span class="input-group-addon" id="color-span"><i class="fa fa-code"></i>&nbsp;&nbsp;Código de Licencia&nbsp;</span> 
 
                 <input type="text" class="form-control input-lg" name="editarCodigo" id="editarCodigo" required>
                 <input type="hidden" id="idLicencia" name="idLicencia">
@@ -293,7 +293,7 @@
               
               <div class="input-group">
               
-                <span class="input-group-addon"><i class="fa fa-user"></i></span> 
+                <span class="input-group-addon" id="color-span"><i class="fa fa-folder-open-o"></i>&nbsp;&nbsp;Nombre de licencia</span> 
 
                 <input type="text" class="form-control input-lg" name="editarLicencia" id="editarLicencia" required>
 
@@ -307,7 +307,7 @@
               
               <div class="input-group">
               
-                <span class="input-group-addon"><i class="fa fa-users"></i></span> 
+                <span class="input-group-addon" id="color-span"><i class="fa fa-folder-open"></i>&nbsp;&nbsp;Tipo de licencia&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> 
 
                 <select class="form-control input-lg" name="editarTipo" required>
 
@@ -329,9 +329,9 @@
               
               <div class="input-group">
               
-                <span class="input-group-addon"><i class="fa fa-envelope"></i></span> 
+                <span class="input-group-addon" id="color-span"><i class="fa fa-money"></i>&nbsp;&nbsp;Costo de licencia&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> 
 
-                <input type="text" class="form-control input-lg" name="editarCosto" id="editarCosto" required>
+                <input type="text" class="form-control input-lg" name="editarCosto" onkeypress="return solonumeroCosto(event);" maxlength="11" onpaste="return false" id="editarCosto" required>
 
               </div>
 

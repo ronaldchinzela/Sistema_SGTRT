@@ -18,16 +18,14 @@ $(".tablas").on("click", ".btnEditarFourwalls", function(){
      	processData: false,
      	dataType:"json",
      	success: function(respuesta){
-
+        //console.log(respuesta);
 			$("#idFourwalls").val(respuesta["idfourwalls"]);
-				$("#editarNombre").val(respuesta["nom_proyecto"]);
+				$("#editarNombre").val(respuesta["nombre"]);
 				$("#editarEquipo").val(respuesta["equipo"]);
 				$("#editarSerie").val(respuesta["serie"]);
 				$("#editarCosto").val(respuesta["costo"]);
 				$("#editarFechaInicio").val(respuesta["fec_inicio"]);
 				$("#editarFechaFin").val(respuesta["fec_fin"]);
-     		
-
      	}
 
 	})

@@ -57,9 +57,17 @@
                   foreach($nexsus as $key => $value) {
                     
                     echo ' <tr>
-                    <td>'.($key+1).'</td>
-                    <td>'.$value["idnexus"].'</td>
-                    <td>'.$value["nom_proyecto"].'</td>
+                    <td>'.($key+1).'</td>';
+
+                    //TRAYEDO EL ALP Y EL NOMBRE DE LA TABLA PROYECTO
+                    $item = "idproyecto";
+                    $valor = $value["idproyecto"];
+
+                    $proyectos = ControladorProyectos::ctrMostrarProyectos($item, $valor);
+
+                    echo'<td>'.$proyectos["idproyecto"].'</td>
+                    <td>'.$proyectos["nombre"].'</td>
+                    
                     <td>'.$value["punto_red"].'</td>
                     <td><b>$</b>&nbsp;&nbsp'.number_format($value["costo"],2).'</td>
 
@@ -130,7 +138,7 @@
               
                 <span class="input-group-addon" id="color-span"><i class="fa fa-file-code-o"></i>&nbsp;&nbsp;Proyecto&nbsp;&nbsp;&nbsp;</span> 
 
-                <input type="text" class="form-control input-lg" name="editarNombre" id="editarNombre" required>
+                <input type="text" class="form-control input-lg" name="editarNombre" id="editarNombre" readonly>
 
                  <input type="hidden"  name="idNexsus" id="idNexsus" required> 
 
