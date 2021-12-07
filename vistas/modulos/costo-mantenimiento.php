@@ -95,11 +95,34 @@
                 <td>'.($key+1).'</td>         
               
                 <td>'.$value["idproyecto"].'</td>
-                <td>'.$value["nombre"].'</td>
-                <td><a href="costo-fourwalls" class="verFourwalls"><b>$</b>&nbsp;&nbsp'.number_format($value["costofourwalls"],2).'</a></td>
-                <td><a href="costo-nexsus" class="verNexus"><b>$</b>&nbsp;&nbsp'.number_format($value["costonexus"],2).'</a></td>
-                <td><a href="costo-hp" class="verHp"><b>$</b>&nbsp;&nbsp'.number_format($value["costohp"],2).'</a></td>
-                <td><b>$</b>&nbsp;&nbsp;'.number_format($value["costofourwalls"] + $value["costonexus"] + $value["costohp"],2).'</td>';
+                <td>'.$value["nombre"].'</td>';
+                
+                //VALIDANDO SI EL CAMPO COSTO NO ESTÁ VACÍO (NULL) MOSTRARÁ EL COSTO
+                if($value["costofourwalls"] != null){
+                echo'<td><a href="costo-fourwalls" class="verFourwalls"><b>$</b>&nbsp;&nbsp'.number_format($value["costofourwalls"],2).'</a></td>';
+                }
+                //SI EL CAMPO COSTO NO TIENE VALOR (ES = NULL) MOSTRARÁ STRING 0
+                else {
+                  echo '<td style="color:#000"><b>$&nbsp;&nbsp</b>0</td>';
+                }
+                
+                
+                if($value["costonexus"] != null){
+                echo'<td><a href="costo-nexsus" class="verNexus"><b>$</b>&nbsp;&nbsp'.number_format($value["costonexus"],2).'</a></td>';
+                }
+                else {
+                  echo '<td style="color:#000"><b>$&nbsp;&nbsp</b>0</td>';
+                }
+
+                if($value["costohp"] != null){
+                echo'<td><a href="costo-hp" class="verHp"><b>$</b>&nbsp;&nbsp'.number_format($value["costohp"],2).'</a></td>';
+                }
+                else {
+                  echo '<td style="color:#000"><b>$&nbsp;&nbsp</b>0</td>';
+                }
+                
+                //SUMA TOTAL DE COSTOS EN DÓLARES
+                echo'<td><b>$</b>&nbsp;&nbsp;'.number_format($value["costofourwalls"] + $value["costonexus"] + $value["costohp"],2).'</td>';
 
 
                 //TRAYENDO TC Y MULTIPLICANDOLO POR EL TOTAL DE LOS COSTOS
