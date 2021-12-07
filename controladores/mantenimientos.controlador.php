@@ -3,20 +3,6 @@
 class ControladorMantenimientos{
 
 	/*=============================================
-					MOSTRAR MANTENIMIENTOS
-	=============================================*/
-
-	static public function ctrMostrarMantenimientos($item, $valor){
-
-		$tabla = "mantenimientos";
-
-		$respuesta = ModeloMantenimientos::mdlMostrarMantenimientos($tabla, $item, $valor);
-
-		return $respuesta;
-
-	}
-
-	/*=============================================
 					CREAR MANTENIMIENTOS
 	=============================================*/
 
@@ -30,8 +16,8 @@ class ControladorMantenimientos{
 
 			   	$tabla = "proyecto";
 
-			   	$datos = array("alp"=>$_POST["nuevoCodigo"],
-					           "nom_proyecto"=>$_POST["nuevoMantenimiento"]);
+			   	$datos = array("idproyecto"=>$_POST["nuevoCodigo"],
+					           "nombre"=>$_POST["nuevoMantenimiento"]);
 
 			   	$respuesta = ModeloMantenimientos::mdlIngresarMantenimiento($tabla, $datos);
 
@@ -46,14 +32,13 @@ class ControladorMantenimientos{
 
 			   	$tabla = "fourwalls";
 
-			   	$datos = array("alp"=>$_POST["nuevoCodigo"],
-					           "nom_proyecto"=>$_POST["nuevoMantenimiento"],
-							   "equipo" => $_POST["nuevoEquipoFourwalls"], 
-							   "serie"=>$_POST["nuevoSerieFourwalls"],
-							   "costo" => $_POST["nuevoCostoFourwalls"], 
-							   "fec_inicio"=>$_POST["nuevoFechaInicioFourwalls"],
-					           "fec_fin"=>$_POST["nuevoFechaFinFourwalls"]);
-
+			   	 $datos = array("equipo" => $_POST["nuevoEquipoFourwalls"], 
+								"serie"=>$_POST["nuevoSerieFourwalls"],
+								"costo" => $_POST["nuevoCostoFourwalls"], 
+								"fec_inicio"=>$_POST["nuevoFechaInicioFourwalls"],
+								"fec_fin"=>$_POST["nuevoFechaFinFourwalls"],
+								"idproyecto"=>$_POST["nuevoCodigo"]);
+								
 			   	$respuesta = ModeloMantenimientos::mdlIngresarMantenimiento($tabla, $datos);
 
 		}
@@ -67,11 +52,10 @@ class ControladorMantenimientos{
 
 			   	$tabla = "nexus";
 
-			   	$datos = array("alp"=>$_POST["nuevoCodigo"],
-					           "nom_proyecto"=>$_POST["nuevoMantenimiento"],
-							   "punto_red"=>$_POST["nuevoPuntoRedNexsus"],
-					           "costo"=>$_POST["nuevoCostoNexsus"]);
-
+			   	 $datos = array("punto_red"=>$_POST["nuevoPuntoRedNexsus"],
+								"costo"=>$_POST["nuevoCostoNexsus"],
+								"idproyecto"=>$_POST["nuevoCodigo"]);
+					           
 			   	$respuesta = ModeloMantenimientos::mdlIngresarMantenimiento($tabla, $datos);
 
 			}
@@ -86,37 +70,15 @@ class ControladorMantenimientos{
 
 			   	$tabla = "hp";
 
-			   	$datos = array("alp"=>$_POST["nuevoCodigo"],
-					           "nom_proyecto"=>$_POST["nuevoMantenimiento"],							 
-							   "equipo"=>$_POST["nuevoEquipoHp"],
-							   "serie" => $_POST["nuevoSerieHp"], 
-							   "costo"=>$_POST["nuevoCostoHp"],
-							   "fec_inicio" => $_POST["nuevoFechaInicioHp"],       
-					           "fec_fin"=>$_POST["nuevoFechaFinHp"]);
-
+			   	 $datos = array("equipo"=>$_POST["nuevoEquipoHp"],
+								"serie" => $_POST["nuevoSerieHp"], 
+								"costo"=>$_POST["nuevoCostoHp"],
+								"fec_inicio" => $_POST["nuevoFechaInicioHp"],       
+								"fec_fin"=>$_POST["nuevoFechaFinHp"],
+								"idproyecto"=>$_POST["nuevoCodigo"]);						 
+								
 			   	$respuesta = ModeloMantenimientos::mdlIngresarMantenimiento($tabla, $datos);
-
-			}
-
-		}
-
-		//TABLA MANTENIMIENTO
-		if(isset($_POST["nuevoCodigo"])){
-
-			if(preg_match('/^[0-9]+$/', $_POST["nuevoCodigo"]) &&
-			   preg_match('/[#\.\-a-zA-Z0-9ñÑáéíóúÁÉÍÓÚ ]+$/', $_POST["nuevoMantenimiento"])){
-
-			   	$tabla = "mantenimientos";
-
-			   	$datos = array("alp"=>$_POST["nuevoCodigo"],
-					           "nom_proyecto"=>$_POST["nuevoMantenimiento"],
-							   "costoFourwalls" => $_POST["nuevoCostoFourwalls"], 							  
-							   "costoNexus" => $_POST["nuevoCostoNexsus"], 					   
-					           "costoHp"=>$_POST["nuevoCostoHp"]);
-
-			   	$respuesta = ModeloMantenimientos::mdlIngresarMantenimiento($tabla, $datos);
-
-			   	if($respuesta == "ok"){
+				   if($respuesta == "ok"){
 
 					echo'<script>
 
@@ -160,7 +122,8 @@ class ControladorMantenimientos{
 
 			}
 
+			}
+
 		}
 
-	}
 }

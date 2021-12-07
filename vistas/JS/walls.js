@@ -115,6 +115,8 @@ function validarCsv()
 =============================================*/
 
 $("#nuevoAlp").change(function(){
+  
+  //$("val").remove();
 
 	var mantenimiento = $(this).val();
 
@@ -137,19 +139,7 @@ $("#nuevoAlp").change(function(){
           //$("#nuevoMantenimiento") HACE REFERENCIA AL ID DEL INPUT
           //idproyecto HACE REFERENCIA AL ID DEL AJAX
           //nombre HACE REFERENCIA AL NOMBRE DEL CAMPO DE LA TABLA
-          $("#nuevoMantenimiento").val(respuesta.idproyecto.nombre);
-          /*$("#nuevoEquipoFourwalls").val(respuesta.idfourwalls.equipo);
-          $("#nuevoSerieFourwalls").val(respuesta.idfourwalls.serie);
-          $("#nuevoCostoFourwalls").val(respuesta.idfourwalls.costo);
-          $("#nuevoFechaInicioFourwalls").val(respuesta.idfourwalls.fec_inicio);
-          $("#nuevoFechaFinFourwalls").val(respuesta.idfourwalls.fec_fin);
-          $("#nuevoPuntoRedNexsus").val(respuesta.idnexus.punto_red);
-          $("#nuevoCostoNexsus").val(respuesta.idnexus.costo);
-          $("#nuevoEquipoHp").val(respuesta.idhp.equipo);
-          $("#nuevoSerieHp").val(respuesta.idhp.serie);
-          $("#nuevoCostoHp").val(respuesta.idhp.costo);
-          $("#nuevoFechaInicioHp").val(respuesta.idhp.fec_inicio);
-          $("#nuevoFechaFinHp").val(respuesta.idhp.fec_fin);*/
+          $("#nuevoMantenimiento").val(respuesta.nombre);
 
 	    	}
 
