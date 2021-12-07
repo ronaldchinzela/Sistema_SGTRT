@@ -217,6 +217,49 @@ function solonumeroCosto(e){
     }
   
   }
+  //VALIDANDO FORMATO DE FECHA, CANTIDAD DE CARACTERES SEGÚN LOS CAMPOS DE LA BD
+  function validar(){
+    var alp,proyecto,equipoFourwalls,serieFourwalls,equipoHp,serieHp,fecha,expresion;
+
+    alp = document.getElementById("nuevoAlp").value;
+    proyecto = document.getElementById("nuevoMantenimiento").value;
+    equipoFourwalls = document.getElementById("nuevoEquipoFourwalls").value;
+    serieFourwalls = document.getElementById("nuevoSerieFourwalls").value;
+    equipoHp = document.getElementById("nuevoEquipoHp").value;
+    serieHp = document.getElementById("nuevoSerieHp").value;
+    fecha = document.getElementById("nuevoFechaInicioFourwalls").value;
+
+    expresion = /[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1]) (2[0-3]|[01][0-9]):[0-5][0-9]:[0-5][0-9]/;
+
+    if(alp === ""){
+      alert("El código ALP no puede estar vacío");
+      return false;
+    }
+    else if(proyecto.length>100){
+        alert("El nombre del proyecto sobrepasa los 100 caracteres");
+        return false;
+    }
+    else if(equipoFourwalls.length>100){
+      alert("El nombre del equipo fourwalls sobrepasa los 100 caracteres");
+      return false;
+    }
+    else if(serieFourwalls.length>100){
+      alert("La serie fourwalls sobrepasa los 100 caracteres");
+      return false;
+    }
+    else if(equipoHp.length>100){
+      alert("El nombre del equipo HP sobrepasa los 100 caracteres");
+      return false;
+    }
+    else if(serieHp.length>100){
+      alert("La serie HP sobrepasa los 100 caracteres");
+      return false;
+    }
+    else if(!expresion.test(fecha)){
+      alert("El formato de fecha no es válido");
+      return false;
+    }
+  }
 
 
 

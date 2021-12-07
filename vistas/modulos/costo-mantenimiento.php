@@ -172,7 +172,7 @@
 
     <div class="modal-content" id="modal-content-mantenimiento">
 
-      <form role="form" method="post" id="dimensiones-form-mantenimiento">
+      <form role="form" method="post" id="dimensiones-form-mantenimiento" onsubmit="return validar();">
 
         <!--=====================================
         CABEZA DEL MODAL
@@ -270,7 +270,7 @@
               
               <div class="input-group">
               
-                <span class="input-group-addon" id="equipoFourwalls"><i class="fa fa-calendar">&nbsp;&nbsp;Fecha inicio 4walls</i></span> 
+                <span class="input-group-addon" id="equipoFourwalls"><i class="fa fa-calendar">&nbsp;&nbsp;Fecha inicio 4walls&nbsp;&nbsp;</i></span> 
 
                 <input type="text" class="form-control input-lg" id="nuevoFechaInicioFourwalls" name="nuevoFechaInicioFourwalls" placeholder="Fecha inicio 4walls" required>
               
@@ -284,7 +284,7 @@
               
               <div class="input-group">
               
-                <span class="input-group-addon" id="equipoFourwalls"><i class="fa fa-calendar">&nbsp;&nbsp;Fecha fin 4walls&nbsp;&nbsp;&nbsp;&nbsp;</i></span> 
+                <span class="input-group-addon" id="equipoFourwalls"><i class="fa fa-calendar">&nbsp;&nbsp;Fecha fin 4walls&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</i></span> 
 
                 <input type="text" class="form-control input-lg" id="nuevoFechaFinFourwalls" name="nuevoFechaFinFourwalls" placeholder="Fecha fin 4walls" required>
 
@@ -313,7 +313,7 @@
               
               <div class="input-group">
               
-                <span class="input-group-addon" id="equipoNexus"><i class="fa fa-money">&nbsp;&nbsp;Costo Nexsus&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</i></span> 
+                <span class="input-group-addon" id="equipoNexus"><i class="fa fa-money">&nbsp;&nbsp;Costo Nexsus&nbsp;&nbsp;&nbsp;</i></span> 
 
                 <input type="text" class="form-control input-lg" id="nuevoCostoNexsus" name="nuevoCostoNexsus" onkeypress="return solonumeroCosto(event);" maxlength="11" onpaste="return false" placeholder="Costo nexsus" required>
 
@@ -327,7 +327,7 @@
               
               <div class="input-group">
               
-                <span class="input-group-addon" id="equipoHp"><i class="fa fa-pencil-square-o">&nbsp;&nbsp;Equipo Nexsus&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</i></span> 
+                <span class="input-group-addon" id="equipoHp"><i class="fa fa-pencil-square-o">&nbsp;&nbsp;Equipo Hp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</i></span> 
 
                 <input type="text" class="form-control input-lg" id="nuevoEquipoHp" name="nuevoEquipoHp" placeholder="Nombre equipo hp" required>
 
@@ -341,7 +341,7 @@
               
               <div class="input-group">
               
-                <span class="input-group-addon" id="equipoHp"><i class="fa fa-barcode">&nbsp;&nbsp;Serie Nexsus&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</i></span> 
+                <span class="input-group-addon" id="equipoHp"><i class="fa fa-barcode">&nbsp;&nbsp;Serie Hp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</i></span> 
 
                 <input type="text" class="form-control input-lg" id="nuevoSerieHp" name="nuevoSerieHp" placeholder="Número serie hp" required>
 
@@ -355,7 +355,7 @@
               
               <div class="input-group">
               
-                <span class="input-group-addon" id="equipoHp"><i class="fa fa-money">&nbsp;&nbsp;Costo Hp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</i></span> 
+                <span class="input-group-addon" id="equipoHp"><i class="fa fa-money">&nbsp;&nbsp;Costo Hp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</i></span> 
 
                 <input type="text" class="form-control input-lg" id="nuevoCostoHp" name="nuevoCostoHp" onkeypress="return solonumeroCosto(event);" maxlength="11" onpaste="return false" placeholder="Costo hp" required>
 
@@ -369,7 +369,7 @@
               
               <div class="input-group">
               
-                <span class="input-group-addon" id="equipoHp"><i class="fa fa-calendar">&nbsp;&nbsp;Fecha inicio HP&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</i></span> 
+                <span class="input-group-addon" id="equipoHp"><i class="fa fa-calendar">&nbsp;&nbsp;Fecha inicio HP</i></span> 
 
                 <input type="text" class="form-control input-lg" id="nuevoFechaInicioHp" name="nuevoFechaInicioHp" placeholder="Fecha inicio hp" required>
 
@@ -384,7 +384,7 @@
               
               <div class="input-group">
               
-                <span class="input-group-addon" id="equipoHp"><i class="fa fa-calendar">&nbsp;&nbsp;Fecha fin HP&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</i></span> 
+                <span class="input-group-addon" id="equipoHp"><i class="fa fa-calendar">&nbsp;&nbsp;Fecha fin HP&nbsp;&nbsp;&nbsp;&nbsp;</i></span> 
 
                 <input type="text" class="form-control input-lg" id="nuevoFechaFinHp" name="nuevoFechaFinHp" placeholder="Fecha fin hp" required>
 
