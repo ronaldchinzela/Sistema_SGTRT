@@ -219,7 +219,7 @@ function solonumeroCosto(e){
   }
   //VALIDANDO FORMATO DE FECHA, CANTIDAD DE CARACTERES SEGÚN LOS CAMPOS DE LA BD
   function validar(){
-    var alp,proyecto,equipoFourwalls,serieFourwalls,equipoHp,serieHp,fecha,expresion;
+    var alp,proyecto,equipoFourwalls,serieFourwalls,equipoHp,serieHp,fecha1,fecha2,fecha3,fecha4,expresion;
 
     alp = document.getElementById("nuevoAlp").value;
     proyecto = document.getElementById("nuevoMantenimiento").value;
@@ -227,9 +227,12 @@ function solonumeroCosto(e){
     serieFourwalls = document.getElementById("nuevoSerieFourwalls").value;
     equipoHp = document.getElementById("nuevoEquipoHp").value;
     serieHp = document.getElementById("nuevoSerieHp").value;
-    fecha = document.getElementById("nuevoFechaInicioFourwalls").value;
+    fecha1 = document.getElementById("nuevoFechaInicioFourwalls").value;
+    fecha2 = document.getElementById("nuevoFechaFinFourwalls").value;
+    fecha3 = document.getElementById("nuevoFechaInicioHp").value;
+    fecha4 = document.getElementById("nuevoFechaFinHp").value;
 
-    expresion = /[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1]) (2[0-3]|[01][0-9]):[0-5][0-9]:[0-5][0-9]/;
+    expresion = /[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1])/;
 
     if(alp === ""){
       alert("El código ALP no puede estar vacío");
@@ -255,12 +258,28 @@ function solonumeroCosto(e){
       alert("La serie HP sobrepasa los 100 caracteres");
       return false;
     }
-    else if(!expresion.test(fecha)){
-      alert("El formato de fecha no es válido");
+    else if(!expresion.test(fecha1)){
+      alert("El formato de fecha en fourwalls no es válido. Por favor ingrese:\naño-mes-día");
       return false;
     }
+    else if(!expresion.test(fecha2)){
+      alert("El formato de fecha en fourwalls no es válido. Por favor ingrese:\naño-mes-día");
+      return false;
+    }
+    else if(!expresion.test(fecha3)){
+      alert("El formato de fecha en hp no es válido. Por favor ingrese:\naño-mes-día");
+      return false;
+    }
+    else if(!expresion.test(fecha4)){
+      alert("El formato de fecha en hp no es válido. Por favor ingrese:\naño-mes-día");
+      return false;
+    }
+
+    //var dateControl = document.querySelector('input[type="date"]');
+    //dateControl.value = '2017-06-01';
   }
 
+/**********************************************/
 
 
 

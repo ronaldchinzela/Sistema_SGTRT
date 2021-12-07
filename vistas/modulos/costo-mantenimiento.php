@@ -272,7 +272,7 @@
               
                 <span class="input-group-addon" id="equipoFourwalls"><i class="fa fa-calendar">&nbsp;&nbsp;Fecha inicio 4walls&nbsp;&nbsp;</i></span> 
 
-                <input type="text" class="form-control input-lg" id="nuevoFechaInicioFourwalls" name="nuevoFechaInicioFourwalls" placeholder="Fecha inicio 4walls" required>
+                <input type="text" class="form-control input-lg" id="nuevoFechaInicioFourwalls" name="nuevoFechaInicioFourwalls" placeholder="yyyy-mm-dd" maxlength="10" required>
               
               </div>
 
@@ -286,7 +286,7 @@
               
                 <span class="input-group-addon" id="equipoFourwalls"><i class="fa fa-calendar">&nbsp;&nbsp;Fecha fin 4walls&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</i></span> 
 
-                <input type="text" class="form-control input-lg" id="nuevoFechaFinFourwalls" name="nuevoFechaFinFourwalls" placeholder="Fecha fin 4walls" required>
+                <input type="text" class="form-control input-lg" id="nuevoFechaFinFourwalls" name="nuevoFechaFinFourwalls" placeholder="yyyy-mm-dd" maxlength="10" required>
 
               </div>
 
@@ -371,7 +371,7 @@
               
                 <span class="input-group-addon" id="equipoHp"><i class="fa fa-calendar">&nbsp;&nbsp;Fecha inicio HP</i></span> 
 
-                <input type="text" class="form-control input-lg" id="nuevoFechaInicioHp" name="nuevoFechaInicioHp" placeholder="Fecha inicio hp" required>
+                <input type="text" class="form-control input-lg" id="nuevoFechaInicioHp" name="nuevoFechaInicioHp" placeholder="yyyy-mm-dd" maxlength="10" required>
 
               </div>
 
@@ -386,7 +386,7 @@
               
                 <span class="input-group-addon" id="equipoHp"><i class="fa fa-calendar">&nbsp;&nbsp;Fecha fin HP&nbsp;&nbsp;&nbsp;&nbsp;</i></span> 
 
-                <input type="text" class="form-control input-lg" id="nuevoFechaFinHp" name="nuevoFechaFinHp" placeholder="Fecha fin hp" required>
+                <input type="text" class="form-control input-lg" id="nuevoFechaFinHp" name="nuevoFechaFinHp" placeholder="yyyy-mm-dd" maxlength="10" required>
 
               </div>
 
