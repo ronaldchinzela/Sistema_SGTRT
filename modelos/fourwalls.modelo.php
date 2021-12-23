@@ -12,14 +12,14 @@ class ModeloFourwalls{
 
 		if($item != null){
 
-			$stmt = Conexion::conectar()->prepare("SELECT f.idfourwalls, f.equipo, f.serie, f.costo, f.fec_inicio, f.fec_fin, p.nombre
-			FROM fourwalls AS f JOIN proyecto AS p ON f.idproyecto = p.idproyecto WHERE idfourwalls = :idFourwalls");
+			$stmt = Conexion::conectar()->prepare("SELECT f.idfourwalls, f.equipo, f.serie, f.costo, f.fec_inicio, f.fec_fin, f.idproyecto, p.nombre
+			FROM fourwalls AS f JOIN proyecto AS p ON f.idproyecto = p.idproyecto WHERE  f.idproyecto = :idFourwalls");
 
 			$stmt -> bindParam(":idFourwalls", $valor, PDO::PARAM_STR);
 
 			$stmt -> execute();
 
-			return $stmt -> fetch();
+			return $stmt -> fetchAll();
 
 		}else{
 
@@ -74,7 +74,7 @@ class ModeloFourwalls{
 					BORRAR FOURWALLS
 	=============================================*/
 
-	static public function mdlBorrarFourwalls($tabla, $datos){
+	/*static public function mdlBorrarFourwalls($tabla, $datos){
 
 		$stmt = Conexion::conectar()->prepare("DELETE FROM $tabla WHERE idfourwalls = :idfourwalls");
 
@@ -94,7 +94,7 @@ class ModeloFourwalls{
 
 		$stmt = null;
 
-	}
+	}*/
 
 }
 

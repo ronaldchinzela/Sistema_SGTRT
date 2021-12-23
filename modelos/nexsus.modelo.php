@@ -13,13 +13,13 @@ class ModeloNexsus{
 		if($item != null){
 
 			$stmt = Conexion::conectar()->prepare("SELECT n.idnexus, n.punto_red, n.costo, n.idproyecto, p.nombre
-			FROM nexus AS n JOIN proyecto AS p ON n.idproyecto = p.idproyecto WHERE idnexus = :idNexus");
+			FROM nexus AS n JOIN proyecto AS p ON n.idproyecto = p.idproyecto WHERE n.idproyecto = :idNexus");
 
 			$stmt -> bindParam(":idNexus", $valor, PDO::PARAM_STR);
 
 			$stmt -> execute();
 
-			return $stmt -> fetch();
+			return $stmt -> fetchAll();
 
 		}else{
 
@@ -71,7 +71,7 @@ class ModeloNexsus{
 					BORRAR NEXSUS
 	=============================================*/
 
-	static public function mdlBorrarNexsus($tabla, $datos){
+	/*static public function mdlBorrarNexsus($tabla, $datos){
 
 		$stmt = Conexion::conectar()->prepare("DELETE FROM $tabla WHERE idnexus = :idnexus");
 
@@ -91,7 +91,7 @@ class ModeloNexsus{
 
 		$stmt = null;
 
-	}
+	}*/
 
 }
 

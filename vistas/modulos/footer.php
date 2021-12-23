@@ -4,8 +4,19 @@
     Todos los derechos reservados 
 
     <div class="erikamonteza">
-    <?php    
-    if( $_GET["ruta"] == "licencia-spla" ||  $_GET["ruta"] == "costo-mantenimiento" || $_GET["ruta"] == "costo-nexsus" || $_GET["ruta"] == "costo-hp" || $_GET["ruta"] == "costo-fourwalls" || $_GET["ruta"] == "sow" || $_GET["ruta"] == "servidores-spla"){
+    <?php   
+    //INDICANDO LAS VISTAS QUE VAN A TENER EL TIPO DE CAMBIO EN EL PIE DE PÁGINA
+    if( $_GET["ruta"] == "licencia-spla" ||  
+        $_GET["ruta"] == "costo-mantenimiento" || 
+        $_GET["ruta"] == "costo-nexsus" || 
+        $_GET["ruta"] == "costo-hp" || 
+        $_GET["ruta"] == "costo-fourwalls" || 
+        $_GET["ruta"] == "sow" || 
+        $_GET["ruta"] == "servidores-spla" || 
+        $_GET["ruta"] == "sow" || 
+        $_GET["ruta"] == "eliminar-costo-fourwalls" || 
+        $_GET["ruta"] == "eliminar-costo-nexsus" || 
+        $_GET["ruta"] == "eliminar-costo-hp"){
     
     $item = null;
     $valor = null;

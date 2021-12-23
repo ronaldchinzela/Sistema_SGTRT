@@ -8,34 +8,24 @@ require_once "../modelos/proyecto.modelo.php";
 class AjaxMantenimientos{
 
 /*=============================================
-	          VALIDAR ALP EXISTENTE
+	 		 VALIDAR ALP EXISTENTE
 =============================================*/	
 
-	public $validarAlp;
+		public $validarAlp;
 
-	public function ajaxValidarAlp(){
-
-		$item = "idproyecto";
-		$valor = $this->validarAlp;
-
-
-		$respuesta = ControladorProyectos::ctrMostrarProyectos($item, $valor);
-		/*$respuestaFourwalls = ControladorFourwalls::ctrMostrarFourwalls("idfourwalls", $respuesta["idfourwalls"]);	
-		$respuestaNexsus = ControladorNexsus::ctrMostrarNexsus("idnexus", $respuesta["idnexus"]);
-		$respuestaHp = ControladorHp::ctrMostrarHp("idhp", $respuesta["idhp"]);*/
-
-		echo json_encode($respuesta);
-
-		/*echo json_encode(["idproyecto" => $respuestaProyecto,
-						  "idfourwalls" => $respuestaFourwalls,
-						  "idnexus" => $respuestaNexsus,
-						  "idhp" => $respuestaHp]);*/
-
+		public function ajaxValidarAlp(){
+	
+			$item = "idproyecto";
+			$valor = $this->validarAlp;
+	
+			$respuesta = ControladorProyectos::ctrMostrarProyectos($item, $valor);
+	
+			echo json_encode($respuesta);
+	
+		}
 	}
-
-}
 /*=============================================
-            OBJETO DE VALIDAR ALP 
+            VALIDAR NO REPETIR ALP
 =============================================*/
 
 if(isset( $_POST["validarAlp"])){
@@ -43,4 +33,5 @@ if(isset( $_POST["validarAlp"])){
 	$valAlp = new AjaxMantenimientos();
 	$valAlp -> validarAlp = $_POST["validarAlp"];
 	$valAlp -> ajaxValidarAlp();
-}
+
+} 

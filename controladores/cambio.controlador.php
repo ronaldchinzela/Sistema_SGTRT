@@ -92,6 +92,8 @@
 					swal({
 						  type: "success",
 						  title: "El tipo de cambio ha sido actualizado correctamente",
+                          allowOutsideClick: false,
+						  allowEscapeKey: false,
                           text: "'.$datos['valor'].'",
 						  showConfirmButton: true,
 						  confirmButtonText: "Aceptar"
@@ -114,7 +116,9 @@
 					swal({
 						  type: "error",
 						  title: "¡Los datos ingresados no pueden ir vacíos o llevar caracteres especiales ni letras!",
-						  showConfirmButton: true,
+                          allowOutsideClick: false,
+						  allowEscapeKey: false,
+                          showConfirmButton: true,
 						  confirmButtonText: "Cerrar"
 						  }).then(function(result){
 							if (result.value) {

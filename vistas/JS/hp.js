@@ -41,10 +41,13 @@ $(".tablas").on("click", ".btnEditarHp", function(){
 
     //capturando el id del fourwalls
     var idHp = $(this).attr("idHp");
+    var idproyecto = $(this).attr("idProyecto");
 
     //mostrarndo la alerta para el id seleccionado
     swal({
       title: '¿Está seguro de borrar este registro?',
+      allowOutsideClick: false,
+      allowEscapeKey: false,
       text: "¡Si no lo está puede cancelar la acción!",
       type: 'warning',
       showCancelButton: true,
@@ -57,7 +60,7 @@ $(".tablas").on("click", ".btnEditarHp", function(){
       //redireccionando a la página de Hp en caso la acción sea ejecutada
       if(result.value){
 
-        window.location = "index.php?ruta=costo-hp&idHp="+idHp;
+        location.href = "index.php?ruta=eliminar-costo-hp&idHp=" + idHp + "&idProyecto=" + idproyecto;
 
       }
 

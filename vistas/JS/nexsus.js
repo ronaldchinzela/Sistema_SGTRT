@@ -37,10 +37,13 @@ $(".tablas").on("click", ".btnEditarNexsus", function(){
 
     //capturando el id del Nexsus
     var idNexsus = $(this).attr("idNexsus");
+    var idproyecto = $(this).attr("idProyecto");
 
     //mostrarndo la alerta para el id seleccionado
     swal({
       title: '¿Está seguro de borrar este registro?',
+      allowOutsideClick: false,
+      allowEscapeKey: false,
       text: "¡Si no lo está puede cancelar la acción!",
       type: 'warning',
       showCancelButton: true,
@@ -53,7 +56,8 @@ $(".tablas").on("click", ".btnEditarNexsus", function(){
       //redireccionando a la página de Nexsus en caso la acción sea ejecutada
       if(result.value){
 
-        window.location = "index.php?ruta=costo-nexsus&idNexsus="+idNexsus;
+        location.href = "index.php?ruta=eliminar-costo-nexsus&idNexsus=" + idNexsus + "&idProyecto=" + idproyecto;
+        location.href = "index.php?ruta=eliminar-costo-fourwalls&idFourwalls=" + idFourwalls + "&idProyecto=" + idproyecto;
 
       }
 

@@ -12,14 +12,14 @@ class ModeloHp{
 
 		if($item != null){
 
-			$stmt = Conexion::conectar()->prepare("SELECT h.idhp, h.equipo, h.serie, h.costo, h.fec_inicio, h.fec_fin, p.nombre
-			FROM hp AS h JOIN proyecto AS p ON h.idproyecto = p.idproyecto WHERE idhp = :idHp");
+			$stmt = Conexion::conectar()->prepare("SELECT h.idhp, h.equipo, h.serie, h.costo, h.fec_inicio, h.fec_fin, h.idproyecto, p.nombre
+			FROM hp AS h JOIN proyecto AS p ON h.idproyecto = p.idproyecto WHERE h.idproyecto = :idHp");
 
 			$stmt -> bindParam(":idHp", $valor, PDO::PARAM_STR);
 
 			$stmt -> execute();
 
-			return $stmt -> fetch();
+			return $stmt -> fetchAll();
 
 		}else{
 
@@ -75,7 +75,7 @@ class ModeloHp{
 					BORRAR HP
 	=============================================*/
 
-	static public function mdlBorrarHp($tabla, $datos){
+	/*static public function mdlBorrarHp($tabla, $datos){
 
 		$stmt = Conexion::conectar()->prepare("DELETE FROM $tabla WHERE idhp = :idhp");
 
@@ -95,6 +95,6 @@ class ModeloHp{
 
 		$stmt = null;
 
-	}
+	}*/
 
 }

@@ -45,6 +45,8 @@ $(".tablas").on("click", ".btnEditarLicencia", function(){
     //mostrarndo la alerta para el id seleccionado
     swal({
       title: '¿Está seguro de borrar la licencia?',
+      allowOutsideClick: false,
+      allowEscapeKey: false,
       text: "¡Si no lo está puede cancelar la acción!",
       type: 'warning',
       showCancelButton: true,

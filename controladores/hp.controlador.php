@@ -49,6 +49,8 @@ class ControladorHp{
 						swal({
 							  type: "success",
 							  title: "El registro se actualizó correctamente",
+							  allowOutsideClick: false,
+							  allowEscapeKey: false,
 							  showConfirmButton: true,
 							  confirmButtonText: "Aceptar"
 							  }).then(function(result){
@@ -71,6 +73,8 @@ class ControladorHp{
 					swal({
 						  type: "error",
 						  title: "¡Los campos no puede ir vacíos o llevar caracteres especiales!",
+						  allowOutsideClick: false,
+						  allowEscapeKey: false,
 						  showConfirmButton: true,
 						  confirmButtonText: "Cerrar"
 						  }).then(function(result){
@@ -91,7 +95,7 @@ class ControladorHp{
 					BORRAR HP
 	=============================================*/
 
-	static public function ctrBorrarHp(){
+	/*static public function ctrBorrarHp(){
 
 		//ELIMINAR REGISTRO DE LA TABLA HP
 		if(isset($_GET["idHp"])){
@@ -122,6 +126,6 @@ class ControladorHp{
 			}
 		}
 
-	}
+	}*/
 
 }

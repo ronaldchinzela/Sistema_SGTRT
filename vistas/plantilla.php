@@ -97,10 +97,14 @@
            $_GET["ruta"] == "resumen-servidores" ||
            $_GET["ruta"] == "usuarios" ||
            $_GET["ruta"] == "sow" ||
+           $_GET["ruta"] == "proyectos" ||
            $_GET["ruta"] == "costo-mantenimiento" || 
            $_GET["ruta"] == "costo-fourwalls" ||
+           $_GET["ruta"] == "eliminar-costo-fourwalls" ||
            $_GET["ruta"] == "costo-nexsus" || 
+           $_GET["ruta"] == "eliminar-costo-nexsus" ||
            $_GET["ruta"] == "costo-hp" ||
+           $_GET["ruta"] == "eliminar-costo-hp" ||
            $_GET["ruta"] == "licencia-spla" ||
            $_GET["ruta"] == "servidores-spla" ||
            $_GET["ruta"] == "grafica" ||

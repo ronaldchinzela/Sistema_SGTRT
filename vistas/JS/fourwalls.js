@@ -12,12 +12,12 @@ $(".tablas").on("click", ".btnEditarFourwalls", function(){
 	$.ajax({
 		url: "ajax/fourwalls.ajax.php",
 		method: "POST",
-      	data: datos,
-      	cache: false,
-     	contentType: false,
-     	processData: false,
-     	dataType:"json",
-     	success: function(respuesta){
+    data: datos,
+    cache: false,
+    contentType: false,
+    processData: false,
+    dataType:"json",
+    success: function(respuesta){
         //console.log(respuesta);
 			$("#idFourwalls").val(respuesta["idfourwalls"]);
 				$("#editarNombre").val(respuesta["nombre"]);
@@ -40,10 +40,12 @@ $(".tablas").on("click", ".btnEditarFourwalls", function(){
 
     //capturando el id del fourwalls
     var idFourwalls = $(this).attr("idFourwalls");
-
+    var idproyecto = $(this).attr("idProyecto");
     //mostrarndo la alerta para el id seleccionado
     swal({
       title: '¿Está seguro de borrar este registro?',
+      allowOutsideClick: false,
+      allowEscapeKey: false,
       text: "¡Si no lo está puede cancelar la acción!",
       type: 'warning',
       showCancelButton: true,
@@ -56,7 +58,9 @@ $(".tablas").on("click", ".btnEditarFourwalls", function(){
       //redireccionando a la página de fourwalls en caso la acción sea ejecutada
       if(result.value){
 
-        window.location = "index.php?ruta=costo-fourwalls&idFourwalls="+idFourwalls;
+        //window.location = "index.php?ruta=costo-fourwalls&idFourwalls="+idFourwalls;
+        //console.log(idFourwalls,idproyecto);
+        location.href = "index.php?ruta=eliminar-costo-fourwalls&idFourwalls=" + idFourwalls + "&idProyecto=" + idproyecto;
 
       }
 

@@ -5751,10 +5751,19 @@ table.text-center th {
    top: 10px;
  }
 
+ #btn-mantenimientoCosto{
+  position: relative;
+  right: -9px;
+  top: 10px;
+  background-color: #12990d;
+}
+ #btn-mantenimientoCosto:hover{
+  background-color: #2eb334;
+}
 .cbo-año{
   position: relative;
-  top: 12px;
-  left: 415px;
+  top: 71px;
+  left: -85px;
   width: 60px;
   font-size: 16px;
   font-family: 'Arial', sans-serif;
@@ -5781,8 +5790,8 @@ table.text-center th {
 }
 .cbo-mes{
   position: relative;
-  top: -24px;
-  left: 435px;
+  top: 35px;
+  left: 405px;
   width: 60px;
   font-size: 16px;
   font-family: 'Arial', sans-serif;
@@ -5812,9 +5821,9 @@ table.text-center th {
   box-sizing: border-box;
   float: auto;
   height: 32px;
-  top: -58px;
+  top: 2px;
   position: relative;
-  left: 700px;
+  left: 645px;
   width: 100px;
   color: #fff;
   padding-left: 10px;
@@ -5838,15 +5847,54 @@ table.text-center th {
 
 #dimensiones-form-mantenimiento{
   position: relative;
-  height: 1000px;
+  height: 280px;
   width: 470px;
 }
 #modal-content-mantenimiento{
   width: 470px;
   right: -90px;
 }
-
+#dimensiones-form-fourwalls{
+  position: relative;
+  height: 505px;
+  width: 470px;
+}
+#modal-content-fourwalls{
+  width: 470px;
+  right: -90px;
+}
+#dimensiones-form-nexus{
+  position: relative;
+  height: 324px;
+  width: 470px;
+}
+#modal-content-nexus{
+  width: 470px;
+  right: -90px;
+}
+#dimensiones-form-hp{
+  position: relative;
+  height: 505px;
+  width: 470px;
+}
+#modal-content-hp{
+  width: 470px;
+  right: -90px;
+}
+#alert-dangerALP{
+  padding: 5px;
+  text-align: center;
+}
 #nuevoAlp{
+  border-color: #000;
+}
+#nuevoAlpFourwalls{
+  border-color: #000;
+}
+#nuevoAlpNexus{
+  border-color: #000;
+}
+#nuevoAlpHp{
   border-color: #000;
 }
 #nuevoAlpSpan{
@@ -6237,11 +6285,11 @@ table.text-center th {
    /*############################################### ESTILOS footer ###########################################*/
   .erikamonteza{
     position: relative;
-    left: 1043px;
-    top: -15px;
+    right: 72px;
+    top: 5px;
+    float: right;
   }
   #TC{
-    position: relative;
     position: absolute;
     top: -12px;
     font-size: 14px;

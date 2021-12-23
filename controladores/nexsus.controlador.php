@@ -88,7 +88,7 @@ class ControladorNexsus{
 					BORRAR NEXSUS
 	=============================================*/
 
-	static public function ctrBorrarNexsus(){
+	/*static public function ctrBorrarNexsus(){
 
 		/*if(isset($_GET["idNexsus"])){
 
@@ -100,7 +100,7 @@ class ControladorNexsus{
 
 		//ELIMINAR REGISTRO DE LA TABLA NEXSUS
 	
-		if(isset($_GET["idNexsus"])){
+		/*if(isset($_GET["idNexsus"])){
 
 			$tabla ="nexus";
 			$datos = $_GET["idNexsus"];
@@ -130,6 +130,6 @@ class ControladorNexsus{
 			}
 		}
 
-	}
+	}*/
 
 }

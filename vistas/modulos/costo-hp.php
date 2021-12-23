@@ -53,21 +53,25 @@
             <?php
                   $item = null;
                   $valor = null;
+
+                  $params = [];
+                  $split = explode('?', $_SERVER["REQUEST_URI"]);
+                  if(isset($split[1])){
+                    parse_str($split[1], $params);
+                  }
+                  
+                  if(isset($params["idproyecto"])){
+                   $item = "idproyecto";
+                   $valor = $params["idproyecto"];
+                  }
         
                   $hp = ControladorHp::ctrMostrarHp($item, $valor);
 
                   foreach($hp as $key => $value) {
                     
                     echo ' <tr>
-                    <td>'.($key+1).'</td>';
-
-                    //TRAYEDO EL NOMBRE DEL PROYECTO DE LA TABLA PROYECTO
-                    $item = "idproyecto";
-                    $valor = $value["idproyecto"];
-
-                    $proyectos = ControladorProyectos::ctrMostrarProyectos($item, $valor);
-
-                    echo'<td>'.$proyectos["nombre"].'</td>
+                         <td>'.($key+1).'</td>
+                         <td>'.$value["nombre"].'</td>
                          <td>'.$value["equipo"].'</td>
                          <td>'.$value["serie"].'</td>
                          <td><b>$</b>&nbsp;&nbsp'.number_format($value["costo"],2).'</td>
@@ -79,7 +83,7 @@
                       <div class="btn-group">
                           
                         <button class="btn btn-warning btnEditarHp" idHp="'.$value["idhp"].'" data-toggle="modal" data-target="#modalEditarHp"><i class="fa fa-pencil"></i>&nbsp;Editar</button>
-                        <button class="btn btn-danger btnEliminarHp" idHp="'.$value["idhp"].'"><i class="fa fa-times"></i>&nbsp;Eliminar</button>
+                        <button class="btn btn-danger btnEliminarHp" idHp="'.$value["idhp"].'" idProyecto="'.$value["idproyecto"].'"><i class="fa fa-times"></i>&nbsp;Eliminar</button>
 
                       </div>  
 
@@ -247,9 +251,4 @@
   </div>
 
 </div>
-<?php
 
-  $borrarHp = new ControladorHp();
-  $borrarHp -> ctrBorrarHp();
-
-?>

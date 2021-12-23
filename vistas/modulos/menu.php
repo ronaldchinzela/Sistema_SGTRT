@@ -94,12 +94,21 @@
                             <span>SOW</span>
                         </a>
                     </li>
+
+                    <li>
+                    <a href="proyectos">
+                        <i class="fa fa-share"></i>
+                        <span>Proyectos</span>
+                    </a>
+                   </li>
+
                     <li>
                         <a href="costo-mantenimiento">
                             <i class="fa fa-share"></i>
                             <span>Costo mantenimiento</span>
                         </a>
                     </li>
+
                     <li>
                         <a href="licencia-spla">
                             <i class="fa fa-share"></i>

@@ -49,6 +49,8 @@ class ControladorFourwalls{
 						swal({
 							  type: "success",
 							  title: "El registro se actualizó correctamente",
+							  allowOutsideClick: false,
+							  allowEscapeKey: false,
 							  showConfirmButton: true,
 							  confirmButtonText: "Aceptar"
 							  }).then(function(result){
@@ -71,6 +73,8 @@ class ControladorFourwalls{
 					swal({
 						  type: "error",
 						  title: "¡Los campos no puede ir vacíos o llevar caracteres especiales!",
+						  allowOutsideClick: false,
+						  allowEscapeKey: false,
 						  showConfirmButton: true,
 						  confirmButtonText: "Cerrar"
 						  }).then(function(result){
@@ -91,9 +95,9 @@ class ControladorFourwalls{
 					BORRAR FOURWALLS
 	=============================================*/
 
-	static public function ctrBorrarFourwalls(){
+	/*static public function ctrBorrarFourwalls(){
 	
-		//si viene un dato get llamado idFourwalls
+		//si viene un dato get llamado idFourwalls 
 		if(isset($_GET["idFourwalls"])){
 
 			//se redireccionará a la tabla Fourwalls de la base de datos
@@ -101,7 +105,7 @@ class ControladorFourwalls{
 			$datos = $_GET["idFourwalls"];
 
 			//la respuesta será enviada al modelo
-			$respuesta = ModeloFourwalls::mdlBorrarFourwalls($tabla, $datos);
+			$respuesta = ModeloEliminarFourwalls::mdlBorrarFourwalls($tabla, $datos);
 
 			//si la respuesta es ok mostrará alert de borrado correctamente
 			if($respuesta == "ok"){
@@ -125,6 +129,6 @@ class ControladorFourwalls{
 			}
 		}
 
-	}
+	}*/
 
 }

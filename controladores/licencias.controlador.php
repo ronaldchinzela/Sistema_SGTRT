@@ -30,6 +30,8 @@ class ControladorLicencias{
 					swal({
 						  type: "success",
 						  title: "¡La licencia ha sido generada exitósamente!",
+						  allowOutsideClick: false,
+						  allowEscapeKey: false,
 						  showConfirmButton: true,
 						  confirmButtonText: "Cerrar"
 						  }).then(function(result){
@@ -51,6 +53,8 @@ class ControladorLicencias{
 					swal({
 						  type: "error",
 						  title: "¡Los datos ingresados no pueden ir vacíos o llevar caracteres especiales!",
+						  allowOutsideClick: false,
+						  allowEscapeKey: false,
 						  showConfirmButton: true,
 						  confirmButtonText: "Cerrar"
 						  }).then(function(result){
@@ -114,6 +118,8 @@ class ControladorLicencias{
 					swal({
 						  type: "success",
 						  title: "La licencia ha sido actualizada correctamente",
+						  allowOutsideClick: false,
+						  allowEscapeKey: false,
 						  showConfirmButton: true,
 						  confirmButtonText: "Aceptar"
 						  }).then(function(result){
@@ -135,6 +141,8 @@ class ControladorLicencias{
 					swal({
 						  type: "error",
 						  title: "¡Los datos ingresados no pueden ir vacíos o llevar caracteres especiales!",
+						  allowOutsideClick: false,
+						  allowEscapeKey: false,
 						  showConfirmButton: true,
 						  confirmButtonText: "Cerrar"
 						  }).then(function(result){
@@ -179,6 +187,8 @@ class ControladorLicencias{
 					swal({
 						  type: "success",
 						  title: "La licencia ha sido borrada correctamente",
+						  allowOutsideClick: false,
+						  allowEscapeKey: false,
 						  showConfirmButton: true,
 						  confirmButtonText: "Aceptar"
 						  }).then(function(result){

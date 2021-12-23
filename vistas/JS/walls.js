@@ -62,61 +62,13 @@ function validarCsv()
 
 }
 
-//TRAER REGISTROS FOURWALLS POR ID
-/*$(".verFourwalls").click(function(e){
-
-  e.preventDefault();
-
-	var idFourwalls = $(this).attr("idFourwalls");
-	
-  var datos = new FormData();
-  datos.append("idFourwalls", idFourwalls);
-	
-  $.ajax({
-
-		url:"ajax/mantenimiento.ajax.php",
-		method: "POST",
-		data: datos,
-		cache: false,
-		contentType: false,
-		processData: false,
-		dataType: "json",
-		success: function(respuesta){
-
-     console.log("respuesta", respuesta);
-			
-			$("#traerNombre").html(respuesta["nom_proyecto"]);
-			$("#traerEquipo").html(respuesta["equipo"]);
-			$("#traerSerie").html(respuesta["serie"]);
-			$("#traerCosto").html(respuesta["costo"]);
-			$("#traerFecIni").html(respuesta["fec_inicio"]);
-			$("#traerFecFin").html(respuesta["fec_fin"]);
-
-
-		}
-
-	});
-
-})*/
-
-/*$(".verFourwalls").click(function(e){
-
-  e.preventDefault();
-  
-  let id = $(this).attr("idFourwalls");
-  document.getElementById("idFourwalls").value = id;
-
-  document.getElementById("#idFourwalls").submit();
-
-})*/
-
-/*=============================================
-      REVISAR SI EL CÓDIGO ALP YA EXISTE
-=============================================*/
+/*=====================================================================
+       REVISAR SI EL CÓDIGO ALP YA EXISTE EN REGISTRO DE PROYECTO
+=====================================================================*/
 
 $("#nuevoAlp").change(function(){
   
-  //$("val").remove();
+  $(".alert").remove();
 
 	var mantenimiento = $(this).val();
 
@@ -136,10 +88,12 @@ $("#nuevoAlp").change(function(){
 
         if(respuesta){
 
-          //$("#nuevoMantenimiento") HACE REFERENCIA AL ID DEL INPUT
           //idproyecto HACE REFERENCIA AL ID DEL AJAX
           //nombre HACE REFERENCIA AL NOMBRE DEL CAMPO DE LA TABLA
-          $("#nuevoMantenimiento").val(respuesta.nombre);
+          
+          //$("#nuevoMantenimiento").val(respuesta.nombre);
+          alert("¡El código ALP " + datos.get("validarAlp")+ " ya existe!");
+          $("#nuevoAlp").val("");
 
 	    	}
 
@@ -147,7 +101,110 @@ $("#nuevoAlp").change(function(){
 
 	})
 })
+/*=========================================================
+      REVISAR SI EL CÓDIGO ALP NO EXISTE EN FOURWALLS
+=========================================================*/
 
+$("#nuevoAlpFourwalls").change(function(){
+  
+    $(".alert").remove();
+
+	var mantenimiento = $(this).val();
+
+	var datos = new FormData();
+	datos.append("validarAlp", mantenimiento);
+
+	 $.ajax({
+	    url:"ajax/mantenimiento.ajax.php",
+	    method:"POST",
+	    data: datos,
+	    cache: false,
+	    contentType: false,
+	    processData: false,
+	    dataType: "json",
+	    success:function(respuesta){
+        console.log("respuesta", respuesta);
+
+        if(respuesta == false){
+
+          alert("¡El código ALP " + datos.get("validarAlp")+ " no existe en la tabla proyecto!\nPor favor, regístrelo");
+	    
+          $("#nuevoAlpFourwalls").val("");
+
+        }
+      }
+
+	})
+})
+/*=========================================================
+      REVISAR SI EL CÓDIGO ALP NO EXISTE EN NEXSUS
+=========================================================*/
+
+$("#nuevoAlpNexus").change(function(){
+  
+  $(".alert").remove();
+
+var mantenimiento = $(this).val();
+
+var datos = new FormData();
+datos.append("validarAlp", mantenimiento);
+
+ $.ajax({
+    url:"ajax/mantenimiento.ajax.php",
+    method:"POST",
+    data: datos,
+    cache: false,
+    contentType: false,
+    processData: false,
+    dataType: "json",
+    success:function(respuesta){
+      console.log("respuesta", respuesta);
+
+      if(respuesta == false){
+
+        alert("¡El código ALP " + datos.get("validarAlp")+ " no existe en la tabla proyecto!\nPor favor, regístrelo");
+    
+        $("#nuevoAlpNexus").val("");
+
+      }
+    }
+
+})
+})
+/*=========================================================
+      REVISAR SI EL CÓDIGO ALP NO EXISTE EN HP
+=========================================================*/
+
+$("#nuevoAlpHp").change(function(){
+  
+  $(".alert").remove();
+
+var mantenimiento = $(this).val();
+var datos = new FormData();
+datos.append("validarAlp", mantenimiento);
+
+ $.ajax({
+    url:"ajax/mantenimiento.ajax.php",
+    method:"POST",
+    data: datos,
+    cache: false,
+    contentType: false,
+    processData: false,
+    dataType: "json",
+    success:function(respuesta){
+      console.log("respuesta", respuesta);
+
+      if(respuesta == false){
+
+        alert("¡El código ALP " + datos.get("validarAlp")+ " no existe en la tabla proyecto!\nPor favor, regístrelo");
+    
+        $("#nuevoAlpHp").val("");
+
+      }
+    }
+
+})
+})
 //LIMITAR INGRESAR SOLO NÚMEROS EL CÓDIGO ALP
 function solonumeroMantenimiento(e){
  
@@ -217,32 +274,38 @@ function solonumeroCosto(e){
     }
   
   }
-  //VALIDANDO FORMATO DE FECHA, CANTIDAD DE CARACTERES SEGÚN LOS CAMPOS DE LA BD
+  //VALIDANDO CANTIDAD DE CARACTERES SEGÚN LOS CAMPOS DE LA BD
   function validar(){
-    var alp,proyecto,equipoFourwalls,serieFourwalls,equipoHp,serieHp,fecha1,fecha2,fecha3,fecha4,expresion;
+    var alp,proyecto;
 
     alp = document.getElementById("nuevoAlp").value;
     proyecto = document.getElementById("nuevoMantenimiento").value;
-    equipoFourwalls = document.getElementById("nuevoEquipoFourwalls").value;
-    serieFourwalls = document.getElementById("nuevoSerieFourwalls").value;
-    equipoHp = document.getElementById("nuevoEquipoHp").value;
-    serieHp = document.getElementById("nuevoSerieHp").value;
-    fecha1 = document.getElementById("nuevoFechaInicioFourwalls").value;
-    fecha2 = document.getElementById("nuevoFechaFinFourwalls").value;
-    fecha3 = document.getElementById("nuevoFechaInicioHp").value;
-    fecha4 = document.getElementById("nuevoFechaFinHp").value;
+   
 
-    expresion = /[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1])/;
-
-    if(alp === ""){
-      alert("El código ALP no puede estar vacío");
+    if(alp === "" || proyecto === ""){
+      alert("Los campos no pueden estar vacíos");
       return false;
     }
     else if(proyecto.length>100){
         alert("El nombre del proyecto sobrepasa los 100 caracteres");
         return false;
     }
-    else if(equipoFourwalls.length>100){
+
+  }
+
+
+//VALIDANDO INPUTS DE COSTO FOURWALLS
+  function validarF(){
+  var  equipoFourwalls,serieFourwalls,fecha1,fecha2,expresion;
+     
+  equipoFourwalls = document.getElementById("nuevoEquipoFourwalls").value;
+  serieFourwalls = document.getElementById("nuevoSerieFourwalls").value;
+  //fecha1 = document.getElementById("nuevoFechaInicioFourwalls").value;
+  //fecha2 = document.getElementById("nuevoFechaFinFourwalls").value;
+  
+  //expresion = /^([0-2][0-9]|3[0-1])(\/|-)(0[1-9]|1[0-2])\2(\d{4})$/;
+  
+    if(equipoFourwalls.length>100){
       alert("El nombre del equipo fourwalls sobrepasa los 100 caracteres");
       return false;
     }
@@ -250,36 +313,65 @@ function solonumeroCosto(e){
       alert("La serie fourwalls sobrepasa los 100 caracteres");
       return false;
     }
-    else if(equipoHp.length>100){
-      alert("El nombre del equipo HP sobrepasa los 100 caracteres");
-      return false;
-    }
-    else if(serieHp.length>100){
-      alert("La serie HP sobrepasa los 100 caracteres");
-      return false;
-    }
-    else if(!expresion.test(fecha1)){
-      alert("El formato de fecha en fourwalls no es válido. Por favor ingrese:\naño-mes-día");
-      return false;
-    }
-    else if(!expresion.test(fecha2)){
-      alert("El formato de fecha en fourwalls no es válido. Por favor ingrese:\naño-mes-día");
-      return false;
-    }
-    else if(!expresion.test(fecha3)){
-      alert("El formato de fecha en hp no es válido. Por favor ingrese:\naño-mes-día");
-      return false;
-    }
-    else if(!expresion.test(fecha4)){
-      alert("El formato de fecha en hp no es válido. Por favor ingrese:\naño-mes-día");
-      return false;
-    }
+}
 
-    //var dateControl = document.querySelector('input[type="date"]');
-    //dateControl.value = '2017-06-01';
+//VALIDANDO INPUTS DE COSTO HP
+function validarH(){
+  var  equipoHp,serieHp,fecha3,fecha4,expresion2;
+     
+  equipoHp = document.getElementById("nuevoEquipoHp").value;
+  serieHp = document.getElementById("nuevoSerieHp").value;
+  //fecha3 = document.getElementById("nuevoFechaInicioHp").value;
+  //fecha4 = document.getElementById("nuevoFechaFinHp").value;
+  
+  //expresion2 = /^([0-2][0-9]|3[0-1])(\/|-)(0[1-9]|1[0-2])\2(\d{4})$/;
+  
+      if(equipoHp.length>100){
+        alert("El nombre del equipo HP sobrepasa los 100 caracteres");
+        return false;
+      }
+      else if(serieHp.length>100){
+        alert("La serie HP sobrepasa los 100 caracteres");
+        return false;
+      }
+  }
+//LIMITAR INGRESAR SOLO NÚMEROS EN FECHA
+/*function solonumeroFecha(e){
+ 
+  if(window.event){
+    keynum = e.keyCode;
+  }
+  else{
+    keynum = e.which;
   }
 
-/**********************************************/
+  // > 47 && < 58 equivale a números del 0 al 9
+  // 8 equivale a retroceso
+  //13 al retorno 
+  //46 equivale al punto
+  if((keynum > 47 && keynum < 58) || keynum == 8 || keynum == 13 || keynum == 47)
+  {
+    return true;
+  }
+  else
+  {
+    alert("Ingresar solo números en el formato día/mes/año");
+    return false;
+  }
 
+}*/
+//
+ /* function ValidarFechasFH()
+{
+   var fechainicial = document.getElementById("nuevoFechaInicioFourwalls").value;
+   var fechafinal = document.getElementById("nuevoFechaFinFourwalls").value;
 
+   if(Date.parse(fechafinal) < Date.parse(fechainicial)) {
 
+   alert("La fecha final debe ser mayor a la fecha inicial");
+  }
+}*/
+
+$(document).ready(function(){
+  $('#nuevoFechaInicioFourwalls').mask('00/00/0000');
+});
