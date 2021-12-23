@@ -5,32 +5,8 @@ require_once "conexion.php";
 class ModeloMantenimientos{
 
 	/*=============================================
-					CREAR MANTENIMIENTO
+					CREAR COSTOS
 	=============================================*/
-
-	static public function mdlIngresarMantenimiento($tabla, $datos){
-
-
-			$stmt1 = Conexion::conectar()->prepare("INSERT INTO $tabla(idproyecto, nombre) 
-												    VALUES (:idproyecto, :nombre)");
-		  
-			$stmt1->bindParam(":idproyecto", $datos["idproyecto"], PDO::PARAM_INT);
-			$stmt1->bindParam(":nombre", $datos["nombre"], PDO::PARAM_STR);
-		  
-			if($stmt1->execute()){
-
-				return "ok";
-	
-			}else{
-	
-				return "error";
-			
-			}
-	
-			$stmt1->close();
-			$stmt1 = null;
-	
-		}
 
 	static public function mdlIngresarFourwalls($tabla, $datos){
 

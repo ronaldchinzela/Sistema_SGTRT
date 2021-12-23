@@ -23,14 +23,6 @@
 
 <div class="box">
 
-
-
-<button class="btn btn-primary" id="btn-mantenimiento" data-toggle="modal" data-target="#modalAgregarMantenimiento">
-          
-          Agregar nuevo proyecto
-
-</button>
-
 <button class="btn btn-primary" id="btn-mantenimientoCosto" data-toggle="modal" data-target="#modalAgregarFourwalls">
           
           Agregar costo Fourwalls
@@ -175,99 +167,6 @@
 
 </section>
 
-
-</div>
-
-
-<!--=================================================================================================================================================
-                                               MODAL AGREGAR MANTENIMIENTO
-==================================================================================================================================================-->
-
-<div id="modalAgregarMantenimiento" class="modal fade" role="dialog">
-  
-  <div class="modal-dialog">
-
-    <div class="modal-content" id="modal-content-mantenimiento">
-
-      <form role="form" method="post" id="dimensiones-form-mantenimiento" onsubmit="return validar();">
-
-        <!--=====================================
-        CABEZA DEL MODAL
-        ======================================-->
-
-        <div class="modal-header" style="background:#3c8dbc; color:white">
-
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
-
-          <h4 class="modal-title" id="center-titulo">REGISTRO - NUEVO PROYECTO</h4>
-
-        </div>
-
-        <!--=====================================
-        CUERPO DEL MODAL
-        ======================================-->
-
-        <div class="modal-body">
-
-          <div class="box-body">
-                          
-          <!-- ENTRADA PARA EL CÓDIGO ALP -->
-            
-            <div class="form-group">
-              
-              <div class="input-group">
-              
-                <span class="input-group-addon" id="nuevoAlpSpan"><i class="fa fa-code">&nbsp;&nbsp;Código ALP</i></span> 
-
-                <input type="text" class="form-control input-lg" id="nuevoAlp" name="nuevoCodigo" onkeypress="return solonumeroMantenimiento(event);" maxlength="6" onpaste="return false" placeholder="Ingresar el código ALP">
-
-              </div>
-
-            </div>
-
-            <!-- ENTRADA PARA EL NOMBRE DEL PROYECTO -->
-            
-            <div class="form-group">
-              
-              <div class="input-group">
-              
-                <span class="input-group-addon" id="alpCod"><i class="fa fa-pencil-square-o">&nbsp;&nbsp;Proyecto&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</i></span> 
-
-                <input type="text" class="form-control input-lg" id="nuevoMantenimiento" name="nuevoMantenimiento" placeholder="Ingresar nombre de proyecto">
-
-              </div>
-
-            </div>
-           
-  
-          </div>
-
-        </div>
-
-        <!--=====================================
-        PIE DEL MODAL
-        ======================================-->
-
-        <div class="modal-footer" id="pie-mantenimiento">
-
-          <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Salir</button>
-
-          <button type="submit" class="btn btn-primary">Registrar Mantenimiento</button>
-
-        </div>
-
-      </form>
-
-      <?php
-
-        $crearMantenimiento = new ControladorMantenimientos();
-        $crearMantenimiento -> ctrCrearMantenimiento();
-
-      ?>
-
-    </div>
-
-  </div>
 
 </div>
 

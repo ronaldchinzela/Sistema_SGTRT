@@ -3,70 +3,8 @@
 class ControladorMantenimientos{
 
 	/*=============================================
-					CREAR MANTENIMIENTOS
+					CREAR COSTOS
 	=============================================*/
-
-	static public function ctrCrearMantenimiento(){
-
-		//TABLA PROYECTO
-		if(isset($_POST["nuevoCodigo"])){
-
-			if(preg_match('/^[0-9]+$/', $_POST["nuevoCodigo"]) &&
-			   preg_match('/[#\.\-a-zA-Z0-9ñÑáéíóúÁÉÍÓÚ ]+$/', $_POST["nuevoMantenimiento"])){
-
-			   	$tabla = "proyecto";
-
-			   	$datos = array("idproyecto"=>$_POST["nuevoCodigo"],
-					           "nombre"=>$_POST["nuevoMantenimiento"]);
-
-			   	$respuesta = ModeloMantenimientos::mdlIngresarMantenimiento($tabla, $datos);
-
-				   if($respuesta == "ok"){
-
-					echo'<script>
-
-					swal({
-						  type: "success",
-						  title: "¡El proyecto han sido registrado exitósamente!",
-						  showConfirmButton: true,
-						  confirmButtonText: "Aceptar"
-						  }).then(function(result){
-									if (result.value) {
-
-									window.location = "costo-mantenimiento";
-
-									}
-								})
-
-					</script>';
-
-				}
-
-			}else{
-
-				echo'<script>
-
-					swal({
-						  type: "error",
-						  title: "¡Los datos ingresados no pueden ir vacíos o llevar caracteres especiales!",
-						  showConfirmButton: true,
-						  confirmButtonText: "Cerrar"
-						  }).then(function(result){
-							if (result.value) {
-
-							window.location = "costo-mantenimiento";
-
-							}
-						})
-
-			  	</script>';
-
-
-
-			}
-
-		}
-	}
 
 	static public function ctrCrearFourwalls(){
 		//TABLA FOURWALLS

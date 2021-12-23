@@ -5763,7 +5763,7 @@ table.text-center th {
 .cbo-año{
   position: relative;
   top: 71px;
-  left: -85px;
+  left: 20px;
   width: 60px;
   font-size: 16px;
   font-family: 'Arial', sans-serif;
@@ -5791,7 +5791,7 @@ table.text-center th {
 .cbo-mes{
   position: relative;
   top: 35px;
-  left: 405px;
+  left: 590px;
   width: 60px;
   font-size: 16px;
   font-family: 'Arial', sans-serif;
@@ -5823,7 +5823,7 @@ table.text-center th {
   height: 32px;
   top: 2px;
   position: relative;
-  left: 645px;
+  left: 705px;
   width: 100px;
   color: #fff;
   padding-left: 10px;
