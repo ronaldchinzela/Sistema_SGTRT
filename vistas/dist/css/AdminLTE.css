@@ -6296,3 +6296,10 @@ table.text-center th {
     white-space: nowrap;
   }
   
+ /*############################################### ESTILOS proyectos ###########################################*/
+  #editarProyecto{
+    border-color: #000;
+  }
+  #editarCodigo{
+    border-color: #000;
+  }

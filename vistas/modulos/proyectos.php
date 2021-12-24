@@ -71,9 +71,9 @@
 
                         <div class="btn-group">
                             
-                          <button class="btn btn-warning btnEditarLicencia" data-toggle="modal" data-target="#modalEditarLicencia" idLicencia="'.$value["idproyecto"].'"><i class="fa fa-pencil"></i>&nbsp;&nbsp;<b>Editar</b></button>
+                          <button class="btn btn-warning btnEditarProyecto" data-toggle="modal" data-target="#modalEditarProyecto" idProyecto="'.$value["idproyecto"].'"><i class="fa fa-pencil"></i>&nbsp;&nbsp;<b>Editar</b></button>
                           
-                          <button class="btn btn-danger btnEliminarLicencia" idLicencia="'.$value["idproyecto"].'"><i class="fa fa-times"></i>&nbsp;&nbsp;<b>Eliminar</b></button>
+                          <button class="btn btn-danger btnEliminarProyecto" idProyecto="'.$value["idproyecto"].'"><i class="fa fa-times"></i>&nbsp;&nbsp;<b>Eliminar</b></button>
                        
                         </div>  
 
@@ -190,16 +190,16 @@
 </div>
 
 <!--=================================================================================================================================================
-                                                    MODAL EDITAR LICENCIA
+                                                  MODAL EDITAR PROYECTO
 ==================================================================================================================================================-->
 
-<div id="modalEditarLicencia" class="modal fade" role="dialog">
+<div id="modalEditarProyecto" class="modal fade" role="dialog">
   
   <div class="modal-dialog">
 
-    <div class="modal-content">
+    <div class="modal-content" id="modal-content-mantenimiento">
 
-      <form role="form" method="post">
+      <form role="form" method="post" id="dimensiones-form-mantenimiento">
 
         <!--=====================================
                   CABEZA DEL MODAL
@@ -209,7 +209,7 @@
 
           <button type="button" class="close" data-dismiss="modal">&times;</button>
 
-          <h4 class="modal-title" id="center-titulo">EDITAR - LICENCIA - SPLA</h4>
+          <h4 class="modal-title" id="center-titulo">EDITAR PROYECTO</h4>
 
         </div>
 
@@ -221,66 +221,30 @@
 
           <div class="box-body">
                           
-          <!-- ENTRADA PARA EL CÓDIGO DE DE LICENCIA -->
+          <!-- ENTRADA PARA EL CÓDIGO ALP -->
             
             <div class="form-group">
               
               <div class="input-group">
               
-                <span class="input-group-addon" id="color-span"><i class="fa fa-code"></i>&nbsp;&nbsp;Código de Licencia&nbsp;</span> 
+              <span class="input-group-addon" id="nuevoAlpSpan"><i class="fa fa-code">&nbsp;&nbsp;Código ALP</i></span> 
 
                 <input type="text" class="form-control input-lg" name="editarCodigo" id="editarCodigo" required>
-                <input type="hidden" id="idLicencia" name="idLicencia">
+                <input type="hidden" id="idProyecto" name="idProyecto">
 
               </div>
 
             </div>
 
-            <!-- ENTRADA PARA EL NOMBRE DE LICENCIA -->
+            <!-- ENTRADA PARA EL NOMBRE DEL PROYECTO -->
             
             <div class="form-group">
               
               <div class="input-group">
               
-                <span class="input-group-addon" id="color-span"><i class="fa fa-folder-open-o"></i>&nbsp;&nbsp;Nombre de licencia</span> 
+              <span class="input-group-addon" id="alpCod"><i class="fa fa-pencil-square-o">&nbsp;&nbsp;Proyecto&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</i></span> 
 
-                <input type="text" class="form-control input-lg" name="editarLicencia" id="editarLicencia" required>
-
-              </div>
-
-            </div>
-
-            <!-- ENTRADA PARA EL TIPO -->
-            
-            <div class="form-group">
-              
-              <div class="input-group">
-              
-                <span class="input-group-addon" id="color-span"><i class="fa fa-folder-open"></i>&nbsp;&nbsp;Tipo de licencia&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> 
-
-                <select class="form-control input-lg" name="editarTipo" required>
-
-                  <option value="" id="editarTipo"></option>
-                  <option value="Office">Office</option>
-                  <option value="Sqlserver">Sqlserver</option>
-                  <option value="Remote">Remote</option>             
-                  <option value="Sqlserver - 2">Sqlserver - 2</option>
-
-                </select>
-
-              </div>
-
-            </div>
-
-            <!-- ENTRADA PARA EL COSTO -->
-            
-            <div class="form-group">
-              
-              <div class="input-group">
-              
-                <span class="input-group-addon" id="color-span"><i class="fa fa-money"></i>&nbsp;&nbsp;Costo de licencia&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> 
-
-                <input type="text" class="form-control input-lg" name="editarCosto" onkeypress="return solonumeroCosto(event);" maxlength="11" onpaste="return false" id="editarCosto" required>
+                <input type="text" class="form-control input-lg" name="editarProyecto" id="editarProyecto" required>
 
               </div>
 
@@ -295,7 +259,7 @@
         PIE DEL MODAL
         ======================================-->
 
-        <div class="modal-footer">
+        <div class="modal-footer" id="pie-mantenimiento">
 
           <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Salir</button>
 
@@ -307,8 +271,8 @@
 
       <?php
 
-          $editarLicencia = new ControladorLicencias();
-          $editarLicencia -> ctrEditarLicencia();
+          $editarProyecto = new ControladorProyectos();
+          $editarProyecto -> ctrEditarProyecto();
 
       ?>
 
@@ -322,7 +286,7 @@
 
 <?php
 
-  $borrarLicencia = new ControladorLicencias();
-  $borrarLicencia -> ctrBorrarLicencia();
+  $borrarProyecto = new ControladorProyectos();
+  $borrarProyecto -> ctrBorrarProyecto();
 
 ?>

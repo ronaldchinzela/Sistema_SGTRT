@@ -145,5 +145,6 @@
 <script type="text/javascript" src="vistas/js/mantenimiento.js"></script>
 <script type="text/javascript" src="vistas/js/walls.js"></script>
 <script src="vistas/js/cambios.js"></script>
+<script src="vistas/js/proyecto.js"></script>
 </body>
 </html>
