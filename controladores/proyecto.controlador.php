@@ -98,7 +98,7 @@ class ControladorProyectos{
 
 			   	$tabla = "proyecto";
 
-			   	$datos = array("idproyecto"=>$_POST["idProyecto"],
+			   	$datos = array("idproyecto"=>$_POST["editarCodigo"],
 					           "nombre"=>$_POST["editarProyecto"]);
 
 			   	$respuesta = ModeloProyectos::mdlEditarProyecto($tabla, $datos);
@@ -117,7 +117,7 @@ class ControladorProyectos{
 						  }).then(function(result){
 									if (result.value) {
 
-									window.location = "licencia-spla";
+									window.location = "proyectos";
 
 									}
 								})
@@ -140,7 +140,7 @@ class ControladorProyectos{
 						  }).then(function(result){
 							if (result.value) {
 
-							window.location = "licencia-spla";
+							window.location = "proyectos";
 
 							}
 						})

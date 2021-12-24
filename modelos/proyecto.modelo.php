@@ -68,4 +68,32 @@ class ModeloProyectos{
 	
 		}
 
+		/*=============================================
+						EDITAR PROYECTO
+		=============================================*/
+
+	static public function mdlEditarProyecto($tabla, $datos){
+
+		$stmt = Conexion::conectar()->prepare("UPDATE $tabla SET idproyecto = :idproyecto, 
+															     nombre = :nombre
+																 WHERE idproyecto = :idproyecto");
+
+		$stmt->bindParam(":idproyecto", $datos["idproyecto"], PDO::PARAM_INT);
+		$stmt->bindParam(":nombre", $datos["nombre"], PDO::PARAM_STR);
+
+		if($stmt->execute()){
+
+			return "ok";
+
+		}else{
+
+			return "error";
+		
+		}
+
+		$stmt->close();
+		$stmt = null;
+
+	}
+
 }
