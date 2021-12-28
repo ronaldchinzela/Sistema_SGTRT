@@ -18,9 +18,8 @@ $(".tablas").on("click", ".btnEditarFourwalls", function(){
     processData: false,
     dataType:"json",
     success: function(respuesta){
-        //console.log(respuesta);
-			$("#idFourwalls").val(respuesta["idfourwalls"]);
-				$("#editarNombre").val(respuesta["nombre"]);
+        console.log(respuesta);
+			  $("#editarNombre").val(respuesta["nombre"]);
 				$("#editarEquipo").val(respuesta["equipo"]);
 				$("#editarSerie").val(respuesta["serie"]);
 				$("#editarCosto").val(respuesta["costo"]);
@@ -29,7 +28,6 @@ $(".tablas").on("click", ".btnEditarFourwalls", function(){
      	}
 
 	})
-
 
 })
   /*=============================================

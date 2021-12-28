@@ -2,6 +2,8 @@
 
 require_once "../controladores/fourwalls.controlador.php";
 require_once "../modelos/fourwalls.modelo.php";
+//require_once "../controladores/proyecto.controlador.php";
+//require_once "../modelos/proyecto.modelo.php";
 
 class AjaxFourwalls{
 
@@ -17,6 +19,7 @@ class AjaxFourwalls{
 		$valor = $this->idFourwalls;
 
 		$respuesta = ControladorFourwalls::ctrMostrarFourwalls($item, $valor);
+		//$respuesta = ControladorProyectos::ctrMostrarProyectos($item, $valor);
 
 		$respuesta["costo"] = number_format($respuesta["costo"], 2);
 		echo json_encode($respuesta);

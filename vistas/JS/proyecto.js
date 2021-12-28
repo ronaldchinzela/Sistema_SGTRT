@@ -18,7 +18,7 @@ $(".tablas").on("click", ".btnEditarProyecto", function(){
       processData: false,
       dataType:"json",
       success:function(respuesta){
-        console.log(respuesta);
+        //console.log(respuesta);
       
       	 $("#editarCodigo").val(respuesta["idproyecto"]);
 	       $("#editarProyecto").val(respuesta["nombre"]);
@@ -33,14 +33,14 @@ $(".tablas").on("click", ".btnEditarProyecto", function(){
                   ELIMINAR PROYECTO
   =============================================*/
   //creando alerta suave sweetalert
-  $(".tablas").on("click", ".btnEliminarLicencia", function(){
+  $(".tablas").on("click", ".btnEliminarProyecto", function(){
 
     //capturando el id de la licencia
-    var idLicencia = $(this).attr("idLicencia");
+    var idProyecto = $(this).attr("idProyecto");
 
     //mostrarndo la alerta para el id seleccionado
     swal({
-      title: '¿Está seguro de borrar la licencia?',
+      title: '¿Está seguro de borrar este  proyecto??',
       allowOutsideClick: false,
       allowEscapeKey: false,
       text: "¡Si no lo está puede cancelar la acción!",
@@ -49,13 +49,13 @@ $(".tablas").on("click", ".btnEditarProyecto", function(){
       confirmButtonColor: '#3085d6',
       cancelButtonColor: '#d33',
       cancelButtonText: 'Cancelar',
-      confirmButtonText: 'Si, borrar licencia!'
+      confirmButtonText: 'Si, borrar proyecto!'
     }).then(function(result){
 
-      //redireccionando a la página de licencia-spla en caso la acción sea ejecutada
+      //redireccionando a la página de proyectos en caso la acción sea ejecutada
       if(result.value){
 
-        window.location = "index.php?ruta=licencia-spla&idLicencia="+idLicencia;
+        window.location = "index.php?ruta=proyectos&idProyecto="+idProyecto;
 
       }
 

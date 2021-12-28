@@ -6303,3 +6303,13 @@ table.text-center th {
   #editarCodigo{
     border-color: #000;
   }
+  .btnEditarProyecto{
+    padding: 2px;
+    padding-top: 1px;
+    width: 80px;
+  }
+  .btnEliminarProyecto{
+    padding: 2px;
+    padding-top: 1px;
+    width: 80px;
+  }

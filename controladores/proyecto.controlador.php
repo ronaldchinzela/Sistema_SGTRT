@@ -178,7 +178,7 @@ class ControladorProyectos{
 
 					swal({
 						  type: "success",
-						  title: "El proyecto ha sido borrada correctamente",
+						  title: "El proyecto ha sido borrado correctamente",
 						  allowOutsideClick: false,
 						  allowEscapeKey: false,
 						  showConfirmButton: true,
@@ -186,7 +186,7 @@ class ControladorProyectos{
 						  }).then(function(result){
 									if (result.value) {
 
-									window.location = "licencia-spla";
+									window.location = "proyectos";
 
 									}
 								})

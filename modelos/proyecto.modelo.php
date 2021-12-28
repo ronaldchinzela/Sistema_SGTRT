@@ -95,5 +95,31 @@ class ModeloProyectos{
 		$stmt = null;
 
 	}
+	
+		/*=============================================
+					BORRAR PROYECTO
+		=============================================*/
+
+	static public function mdlBorrarProyecto($tabla, $datos){
+
+		$stmt = Conexion::conectar()->prepare("DELETE FROM $tabla WHERE idproyecto = :idproyecto");
+
+		$stmt -> bindParam(":idproyecto", $datos, PDO::PARAM_INT);
+
+		if($stmt -> execute()){
+
+			return "ok";
+		
+		}else{
+
+			return "error";	
+
+		}
+
+		$stmt -> close();
+
+		$stmt = null;
+
+	}
 
 }

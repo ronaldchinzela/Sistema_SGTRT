@@ -118,7 +118,7 @@
                   echo '<td style="color:#000"><b>$&nbsp;&nbsp</b>0</td>';
                 }
                 
-                //TRAER FOURWALLS POR CÓDIGO ALP            
+                //TRAER NEXSUS POR CÓDIGO ALP            
                 if($value["costonexus"] != null){
                 echo'<td><a href="costo-nexsus?idproyecto=' .$value["idproyecto"] . '" class="verNexus"><b>$</b>&nbsp;&nbsp'.number_format($value["costonexus"],2).'</a></td>';
                 }
@@ -127,7 +127,7 @@
                   echo '<td style="color:#000"><b>$&nbsp;&nbsp</b>0</td>';
                 }
 
-                //TRAER FOURWALLS POR CÓDIGO ALP 
+                //TRAER HP POR CÓDIGO ALP 
                 if($value["costohp"] != null){
                 echo'<td><a href="costo-hp?idproyecto=' .$value["idproyecto"] . '" class="verHp"><b>$</b>&nbsp;&nbsp'.number_format($value["costohp"],2).'</a></td>';
                 }

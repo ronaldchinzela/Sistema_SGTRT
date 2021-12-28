@@ -1,7 +1,7 @@
 <?php
 
-require_once "../controladores/Mantenimientos.controlador.php";
-require_once "../modelos/Mantenimientos.modelo.php";
+//require_once "../controladores/Mantenimientos.controlador.php";
+//require_once "../modelos/Mantenimientos.modelo.php";
 require_once "../controladores/proyecto.controlador.php";
 require_once "../modelos/proyecto.modelo.php";
 
