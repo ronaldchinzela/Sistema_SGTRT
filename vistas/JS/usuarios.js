@@ -132,7 +132,7 @@ $(document).on("click", ".btnEliminarUsuario", function(){
   })
 
   //LIMITAR CANTIDAD DE NÚMEROS EN LA CAJA REGISTRAR NÚMERO DE CELULAR DE usuarios.php
-  var input =  document.getElementById('numero');
+  /*var input =  document.getElementById('numero');
   input.addEventListener('input',function(){
     if (this.value.length > 9) 
       this.value = this.value.slice(0,9); 
@@ -142,7 +142,7 @@ $(document).on("click", ".btnEliminarUsuario", function(){
   input.addEventListener('input',function(){
     if (this.value.length > 9) 
       this.value = this.value.slice(0,9); 
-  })
+  })*/
   
   //LIMITAR INGRESAR SOLO NÚMEROS EN LA CAJA REGISTRAR NÚMERO DE CELULAR DE usuarios.php
   function solonumeros(e){

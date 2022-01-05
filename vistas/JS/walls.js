@@ -371,7 +371,3 @@ function validarH(){
    alert("La fecha final debe ser mayor a la fecha inicial");
   }
 }*/
-
-$(document).ready(function(){
-  $('#nuevoFechaInicioFourwalls').mask('00/00/0000');
-});

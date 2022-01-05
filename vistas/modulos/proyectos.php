@@ -64,7 +64,7 @@
 
               echo '<tr>
                       <td>'.($key+1).'</td>
-                      <td>'.$value["idproyecto"].'</td>
+                      <td>'.sprintf("%'.06d\n", $value["idproyecto"]).'</td>
                       <td>'.$value["nombre"].'</td>
 
                       <td>

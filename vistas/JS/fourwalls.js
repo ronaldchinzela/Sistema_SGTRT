@@ -2,13 +2,13 @@
 				  EDITAR 4WALL
 =============================================*/
 $(".tablas").on("click", ".btnEditarFourwalls", function(){
-
+  //console.log("holaa azuuul");
 	//Almacenando en una variable el atributo idfourwalls de la BD 
 	var idFourwalls = $(this).attr("idFourwalls");
 
 	var datos = new FormData();
 	datos.append("idFourwalls", idFourwalls);
-
+  
 	$.ajax({
 		url: "ajax/fourwalls.ajax.php",
 		method: "POST",

@@ -6002,21 +6002,54 @@ table.text-center th {
   font-size: 24px;
  }
 
-  /* ESTILOS usuarios */
+  /*############################################ ESTILOS usuarios #############################################*/
   #formulario-usuarios{
     position: relative;
-    top: -40px;
+    top: -50px;
+  }
+  #modal-content-usuario{
+    width: 490px;
+    right: -90px;
+    top: 10px;
+  }
+  #spamIcon{
+    color: #0522a3;
+    background-color: #eeeeee;
+    font-size: 20px;
+    border-color: #000;
+  }
+  #ingresartextoInput{
+    background-color: #eeeeee;
+    border-color: #000;
   }
 
-  #pie{
+  #pieUsuario{
     position: relative;
-    top: -40px;
+    top: -69px;
   }
 
   #dimensiones-form-usuario{
     position: relative;
-    height: 550px;
+    height: 525px;
   }
+
+  #editarNombre{
+    background-color: #eeeeee;
+    border-color: #000;
+  }
+  #editarApellido{
+    background-color: #eeeeee;
+    border-color: #000;
+  }
+  #editarCorreo{
+    background-color: #eeeeee;
+    border-color: #000;
+  }
+  #editarCelular{
+    background-color: #eeeeee;
+    border-color: #000;
+  }
+  
 
   /*######################################### ESTILOS licencia-spla #########################################*/
  #ver-listado-1{

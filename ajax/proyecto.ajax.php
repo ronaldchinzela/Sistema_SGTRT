@@ -17,7 +17,9 @@ class AjaxProyectos{
 		$valor = $this->idProyecto;
 
 		$respuesta = ControladorProyectos::ctrMostrarProyectos($item, $valor);
-		//$respuesta["costo"] = number_format($respuesta["costo"], 2);
+		
+		//Agregando formato de seis ceros en la  vista para no redondear los números con 0 a  la izquierda
+		$respuesta["idproyecto"] = sprintf("%'.06d\n", $respuesta["idproyecto"]);
 		echo json_encode($respuesta);
 
 

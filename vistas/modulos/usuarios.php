@@ -112,7 +112,7 @@
 
   <div class="modal-dialog">
 
-    <div class="modal-content">
+    <div class="modal-content" id="modal-content-usuario">
 
     <form role="form" method="post" id="dimensiones-form-usuario">
 
@@ -150,8 +150,8 @@
 
                 <div class="input-group">
 
-                    <span class="input-group-addon"><i class="fa fa-user"></i></span>
-                    <input type="text" onkeypress="return soloLetrasNomApe(event);" onpaste="return false" maxlength="60" class="form-control input-lg" name="nuevoNombre" placeholder="Ingresar el nombre" required>
+                    <span class="input-group-addon" id="spamIcon"><i class="fa fa-user">&nbsp;&nbsp;&nbsp;Nombres&nbsp;&nbsp;</i></span>
+                    <input type="text" onkeypress="return soloLetrasNomApe(event);" onpaste="return false" maxlength="60" class="form-control input-lg" id="ingresartextoInput" name="nuevoNombre" placeholder="Ingresar el nombre" required>
 
                 </div>
 
@@ -161,8 +161,8 @@
 
                 <div class="input-group">
 
-                    <span class="input-group-addon"><i class="fa fa-id-card"></i></span>
-                    <input type="text" onkeypress="return soloLetrasNomApe(event);" onpaste="return false" maxlength="60" class="form-control input-lg" name="nuevoApellido" placeholder="Ingresar los apellidos" required>
+                    <span class="input-group-addon" id="spamIcon"><i class="fa fa-id-card">&nbsp;&nbsp;Apellidos</i></span>
+                    <input type="text" onkeypress="return soloLetrasNomApe(event);" onpaste="return false" maxlength="60" class="form-control input-lg" id="ingresartextoInput" name="nuevoApellido" placeholder="Ingresar los apellidos" required>
 
                 </div>
 
@@ -172,8 +172,8 @@
 
                 <div class="input-group">
 
-                    <span class="input-group-addon"><i class="fa fa-envelope"></i></span>
-                    <input type="text" class="form-control input-lg" name="nuevoCorreo" placeholder="Ingresar el correo" required>
+                    <span class="input-group-addon" id="spamIcon"><i class="fa fa-envelope">&nbsp;&nbsp;Correo&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</i></span>
+                    <input type="text" class="form-control input-lg" id="ingresartextoInput" name="nuevoCorreo" placeholder="Ingresar el correo" required>
 
                 </div>
 
@@ -183,8 +183,8 @@
 
                 <div class="input-group">
 
-                    <span class="input-group-addon"><i class="fa fa-phone"></i></span>
-                    <input type="text" class="form-control input-lg" name="nuevoCelular" min="7" max="999999999" id="numero" onkeypress="return solonumeros(event)" onpaste="return false" placeholder="Ingresar número telefónico" required>
+                    <span class="input-group-addon" id="spamIcon"><i class="fa fa-phone">&nbsp;&nbsp;Teléfono&nbsp;&nbsp;&nbsp;</i></span>
+                    <input type="text" class="form-control input-lg" id="ingresartextoInput" name="nuevoCelular" minlength="7" maxlength="9" id="numero" onkeypress="return solonumeros(event)" onpaste="return false" placeholder="Ingresar número telefónico" required>
 
                 </div>
 
@@ -194,8 +194,8 @@
 
                 <div class="input-group">
 
-                    <span class="input-group-addon"><i class="fa fa-lock"></i></span>
-                    <input type="password" class="form-control input-lg" name="nuevoPassword" placeholder="Ingresar contraseña" required>
+                    <span class="input-group-addon" id="spamIcon"><i class="fa fa-lock">&nbsp;&nbsp;Password&nbsp;&nbsp;</i></span>
+                    <input type="password" class="form-control input-lg" id="ingresartextoInput" name="nuevoPassword" placeholder="Ingresar contraseña" required>
 
                 </div>
 
@@ -205,8 +205,8 @@
 
                 <div class="input-group">
 
-                    <span class="input-group-addon"><i class="fa fa-address-book-o"></i></span>
-                        <select class="form-control input-lg" name="nuevoPerfil" required>
+                    <span class="input-group-addon" id="spamIcon"><i class="fa fa-address-book-o">&nbsp;&nbsp;Rol&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</i></span>
+                        <select class="form-control input-lg" id="ingresartextoInput" name="nuevoPerfil" required>
                             <option value="">Seleccionar rol</option>
                             <option value="Administrador">Administrador</option>
                             <option value="Analista">Analista</option>
@@ -223,7 +223,7 @@
 <!--===========================================
         PIE DEL MODAL
 ============================================-->
-      <div class="modal-footer" id="pie">
+      <div class="modal-footer" id="pieUsuario">
         <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Salir</button>
         <button type="submit" class="btn btn-primary">Generar usuario</button>
       </div>
@@ -248,7 +248,7 @@
 
   <div class="modal-dialog">
 
-    <div class="modal-content">
+    <div class="modal-content" id="modal-content-usuario">
 
     <form role="form" method="post" id="dimensiones-form-usuario">
 
@@ -287,7 +287,7 @@
 
                 <div class="input-group">
 
-                    <span class="input-group-addon"><i class="fa fa-user"></i></span>
+                    <span class="input-group-addon" id="spamIcon"><i class="fa fa-user">&nbsp;&nbsp;&nbsp;Nombres&nbsp;&nbsp;</i></span>
                     <input type="text" onkeypress="return soloLetrasNomApe(event);" onpaste="return false" maxlength="60" class="form-control input-lg" id="editarNombre" name="editarNombre" value="" required>
                     <input type="hidden"  name="idUsuario" id="idUsuario" required> 
                 </div>
@@ -298,7 +298,7 @@
 
                 <div class="input-group">
 
-                    <span class="input-group-addon"><i class="fa fa-id-card"></i></span>
+                    <span class="input-group-addon" id="spamIcon"><i class="fa fa-id-card">&nbsp;&nbsp;Apellidos</i></span>
                     <input type="text" onkeypress="return soloLetrasNomApe(event);" onpaste="return false" maxlength="60" class="form-control input-lg" id="editarApellido" name="editarApellido" value="" required>
 
                 </div>
@@ -309,7 +309,7 @@
 
                 <div class="input-group">
 
-                    <span class="input-group-addon"><i class="fa fa-envelope"></i></span>
+                    <span class="input-group-addon" id="spamIcon"><i class="fa fa-envelope">&nbsp;&nbsp;Correo&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</i></span>
                     <input type="text" class="form-control input-lg" id="editarCorreo" name="editarCorreo" value="" required>
 
                 </div>
@@ -320,8 +320,8 @@
 
                 <div class="input-group">
 
-                    <span class="input-group-addon"><i class="fa fa-phone"></i></span>
-                    <input type="text" class="form-control input-lg" id="editarCelular" name="editarCelular" min="7" max="999999999" onkeypress="return solonumeros(event)" onpaste="return false"  value="" required>
+                    <span class="input-group-addon" id="spamIcon"><i class="fa fa-phone">&nbsp;&nbsp;Teléfono&nbsp;&nbsp;&nbsp;</i></span>
+                    <input type="text" class="form-control input-lg" id="editarCelular" name="editarCelular" minlength="7" maxlength="9" onkeypress="return solonumeros(event)" onpaste="return false"  value="" required>
 
                 </div>
 
@@ -331,9 +331,9 @@
                 
                 <div class="input-group">
                 
-                    <span class="input-group-addon"><i class="fa fa-lock"></i></span> 
+                    <span class="input-group-addon" id="spamIcon"><i class="fa fa-lock">&nbsp;&nbsp;Password&nbsp;&nbsp;</i></span> 
 
-                    <input type="password" class="form-control input-lg" name="editarPassword" placeholder="Escriba la nueva contraseña">
+                    <input type="password" class="form-control input-lg" id="ingresartextoInput" name="editarPassword" placeholder="Escriba la nueva contraseña">
 
                     <input type="hidden" id="passwordActual" name="passwordActual">
 
@@ -345,9 +345,9 @@
               
               <div class="input-group">
               
-                <span class="input-group-addon"><i class="fa fa-users"></i></span> 
+                <span class="input-group-addon" id="spamIcon"><i class="fa fa-users">&nbsp;&nbsp;Rol&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</i></span> 
 
-                <select class="form-control input-lg" name="editarPerfil">
+                <select class="form-control input-lg" id="ingresartextoInput" name="editarPerfil">
                   
                   <option value="" id="editarPerfil"></option>
                             <option value="Administrador">Administrador</option>
@@ -365,7 +365,7 @@
 <!--===========================================
         PIE DEL MODAL EDITAR USUARIO
 ============================================-->
-      <div class="modal-footer" id="pie">
+      <div class="modal-footer" id="pieUsuario">
         <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Salir</button>
         <button type="submit" class="btn btn-primary">Actualizar usuario</button>
       </div>
