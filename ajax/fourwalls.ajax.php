@@ -16,18 +16,19 @@ class AjaxFourwalls{
 	public function ajaxEditarFourwalls(){
 
 		$item = "idfourwalls";
-		$valor = $this->idFourwalls;
+		$valor = $_POST["idFourwalls"];
+		//$valor = $this->idFourwalls;
 
 		$respuesta = ControladorFourwalls::ctrMostrarFourwalls($item, $valor);
 		//$respuesta = ControladorProyectos::ctrMostrarProyectos($item, $valor);
+		var_dump($respuesta);
 		$respuesta = $respuesta[0];
 		$respuesta["costo"] = number_format($respuesta["costo"], 2);
 		
-		//error: function(error){
+		
 		echo json_encode($respuesta);
 		
-		//	console.error(error);
-		//}
+
 
 	}
 }

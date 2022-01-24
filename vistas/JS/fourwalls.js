@@ -12,13 +12,19 @@ $(".tablas").on("click", ".btnEditarFourwalls", function(){
 	$.ajax({
 		url: "ajax/fourwalls.ajax.php",
 		method: "POST",
-    data: datos,
+    data: {"idFourwalls": idFourwalls},
     cache: false,
     contentType: false,
     processData: false,
     dataType:"json",
+
+    error: function(error){
+      console.error(error);
+  },
+
     success: function(respuesta){
         console.log(respuesta);
+        
 			  $("#editarNombre").val(respuesta["nombre"]);
 				$("#editarEquipo").val(respuesta["equipo"]);
 				$("#editarSerie").val(respuesta["serie"]);
@@ -26,7 +32,7 @@ $(".tablas").on("click", ".btnEditarFourwalls", function(){
 				$("#editarFechaInicio").val(respuesta["fec_inicio"]);
 				$("#editarFechaFin").val(respuesta["fec_fin"]);
      	}
-
+    
 	})
 
 })

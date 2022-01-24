@@ -193,7 +193,31 @@ class ControladorProyectos{
 
 					</script>';
 			}
+		}else{
+
+			echo'<script>
+
+				swal({
+					  type: "error",
+					  title: "¡Error en la eliminación!",
+					  allowOutsideClick: false,
+					  allowEscapeKey: false,
+					  showConfirmButton: true,
+					  confirmButtonText: "Cerrar"
+					  }).then(function(result){
+						if (result.value) {
+
+						window.location = "proyectos";
+
+						}
+					})
+
+			  </script>';
+
+
+
 		}
+
 		
 	}
 
