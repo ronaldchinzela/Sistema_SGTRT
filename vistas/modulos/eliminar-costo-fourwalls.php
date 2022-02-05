@@ -76,7 +76,7 @@ class ModeloEliminarFourwalls{
 
 	static public function mdlBorrarFourwalls($tabla, $datos){
 
-		$stmt = Conexion::conectar()->prepare("DELETE FROM $tabla WHERE idfourwalls = :idfourwalls");
+		$stmt = Conexion::conectar()->prepare("UPDATE $tabla SET eliminado = 1 WHERE idFourwalls = :idFourwalls");
 
 		$stmt -> bindParam(":idfourwalls", $datos, PDO::PARAM_INT);
 

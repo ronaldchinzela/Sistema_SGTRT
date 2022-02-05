@@ -193,7 +193,8 @@ class ControladorProyectos{
 
 					</script>';
 			}
-		}else{
+		}
+		/*else{
 
 			echo'<script>
 
@@ -216,7 +217,7 @@ class ControladorProyectos{
 
 
 
-		}
+		}*/
 
 		
 	}

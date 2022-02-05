@@ -13,7 +13,7 @@ class ModeloFourwalls{
 		if($item != null){
 
 			$stmt = Conexion::conectar()->prepare("SELECT f.idfourwalls, f.equipo, f.serie, f.costo, f.fec_inicio, f.fec_fin, f.idproyecto, p.nombre
-			FROM fourwalls AS f JOIN proyecto AS p ON f.idproyecto = p.idproyecto WHERE  f.idproyecto = :idFourwalls");
+			FROM fourwalls AS f JOIN proyecto AS p ON f.idproyecto = p.idproyecto WHERE  f.idproyecto = :idFourwalls AND f.eliminado = 0");
 
 			$stmt -> bindParam(":idFourwalls", $valor, PDO::PARAM_STR);
 
