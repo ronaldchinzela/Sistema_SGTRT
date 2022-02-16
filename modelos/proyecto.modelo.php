@@ -24,9 +24,9 @@ class ModeloProyectos{
 		}else{
 
 			$stmt = Conexion::conectar()->prepare("SELECT p.idproyecto, p.nombre, 
-			(SELECT SUM(f.costo) FROM fourwalls AS f WHERE p.idproyecto = f.idproyecto) AS costoFourwalls,
-			(SELECT SUM(n.costo) FROM nexus AS n WHERE p.idproyecto = n.idproyecto) AS costoNexus,
-			(SELECT SUM(h.costo) FROM hp AS h WHERE p.idproyecto = h.idproyecto) AS costoHp
+			(SELECT SUM(f.costo) FROM fourwalls AS f WHERE p.idproyecto = f.idproyecto AND f.eliminado = false) AS costoFourwalls,
+			(SELECT SUM(n.costo) FROM nexus AS n WHERE p.idproyecto = n.idproyecto AND n.eliminado = false) AS costoNexus,
+			(SELECT SUM(h.costo) FROM hp AS h WHERE p.idproyecto = h.idproyecto AND h.eliminado = false) AS costoHp
 			 FROM proyecto AS p;");
 
 			$stmt -> execute();

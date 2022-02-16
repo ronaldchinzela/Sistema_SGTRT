@@ -75,10 +75,11 @@ require_once "./modelos/conexion.php";
 class ModeloEliminarFourwalls{
 
 	static public function mdlBorrarFourwalls($tabla, $datos){
+    //var_dump ($datos);
+		$stmt = Conexion::conectar()->prepare("UPDATE $tabla SET eliminado = true WHERE idFourwalls = :idFourwalls");
 
-		$stmt = Conexion::conectar()->prepare("UPDATE $tabla SET eliminado = 1 WHERE idFourwalls = :idFourwalls");
-
-		$stmt -> bindParam(":idfourwalls", $datos, PDO::PARAM_INT);
+		$stmt -> bindParam(":idFourwalls",  $datos, PDO::PARAM_INT);
+    
 
 		if($stmt -> execute()){
 			

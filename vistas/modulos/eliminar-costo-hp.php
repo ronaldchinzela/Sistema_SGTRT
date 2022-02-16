@@ -84,13 +84,13 @@ class ModeloEliminarHp{
 
 static public function mdlBorrarHp($tabla, $datos){
 
-    $stmt = Conexion::conectar()->prepare("DELETE FROM $tabla WHERE idhp = :idhp");
+    $stmt = Conexion::conectar()->prepare("UPDATE $tabla SET eliminado = true WHERE idhp = :idHp");
 
-    $stmt -> bindParam(":idhp", $datos, PDO::PARAM_INT);
+    $stmt -> bindParam(":idHp", $datos, PDO::PARAM_INT);
 
     if($stmt -> execute()){
         
-        echo'<script>
+    echo'<script>
 
     swal({
           type: "success",

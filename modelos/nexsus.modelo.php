@@ -13,7 +13,7 @@ class ModeloNexsus{
 		if($item != null){
 
 			$stmt = Conexion::conectar()->prepare("SELECT n.idnexus, n.punto_red, n.costo, n.idproyecto, p.nombre
-			FROM nexus AS n JOIN proyecto AS p ON n.idproyecto = p.idproyecto WHERE n.idproyecto = :idNexus");
+			FROM nexus AS n JOIN proyecto AS p ON n.idproyecto = p.idproyecto WHERE n.idproyecto = :idNexus AND n.eliminado = false");
 
 			$stmt -> bindParam(":idNexus", $valor, PDO::PARAM_STR);
 

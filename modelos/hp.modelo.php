@@ -13,7 +13,7 @@ class ModeloHp{
 		if($item != null){
 
 			$stmt = Conexion::conectar()->prepare("SELECT h.idhp, h.equipo, h.serie, h.costo, h.fec_inicio, h.fec_fin, h.idproyecto, p.nombre
-			FROM hp AS h JOIN proyecto AS p ON h.idproyecto = p.idproyecto WHERE h.idproyecto = :idHp");
+			FROM hp AS h JOIN proyecto AS p ON h.idproyecto = p.idproyecto WHERE h.idproyecto = :idHp AND h.eliminado = false");
 
 			$stmt -> bindParam(":idHp", $valor, PDO::PARAM_STR);
 

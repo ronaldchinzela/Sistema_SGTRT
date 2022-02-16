@@ -5835,6 +5835,13 @@ table.text-center th {
   background-color: #3C8DBC;
  }
 
+ #gaaa{
+  position: relative;
+  top: -15px;
+  right: -9px;
+  background-color: #15b90f;
+ }
+
 #borde-tabla{
   border-color: #000;
 }

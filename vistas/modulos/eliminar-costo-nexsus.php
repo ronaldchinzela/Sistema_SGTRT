@@ -76,9 +76,9 @@ class ModeloEliminarNexsus{
 
 	static public function mdlBorrarNexsus($tabla, $datos){
 
-		$stmt = Conexion::conectar()->prepare("DELETE FROM $tabla WHERE idnexus = :idnexus");
+		$stmt = Conexion::conectar()->prepare("UPDATE $tabla SET eliminado = true WHERE idnexus = :idNexsus");
 
-		$stmt -> bindParam(":idnexus", $datos, PDO::PARAM_INT);
+		$stmt -> bindParam(":idNexsus", $datos, PDO::PARAM_INT);
 
 		if($stmt -> execute()){
 			
