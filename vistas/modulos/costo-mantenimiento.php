@@ -62,7 +62,7 @@
 
 <!-- BOTONES-->
 <input class="boton-listar-consultar" type="button" value="consultar" onclick="location.href='#'">
-<input class="ingresar_alp" type="" value="consultar">
+<input class="ingresar_alp">
 
 
 <!-- IMPORTAR ARCHIVO CSV -->

@@ -5835,11 +5835,11 @@ table.text-center th {
   background-color: #3C8DBC;
  }
 
- #gaaa{
+ .ingresar_alp{
   position: relative;
-  top: -15px;
-  right: -9px;
-  background-color: #15b90f;
+  top: 3px;
+  right: -725px;
+  padding-top: 5px;
  }
 
 #borde-tabla{
